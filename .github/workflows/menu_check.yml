@@ -9,6 +9,7 @@ on:
 jobs:
   check-menu:
     runs-on: ubuntu-latest
+    environment: Configure env
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
