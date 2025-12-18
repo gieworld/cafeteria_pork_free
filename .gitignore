@@ -1,6 +1,10 @@
 # Environment variables (contains secrets!)
 .env
 
+# Feedback and logs (user data)
+feedback_log.txt
+.last_update_id
+
 # Python
 __pycache__/
 *.py[cod]

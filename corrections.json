@@ -1,0 +1,17 @@
+{
+    "corrections": [
+        {
+            "dish": "curry",
+            "cafeteria": "all",
+            "status": "unsafe",
+            "reason": "Curry at Kumoh often contains pork",
+            "added_by": "admin",
+            "date": "2024-12-18"
+        }
+    ],
+    "notes": [
+        "This file contains manual corrections to override AI analysis",
+        "Add entries when users report mistakes or you discover errors",
+        "Format: {dish, cafeteria, status, reason, added_by, date}"
+    ]
+}
