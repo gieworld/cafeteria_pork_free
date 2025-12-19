@@ -201,16 +201,31 @@ Return ONLY this JSON (no markdown):
     {{
       "name": "A La Carte",
       "type": "individual",
-      "safe_options": ["list of pork-free dishes to order"],
-      "avoid": ["list of dishes containing pork"]
+      "safe_options": ["Dish Name 1", "Dish Name 2"],
+      "avoid": ["Dish Name 3", "Dish Name 4"]
     }}
   ]
 }}
+
+IMPORTANT: For A La Carte, safe_options and avoid MUST be simple string arrays of dish names only.
+Do NOT use objects/dicts. Just plain strings like: ["Chicken Steak", "Beef Soup"]
 """
     try:
         response = model.generate_content(prompt)
         cleaned_text = response.text.replace("```json", "").replace("```", "").strip()
-        return json.loads(cleaned_text)
+        result = json.loads(cleaned_text)
+        
+        # Fix any dict items in safe_options/avoid (fallback)
+        for cafe in result.get("cafeterias", []):
+            if cafe.get("type") == "individual":
+                # Convert dicts to strings if AI misbehaved
+                safe = cafe.get("safe_options", [])
+                cafe["safe_options"] = [item if isinstance(item, str) else item.get("menu", str(item)) for item in safe]
+                
+                avoid = cafe.get("avoid", [])
+                cafe["avoid"] = [item if isinstance(item, str) else item.get("menu", str(item)) for item in avoid]
+        
+        return result
     except Exception as e:
         print(f"Error analyzing with Gemini: {e}")
         return None

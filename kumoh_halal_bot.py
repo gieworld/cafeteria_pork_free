@@ -258,8 +258,12 @@ Always verify ingredients if halal is important to you.
                 run_week_analysis(chat_id)
                 
             elif text == "/refresh":
-                send_telegram_message(chat_id, "🔄 Force refreshing menu (bypassing cache)...\n\n⏳ Please wait...")
-                run_analysis(chat_id, day_offset=0, force_refresh=True)
+                # Admin-only command to protect API quota
+                if str(chat_id) == str(TELEGRAM_CHAT_ID):
+                    send_telegram_message(chat_id, "🔄 Force refreshing menu (bypassing cache)...\n\n⏳ Please wait...")
+                    run_analysis(chat_id, day_offset=0, force_refresh=True)
+                else:
+                    send_telegram_message(chat_id, "⚠️ This command is admin-only to protect API quota.\n\nUse /today to get the latest cached menu.")
                 
             elif text == "/help":
                 help_msg = """🤖 *Kumoh Pork-Free Bot*
