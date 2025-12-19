@@ -1,85 +1,66 @@
-# 🍽️ Kumoh Halal Menu Checker
+# 🍽️ Kumoh Pork-Free Bot
 
-Daily Telegram alerts for halal-safe cafeteria meals at Kumoh National Institute of Technology.
+Daily pork-free cafeteria guide for Kumoh University students.
 
-## Features
-
-- ✅ **Daily alerts** at 7:00 AM KST
-- 🤖 **Interactive commands** - Send `/check` to get today's menu
-- 📦 **Package vs Order** - Distinguishes set meals from à la carte
-- 🧠 **AI-powered** - Uses Gemini to detect hidden pork ingredients
+> ⚠️ **Disclaimer**: This bot checks for PORK only. Not halal certification.
 
 ## Quick Start
 
-### 1. Get Credentials
-
-| Credential | How to Get |
-|------------|------------|
-| `GEMINI_API_KEY` | [Google AI Studio](https://makersuite.google.com/app/apikey) |
-| `TELEGRAM_TOKEN` | Message [@BotFather](https://t.me/BotFather) → `/newbot` |
-| `TELEGRAM_CHAT_ID` | Message [@userinfobot](https://t.me/userinfobot) |
-
-### 2. Local Setup
-
+### 1. Install Dependencies
 ```bash
-# Install dependencies
 pip install -r requirements.txt
+```
 
-# Copy and edit .env
-cp .env.example .env
-# Add your credentials to .env
+### 2. Configure
+Copy `.env.example` to `.env` and fill in your credentials.
 
-# Run once
-python kumoh_halal_bot.py
-
-# Or run in bot mode (listens for /check commands)
+### 3. Run the Bot
+**Double-click `start_bot.bat`** or:
+```bash
 python kumoh_halal_bot.py --bot
 ```
 
-### 3. GitHub Actions (Automated Daily)
+### 4. (Optional) Auto Morning Scrape
+Right-click `setup_scheduler.bat` → **Run as Administrator**
 
-1. Push code to GitHub
-2. Go to **Settings → Secrets → Actions**
-3. Add: `GEMINI_API_KEY`, `TELEGRAM_TOKEN`, `TELEGRAM_CHAT_ID`
-4. The bot runs automatically every day at 7:00 AM KST
+This sets up automatic 6:50 AM scraping on weekdays.
 
-## Bot Commands
+## Commands
 
 | Command | Description |
 |---------|-------------|
-| `/check` | Get today's halal menu |
-| `/menu` | Same as /check |
-| `/start` | Welcome message + menu |
+| `/today` | Today's pork-free menu |
+| `/tomorrow` | Tomorrow's menu |
+| `/week` | Weekly overview |
+| `/refresh` | Force refresh (bypass cache) |
+| `/feedback` | Report errors |
 | `/help` | Show commands |
-
-## Sample Output
-
-```
-🍽️ Thursday's Halal Guide 🍽️
-
-📦 Student Cafeteria (Package)
-❌ Lunch: Contains Tonkatsu (pork)
-
-📦 Professor Cafeteria (Package)
-✅ Dinner: Beef soup, safe to eat
-
-🍴 A La Carte (Order)
-✅ Order: Chicken Karaage Bowl
-❌ Avoid: Tonkatsu, Ramen
-
-📌 Package = full set meal
-📌 Order = pick individual dish
-```
 
 ## Files
 
 | File | Purpose |
 |------|---------|
-| `kumoh_halal_bot.py` | Main bot script |
-| `requirements.txt` | Python dependencies |
-| `.env.example` | Credential template |
-| `.github/workflows/menu_check.yml` | Daily automation |
+| `kumoh_halal_bot.py` | Main bot (run with `--bot`) |
+| `morning_scrape.py` | Scheduled scraping script |
+| `corrections.json` | Korean food corrections |
+| `start_bot.bat` | Easy bot launcher |
+| `setup_scheduler.bat` | Set up auto-scraping |
+
+## How It Works
+
+1. **Morning (6:50 AM)**: Auto-scrapes and caches all weekday menus
+2. **All Day**: Users send `/today`, bot responds from cache instantly
+3. **Change Detection**: If menu changes, bot auto re-analyzes
+
+## Korean Food Knowledge
+
+Bot knows these Korean dishes typically contain pork:
+- Curry rice (카레라이스)
+- Ramen broth (라면)
+- Mandu/dumplings (만두)
+- Jjigae stews (찌개)
+- Sundubu (순두부)
 
 ---
 
-**Stay halal, stay healthy!** 🌙
+Made for Kumoh international students 🌍

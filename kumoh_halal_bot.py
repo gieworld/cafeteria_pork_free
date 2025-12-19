@@ -1,156 +1,30 @@
 import requests
-from bs4 import BeautifulSoup
-import google.generativeai as genai
-import json
 import os
 import sys
-from datetime import datetime
+from datetime import datetime, timedelta
 from dotenv import load_dotenv
+import halal_lib  # Import shared library
 
-# Load environment variables from .env file
+# Load environment variables
 load_dotenv()
-
-# --- CONFIGURATION ---
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
 
-# Cafeteria URLs
-URLS = {
-    "Student Cafeteria": "https://www.kumoh.ac.kr/ko/restaurant01.do",
-    "Professor Cafeteria": "https://www.kumoh.ac.kr/ko/restaurant02.do",
-    "A La Carte": "https://www.kumoh.ac.kr/ko/restaurant04.do"
-}
-
-def get_menu_text(url):
-    """Scrapes the weekly menu table from the website."""
-    try:
-        response = requests.get(url, timeout=15)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
-        
-        menu_table = soup.find('table') 
-        if not menu_table:
-            return "No menu found."
-            
-        menu_text = ""
-        rows = menu_table.find_all('tr')
-        for row in rows:
-            cols = row.find_all(['th', 'td'])
-            row_data = [ele.text.strip().replace('\n', ' ') for ele in cols]
-            menu_text += " | ".join(row_data) + "\n"
-            
-        return menu_text
-    except Exception as e:
-        return f"Error scraping: {e}"
-
-def get_current_day():
-    """Returns the current day of the week in English."""
+def get_day_name(offset=0):
+    """Returns day name with offset (0=today, 1=tomorrow)."""
     days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    return days[datetime.now().weekday()]
+    target = datetime.now() + timedelta(days=offset)
+    return days[target.weekday()]
 
-def load_corrections():
-    """Load manual corrections from corrections.json."""
-    try:
-        if os.path.exists("corrections.json"):
-            with open("corrections.json", "r", encoding="utf-8") as f:
-                data = json.load(f)
-                return data.get("corrections", [])
-    except Exception as e:
-        print(f"Warning: Could not load corrections: {e}")
-    return []
-
-def analyze_with_gemini(menu_data, current_day):
-    """Sends menu text to Gemini to find halal-safe options."""
-    genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel('gemini-3-flash-preview')
-    
-    # Load manual corrections
-    corrections = load_corrections()
-    corrections_text = ""
-    if corrections:
-        corrections_text = "\n\nMANUAL CORRECTIONS (OVERRIDE AI):\n"
-        for corr in corrections:
-            corrections_text += f"- {corr['dish']} at {corr['cafeteria']}: {corr['status'].upper()} - {corr['reason']}\n"
-
-    prompt = f"""
-You are a Halal food assistant for Muslim students in Korea.
-
-TODAY: {current_day}
-
-CONTEXT:
-- Student & Professor Cafeteria = PACKAGE MEAL (you get everything, cannot choose individual items)
-- A La Carte = INDIVIDUAL ORDER (you can pick specific safe dishes)
-
-HALAL RULES:
-- UNSAFE: Pork, Ham, Bacon, Sausage, Spam, Tonkatsu, Mandu/Dumplings (usually pork), Budae-jjigae, Gamjatang, Jeyuk
-- SAFE: Chicken, Beef, Fish, Seafood, Tofu, Eggs, Vegetables
-- SUSPICIOUS: Ramen (pork broth), Kimchi Stew, Soft Tofu Stew (may contain pork)
-{corrections_text}
-
-PACKAGE MEAL WORTHINESS:
-- SAFE = All items are halal-safe
-- WORTH IT = Main dish is safe, but some side dishes contain pork (student can skip those sides)
-- NOT WORTH = Main dish contains pork (don't buy this package)
-- NONE = No meal available
-
-MENU DATA:
-{menu_data}
-
-Return ONLY this JSON (no markdown):
-{{
-  "today": "{current_day}",
-  "cafeterias": [
-    {{
-      "name": "Student Cafeteria",
-      "type": "package",
-      "meals": [
-        {{
-          "time": "Breakfast",
-          "verdict": "SAFE/WORTH IT/NOT WORTH/NONE",
-          "main_dish": "name of main protein/dish",
-          "safe_items": ["list items you can eat"],
-          "skip_items": ["list items with pork to skip"],
-          "reason": "brief explanation"
-        }},
-        {{"time": "Lunch", "verdict": "SAFE/WORTH IT/NOT WORTH/NONE", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}},
-        {{"time": "Dinner", "verdict": "SAFE/WORTH IT/NOT WORTH/NONE", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}}
-      ]
-    }},
-    {{
-      "name": "Professor Cafeteria",
-      "type": "package",
-      "meals": [
-        {{"time": "Breakfast", "verdict": "SAFE/WORTH IT/NOT WORTH/NONE", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}},
-        {{"time": "Lunch", "verdict": "SAFE/WORTH IT/NOT WORTH/NONE", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}},
-        {{"time": "Dinner", "verdict": "SAFE/WORTH IT/NOT WORTH/NONE", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}}
-      ]
-    }},
-    {{
-      "name": "A La Carte",
-      "type": "individual",
-      "safe_options": ["list of safe dishes to order"],
-      "avoid": ["list of pork dishes to avoid"]
-    }}
-  ]
-}}
-"""
-    
-    try:
-        response = model.generate_content(prompt)
-        cleaned_text = response.text.replace("```json", "").replace("```", "").strip()
-        return json.loads(cleaned_text)
-    except Exception as e:
-        print(f"Error analyzing with Gemini: {e}")
-        return None
-
-def format_message(analysis):
+# --- MESSAGE FORMATTING ---
+def format_message(analysis, is_tomorrow=False):
     """Format analysis into a clean Telegram message."""
     if not analysis:
-        return "⚠️ Could not analyze menu today."
+        return "⚠️ Could not analyze menu."
     
-    today = analysis.get("today", "Today")
-    msg = f"🍽️ *{today}'s Halal Guide*\n\n"
+    day = analysis.get("day", "Today")
+    prefix = "Tomorrow's" if is_tomorrow else f"{day}'s"
+    msg = f"🍽️ *{prefix} Pork-Free Guide*\n\n"
     
     for cafe in analysis.get("cafeterias", []):
         name = cafe.get("name", "")
@@ -164,17 +38,15 @@ def format_message(analysis):
                 main_dish = meal.get("main_dish", "")
                 safe_items = meal.get("safe_items", [])
                 skip_items = meal.get("skip_items", [])
-                reason = meal.get("reason", "")
                 
                 if verdict == "NONE" or not verdict:
                     continue
                 
-                # Emoji based on verdict
                 if verdict == "SAFE":
                     emoji = "✅"
                 elif verdict == "WORTH IT":
                     emoji = "💰"
-                else:  # NOT WORTH
+                else:
                     emoji = "❌"
                 
                 msg += f"{emoji} *{time}*"
@@ -184,10 +56,14 @@ def format_message(analysis):
                     msg += "\n"
                 
                 if safe_items:
-                    msg += f"  ✅ {', '.join(safe_items)}\n"
+                    # Handle both strings and dicts in list
+                    safe_str = ', '.join(str(item) if isinstance(item, str) else str(item) for item in safe_items)
+                    msg += f"  ✅ {safe_str}\n"
                 
                 if skip_items:
-                    msg += f"  ⏭️ {', '.join(skip_items)}\n"
+                    # Handle both strings and dicts in list
+                    skip_str = ', '.join(str(item) if isinstance(item, str) else str(item) for item in skip_items)
+                    msg += f"  ⏭️ {skip_str}\n"
                 
             msg += "\n"
             
@@ -197,15 +73,19 @@ def format_message(analysis):
             avoid = cafe.get("avoid", [])
             
             if safe:
-                msg += f"✅ {', '.join(safe)}\n"
+                safe_str = ', '.join(str(item) if isinstance(item, str) else str(item) for item in safe)
+                msg += f"✅ {safe_str}\n"
             if avoid:
-                msg += f"❌ {', '.join(avoid)}\n"
+                avoid_str = ', '.join(str(item) if isinstance(item, str) else str(item) for item in avoid)
+                msg += f"❌ {avoid_str}\n"
             msg += "\n"
     
-    msg += "_💡 ✅=Safe 💰=Worth it ❌=Skip_"
+    msg += "_⚠️ This is a PORK-FREE guide only._\n"
+    msg += "_Not halal certified. Always verify if important._"
     
     return msg
 
+# --- TELEGRAM ---
 def send_telegram_message(chat_id, message):
     """Send message to Telegram."""
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
@@ -217,7 +97,6 @@ def send_telegram_message(chat_id, message):
     try:
         response = requests.post(url, json=payload, timeout=10)
         if response.status_code != 200:
-            # Try without markdown
             payload["parse_mode"] = None
             requests.post(url, json=payload, timeout=10)
         return True
@@ -225,32 +104,95 @@ def send_telegram_message(chat_id, message):
         print(f"Telegram error: {e}")
         return False
 
-def run_analysis(chat_id=None):
-    """Run the full menu analysis and send results."""
+# --- ANALYSIS ---
+def run_analysis(chat_id=None, day_offset=0, force_refresh=False):
+    """Run menu analysis for a specific day."""
     target_chat = chat_id or TELEGRAM_CHAT_ID
+    target_day = get_day_name(day_offset)
+    is_tomorrow = day_offset == 1
     
-    print(f"📅 Today: {get_current_day()}")
-    print("📥 Fetching menus...")
+    print(f"📅 Target day: {target_day}")
     
-    full_menu = ""
-    for name, url in URLS.items():
-        print(f"   - {name}...")
-        full_menu += f"--- {name} ---\n{get_menu_text(url)}\n\n"
+    # Check cache first (skip fetch if cache valid and no refresh)
+    # But wait, we need to check HASH to know if menu changed. So we MUST fetch.
     
-    print("🤖 Analyzing with Gemini...")
-    result = analyze_with_gemini(full_menu, get_current_day())
+    # 1. Fetch menu
+    full_menu = halal_lib.fetch_all_menus()
+    current_hash = halal_lib.get_menu_hash(full_menu)
+    
+    # 2. Check Cache
+    use_cache = False
+    if not force_refresh and halal_lib.is_cache_valid(target_day):
+        if not halal_lib.has_menu_changed(target_day, current_hash):
+            print("📦 Using cached analysis (menu unchanged)...")
+            use_cache = True
+        else:
+            print("🔄 Menu changed! Re-analyzing...")
+    
+    if use_cache:
+        result = halal_lib.get_cached_analysis(target_day)
+    else:
+        print("🤖 Analyzing with Gemini...")
+        result = halal_lib.analyze_with_gemini(full_menu, target_day)
+        
+        # Save to cache with hash
+        if result:
+            halal_lib.save_cache(target_day, result, current_hash)
+            print("💾 Cached for future requests")
     
     print("📤 Sending notification...")
-    message = format_message(result)
+    message = format_message(result, is_tomorrow)
     success = send_telegram_message(target_chat, message)
     
     return success
 
+def run_week_analysis(chat_id):
+    """Generate weekly overview (today + next 4 weekdays)."""
+    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+    today_idx = datetime.now().weekday()
+    
+    msg = "📅 *This Week's Pork-Free Overview*\n\n"
+    
+    # Only weekdays
+    for i, day in enumerate(days):
+        if i < today_idx:
+            continue  # Skip past days
+        
+        # Check cache
+        cache = halal_lib.load_cache()
+        if day in cache:
+            analysis = cache[day].get("analysis", {})
+            status_summary = []
+            for cafe in analysis.get("cafeterias", []):
+                if cafe.get("type") == "individual":
+                    safe = cafe.get("safe_options", [])
+                    if safe:
+                        # Handle potential dicts
+                        safe_list = [str(x) for x in safe]
+                        status_summary.append(f"🍴 {', '.join(safe_list[:2])}")
+                else:
+                    for meal in cafe.get("meals", []):
+                        v = meal.get("verdict", "")
+                        if v == "SAFE":
+                            status_summary.append(f"✅ {meal.get('time')}")
+                        elif v == "WORTH IT":
+                            status_summary.append(f"💰 {meal.get('time')}")
+            
+            if status_summary:
+                msg += f"*{day}*: {', '.join(status_summary[:3])}\n"
+            else:
+                msg += f"*{day}*: Check with /today or /tomorrow\n"
+        else:
+            msg += f"*{day}*: Not cached yet\n"
+    
+    msg += "\n_Use /today or /tomorrow for full details_"
+    send_telegram_message(chat_id, msg)
+
+# --- BOT COMMANDS ---
 def check_bot_updates():
     """Check for new messages/commands sent to the bot."""
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/getUpdates"
     
-    # Get the last update ID we processed
     offset_file = ".last_update_id"
     last_update_id = 0
     if os.path.exists(offset_file):
@@ -276,70 +218,77 @@ def check_bot_updates():
             
             print(f"📨 Received: '{text}' from {user_name}")
             
-            if text in ["/start", "/check", "/menu"]:
+            if text in ["/start", "/check", "/menu", "/today"]:
                 if text == "/start":
-                    # Welcome tutorial for new users
-                    welcome_msg = f"""👋 *Welcome to Kumoh Halal Bot!*
+                    welcome_msg = f"""👋 *Welcome to Kumoh Pork-Free Bot!*
 
-I help Muslim students at Kumoh University find halal-safe cafeteria meals.
+I help students at Kumoh University find pork-free cafeteria meals.
 
-🎯 *What I Do:*
-• Check 3 cafeterias daily for halal options
-• Identify pork & suspicious dishes
-• Tell you if package meals are worth buying
+⚠️ *Important Disclaimer:*
+This bot checks for PORK only. Not full halal certification.
+Always verify ingredients if halal is important to you.
 
 📱 *Commands:*
-/check - Get today's menu now
+/today - Today's pork-free menu
+/tomorrow - Tomorrow's menu
+/week - Weekly overview
+/refresh - Force refresh (bypass cache)
 /feedback [msg] - Report errors
 /help - Show all commands
 
-⏰ *Daily Alerts:*
-You'll get automatic updates every morning at 7:00 AM KST!
-
 💡 *Understanding Results:*
-✅ SAFE = All halal
+✅ SAFE = No pork detected
 💰 WORTH IT = Main dish safe, skip some sides
-❌ NOT WORTH = Main has pork
+❌ NOT WORTH = Main contains pork
 
-📦 Package = Full set meal (Student/Prof)
-🍴 Order = Pick individual (A La Carte)
-
-Ready to check today's menu?"""
+📦 Package = Full set meal
+🍴 Order = Pick individual dish"""
                     send_telegram_message(chat_id, welcome_msg)
-                    # Also send today's menu
                     send_telegram_message(chat_id, "⏳ Checking today's menu...")
                 else:
-                    send_telegram_message(chat_id, f"👋 Hi {user_name}! Checking today's halal menu...\n\n⏳ Please wait...")
-                run_analysis(chat_id)
+                    send_telegram_message(chat_id, f"👋 Hi {user_name}! Checking today's pork-free menu...\n\n⏳ Please wait...")
+                run_analysis(chat_id, day_offset=0)
+                
+            elif text == "/tomorrow":
+                send_telegram_message(chat_id, f"👋 Hi {user_name}! Checking tomorrow's menu...\n\n⏳ Please wait...")
+                run_analysis(chat_id, day_offset=1)
+            
+            elif text == "/week":
+                send_telegram_message(chat_id, "📅 Getting weekly overview...")
+                run_week_analysis(chat_id)
+                
+            elif text == "/refresh":
+                send_telegram_message(chat_id, "🔄 Force refreshing menu (bypassing cache)...\n\n⏳ Please wait...")
+                run_analysis(chat_id, day_offset=0, force_refresh=True)
+                
             elif text == "/help":
-                help_msg = """🤖 *Kumoh Halal Bot*
+                help_msg = """🤖 *Kumoh Pork-Free Bot*
 
 Commands:
-/check - Get today's halal menu
-/menu - Same as /check
-/feedback [message] - Report an error
+/today - Today's pork-free menu
+/tomorrow - Tomorrow's menu
+/week - Weekly overview
+/refresh - Force refresh (new data)
+/feedback [msg] - Report errors
 /help - Show this message
 
-The bot also sends daily updates at 7:00 AM KST!"""
+⚠️ This checks for PORK only.
+Not halal certified."""
                 send_telegram_message(chat_id, help_msg)
+                
             elif text.startswith("/feedback"):
                 feedback_text = text.replace("/feedback", "").strip()
                 if feedback_text:
-                    # Log feedback
                     with open("feedback_log.txt", "a", encoding="utf-8") as f:
                         f.write(f"[{datetime.now()}] User: {user_name} (ID: {chat_id})\n")
                         f.write(f"Feedback: {feedback_text}\n\n")
                     
-                    # Send to admin (you)
                     admin_msg = f"📝 *New Feedback*\nFrom: {user_name} (ID: {chat_id})\nMessage: {feedback_text}"
                     send_telegram_message(TELEGRAM_CHAT_ID, admin_msg)
-                    
-                    # Confirm to user
                     send_telegram_message(chat_id, "✅ Thank you! Your feedback has been sent to the admin.")
                 else:
                     send_telegram_message(chat_id, "Usage: /feedback [your message]\nExample: /feedback Curry contains pork")
             
-            # Save the last processed update ID
             with open(offset_file, "w") as f:
                 f.write(str(update_id))
                 
@@ -348,22 +297,20 @@ The bot also sends daily updates at 7:00 AM KST!"""
 
 def main():
     print("=" * 50)
-    print("🍽️  Kumoh Halal Menu Checker")
+    print("🍽️  Kumoh Pork-Free Menu Checker")
     print("=" * 50)
     
-    if not GEMINI_API_KEY or not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
+    if not TELEGRAM_TOKEN or not TELEGRAM_CHAT_ID:
         print("❌ Error: Missing credentials!")
-        print("Please set GEMINI_API_KEY, TELEGRAM_TOKEN, and TELEGRAM_CHAT_ID")
+        print("Please set TELEGRAM_TOKEN and TELEGRAM_CHAT_ID")
         return
     
-    # Check if running in bot mode (listening for commands)
     if len(sys.argv) > 1 and sys.argv[1] == "--bot":
         print("🤖 Running in bot mode - listening for commands...")
         print("Press Ctrl+C to stop\n")
         while True:
             check_bot_updates()
     else:
-        # Normal mode - just run analysis once
         run_analysis()
         print("\n✅ Done!")
         print("=" * 50)

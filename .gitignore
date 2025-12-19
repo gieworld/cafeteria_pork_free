@@ -1,9 +1,10 @@
 # Environment variables (contains secrets!)
 .env
 
-# Feedback and logs (user data)
+# Feedback, logs, and cache (user/session data)
 feedback_log.txt
 .last_update_id
+menu_cache.json
 
 # Python
 __pycache__/
