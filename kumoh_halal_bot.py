@@ -260,8 +260,28 @@ Always verify ingredients if halal is important to you.
             elif text == "/refresh":
                 # Admin-only command to protect API quota
                 if str(chat_id) == str(TELEGRAM_CHAT_ID):
-                    send_telegram_message(chat_id, "🔄 Force refreshing menu (bypassing cache)...\n\n⏳ Please wait...")
-                    run_analysis(chat_id, day_offset=0, force_refresh=True)
+                    send_telegram_message(chat_id, "🔄 Force refreshing ALL weekday menus...\n\n⏳ This may take a minute...")
+                    
+                    # Refresh all weekdays like morning_scrape
+                    full_menu = halal_lib.fetch_all_menus()
+                    current_hash = halal_lib.get_menu_hash(full_menu)
+                    
+                    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+                    cache = {}
+                    
+                    for day in days:
+                        print(f"🤖 Analyzing {day}...")
+                        result = halal_lib.analyze_with_gemini(full_menu, day)
+                        if result:
+                            from datetime import datetime as dt
+                            cache[day] = {
+                                "timestamp": dt.now().isoformat(),
+                                "analysis": result,
+                                "menu_hash": current_hash
+                            }
+                    
+                    halal_lib.save_full_cache(cache)
+                    send_telegram_message(chat_id, f"✅ Refreshed {len(cache)} days!\n\nUse /week to see the overview.")
                 else:
                     send_telegram_message(chat_id, "⚠️ This command is admin-only to protect API quota.\n\nUse /today to get the latest cached menu.")
                 
