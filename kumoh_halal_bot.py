@@ -317,7 +317,15 @@ Not halal certified."""
                 f.write(str(update_id))
                 
     except Exception as e:
-        print(f"Error checking updates: {e}")
+        # Don't spam errors - only print occasionally
+        if not hasattr(check_bot_updates, 'error_count'):
+            check_bot_updates.error_count = 0
+        check_bot_updates.error_count += 1
+        
+        # Only print every 5th error to reduce spam
+        if check_bot_updates.error_count % 5 == 1:
+            print(f"⚠️ Network issue (error #{check_bot_updates.error_count}): Connection timeout")
+            print("   Bot will keep retrying automatically...")
 
 def main():
     print("=" * 50)
@@ -332,8 +340,24 @@ def main():
     if len(sys.argv) > 1 and sys.argv[1] == "--bot":
         print("🤖 Running in bot mode - listening for commands...")
         print("Press Ctrl+C to stop\n")
+        
+        import time
+        retry_delay = 1  # Start with 1 second
+        
         while True:
-            check_bot_updates()
+            try:
+                check_bot_updates()
+                retry_delay = 1  # Reset on success
+                time.sleep(0.5)  # Small delay between checks
+            except KeyboardInterrupt:
+                print("\n\n👋 Bot stopped by user")
+                break
+            except Exception as e:
+                # Exponential backoff on repeated failures
+                print(f"⚠️ Unexpected error: {e}")
+                print(f"   Retrying in {retry_delay} seconds...")
+                time.sleep(retry_delay)
+                retry_delay = min(retry_delay * 2, 30)  # Max 30 seconds
     else:
         run_analysis()
         print("\n✅ Done!")
