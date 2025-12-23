@@ -87,6 +87,14 @@
             "reason": "Glass noodles may be stir-fried with pork",
             "added_by": "admin",
             "date": "2024-12-18"
+        },
+        {
+            "dish": "bulgogi",
+            "cafeteria": "all",
+            "status": "suspicious",
+            "reason": "In cafeterias, bulgogi may be mixed with pork to reduce costs. Hotels/expensive places use pure beef, but cheap cafeterias often mix. Always verify before eating.",
+            "added_by": "admin",
+            "date": "2024-12-23"
         }
     ],
     "notes": [
