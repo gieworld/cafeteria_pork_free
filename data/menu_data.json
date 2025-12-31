@@ -1,0 +1,455 @@
+{
+  "updated_at": "2025-12-31T17:48:45.949584",
+  "menu_hash": "cc2d19c63a5a85b3a7f3bda00a3c3183",
+  "week_data": {
+    "Monday": {
+      "day": "Monday",
+      "cafeterias": [
+        {
+          "name": "Student Cafeteria",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Breakfast",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available for this day."
+            },
+            {
+              "time": "Lunch",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available for this day."
+            },
+            {
+              "time": "Dinner",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available for this day."
+            }
+          ]
+        },
+        {
+          "name": "Professor Cafeteria",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Breakfast",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Breakfast is not served at this location."
+            },
+            {
+              "time": "Lunch",
+              "verdict": "NOT WORTH",
+              "main_dish": "Tangsuyuk (Sweet and Sour Pork)",
+              "safe_items": [
+                "양장피해파리냉채 (Jellyfish Cold Salad)",
+                "단무지락교무침 (Pickled Radish)",
+                "배추김치 (Kimchi)",
+                "지마구튀김 (Sesame Ball)"
+              ],
+              "skip_items": [
+                "고추짜장덮밥 (Chili Jjajang Rice Bowl)",
+                "짬뽕국 (Jjamppong Soup)",
+                "맛동산탕수육 (Tangsuyuk)"
+              ],
+              "reason": "The main protein (Tangsuyuk) is pork. Additionally, Jjajang rice typically contains pork mince and Jjamppong broth is suspicious."
+            },
+            {
+              "time": "Dinner",
+              "verdict": "NOT WORTH",
+              "main_dish": "Hambak Steak",
+              "safe_items": [
+                "콩나물국밥 (Bean Sprout Soup Rice)",
+                "감자조림 (Braised Potatoes)",
+                "김가루실파무침 (Seasoned Green Onion)",
+                "콘샐러드 (Corn Salad)",
+                "깍두기 (Radish Kimchi)"
+              ],
+              "skip_items": [
+                "함박스테이크 (Hambak Steak)"
+              ],
+              "reason": "The main dish, Hambak Steak, is almost always a mixture of ground beef and pork in cafeteria settings."
+            }
+          ]
+        },
+        {
+          "name": "A La Carte",
+          "type": "individual",
+          "safe_options": [],
+          "avoid": [
+            "돈가스김치나베우동 (Donkatsu Kimchi Nabe Udon)",
+            "대패삼겹덮밥 (Sliced Pork Belly Rice Bowl)",
+            "라면류 (Ramen)",
+            "돈가스류 (Donkatsu)"
+          ]
+        }
+      ]
+    },
+    "Tuesday": {
+      "day": "Tuesday",
+      "cafeterias": [
+        {
+          "name": "Student Cafeteria",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Breakfast",
+              "verdict": "NONE",
+              "main_dish": "none",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available for this day."
+            },
+            {
+              "time": "Lunch",
+              "verdict": "NONE",
+              "main_dish": "none",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available for this day."
+            },
+            {
+              "time": "Dinner",
+              "verdict": "NONE",
+              "main_dish": "none",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available for this day."
+            }
+          ]
+        },
+        {
+          "name": "Professor Cafeteria",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Breakfast",
+              "verdict": "NONE",
+              "main_dish": "none",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available for this time slot."
+            },
+            {
+              "time": "Lunch",
+              "verdict": "WORTH IT",
+              "main_dish": "Spicy Chicken Soup (Dakgae-jang)",
+              "safe_items": [
+                "Multi-grain rice",
+                "Spicy chicken soup",
+                "Grilled seasoned tofu",
+                "Seaweed salad",
+                "Kimchi"
+              ],
+              "skip_items": [
+                "Bite-sized pork cutlet (Donkatsu)",
+                "Japchae"
+              ],
+              "reason": "The main soup is chicken-based, but you must skip the pork cutlet and the japchae (which is suspicious for pork content)."
+            },
+            {
+              "time": "Dinner",
+              "verdict": "NOT WORTH",
+              "main_dish": "Pork Stew (Dwaeji-jjigae)",
+              "safe_items": [
+                "Multi-grain rice",
+                "Mung bean jelly salad",
+                "Garlic stalk and anchovy stir-fry",
+                "Kimchi",
+                "Drink"
+              ],
+              "skip_items": [
+                "Pork stew",
+                "Meat patty & pumpkin dish"
+              ],
+              "reason": "The main dish is pork stew, and the meat patty side dish likely contains minced pork."
+            }
+          ]
+        },
+        {
+          "name": "A La Carte",
+          "type": "individual",
+          "safe_options": [
+            "Dungchon Shabu Kalguksu (Beef-based noodle soup)",
+            "Spicy Chicken Rice Bowl (Maecom Chibap)"
+          ],
+          "avoid": [
+            "Ramen (Uses pork broth)",
+            "Donkatsu (Pork cutlet)"
+          ]
+        }
+      ]
+    },
+    "Wednesday": {
+      "day": "Wednesday",
+      "cafeterias": [
+        {
+          "name": "Student Cafeteria",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Breakfast",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available"
+            },
+            {
+              "time": "Lunch",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available"
+            },
+            {
+              "time": "Dinner",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available"
+            }
+          ]
+        },
+        {
+          "name": "Professor Cafeteria",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Breakfast",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available"
+            },
+            {
+              "time": "Lunch",
+              "verdict": "NOT WORTH",
+              "main_dish": "Pork Rib Stew (돼지갈비찜)",
+              "safe_items": [
+                "Rice (잡곡밥)",
+                "Fried Shrimp (새우튀김)",
+                "Bean Sprout Salad (콩나물무침)",
+                "Seasoned Radish (무말랭이무침)",
+                "Kimchi (배추김치)"
+              ],
+              "skip_items": [
+                "Pork Rib Stew (돼지갈비찜)",
+                "Rice Cake Soup (떡국)"
+              ],
+              "reason": "The main meat dish is pork ribs; the soup broth may also be suspicious in a high-pork menu context."
+            },
+            {
+              "time": "Dinner",
+              "verdict": "NOT WORTH",
+              "main_dish": "Vienna Sausage Stir-fry (비엔나소세지볶음)",
+              "safe_items": [
+                "Rice (잡곡밥)",
+                "Chicken Nuggets (치킨너겟)",
+                "Seasoned Vegetables (삼동초생채)",
+                "Mushroom Stir-fry (애느타리버섯볶음)",
+                "Altari Kimchi (알타리김치)"
+              ],
+              "skip_items": [
+                "Vienna Sausage (비엔나소세지볶음)",
+                "Dumpling Kimchi Soup (옹심이만두김치국)"
+              ],
+              "reason": "Contains pork sausages and the soup contains mandu (dumplings) which almost always contain pork."
+            }
+          ]
+        },
+        {
+          "name": "A La Carte",
+          "type": "individual",
+          "safe_options": [
+            "Gomtang (곰탕/Beef Bone Soup)"
+          ],
+          "avoid": [
+            "Jeyuk-deopbap (제육덮밥/Spicy Pork Rice)",
+            "Ramen (라면류)",
+            "Donkatsu (돈가스류)"
+          ]
+        }
+      ]
+    },
+    "Thursday": {
+      "day": "Thursday",
+      "cafeterias": [
+        {
+          "name": "Student Cafeteria",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Breakfast",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available or closed for New Year's Day"
+            },
+            {
+              "time": "Lunch",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available or closed for New Year's Day"
+            },
+            {
+              "time": "Dinner",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available or closed for New Year's Day"
+            }
+          ]
+        },
+        {
+          "name": "Professor Cafeteria",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Breakfast",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No breakfast service scheduled"
+            },
+            {
+              "time": "Lunch",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Closed for New Year's Day (신정)"
+            },
+            {
+              "time": "Dinner",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Closed for New Year's Day (신정)"
+            }
+          ]
+        },
+        {
+          "name": "A La Carte",
+          "type": "individual",
+          "safe_options": [],
+          "avoid": []
+        }
+      ]
+    },
+    "Friday": {
+      "day": "Friday",
+      "cafeterias": [
+        {
+          "name": "Student Cafeteria",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Breakfast",
+              "verdict": "NONE",
+              "main_dish": "none",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data provided."
+            },
+            {
+              "time": "Lunch",
+              "verdict": "NONE",
+              "main_dish": "none",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data provided."
+            },
+            {
+              "time": "Dinner",
+              "verdict": "NONE",
+              "main_dish": "none",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data provided."
+            }
+          ]
+        },
+        {
+          "name": "Professor Cafeteria",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Breakfast",
+              "verdict": "NONE",
+              "main_dish": "none",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data provided for breakfast."
+            },
+            {
+              "time": "Lunch",
+              "verdict": "NOT WORTH",
+              "main_dish": "Rice cake dumpling soup and Bulgogi",
+              "safe_items": [
+                "Multigrain rice",
+                "Nut stir-fry",
+                "Cucumber salad",
+                "Kimchi",
+                "Tangerine"
+              ],
+              "skip_items": [
+                "Rice cake dumpling soup (Mandu)",
+                "Gochujang Bulgogi",
+                "Meatballs"
+              ],
+              "reason": "Contains dumplings (Mandu) and meatballs which contain pork. Bulgogi in cafeterias is also suspicious/unsafe."
+            },
+            {
+              "time": "Dinner",
+              "verdict": "WORTH IT",
+              "main_dish": "Spicy beef soup and Fried pollack",
+              "safe_items": [
+                "Multigrain rice",
+                "Yukgaejang (Spicy beef soup)",
+                "Fried pollack",
+                "Steamed eggs",
+                "Kimchi"
+              ],
+              "skip_items": [
+                "Buckwheat crepes (Jeonbyeong)"
+              ],
+              "reason": "Main protein sources (Beef and Fish) are safe. Buckwheat crepes often contain minced pork and should be skipped."
+            }
+          ]
+        },
+        {
+          "name": "A La Carte",
+          "type": "individual",
+          "safe_options": [
+            "Clam soup with rice (Bajirak-gukbap)"
+          ],
+          "avoid": [
+            "Pork cutlet",
+            "Ramen",
+            "Green onion pork cutlet"
+          ]
+        }
+      ]
+    }
+  }
+}
