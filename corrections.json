@@ -1,0 +1,105 @@
+{
+    "corrections": [
+        {
+            "dish": "curry rice",
+            "cafeteria": "all",
+            "status": "unsafe",
+            "reason": "Korean curry often contains pork pieces or pork broth",
+            "added_by": "admin",
+            "date": "2024-12-18"
+        },
+        {
+            "dish": "curry",
+            "cafeteria": "all",
+            "status": "unsafe",
+            "reason": "Korean curry often contains pork",
+            "added_by": "admin",
+            "date": "2024-12-18"
+        },
+        {
+            "dish": "ramen",
+            "cafeteria": "all",
+            "status": "unsafe",
+            "reason": "Korean ramen uses pork bone broth (tonkotsu)",
+            "added_by": "admin",
+            "date": "2024-12-18"
+        },
+        {
+            "dish": "jjigae",
+            "cafeteria": "all",
+            "status": "suspicious",
+            "reason": "Korean stews often contain minced pork",
+            "added_by": "admin",
+            "date": "2024-12-18"
+        },
+        {
+            "dish": "kimchi jjigae",
+            "cafeteria": "all",
+            "status": "unsafe",
+            "reason": "Kimchi stew traditionally made with pork",
+            "added_by": "admin",
+            "date": "2024-12-18"
+        },
+        {
+            "dish": "sundubu",
+            "cafeteria": "all",
+            "status": "unsafe",
+            "reason": "Soft tofu stew typically contains minced pork",
+            "added_by": "admin",
+            "date": "2024-12-18"
+        },
+        {
+            "dish": "mandu",
+            "cafeteria": "all",
+            "status": "unsafe",
+            "reason": "Korean dumplings almost always contain ground pork",
+            "added_by": "admin",
+            "date": "2024-12-18"
+        },
+        {
+            "dish": "wang mandu",
+            "cafeteria": "all",
+            "status": "unsafe",
+            "reason": "King dumplings contain pork filling",
+            "added_by": "admin",
+            "date": "2024-12-18"
+        },
+        {
+            "dish": "gyoza",
+            "cafeteria": "all",
+            "status": "unsafe",
+            "reason": "Japanese dumplings contain pork",
+            "added_by": "admin",
+            "date": "2024-12-18"
+        },
+        {
+            "dish": "jjamppong",
+            "cafeteria": "all",
+            "status": "suspicious",
+            "reason": "Spicy seafood noodle soup may use pork broth",
+            "added_by": "admin",
+            "date": "2024-12-18"
+        },
+        {
+            "dish": "japchae",
+            "cafeteria": "all",
+            "status": "suspicious",
+            "reason": "Glass noodles may be stir-fried with pork",
+            "added_by": "admin",
+            "date": "2024-12-18"
+        },
+        {
+            "dish": "bulgogi",
+            "cafeteria": "all",
+            "status": "suspicious",
+            "reason": "In cafeterias, bulgogi may be mixed with pork to reduce costs. Hotels/expensive places use pure beef, but cheap cafeterias often mix. Always verify before eating.",
+            "added_by": "admin",
+            "date": "2024-12-23"
+        }
+    ],
+    "notes": [
+        "This file contains Korean-specific food corrections",
+        "Korean versions of dishes often contain pork unlike international versions",
+        "Add new entries when users report issues via /feedback"
+    ]
+}

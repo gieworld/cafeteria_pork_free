@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumoh Pork-Free Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: #e2e8f0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .card { background-color: #1e293b; border-radius: 0.75rem; padding: 1rem; margin-bottom: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .badge { display: inline-block; padding: 0.25rem 0.5rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+        .badge-safe { background-color: #064e3b; color: #6ee7b7; border: 1px solid #059669; }
+        .badge-warn { background-color: #431407; color: #fdba74; border: 1px solid #c2410c; }
+        .badge-danger { background-color: #450a0a; color: #fca5a5; border: 1px solid #dc2626; }
+        .tab-active { border-bottom: 2px solid #38bdf8; color: #38bdf8; }
+        .tab-inactive { color: #94a3b8; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="max-w-md mx-auto min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="p-4 border-b border-gray-800 bg-slate-900 sticky top-0 z-10">
+        <h1 class="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
+            🍽️ Kumoh Pork-Free
+        </h1>
+        <p class="text-xs text-gray-500 mt-1 flex justify-between">
+            <span>Student Cafeteria Guide</span>
+            <span id="update-time">Loading...</span>
+        </p>
+    </header>
+
+    <!-- Day Tabs -->
+    <nav class="flex overflow-x-auto p-2 bg-slate-900/90 backdrop-blur sticky top-16 z-10 text-sm no-scrollbar">
+        <button onclick="switchTab('Monday')" class="tab px-4 py-2 whitespace-nowrap" id="tab-Monday">Mon</button>
+        <button onclick="switchTab('Tuesday')" class="tab px-4 py-2 whitespace-nowrap" id="tab-Tuesday">Tue</button>
+        <button onclick="switchTab('Wednesday')" class="tab px-4 py-2 whitespace-nowrap" id="tab-Wednesday">Wed</button>
+        <button onclick="switchTab('Thursday')" class="tab px-4 py-2 whitespace-nowrap" id="tab-Thursday">Thu</button>
+        <button onclick="switchTab('Friday')" class="tab px-4 py-2 whitespace-nowrap" id="tab-Friday">Fri</button>
+    </nav>
+
+    <!-- Content -->
+    <main id="content" class="flex-1 p-4">
+        <div id="loading" class="text-center py-20 text-gray-500 animate-pulse">
+            Loading menu data...
+        </div>
+        <div id="error-msg" class="hidden text-center py-20 text-red-400">
+            Failed to load data. Use VPN if needed.
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="p-4 text-center text-xs text-gray-600 border-t border-gray-800">
+        <p>⚠️ PORK-FREE GUIDE ONLY (Not Halal Certified)<br>Always verify yourself before eating.</p>
+        <p class="mt-2 text-gray-700">Powered by Gemini AI • Updated Daily</p>
+    </footer>
+
+    <script>
+        let menuData = {};
+        const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+        const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+
+        async function loadData() {
+            try {
+                // Determine base URL (GitHub Pages uses repository name)
+                // For local dev, relative path works
+                const response = await fetch('data/menu_data.json?v=' + new Date().getTime());
+                if (!response.ok) throw new Error("No data file");
+                
+                const data = await response.json();
+                menuData = data.week_data;
+                
+                document.getElementById('update-time').innerText = "Updated: " + new Date(data.updated_at).toLocaleDateString();
+                document.getElementById('loading').classList.add('hidden');
+                
+                // Switch to today or Monday if weekend
+                const startDay = days.includes(today) ? today : "Monday";
+                switchTab(startDay);
+                
+            } catch (e) {
+                console.error(e);
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('error-msg').classList.remove('hidden');
+            }
+        }
+
+        function switchTab(day) {
+            // Update Tabs
+            days.forEach(d => {
+                const btn = document.getElementById(`tab-${d}`);
+                if (d === day) {
+                    btn.classList.remove('tab-inactive');
+                    btn.classList.add('tab-active');
+                } else {
+                    btn.classList.add('tab-inactive');
+                    btn.classList.remove('tab-active');
+                }
+            });
+
+            renderMenu(day);
+        }
+
+        function renderMenu(day) {
+            const container = document.getElementById('content');
+            container.innerHTML = ""; // Clear existing
+
+            const dayData = menuData[day];
+            
+            if (!dayData) {
+                container.innerHTML = `<div class="text-center py-10 text-gray-500">No data available for ${day}</div>`;
+                return;
+            }
+
+            dayData.cafeterias.forEach(cafe => {
+                const card = document.createElement('div');
+                card.className = 'card animate-fade-in';
+                
+                let html = `<h2 class="text-lg font-bold mb-3 text-white border-b border-gray-700 pb-2">${cafe.name}</h2>`;
+
+                if (cafe.type === 'individual') {
+                    // A La Carte
+                    if (cafe.safe_options && cafe.safe_options.length > 0) {
+                        html += `<div class="mb-2"><span class="badge badge-safe">SAFE OPTIONS</span></div>`;
+                        html += `<ul class="list-disc list-inside text-sm text-gray-300 space-y-1 mb-3">`;
+                        cafe.safe_options.forEach(item => {
+                            html += `<li>${item}</li>`;
+                        });
+                        html += `</ul>`;
+                    }
+                    if (cafe.avoid && cafe.avoid.length > 0) {
+                        html += `<div class="mb-2 mt-4"><span class="badge badge-danger">CONTAINS PORK</span></div>`;
+                        html += `<ul class="list-disc list-inside text-sm text-gray-400 space-y-1">`;
+                        cafe.avoid.forEach(item => {
+                            html += `<li>${item}</li>`;
+                        });
+                        html += `</ul>`;
+                    }
+                } else {
+                    // Package Meals
+                    cafe.meals.forEach(meal => {
+                        let badgeClass = 'badge-danger';
+                        let badgeText = 'CONTAINS PORK';
+                        
+                        if (meal.verdict === 'SAFE') {
+                            badgeClass = 'badge-safe';
+                            badgeText = '✅ SAFE';
+                        } else if (meal.verdict === 'WORTH IT') {
+                            badgeClass = 'badge-warn';
+                            badgeText = '💰 WORTH IT';
+                        } else if (meal.verdict === 'NONE') {
+                            return; // Skip empty meals
+                        }
+
+                        html += `
+                        <div class="mb-4 last:mb-0">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm font-semibold text-gray-400 uppercase tracking-wide">${meal.time}</span>
+                                <span class="badge ${badgeClass}">${badgeText}</span>
+                            </div>
+                            <div class="text-base font-medium text-white mb-1">${meal.main_dish || 'No info'}</div>
+                            
+                            ${meal.safe_items && meal.safe_items.length ? 
+                                `<p class="text-xs text-green-400 mt-1">👍 ${meal.safe_items.join(', ')}</p>` : ''}
+                            
+                            ${meal.skip_items && meal.skip_items.length ? 
+                                `<p class="text-xs text-red-400 mt-1">🛑 Skip: ${meal.skip_items.join(', ')}</p>` : ''}
+                        </div>`;
+                    });
+                }
+                
+                card.innerHTML = html;
+                container.appendChild(card);
+            });
+        }
+
+        // Start
+        loadData();
+    </script>
+</body>
+</html>
