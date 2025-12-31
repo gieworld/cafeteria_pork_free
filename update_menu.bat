@@ -30,5 +30,6 @@ if %errorlevel% == 0 (
     echo ⚠️ Git push failed (maybe no changes or network issue)
 )
 
+if "%1"=="auto" exit /b
 echo.
 pause
