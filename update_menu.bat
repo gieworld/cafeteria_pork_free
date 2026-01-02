@@ -1,6 +1,6 @@
 @echo off
 echo ========================================
-echo 🍱 Kumoh Pork-Free Menu Updater
+echo 🍱 KIT Pork-Free Menu Updater
 echo ========================================
 echo.
 

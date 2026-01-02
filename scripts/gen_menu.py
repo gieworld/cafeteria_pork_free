@@ -14,7 +14,7 @@ DATA_FILE = os.path.join(BASE_DIR, "data", "menu_data.json")
 
 def main():
     print("=" * 50)
-    print(f"🌍 Web Dashboard Generator - {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print(f"🌍 KIT Pork-Free Generator - {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print("=" * 50)
     
     # Authenticate

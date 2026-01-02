@@ -1,4 +1,4 @@
-# 🚀 Kumoh Pork-Free Web Dashboard Launch
+# 🚀 KIT Pork-Free Guide Launch
 
 We have upgraded from a **Telegram Bot** (blocked mainly by network) to a **Web Dashboard** (unblockable & fast).
 
@@ -36,7 +36,7 @@ We have upgraded from a **Telegram Bot** (blocked mainly by network) to a **Web 
    - **Save**.
 
 5. **Bookmark It!**
-   - Your URL will be: `https://gieworld.github.io/cafeteria_halal/` (or similar).
+   - Your URL will be: `https://gieworld.github.io/cafeteria_pork_free/`
    - Add to your phone home screen.
 
 ## ✨ Benefits
