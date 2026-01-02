@@ -25,6 +25,8 @@ def main():
     # 1. Fetch Menu
     print("📥 Fetching menus from Kumoh website...")
     full_menu = halal_lib.fetch_all_menus()
+    menu_hash = halal_lib.get_menu_hash(full_menu)
+    
     # 2. Check for Changes (Optimization)
     print(f"🔑 Menu Hash: {menu_hash}")
     
