@@ -1,7 +1,102 @@
 {
-  "updated_at": "2026-01-24T09:00:08.078948",
-  "menu_hash": "84e8a0b9b975a6954f2d05837f4947fa",
+  "updated_at": "2026-01-25T09:02:29.150719",
+  "menu_hash": "d2ba7fedbf63c05f4ec1954d9ae2f2bc",
   "week_data": {
+    "Monday": {
+      "day": "Monday",
+      "cafeterias": [
+        {
+          "name": "Student Cafeteria",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Breakfast",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available for this time"
+            },
+            {
+              "time": "Lunch",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available for this time"
+            },
+            {
+              "time": "Dinner",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available for this time"
+            }
+          ]
+        },
+        {
+          "name": "Professor Cafeteria",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Breakfast",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available for this time"
+            },
+            {
+              "time": "Lunch",
+              "verdict": "NOT WORTH",
+              "main_dish": "Siraegi Sundae-guk (Korean Sausage Soup)",
+              "safe_items": [
+                "Multigrain rice",
+                "Braised nuts",
+                "Pickled onion and cucumber",
+                "Potato croquette",
+                "Kkakdugi"
+              ],
+              "skip_items": [
+                "Siraegi Sundae-guk",
+                "Seop-sanjeok Eomuk-jorim"
+              ],
+              "reason": "Sundae (Korean blood sausage) is made with pork intestines and pork filling. Sanjeok patties also frequently contain minced pork."
+            },
+            {
+              "time": "Dinner",
+              "verdict": "NOT WORTH",
+              "main_dish": "Menchi Katsu & Tuna Kimchi Jjigae",
+              "safe_items": [
+                "Multigrain rice",
+                "Seafood Stir-fry Udon",
+                "Fried seaweed",
+                "Braised quail eggs",
+                "Kkakdugi"
+              ],
+              "skip_items": [
+                "Menchi Katsu",
+                "Tuna Kimchi Jjigae"
+              ],
+              "reason": "Menchi Katsu contains ground pork. Kimchi Jjigae is unsafe according to rules as it traditionally uses pork broth or pieces, even if tuna is listed."
+            }
+          ]
+        },
+        {
+          "name": "A La Carte",
+          "type": "individual",
+          "safe_options": [
+            "Gomtang (Beef Bone Soup)"
+          ],
+          "avoid": [
+            "Assorted Katsu (Modeum-kkasu)",
+            "Ramen",
+            "Donkatsu"
+          ]
+        }
+      ]
+    },
     "Tuesday": {
       "day": "Tuesday",
       "cafeterias": [
@@ -12,26 +107,26 @@
             {
               "time": "Breakfast",
               "verdict": "NONE",
-              "main_dish": "None",
+              "main_dish": "none",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available for this day"
+              "reason": "No menu data available for this time."
             },
             {
               "time": "Lunch",
               "verdict": "NONE",
-              "main_dish": "None",
+              "main_dish": "none",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available for this day"
+              "reason": "No menu data available for this time."
             },
             {
               "time": "Dinner",
               "verdict": "NONE",
-              "main_dish": "None",
+              "main_dish": "none",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available for this day"
+              "reason": "No menu data available for this time."
             }
           ]
         },
@@ -42,44 +137,44 @@
             {
               "time": "Breakfast",
               "verdict": "NONE",
-              "main_dish": "None",
+              "main_dish": "none",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available for this time"
+              "reason": "No menu data available for this time."
             },
             {
               "time": "Lunch",
-              "verdict": "NOT WORTH",
-              "main_dish": "Stir-fried Pork and Bell Peppers",
+              "verdict": "WORTH IT",
+              "main_dish": "닭볶음탕 (Spicy Braised Chicken)",
               "safe_items": [
-                "Mixed grain rice",
-                "Cucumber salad",
-                "Broccoli crab meat salad",
-                "Stir-fried dried shrimp",
-                "Kimchi"
+                "잡곡밥 (Multi-grain Rice)",
+                "닭볶음탕 (Spicy Braised Chicken)",
+                "쥐어채볶음 (Stir-fried Dried Fish)",
+                "맛김구이 (Roasted Seaweed)",
+                "깻잎순볶음 (Stir-fried Perilla Shoots)",
+                "배추김치 (Kimchi)"
               ],
               "skip_items": [
-                "Rice cake dumpling soup (Mandu-guk)",
-                "Stir-fried pork and bell peppers (Donyuk-pimang-chae-bokkeum)"
+                "한입돈가스강정 (Bite-sized Pork Cutlet)"
               ],
-              "reason": "The main protein is pork (Donyuk) and the soup contains dumplings (Mandu), which typically contain pork."
+              "reason": "The main dish is chicken-based, but one of the side dishes is pork cutlet which should be avoided."
             },
             {
               "time": "Dinner",
               "verdict": "NOT WORTH",
-              "main_dish": "Korean Blood Sausage Soup (Sundaeguk)",
+              "main_dish": "찹쌀탕수육 (Sweet and Sour Pork)",
               "safe_items": [
-                "Mixed grain rice",
-                "Vegetable croquette",
-                "Braised peanuts and lotus root",
-                "Cabbage salad",
-                "Pickled green chili",
-                "Kkakdugi"
+                "잡곡밥 (Multi-grain Rice)",
+                "꽃게된장국 (Blue Crab Soybean Paste Soup)",
+                "두부양파조림 (Braised Tofu and Onion)",
+                "미니새송이버섯볶음 (Stir-fried King Oyster Mushrooms)",
+                "콩나물무침 (Seasoned Bean Sprouts)",
+                "배추김치 (Kimchi)"
               ],
               "skip_items": [
-                "Korean Blood Sausage Soup (Sundaeguk)"
+                "찹쌀탕수육 (Sweet and Sour Pork)"
               ],
-              "reason": "The main dish, Sundaeguk, uses a pork-based broth and pork intestines."
+              "reason": "The main protein is pork (Tangsuyuk)."
             }
           ]
         },
@@ -88,16 +183,16 @@
           "type": "individual",
           "safe_options": [],
           "avoid": [
-            "매콤찜갈비 (Spicy Braised Ribs)",
-            "스팸마요덮밥 (Spam Mayo Rice Bowl)",
+            "돼지김치찌개 (Pork Kimchi Stew)",
+            "아비꼬카레&회오리감자 (Curry & Potato)",
             "라면류 (Ramen)",
-            "돈가스류 (Pork Cutlets)"
+            "돈가스류 (Donkatsu)"
           ]
         }
       ]
     },
-    "Wednesday": {
-      "day": "Wednesday",
+    "Thursday": {
+      "day": "Thursday",
       "cafeterias": [
         {
           "name": "Student Cafeteria",
@@ -109,7 +204,7 @@
               "main_dish": "none",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data provided."
+              "reason": "No menu data provided for this day"
             },
             {
               "time": "Lunch",
@@ -117,7 +212,7 @@
               "main_dish": "none",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data provided."
+              "reason": "No menu data provided for this day"
             },
             {
               "time": "Dinner",
@@ -125,7 +220,7 @@
               "main_dish": "none",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data provided."
+              "reason": "No menu data provided for this day"
             }
           ]
         },
@@ -139,41 +234,41 @@
               "main_dish": "none",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data provided."
+              "reason": "No breakfast schedule listed"
             },
             {
               "time": "Lunch",
-              "verdict": "NOT WORTH",
-              "main_dish": "Kimchi Fried Rice",
-              "safe_items": [
-                "Fish Cake Soup",
-                "Chicken Nuggets",
-                "Fried Seaweed",
-                "Bean Sprout Salad",
-                "Caesar Salad"
-              ],
-              "skip_items": [
-                "Kimchi Fried Rice"
-              ],
-              "reason": "Kimchi fried rice in cafeterias almost always contains ham, bacon, or minced pork."
-            },
-            {
-              "time": "Dinner",
               "verdict": "WORTH IT",
-              "main_dish": "Spicy Webfoot Octopus & Squid Stir-fry",
+              "main_dish": "Kalguksu (Noodle Soup)",
               "safe_items": [
-                "Multi-grain Rice",
-                "Beef Soup",
-                "Spicy Webfoot Octopus & Squid Stir-fry",
-                "Mung Bean Jelly",
-                "Corn Salad",
+                "Rice",
+                "Kalguksu",
+                "Balloon flower radish salad",
+                "Chickpea and burdock braise",
                 "Kimchi",
-                "Tangerine"
+                "Roasted egg"
               ],
               "skip_items": [
-                "Chili Japchae Seaweed Rolls"
+                "Wang Mandu (King Dumplings)"
               ],
-              "reason": "Main protein is seafood and soup is beef, but the seaweed rolls contain Japchae which is marked as suspicious."
+              "reason": "The main noodle dish is safe, but the dumplings (Wang Mandu) contain pork and must be skipped."
+            },
+            {
+              "time": "Dinner",
+              "verdict": "NOT WORTH",
+              "main_dish": "Budae-jjigae",
+              "safe_items": [
+                "Multigrain rice",
+                "Braised mackerel",
+                "Sweet potato fries",
+                "Spinach salad",
+                "Kimchi",
+                "Plum juice"
+              ],
+              "skip_items": [
+                "Budae-jjigae"
+              ],
+              "reason": "The main dish is Budae-jjigae, which contains ham, sausage, and minced pork."
             }
           ]
         },
@@ -181,107 +276,12 @@
           "name": "A La Carte",
           "type": "individual",
           "safe_options": [
-            "Spicy Chicken Katsu"
+            "Yukhoe-bibimbap (Raw Beef Bibimbap)"
           ],
           "avoid": [
-            "Gan-jjajang & Tangsuyuk",
+            "Pyeo-haejang-guk (Pork Backbone Soup)",
             "Ramen",
-            "Donkatsu"
-          ]
-        }
-      ]
-    },
-    "Friday": {
-      "day": "Friday",
-      "cafeterias": [
-        {
-          "name": "Student Cafeteria",
-          "type": "package",
-          "meals": [
-            {
-              "time": "Breakfast",
-              "verdict": "NONE",
-              "main_dish": "NONE",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available for this day."
-            },
-            {
-              "time": "Lunch",
-              "verdict": "NONE",
-              "main_dish": "NONE",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available for this day."
-            },
-            {
-              "time": "Dinner",
-              "verdict": "NONE",
-              "main_dish": "NONE",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available for this day."
-            }
-          ]
-        },
-        {
-          "name": "Professor Cafeteria",
-          "type": "package",
-          "meals": [
-            {
-              "time": "Breakfast",
-              "verdict": "NONE",
-              "main_dish": "NONE",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu provided for breakfast."
-            },
-            {
-              "time": "Lunch",
-              "verdict": "NOT WORTH",
-              "main_dish": "추억의 도시락비빔 (Old-fashioned Lunchbox Bibimbap)",
-              "safe_items": [
-                "들깨미역국 (Perilla seaweed soup)",
-                "고구마롤 (Sweet potato roll)",
-                "양상치샐러드 (Salad)",
-                "배추김치 (Kimchi)",
-                "누룽지튀김 (Fried scorched rice)",
-                "발효음료 (Fermented drink)"
-              ],
-              "skip_items": [
-                "추억의 도시락비빔 (Contains processed pork sausage/ham)"
-              ],
-              "reason": "The main 'Lunchbox' bibimbap traditionally contains fried pink sausage or ham made of pork."
-            },
-            {
-              "time": "Dinner",
-              "verdict": "NOT WORTH",
-              "main_dish": "함박스테이크 (Hambak Steak)",
-              "safe_items": [
-                "잡곡밥 (Multigrain rice)",
-                "옥수수스프 (Corn soup)",
-                "멸치아몬드조림 (Anchovy almond stir-fry)",
-                "새송이버섯구이 (Grilled mushrooms)",
-                "모듬야채겉절이 (Fresh vegetable salad)",
-                "배추김치 (Kimchi)"
-              ],
-              "skip_items": [
-                "함박스테이크 (Ground pork/beef mix)"
-              ],
-              "reason": "Hambak steak in Korean cafeterias is almost always a blend of ground beef and ground pork."
-            }
-          ]
-        },
-        {
-          "name": "A La Carte",
-          "type": "individual",
-          "safe_options": [
-            "치킨가라아게덮밥 (Chicken Karaage Rice Bowl)"
-          ],
-          "avoid": [
-            "낙삼새전골 (Contains Samgyeopsal/Pork Belly)",
-            "라면류 (Ramen - Pork broth)",
-            "돈가스류 (Donkatsu - Breaded pork)"
+            "Donkatsu (Pork Cutlet)"
           ]
         }
       ]
