@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-01-29T10:28:04.363973",
+  "updated_at": "2026-01-29T10:40:08.074202",
   "menu_hash": "802c7c9d208d2411698999bee474f562",
   "week_data": {
     "Monday": {
@@ -11,27 +11,33 @@
           "meals": [
             {
               "time": "Breakfast",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available."
             },
             {
               "time": "Lunch",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available."
             },
             {
               "time": "Dinner",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available."
             }
           ]
         },
@@ -41,35 +47,67 @@
           "meals": [
             {
               "time": "Breakfast",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available."
             },
             {
               "time": "Lunch",
-              "verdict": "NONE",
-              "main_dish": "N/A",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "price": "6000원",
+              "selling_time": "11:30~13:30",
+              "verdict": "NOT WORTH",
+              "main_dish": "시래기순대국 (Siraegi Sundae Soup)",
+              "safe_items": [
+                "잡곡밥 (Mixed grain rice)",
+                "견과류조림 (Braised nuts)",
+                "양파오이초절임 (Onion cucumber pickles)",
+                "깍두기 (Radish kimchi)"
+              ],
+              "skip_items": [
+                "시래기순대국 (Sundae contains pork)",
+                "섭산적어묵조림 (Meat patties often contain pork)",
+                "감자고르케 (Croquettes often contain minced pork)"
+              ],
+              "reason": "The main soup (Sundae-guk) contains Korean blood sausage which is made with pork parts/blood."
             },
             {
               "time": "Dinner",
-              "verdict": "NONE",
-              "main_dish": "N/A",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "price": "6000원",
+              "selling_time": "17:00~18:30",
+              "verdict": "NOT WORTH",
+              "main_dish": "참치김치찌개 (Tuna Kimchi Stew), 멘치카츠 (Menchi Katsu)",
+              "safe_items": [
+                "잡곡밥 (Mixed grain rice)",
+                "해물볶음우동 (Seafood stir-fried udon)",
+                "다시마부각 (Kelp chips)",
+                "메추리알고추장조림 (Quail eggs)",
+                "깍두기 (Radish kimchi)"
+              ],
+              "skip_items": [
+                "참치김치찌개 (Kimchi stew rule: unsafe)",
+                "멘치카츠 (Menchi katsu contains pork)"
+              ],
+              "reason": "Menchi Katsu is a pork dish, and Kimchi stew is considered unsafe due to potential pork broth or cross-contamination rules."
             }
           ]
         },
         {
           "name": "A La Carte",
           "type": "individual",
-          "safe_options": [],
-          "avoid": []
+          "price": "Varies",
+          "selling_time": "11:00~14:00, 16:00~18:30",
+          "safe_options": [
+            "곰탕 (Gomtang/Beef Bone Soup)"
+          ],
+          "avoid": [
+            "모듬까스 (Mixed Cutlet)",
+            "라면류 (Ramen)",
+            "돈가스류 (Donkatsu)"
+          ]
         }
       ]
     },
@@ -82,27 +120,33 @@
           "meals": [
             {
               "time": "Breakfast",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available."
             },
             {
               "time": "Lunch",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available."
             },
             {
               "time": "Dinner",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available."
             }
           ]
         },
@@ -112,35 +156,66 @@
           "meals": [
             {
               "time": "Breakfast",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available."
             },
             {
               "time": "Lunch",
-              "verdict": "NONE",
-              "main_dish": "N/A",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "price": "6000원",
+              "selling_time": "11:30~13:30",
+              "verdict": "WORTH IT",
+              "main_dish": "닭볶음탕 (Spicy Braised Chicken)",
+              "safe_items": [
+                "잡곡밥 (Multigrain Rice)",
+                "닭볶음탕 (Spicy Braised Chicken)",
+                "쥐어채볶음 (Stir-fried Filefish Strips)",
+                "맛김구이 (Seasoned Seaweed)",
+                "깻잎순볶음 (Stir-fried Perilla Leaves)",
+                "배추김치 (Kimchi)"
+              ],
+              "skip_items": [
+                "한입돈가스강정 (Bite-sized Pork Cutlet Gangjeong)"
+              ],
+              "reason": "The main dish is chicken, but you must skip the bite-sized pork cutlets served as a side."
             },
             {
               "time": "Dinner",
-              "verdict": "NONE",
-              "main_dish": "N/A",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "price": "6000원",
+              "selling_time": "17:00~18:30",
+              "verdict": "NOT WORTH",
+              "main_dish": "찹쌀탕수육 (Glutinous Rice Sweet and Sour Pork)",
+              "safe_items": [
+                "잡곡밥 (Multigrain Rice)",
+                "꽃게된장국 (Blue Crab Soybean Paste Soup)",
+                "두부양파조림 (Braised Tofu and Onion)",
+                "미니새송이버섯볶음 (Stir-fried Mushrooms)",
+                "콩나물무침 (Seasoned Bean Sprouts)",
+                "배추김치 (Kimchi)"
+              ],
+              "skip_items": [
+                "찹쌀탕수육 (Sweet and Sour Pork)"
+              ],
+              "reason": "The primary meat dish is Tangsuyuk, which is made of pork."
             }
           ]
         },
         {
           "name": "A La Carte",
           "type": "individual",
+          "price": "Varies",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
-          "avoid": []
+          "avoid": [
+            "돼지김치찌개 (Pork Kimchi Stew)",
+            "아비꼬카레 (Curry)",
+            "라면류 (Ramen)",
+            "돈가스류 (Pork Cutlet)"
+          ]
         }
       ]
     },
@@ -153,27 +228,33 @@
           "meals": [
             {
               "time": "Breakfast",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available."
             },
             {
               "time": "Lunch",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available."
             },
             {
               "time": "Dinner",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available."
             }
           ]
         },
@@ -183,35 +264,65 @@
           "meals": [
             {
               "time": "Breakfast",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available."
             },
             {
               "time": "Lunch",
-              "verdict": "NONE",
-              "main_dish": "N/A",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "price": "6000원",
+              "selling_time": "11:30~13:30",
+              "verdict": "NOT WORTH",
+              "main_dish": "Shrimp Bacon Fried Rice",
+              "safe_items": [
+                "Corn soup",
+                "Fried seaweed rolls",
+                "Seasoned squid and radish",
+                "Cabbage salad",
+                "Pickles & Jalapenos"
+              ],
+              "skip_items": [
+                "Shrimp Bacon Fried Rice"
+              ],
+              "reason": "The main dish (fried rice) contains bacon, which is pork."
             },
             {
               "time": "Dinner",
-              "verdict": "NONE",
-              "main_dish": "N/A",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "price": "6000원",
+              "selling_time": "17:00~18:30",
+              "verdict": "NOT WORTH",
+              "main_dish": "Pork Bulgogi",
+              "safe_items": [
+                "Multi-grain rice",
+                "Seaweed soup with rice cakes",
+                "Stir-fried shredded potatoes",
+                "Braised lotus root",
+                "Fresh seasoned greens",
+                "Baechu Kimchi"
+              ],
+              "skip_items": [
+                "Pork Bulgogi"
+              ],
+              "reason": "The main dish is Pork Bulgogi (돈육불고기)."
             }
           ]
         },
         {
           "name": "A La Carte",
           "type": "individual",
+          "price": "Not specified",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
-          "avoid": []
+          "avoid": [
+            "규코츠라멘 (Gyukotsu Ramen)",
+            "대패삼겹덮밥 (Pork Belly Rice Bowl)",
+            "라면류 (Ramen)",
+            "돈가스류 (Tonkatsu)"
+          ]
         }
       ]
     },
@@ -224,27 +335,33 @@
           "meals": [
             {
               "time": "Breakfast",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available"
             },
             {
               "time": "Lunch",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available"
             },
             {
               "time": "Dinner",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available"
             }
           ]
         },
@@ -254,35 +371,67 @@
           "meals": [
             {
               "time": "Breakfast",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available"
             },
             {
               "time": "Lunch",
-              "verdict": "NONE",
-              "main_dish": "N/A",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "price": "6000원",
+              "selling_time": "11:30~13:30",
+              "verdict": "NOT WORTH",
+              "main_dish": "왕만두찜 (Steamed King Dumplings)",
+              "safe_items": [
+                "쌀밥",
+                "칼국수",
+                "도라지무생채",
+                "병아리콩우엉조림",
+                "배추김치",
+                "구운 계란"
+              ],
+              "skip_items": [
+                "왕만두찜"
+              ],
+              "reason": "Wang Mandu (King Dumplings) almost always contain ground pork."
             },
             {
               "time": "Dinner",
-              "verdict": "NONE",
-              "main_dish": "N/A",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "price": "6000원",
+              "selling_time": "17:00~18:30",
+              "verdict": "NOT WORTH",
+              "main_dish": "부대찌개 (Army Stew)",
+              "safe_items": [
+                "잡곡밥",
+                "고등어무조림",
+                "고구마튀김",
+                "시금치무침",
+                "배추김치",
+                "매실캔음료"
+              ],
+              "skip_items": [
+                "부대찌개"
+              ],
+              "reason": "Budae-jjigae contains ham, sausage, and spam, which are all pork products."
             }
           ]
         },
         {
           "name": "A La Carte",
           "type": "individual",
-          "safe_options": [],
-          "avoid": []
+          "price": "Prices vary",
+          "selling_time": "11:00~14:00 16:00~18:30",
+          "safe_options": [
+            "육회비빔밥 (Beef Tartare Bibimbap)"
+          ],
+          "avoid": [
+            "뼈해장국 (Pork Bone Soup)",
+            "라면류 (Ramen)",
+            "돈가스류 (Pork Cutlet)"
+          ]
         }
       ]
     },
@@ -295,27 +444,33 @@
           "meals": [
             {
               "time": "Breakfast",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available."
             },
             {
               "time": "Lunch",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available."
             },
             {
               "time": "Dinner",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available."
             }
           ]
         },
@@ -325,35 +480,65 @@
           "meals": [
             {
               "time": "Breakfast",
+              "price": "NONE",
+              "selling_time": "NONE",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "NONE",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "reason": "No menu data available."
             },
             {
               "time": "Lunch",
-              "verdict": "NONE",
-              "main_dish": "N/A",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "price": "6000원",
+              "selling_time": "11:30~13:30",
+              "verdict": "WORTH IT",
+              "main_dish": "Jangteo-guk (Beef-based soup)",
+              "safe_items": [
+                "잡곡밥 (Multigrain rice)",
+                "장터국 (Market-style soup)",
+                "볶은멸치조림 (Stir-fried anchovies)",
+                "어묵마늘종볶음 (Fish cake stir-fry)",
+                "김가루무침 (Seaweed)",
+                "깍두기 (Radish kimchi)"
+              ],
+              "skip_items": [
+                "메밀전병야채무침 (Buckwheat crepes - often contain ground pork)"
+              ],
+              "reason": "The main soup is typically beef-based, and most sides are fish or vegetable based. Skip the buckwheat crepes as they often contain pork."
             },
             {
               "time": "Dinner",
-              "verdict": "NONE",
-              "main_dish": "N/A",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "Analysis failed - please check manually"
+              "price": "6000원",
+              "selling_time": "17:00~18:30",
+              "verdict": "NOT WORTH",
+              "main_dish": "Vienna Sausage stir-fry",
+              "safe_items": [
+                "잡곡밥 (Multigrain rice)",
+                "열무된장국 (Radish leaf miso soup)",
+                "야채계란말이 (Egg roll)",
+                "오이생채 (Cucumber salad)",
+                "배추김치 (Kimchi)"
+              ],
+              "skip_items": [
+                "비엔나소세지볶음 (Vienna sausage)",
+                "오꼬노미야끼 (Okonomiyaki - often contains pork/bacon)"
+              ],
+              "reason": "The main protein is Vienna sausage, which contains pork. Okonomiyaki is also suspicious."
             }
           ]
         },
         {
           "name": "A La Carte",
           "type": "individual",
+          "price": "Varies",
+          "selling_time": "11:00~14:00",
           "safe_options": [],
-          "avoid": []
+          "avoid": [
+            "고추장불고기정식 (Bulgogi may be mixed with pork)",
+            "라면류 (Ramen uses pork broth)",
+            "돈가스류 (Pork cutlet)"
+          ]
         }
       ]
     }
