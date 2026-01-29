@@ -94,8 +94,12 @@ def get_menu_text(url):
         if not menu_table:
             return "No menu found."
             
-        menu_text = ""
         rows = menu_table.find_all('tr')
+        # Check if table has only headers (1 row) or no rows
+        if len(rows) <= 1:
+            return "No menu data available."
+            
+        menu_text = ""
         for row in rows:
             cols = row.find_all(['th', 'td'])
             row_data = [ele.text.strip().replace('\n', ' ') for ele in cols]
@@ -174,63 +178,110 @@ PACKAGE MEAL WORTHINESS:
 MENU DATA:
 {menu_data}
 
-Return ONLY this JSON (no markdown):
-{{
-  "day": "{target_day}",
-  "cafeterias": [
+    Return ONLY this JSON (no markdown):
     {{
-      "name": "Student Cafeteria",
-      "type": "package",
-      "meals": [
+      "day": "{target_day}",
+      "cafeterias": [
         {{
-          "time": "Breakfast",
-          "verdict": "SAFE/WORTH IT/NOT WORTH/NONE",
-          "main_dish": "name of main protein/dish",
-          "safe_items": ["list items you can eat"],
-          "skip_items": ["list items with pork to skip"],
-          "reason": "brief explanation"
+          "name": "Student Cafeteria",
+          "type": "package",
+          "meals": [
+            {{
+              "time": "Breakfast",
+              "price": "e.g. 5000원",
+              "selling_time": "e.g. 08:00~09:00",
+              "verdict": "SAFE/WORTH IT/NOT WORTH/NONE",
+              "main_dish": "name of main protein/dish",
+              "safe_items": ["list items you can eat"],
+              "skip_items": ["list items with pork to skip"],
+              "reason": "brief explanation"
+            }},
+            {{"time": "Lunch", "price": "...", "selling_time": "...", "verdict": "...", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}},
+            {{"time": "Dinner", "price": "...", "selling_time": "...", "verdict": "...", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}}
+          ]
         }},
-        {{"time": "Lunch", "verdict": "...", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}},
-        {{"time": "Dinner", "verdict": "...", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}}
+        {{
+          "name": "Professor Cafeteria",
+          "type": "package",
+          "meals": [
+            {{"time": "Breakfast", "price": "...", "selling_time": "...", "verdict": "...", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}},
+            {{"time": "Lunch", "price": "...", "selling_time": "...", "verdict": "...", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}},
+            {{"time": "Dinner", "price": "...", "selling_time": "...", "verdict": "...", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}}
+          ]
+        }},
+        {{
+          "name": "A La Carte",
+          "type": "individual",
+          "price": "Range or specific price",
+          "selling_time": "Operating hours",
+          "safe_options": ["Dish Name 1", "Dish Name 2"],
+          "avoid": ["Dish Name 3", "Dish Name 4"]
+        }}
       ]
-    }},
-    {{
-      "name": "Professor Cafeteria",
-      "type": "package",
-      "meals": [
-        {{"time": "Breakfast", "verdict": "...", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}},
-        {{"time": "Lunch", "verdict": "...", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}},
-        {{"time": "Dinner", "verdict": "...", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}}
-      ]
-    }},
-    {{
-      "name": "A La Carte",
-      "type": "individual",
-      "safe_options": ["Dish Name 1", "Dish Name 2"],
-      "avoid": ["Dish Name 3", "Dish Name 4"]
     }}
-  ]
-}}
 
 IMPORTANT: For A La Carte, safe_options and avoid MUST be simple string arrays of dish names only.
 Do NOT use objects/dicts. Just plain strings like: ["Chicken Steak", "Beef Soup"]
 """
-    try:
-        response = model.generate_content(prompt)
-        cleaned_text = response.text.replace("```json", "").replace("```", "").strip()
-        result = json.loads(cleaned_text)
-        
-        # Fix any dict items in safe_options/avoid (fallback)
-        for cafe in result.get("cafeterias", []):
-            if cafe.get("type") == "individual":
-                # Convert dicts to strings if AI misbehaved
-                safe = cafe.get("safe_options", [])
-                cafe["safe_options"] = [item if isinstance(item, str) else item.get("menu", str(item)) for item in safe]
+    
+    max_retries = 3
+    retry_delay = 2  # seconds
+    
+    for attempt in range(max_retries):
+        try:
+            # Add timeout to prevent hanging (REMOVED: Not supported in this version)
+            response = model.generate_content(prompt)
+            
+            # Clean and parse response
+            cleaned_text = response.text.replace("```json", "").replace("```", "").strip()
+            
+            # Try to find JSON in the response if it's wrapped in other text
+            if not cleaned_text.startswith("{"):
+                # Look for JSON object in the text
+                start = cleaned_text.find("{")
+                end = cleaned_text.rfind("}") + 1
+                if start != -1 and end > start:
+                    cleaned_text = cleaned_text[start:end]
+            
+            result = json.loads(cleaned_text)
+            
+            # Fix any dict items in safe_options/avoid (fallback)
+            for cafe in result.get("cafeterias", []):
+                if cafe.get("type") == "individual":
+                    # Convert dicts to strings if AI misbehaved
+                    safe = cafe.get("safe_options", [])
+                    cafe["safe_options"] = [item if isinstance(item, str) else item.get("menu", str(item)) for item in safe]
+                    
+                    avoid = cafe.get("avoid", [])
+                    cafe["avoid"] = [item if isinstance(item, str) else item.get("menu", str(item)) for item in avoid]
+            
+            # Success! Return result
+            return result
+            
+        except json.JSONDecodeError as e:
+            print(f"   ⚠️ JSON parsing error on attempt {attempt + 1}/{max_retries}: {e}")
+            if attempt < max_retries - 1:
+                print(f"   ⏳ Retrying in {retry_delay} seconds...")
+                import time
+                time.sleep(retry_delay)
+            else:
+                print(f"   ❌ Failed to parse JSON after {max_retries} attempts")
+                print(f"   Raw response: {cleaned_text[:200]}...")
                 
-                avoid = cafe.get("avoid", [])
-                cafe["avoid"] = [item if isinstance(item, str) else item.get("menu", str(item)) for item in avoid]
-        
-        return result
-    except Exception as e:
-        print(f"Error analyzing with Gemini: {e}")
-        return None
+        except Exception as e:
+            error_msg = str(e)
+            print(f"   ⚠️ Gemini API error on attempt {attempt + 1}/{max_retries}: {error_msg}")
+            
+            # Check if it's a rate limit error
+            if "quota" in error_msg.lower() or "rate" in error_msg.lower():
+                print(f"   ⏳ Rate limit detected, waiting {retry_delay * 2} seconds...")
+                import time
+                time.sleep(retry_delay * 2)
+            elif attempt < max_retries - 1:
+                print(f"   ⏳ Retrying in {retry_delay} seconds...")
+                import time
+                time.sleep(retry_delay)
+            else:
+                print(f"   ❌ Failed after {max_retries} attempts")
+    
+    return None

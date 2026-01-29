@@ -1,6 +1,13 @@
 import os
 import sys
 import json
+import warnings
+
+# Silence warnings
+warnings.filterwarnings("ignore")
+os.environ['GRPC_VERBOSITY'] = 'ERROR'
+os.environ['GLOG_minloglevel'] = '2'
+
 from datetime import datetime
 
 # Path setup - ensure we can import halal_lib from scripts/
@@ -41,15 +48,8 @@ def main():
     old_hash = existing_data.get("menu_hash")
     
     if old_hash == menu_hash:
-        print("\n✨ Menu has NOT changed. Using existing analysis (Savings: 100% Tokens).")
-        # We still might want to update the "updated_at" to show we checked
-        existing_data["updated_at"] = datetime.now().isoformat()
-        
-        # Save just the timestamp update
-        with open(DATA_FILE, "w", encoding="utf-8") as f:
-            json.dump(existing_data, f, ensure_ascii=False, indent=2)
-            
-        print(f"✅ Data touched at {DATA_FILE}")
+        print("\n✨ Menu has NOT changed. Skipping analysis & file update.")
+        print(f"   (Local file already up to date with hash {menu_hash})")
         return
 
     # 3. Analyze ALL Weekdays (Mon-Fri)
@@ -60,13 +60,48 @@ def main():
     print("\n🤖 Menu CHANGED! Starting AI analysis...")
     print("   (This uses Gemini tokens - approx 5 calls)")
     
-    for day in days:
+    for idx, day in enumerate(days):
         print(f"   > Analyzing {day}...")
         result = halal_lib.analyze_with_gemini(full_menu, day)
         if result:
             week_data[day] = result
         else:
-            print(f"     ⚠️ Analysis failed for {day}")
+            print(f"     ⚠️ Analysis failed for {day}, using fallback structure")
+            # Add fallback structure so day is not missing
+            week_data[day] = {
+                "day": day,
+                "cafeterias": [
+                    {
+                        "name": "Student Cafeteria",
+                        "type": "package",
+                        "meals": [
+                            {"time": "Breakfast", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"},
+                            {"time": "Lunch", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"},
+                            {"time": "Dinner", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"}
+                        ]
+                    },
+                    {
+                        "name": "Professor Cafeteria",
+                        "type": "package",
+                        "meals": [
+                            {"time": "Breakfast", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"},
+                            {"time": "Lunch", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"},
+                            {"time": "Dinner", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"}
+                        ]
+                    },
+                    {
+                        "name": "A La Carte",
+                        "type": "individual",
+                        "safe_options": [],
+                        "avoid": []
+                    }
+                ]
+            }
+        
+        # Add small delay between days to prevent rate limiting (except after last day)
+        if idx < len(days) - 1:
+            import time
+            time.sleep(1)
     
     # 4. Build Final JSON Structure
     output = {
