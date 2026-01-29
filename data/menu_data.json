@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-01-29T09:00:05.306369",
-  "menu_hash": "d2ba7fedbf63c05f4ec1954d9ae2f2bc",
+  "updated_at": "2026-01-29T10:28:04.363973",
+  "menu_hash": "802c7c9d208d2411698999bee474f562",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -15,7 +15,7 @@
               "main_dish": "N/A",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available for this time"
+              "reason": "Analysis failed - please check manually"
             },
             {
               "time": "Lunch",
@@ -23,7 +23,7 @@
               "main_dish": "N/A",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available for this time"
+              "reason": "Analysis failed - please check manually"
             },
             {
               "time": "Dinner",
@@ -31,7 +31,7 @@
               "main_dish": "N/A",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available for this time"
+              "reason": "Analysis failed - please check manually"
             }
           ]
         },
@@ -45,55 +45,31 @@
               "main_dish": "N/A",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available for this time"
+              "reason": "Analysis failed - please check manually"
             },
             {
               "time": "Lunch",
-              "verdict": "NOT WORTH",
-              "main_dish": "Siraegi Sundae-guk (Korean Sausage Soup)",
-              "safe_items": [
-                "Multigrain rice",
-                "Braised nuts",
-                "Pickled onion and cucumber",
-                "Potato croquette",
-                "Kkakdugi"
-              ],
-              "skip_items": [
-                "Siraegi Sundae-guk",
-                "Seop-sanjeok Eomuk-jorim"
-              ],
-              "reason": "Sundae (Korean blood sausage) is made with pork intestines and pork filling. Sanjeok patties also frequently contain minced pork."
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
             },
             {
               "time": "Dinner",
-              "verdict": "NOT WORTH",
-              "main_dish": "Menchi Katsu & Tuna Kimchi Jjigae",
-              "safe_items": [
-                "Multigrain rice",
-                "Seafood Stir-fry Udon",
-                "Fried seaweed",
-                "Braised quail eggs",
-                "Kkakdugi"
-              ],
-              "skip_items": [
-                "Menchi Katsu",
-                "Tuna Kimchi Jjigae"
-              ],
-              "reason": "Menchi Katsu contains ground pork. Kimchi Jjigae is unsafe according to rules as it traditionally uses pork broth or pieces, even if tuna is listed."
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
             }
           ]
         },
         {
           "name": "A La Carte",
           "type": "individual",
-          "safe_options": [
-            "Gomtang (Beef Bone Soup)"
-          ],
-          "avoid": [
-            "Assorted Katsu (Modeum-kkasu)",
-            "Ramen",
-            "Donkatsu"
-          ]
+          "safe_options": [],
+          "avoid": []
         }
       ]
     },
@@ -107,26 +83,26 @@
             {
               "time": "Breakfast",
               "verdict": "NONE",
-              "main_dish": "none",
+              "main_dish": "N/A",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available for this time."
+              "reason": "Analysis failed - please check manually"
             },
             {
               "time": "Lunch",
               "verdict": "NONE",
-              "main_dish": "none",
+              "main_dish": "N/A",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available for this time."
+              "reason": "Analysis failed - please check manually"
             },
             {
               "time": "Dinner",
               "verdict": "NONE",
-              "main_dish": "none",
+              "main_dish": "N/A",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available for this time."
+              "reason": "Analysis failed - please check manually"
             }
           ]
         },
@@ -137,44 +113,26 @@
             {
               "time": "Breakfast",
               "verdict": "NONE",
-              "main_dish": "none",
+              "main_dish": "N/A",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available for this time."
+              "reason": "Analysis failed - please check manually"
             },
             {
               "time": "Lunch",
-              "verdict": "WORTH IT",
-              "main_dish": "닭볶음탕 (Spicy Braised Chicken)",
-              "safe_items": [
-                "잡곡밥 (Multi-grain Rice)",
-                "닭볶음탕 (Spicy Braised Chicken)",
-                "쥐어채볶음 (Stir-fried Dried Fish)",
-                "맛김구이 (Roasted Seaweed)",
-                "깻잎순볶음 (Stir-fried Perilla Shoots)",
-                "배추김치 (Kimchi)"
-              ],
-              "skip_items": [
-                "한입돈가스강정 (Bite-sized Pork Cutlet)"
-              ],
-              "reason": "The main dish is chicken-based, but one of the side dishes is pork cutlet which should be avoided."
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
             },
             {
               "time": "Dinner",
-              "verdict": "NOT WORTH",
-              "main_dish": "찹쌀탕수육 (Sweet and Sour Pork)",
-              "safe_items": [
-                "잡곡밥 (Multi-grain Rice)",
-                "꽃게된장국 (Blue Crab Soybean Paste Soup)",
-                "두부양파조림 (Braised Tofu and Onion)",
-                "미니새송이버섯볶음 (Stir-fried King Oyster Mushrooms)",
-                "콩나물무침 (Seasoned Bean Sprouts)",
-                "배추김치 (Kimchi)"
-              ],
-              "skip_items": [
-                "찹쌀탕수육 (Sweet and Sour Pork)"
-              ],
-              "reason": "The main protein is pork (Tangsuyuk)."
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
             }
           ]
         },
@@ -182,12 +140,78 @@
           "name": "A La Carte",
           "type": "individual",
           "safe_options": [],
-          "avoid": [
-            "돼지김치찌개 (Pork Kimchi Stew)",
-            "아비꼬카레&회오리감자 (Curry & Potato)",
-            "라면류 (Ramen)",
-            "돈가스류 (Donkatsu)"
+          "avoid": []
+        }
+      ]
+    },
+    "Wednesday": {
+      "day": "Wednesday",
+      "cafeterias": [
+        {
+          "name": "Student Cafeteria",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Breakfast",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
+            },
+            {
+              "time": "Lunch",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
+            },
+            {
+              "time": "Dinner",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
+            }
           ]
+        },
+        {
+          "name": "Professor Cafeteria",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Breakfast",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
+            },
+            {
+              "time": "Lunch",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
+            },
+            {
+              "time": "Dinner",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
+            }
+          ]
+        },
+        {
+          "name": "A La Carte",
+          "type": "individual",
+          "safe_options": [],
+          "avoid": []
         }
       ]
     },
@@ -201,26 +225,26 @@
             {
               "time": "Breakfast",
               "verdict": "NONE",
-              "main_dish": "none",
+              "main_dish": "N/A",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data provided for this day"
+              "reason": "Analysis failed - please check manually"
             },
             {
               "time": "Lunch",
               "verdict": "NONE",
-              "main_dish": "none",
+              "main_dish": "N/A",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data provided for this day"
+              "reason": "Analysis failed - please check manually"
             },
             {
               "time": "Dinner",
               "verdict": "NONE",
-              "main_dish": "none",
+              "main_dish": "N/A",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data provided for this day"
+              "reason": "Analysis failed - please check manually"
             }
           ]
         },
@@ -231,58 +255,105 @@
             {
               "time": "Breakfast",
               "verdict": "NONE",
-              "main_dish": "none",
+              "main_dish": "N/A",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No breakfast schedule listed"
+              "reason": "Analysis failed - please check manually"
             },
             {
               "time": "Lunch",
-              "verdict": "WORTH IT",
-              "main_dish": "Kalguksu (Noodle Soup)",
-              "safe_items": [
-                "Rice",
-                "Kalguksu",
-                "Balloon flower radish salad",
-                "Chickpea and burdock braise",
-                "Kimchi",
-                "Roasted egg"
-              ],
-              "skip_items": [
-                "Wang Mandu (King Dumplings)"
-              ],
-              "reason": "The main noodle dish is safe, but the dumplings (Wang Mandu) contain pork and must be skipped."
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
             },
             {
               "time": "Dinner",
-              "verdict": "NOT WORTH",
-              "main_dish": "Budae-jjigae",
-              "safe_items": [
-                "Multigrain rice",
-                "Braised mackerel",
-                "Sweet potato fries",
-                "Spinach salad",
-                "Kimchi",
-                "Plum juice"
-              ],
-              "skip_items": [
-                "Budae-jjigae"
-              ],
-              "reason": "The main dish is Budae-jjigae, which contains ham, sausage, and minced pork."
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
             }
           ]
         },
         {
           "name": "A La Carte",
           "type": "individual",
-          "safe_options": [
-            "Yukhoe-bibimbap (Raw Beef Bibimbap)"
-          ],
-          "avoid": [
-            "Pyeo-haejang-guk (Pork Backbone Soup)",
-            "Ramen",
-            "Donkatsu (Pork Cutlet)"
+          "safe_options": [],
+          "avoid": []
+        }
+      ]
+    },
+    "Friday": {
+      "day": "Friday",
+      "cafeterias": [
+        {
+          "name": "Student Cafeteria",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Breakfast",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
+            },
+            {
+              "time": "Lunch",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
+            },
+            {
+              "time": "Dinner",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
+            }
           ]
+        },
+        {
+          "name": "Professor Cafeteria",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Breakfast",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
+            },
+            {
+              "time": "Lunch",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
+            },
+            {
+              "time": "Dinner",
+              "verdict": "NONE",
+              "main_dish": "N/A",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "Analysis failed - please check manually"
+            }
+          ]
+        },
+        {
+          "name": "A La Carte",
+          "type": "individual",
+          "safe_options": [],
+          "avoid": []
         }
       ]
     }
