@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-01-29T10:40:08.074202",
-  "menu_hash": "802c7c9d208d2411698999bee474f562",
+  "updated_at": "2026-02-01T09:01:58.693082",
+  "menu_hash": "546b3a42f49e9b4a426eefdf507f6f0a",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -60,53 +60,51 @@
               "price": "6000원",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "시래기순대국 (Siraegi Sundae Soup)",
+              "main_dish": "Mapo Tofu Rice (마파두부덮밥)",
               "safe_items": [
-                "잡곡밥 (Mixed grain rice)",
-                "견과류조림 (Braised nuts)",
-                "양파오이초절임 (Onion cucumber pickles)",
-                "깍두기 (Radish kimchi)"
+                "Egg Vegetable Soup",
+                "Sweet Potato Roll",
+                "Dried Pollock & Balloon Flower Salad",
+                "Cabbage Kimchi"
               ],
               "skip_items": [
-                "시래기순대국 (Sundae contains pork)",
-                "섭산적어묵조림 (Meat patties often contain pork)",
-                "감자고르케 (Croquettes often contain minced pork)"
+                "Mapo Tofu Rice (typically contains minced pork)",
+                "Stir-fried Soondae & Vegetables (Soondae is pork-based)"
               ],
-              "reason": "The main soup (Sundae-guk) contains Korean blood sausage which is made with pork parts/blood."
+              "reason": "The main dish Mapo Tofu usually contains minced pork, and the side dish Soondae is made with pig intestines and blood."
             },
             {
               "time": "Dinner",
               "price": "6000원",
               "selling_time": "17:00~18:30",
               "verdict": "NOT WORTH",
-              "main_dish": "참치김치찌개 (Tuna Kimchi Stew), 멘치카츠 (Menchi Katsu)",
+              "main_dish": "Pork Stew (돼지찌개)",
               "safe_items": [
-                "잡곡밥 (Mixed grain rice)",
-                "해물볶음우동 (Seafood stir-fried udon)",
-                "다시마부각 (Kelp chips)",
-                "메추리알고추장조림 (Quail eggs)",
-                "깍두기 (Radish kimchi)"
+                "Burdock Root Salad",
+                "Stir-fried Anchovies",
+                "Radish Kimchi",
+                "Tangerine"
               ],
               "skip_items": [
-                "참치김치찌개 (Kimchi stew rule: unsafe)",
-                "멘치카츠 (Menchi katsu contains pork)"
+                "Pork Stew",
+                "Meat Patties & Pumpkin Simmered"
               ],
-              "reason": "Menchi Katsu is a pork dish, and Kimchi stew is considered unsafe due to potential pork broth or cross-contamination rules."
+              "reason": "The main dish is explicitly pork stew (돼지찌개), and meat patties (San-jeok) in cafeterias are often a pork/beef mixture."
             }
           ]
         },
         {
           "name": "A La Carte",
           "type": "individual",
-          "price": "Varies",
+          "price": "6000원~",
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "곰탕 (Gomtang/Beef Bone Soup)"
+            "Flying Fish Roe & Tuna Sashimi Rice Bowl (날치알참치회덮밥)"
           ],
           "avoid": [
-            "모듬까스 (Mixed Cutlet)",
-            "라면류 (Ramen)",
-            "돈가스류 (Donkatsu)"
+            "Soft Tofu Stew (순두부찌개 - contains minced pork)",
+            "Ramen (라면류 - pork bone broth)",
+            "Pork Cutlet (돈가스류 - contains pork)"
           ]
         }
       ]
@@ -120,30 +118,30 @@
           "meals": [
             {
               "time": "Breakfast",
-              "price": "NONE",
-              "selling_time": "NONE",
+              "price": "none",
+              "selling_time": "none",
               "verdict": "NONE",
-              "main_dish": "NONE",
+              "main_dish": "none",
               "safe_items": [],
               "skip_items": [],
               "reason": "No menu data available."
             },
             {
               "time": "Lunch",
-              "price": "NONE",
-              "selling_time": "NONE",
+              "price": "none",
+              "selling_time": "none",
               "verdict": "NONE",
-              "main_dish": "NONE",
+              "main_dish": "none",
               "safe_items": [],
               "skip_items": [],
               "reason": "No menu data available."
             },
             {
               "time": "Dinner",
-              "price": "NONE",
-              "selling_time": "NONE",
+              "price": "none",
+              "selling_time": "none",
               "verdict": "NONE",
-              "main_dish": "NONE",
+              "main_dish": "none",
               "safe_items": [],
               "skip_items": [],
               "reason": "No menu data available."
@@ -156,10 +154,10 @@
           "meals": [
             {
               "time": "Breakfast",
-              "price": "NONE",
-              "selling_time": "NONE",
+              "price": "none",
+              "selling_time": "none",
               "verdict": "NONE",
-              "main_dish": "NONE",
+              "main_dish": "none",
               "safe_items": [],
               "skip_items": [],
               "reason": "No menu data available."
@@ -168,39 +166,37 @@
               "time": "Lunch",
               "price": "6000원",
               "selling_time": "11:30~13:30",
-              "verdict": "WORTH IT",
-              "main_dish": "닭볶음탕 (Spicy Braised Chicken)",
+              "verdict": "SAFE",
+              "main_dish": "Chicken Karaage",
               "safe_items": [
-                "잡곡밥 (Multigrain Rice)",
-                "닭볶음탕 (Spicy Braised Chicken)",
-                "쥐어채볶음 (Stir-fried Filefish Strips)",
-                "맛김구이 (Seasoned Seaweed)",
-                "깻잎순볶음 (Stir-fried Perilla Leaves)",
-                "배추김치 (Kimchi)"
+                "잡곡밥 (Mixed grain rice)",
+                "다슬기국 (Marsh snail soup)",
+                "치킨가라게 (Chicken karaage)",
+                "감자양념구이 (Seasoned grilled potato)",
+                "애느타리버섯볶음 (Stir-fried mushrooms)",
+                "양배추샐러드 (Cabbage salad)",
+                "깍두기 (Radish kimchi)"
               ],
-              "skip_items": [
-                "한입돈가스강정 (Bite-sized Pork Cutlet Gangjeong)"
-              ],
-              "reason": "The main dish is chicken, but you must skip the bite-sized pork cutlets served as a side."
+              "skip_items": [],
+              "reason": "The main protein is chicken and all other items are pork-free."
             },
             {
               "time": "Dinner",
               "price": "6000원",
               "selling_time": "17:00~18:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "찹쌀탕수육 (Glutinous Rice Sweet and Sour Pork)",
+              "verdict": "SAFE",
+              "main_dish": "Seollongtang (Ox Bone Soup) & Shrimp Cutlet",
               "safe_items": [
-                "잡곡밥 (Multigrain Rice)",
-                "꽃게된장국 (Blue Crab Soybean Paste Soup)",
-                "두부양파조림 (Braised Tofu and Onion)",
-                "미니새송이버섯볶음 (Stir-fried Mushrooms)",
-                "콩나물무침 (Seasoned Bean Sprouts)",
-                "배추김치 (Kimchi)"
+                "잡곡밥 (Mixed grain rice)",
+                "설렁탕 (Ox bone soup)",
+                "새우통살까스 (Shrimp cutlet)",
+                "계란장조림 (Braised eggs)",
+                "마늘종장아찌무침 (Garlic scapes)",
+                "솎음배추생채 (Young cabbage salad)",
+                "깍두기 (Radish kimchi)"
               ],
-              "skip_items": [
-                "찹쌀탕수육 (Sweet and Sour Pork)"
-              ],
-              "reason": "The primary meat dish is Tangsuyuk, which is made of pork."
+              "skip_items": [],
+              "reason": "Main proteins are beef (soup) and shrimp (cutlet), both of which are pork-free."
             }
           ]
         },
@@ -209,12 +205,13 @@
           "type": "individual",
           "price": "Varies",
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [],
+          "safe_options": [
+            "치킨크림스튜우동 (Chicken Cream Stew Udon)"
+          ],
           "avoid": [
-            "돼지김치찌개 (Pork Kimchi Stew)",
-            "아비꼬카레 (Curry)",
-            "라면류 (Ramen)",
-            "돈가스류 (Pork Cutlet)"
+            "쭈삼불고기덮밥 (Jju-sam Bulgogi - contains pork belly)",
+            "라면류 (Ramen - contains pork broth)",
+            "돈가스류 (Donkatsu - pork cutlet)"
           ]
         }
       ]
@@ -277,51 +274,51 @@
               "price": "6000원",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Shrimp Bacon Fried Rice",
+              "main_dish": "Onion Tonkatsu (양파돈가스)",
               "safe_items": [
-                "Corn soup",
-                "Fried seaweed rolls",
-                "Seasoned squid and radish",
-                "Cabbage salad",
-                "Pickles & Jalapenos"
+                "잡곡밥 (Mixed rice)",
+                "매운어묵국 (Spicy fish cake soup)",
+                "쫄면야채무침 (Spicy noodles with vegetables)",
+                "콘슬로우 (Coleslaw)",
+                "배추김치 (Kimchi)"
               ],
               "skip_items": [
-                "Shrimp Bacon Fried Rice"
+                "양파돈가스 (Onion Tonkatsu)"
               ],
-              "reason": "The main dish (fried rice) contains bacon, which is pork."
+              "reason": "The main dish is Tonkatsu, which is breaded pork cutlet."
             },
             {
               "time": "Dinner",
               "price": "6000원",
               "selling_time": "17:00~18:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Pork Bulgogi",
+              "main_dish": "Braised Pork and Vegetables (돈육야채조림)",
               "safe_items": [
-                "Multi-grain rice",
-                "Seaweed soup with rice cakes",
-                "Stir-fried shredded potatoes",
-                "Braised lotus root",
-                "Fresh seasoned greens",
-                "Baechu Kimchi"
+                "잡곡밥 (Mixed rice)",
+                "두부구이 (Grilled tofu)",
+                "볶은파래자반 (Stir-fried seaweed)",
+                "무말랭이무침 (Spiced dried radish)",
+                "배추김치 (Kimchi)"
               ],
               "skip_items": [
-                "Pork Bulgogi"
+                "돈육야채조림 (Braised pork)",
+                "떡국 (Rice cake soup - broth may contain pork/beef mix)"
               ],
-              "reason": "The main dish is Pork Bulgogi (돈육불고기)."
+              "reason": "The main dish explicitly contains pork (돈육)."
             }
           ]
         },
         {
           "name": "A La Carte",
           "type": "individual",
-          "price": "Not specified",
-          "selling_time": "11:00~14:00, 16:00~18:30",
+          "price": "Varies",
+          "selling_time": "11:00~14:00 16:00~18:30",
           "safe_options": [],
           "avoid": [
-            "규코츠라멘 (Gyukotsu Ramen)",
-            "대패삼겹덮밥 (Pork Belly Rice Bowl)",
-            "라면류 (Ramen)",
-            "돈가스류 (Tonkatsu)"
+            "된장찌개&열무비빔밥 (Soybean paste stew is suspicious, bibimbap may contain minced pork)",
+            "콘햄마요덮밥 (Contains ham)",
+            "라면류 (Ramen broth contains pork)",
+            "돈가스류 (Tonkatsu is pork)"
           ]
         }
       ]
@@ -335,33 +332,33 @@
           "meals": [
             {
               "time": "Breakfast",
-              "price": "NONE",
-              "selling_time": "NONE",
+              "price": "N/A",
+              "selling_time": "N/A",
               "verdict": "NONE",
-              "main_dish": "NONE",
+              "main_dish": "N/A",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available"
+              "reason": "No menu data available."
             },
             {
               "time": "Lunch",
-              "price": "NONE",
-              "selling_time": "NONE",
+              "price": "N/A",
+              "selling_time": "N/A",
               "verdict": "NONE",
-              "main_dish": "NONE",
+              "main_dish": "N/A",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available"
+              "reason": "No menu data available."
             },
             {
               "time": "Dinner",
-              "price": "NONE",
-              "selling_time": "NONE",
+              "price": "N/A",
+              "selling_time": "N/A",
               "verdict": "NONE",
-              "main_dish": "NONE",
+              "main_dish": "N/A",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available"
+              "reason": "No menu data available."
             }
           ]
         },
@@ -371,66 +368,63 @@
           "meals": [
             {
               "time": "Breakfast",
-              "price": "NONE",
-              "selling_time": "NONE",
+              "price": "N/A",
+              "selling_time": "N/A",
               "verdict": "NONE",
-              "main_dish": "NONE",
+              "main_dish": "N/A",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available"
+              "reason": "No breakfast menu data available."
             },
             {
               "time": "Lunch",
               "price": "6000원",
               "selling_time": "11:30~13:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "왕만두찜 (Steamed King Dumplings)",
+              "verdict": "WORTH IT",
+              "main_dish": "Steamed Chicken with Vegetables (야채찜닭)",
               "safe_items": [
-                "쌀밥",
-                "칼국수",
-                "도라지무생채",
-                "병아리콩우엉조림",
-                "배추김치",
-                "구운 계란"
+                "Rice (잡곡밥)",
+                "Stir-fried Mini King Oyster Mushrooms (미니새송이버섯볶음)",
+                "Radish Kimchi (깍두기)"
               ],
               "skip_items": [
-                "왕만두찜"
+                "Bean Sprout Kimchi Soup (콩나물김치국)",
+                "Bibim Mandu (비빔만두)"
               ],
-              "reason": "Wang Mandu (King Dumplings) almost always contain ground pork."
+              "reason": "The main chicken dish is safe, but dumplings (Mandu) and Kimchi soup often contain pork."
             },
             {
               "time": "Dinner",
               "price": "6000원",
               "selling_time": "17:00~18:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "부대찌개 (Army Stew)",
+              "verdict": "WORTH IT",
+              "main_dish": "Spicy Beef Soup (육개장) and Spiced Fried Pollack (코다리강정)",
               "safe_items": [
-                "잡곡밥",
-                "고등어무조림",
-                "고구마튀김",
-                "시금치무침",
-                "배추김치",
-                "매실캔음료"
+                "Rice (잡곡밥)",
+                "Spicy Beef Soup (육개장)",
+                "Spiced Fried Pollack (코다리강정)",
+                "Steamed Eggs (야채계란찜)",
+                "Kimchi (배추김치)"
               ],
               "skip_items": [
-                "부대찌개"
+                "Buckwheat Crepes (메밀전병)"
               ],
-              "reason": "Budae-jjigae contains ham, sausage, and spam, which are all pork products."
+              "reason": "The main beef soup and fish are safe, but buckwheat crepes (jeonbyeong) typically contain pork and kimchi filling."
             }
           ]
         },
         {
           "name": "A La Carte",
           "type": "individual",
-          "price": "Prices vary",
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "price": "Price varies",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "육회비빔밥 (Beef Tartare Bibimbap)"
+            "Beef Noodle Soup (우육탕면)",
+            "Chicken Leg Steak (닭다리살스테이크)"
           ],
           "avoid": [
-            "뼈해장국 (Pork Bone Soup)",
-            "라면류 (Ramen)",
-            "돈가스류 (Pork Cutlet)"
+            "Ramen (라면류)",
+            "Donkatsu (돈가스류)"
           ]
         }
       ]
@@ -492,39 +486,30 @@
               "time": "Lunch",
               "price": "6000원",
               "selling_time": "11:30~13:30",
-              "verdict": "WORTH IT",
-              "main_dish": "Jangteo-guk (Beef-based soup)",
+              "verdict": "NOT WORTH",
+              "main_dish": "Gochujang Bulgogi",
               "safe_items": [
-                "잡곡밥 (Multigrain rice)",
-                "장터국 (Market-style soup)",
-                "볶은멸치조림 (Stir-fried anchovies)",
-                "어묵마늘종볶음 (Fish cake stir-fry)",
-                "김가루무침 (Seaweed)",
-                "깍두기 (Radish kimchi)"
+                "Multi-grain rice (잡곡밥)",
+                "Young radish soybean paste soup (열무된장국)",
+                "Braised potatoes (감자조림)",
+                "Cabbage and dried pollack salad (양배추북어포초무침)",
+                "Baechu Kimchi (배추김치)"
               ],
               "skip_items": [
-                "메밀전병야채무침 (Buckwheat crepes - often contain ground pork)"
+                "Gochujang Bulgogi (고추장불고기)",
+                "Meatball Patties (동그랑땡전)"
               ],
-              "reason": "The main soup is typically beef-based, and most sides are fish or vegetable based. Skip the buckwheat crepes as they often contain pork."
+              "reason": "Bulgogi is suspicious as it may be mixed with pork in cafeterias to reduce costs. Additionally, the side dish (Meatball patties) contains pork."
             },
             {
               "time": "Dinner",
-              "price": "6000원",
-              "selling_time": "17:00~18:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "Vienna Sausage stir-fry",
-              "safe_items": [
-                "잡곡밥 (Multigrain rice)",
-                "열무된장국 (Radish leaf miso soup)",
-                "야채계란말이 (Egg roll)",
-                "오이생채 (Cucumber salad)",
-                "배추김치 (Kimchi)"
-              ],
-              "skip_items": [
-                "비엔나소세지볶음 (Vienna sausage)",
-                "오꼬노미야끼 (Okonomiyaki - often contains pork/bacon)"
-              ],
-              "reason": "The main protein is Vienna sausage, which contains pork. Okonomiyaki is also suspicious."
+              "price": "NONE",
+              "selling_time": "NONE",
+              "verdict": "NONE",
+              "main_dish": "NONE",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "The cafeteria is not operating. Only the snack bar (분식당) is open."
             }
           ]
         },
@@ -532,12 +517,11 @@
           "name": "A La Carte",
           "type": "individual",
           "price": "Varies",
-          "selling_time": "11:00~14:00",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
           "avoid": [
-            "고추장불고기정식 (Bulgogi may be mixed with pork)",
-            "라면류 (Ramen uses pork broth)",
-            "돈가스류 (Pork cutlet)"
+            "Ramen (라면류)",
+            "Donkatsu (돈가스류)"
           ]
         }
       ]
