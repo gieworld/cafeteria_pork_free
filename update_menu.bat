@@ -20,30 +20,26 @@ echo 2. Uploading to GitHub...
 
 rem Check if there are changes to commit
 git diff --quiet data/menu_data.json
-if %errorlevel% == 0 (
+if %errorlevel% neq 0 (
     echo.
-    echo ✨ No changes detected. Skipping GitHub update.
-    goto :done
-)
-
-git add data/menu_data.json
-git commit -m "🍱 Manual Menu Update"
-
-rem Only push if commit succeeded
-if %errorlevel% == 0 (
-    echo Pushing changes...
-    git push
-    if %errorlevel% == 0 (
-        echo.
-        echo ✅ Menu Updated Successfully!
-        echo Your web dashboard will update in ~1 minute.
-    ) else (
-        echo.
-        echo ⚠️ Git push failed (Network or Auth issue^).
-    )
+    echo 📝 Changes detected. Committing...
+    git add data/menu_data.json
+    git commit -m "🍱 Manual Menu Update"
 ) else (
     echo.
-    echo ⚠️ Nothing to commit.
+    echo ✨ No new menu changes to commit.
+)
+
+echo.
+echo 3. Syncing with GitHub...
+git push
+if %errorlevel% == 0 (
+    echo.
+    echo ✅ Cloud Sync Successful!
+    echo Your web dashboard will update in ~1 minute.
+) else (
+    echo.
+    echo ⚠️ Cloud Sync failed (Network or Auth issue^).
 )
 
 :done
