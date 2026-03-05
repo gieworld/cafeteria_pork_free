@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import google.generativeai as genai
 import json
 import os
 import hashlib
@@ -141,8 +140,7 @@ def analyze_with_gemini(menu_data, target_day):
         print("❌ Missing GEMINI_API_KEY")
         return None
 
-    genai.configure(api_key=GEMINI_API_KEY)
-    model = genai.GenerativeModel('gemini-3-flash-preview')
+    # No generative SDK needed, we use REST API
     
     # Load manual corrections
     corrections = load_corrections()
@@ -229,11 +227,26 @@ Do NOT use objects/dicts. Just plain strings like: ["Chicken Steak", "Beef Soup"
     
     for attempt in range(max_retries):
         try:
-            # Add timeout to prevent hanging (REMOVED: Not supported in this version)
-            response = model.generate_content(prompt)
+            # Call Gemini REST API directly to avoid any protobuf/grpc dependency conflicts
+            url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent?key={GEMINI_API_KEY}"
+            headers = {'Content-Type': 'application/json'}
+            payload = {
+                "generationConfig": {"temperature": 0.1},
+                "contents": [{"parts": [{"text": prompt}]}]
+            }
+            
+            # Send Request
+            res = requests.post(url, headers=headers, json=payload, timeout=60)
+            res.raise_for_status()
+            
+            response_data = res.json()
+            if 'candidates' not in response_data or not response_data['candidates']:
+                raise ValueError(f"Unexpected API response structure: {response_data}")
+                
+            raw_text = response_data['candidates'][0]['content']['parts'][0]['text']
             
             # Clean and parse response
-            cleaned_text = response.text.replace("```json", "").replace("```", "").strip()
+            cleaned_text = raw_text.replace("```json", "").replace("```", "").strip()
             
             # Try to find JSON in the response if it's wrapped in other text
             if not cleaned_text.startswith("{"):
