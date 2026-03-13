@@ -95,6 +95,14 @@
             "reason": "In cafeterias, bulgogi may be mixed with pork to reduce costs. Hotels/expensive places use pure beef, but cheap cafeterias often mix. Always verify before eating.",
             "added_by": "admin",
             "date": "2024-12-23"
+        },
+        {
+            "dish": "ttukbaegi bulgogi",
+            "cafeteria": "all",
+            "status": "safe",
+            "reason": "Ttukbaegi Bulgogi (hot pot bulgogi) is specifically made with pure beef",
+            "added_by": "user_feedback",
+            "date": "2026-03-13"
         }
     ],
     "notes": [
