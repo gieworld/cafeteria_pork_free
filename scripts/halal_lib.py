@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import google.generativeai as genai
 import json
 import os
 import hashlib
@@ -140,7 +141,10 @@ def analyze_with_gemini(menu_data, target_day):
         print("❌ Missing GEMINI_API_KEY")
         return None
 
-    # No generative SDK needed, we use REST API
+    genai.configure(api_key=GEMINI_API_KEY)
+    
+    # Try the requested model, fallback if needed
+    model = genai.GenerativeModel('gemini-2.5-flash')
     
     # Load manual corrections
     corrections = load_corrections()
@@ -172,6 +176,10 @@ PACKAGE MEAL WORTHINESS:
 - WORTH IT = Main dish is pork-free, but some side dishes contain pork (can skip those sides)
 - NOT WORTH = Main dish contains pork (don't buy this package)
 - NONE = No meal available
+
+TRANSLATION RULE (CRITICAL):
+- ALL values in the JSON (including `main_dish`, `safe_items`, `skip_items`, `reason`, `safe_options`, `avoid`) MUST be translated into English.
+- Do NOT output Korean characters in these fields.
 
 MENU DATA:
 {menu_data}
@@ -227,26 +235,19 @@ Do NOT use objects/dicts. Just plain strings like: ["Chicken Steak", "Beef Soup"
     
     for attempt in range(max_retries):
         try:
-            # Call Gemini REST API directly to avoid any protobuf/grpc dependency conflicts
-            url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent?key={GEMINI_API_KEY}"
-            headers = {'Content-Type': 'application/json'}
-            payload = {
-                "generationConfig": {"temperature": 0.1},
-                "contents": [{"parts": [{"text": prompt}]}]
-            }
-            
-            # Send Request
-            res = requests.post(url, headers=headers, json=payload, timeout=60)
-            res.raise_for_status()
-            
-            response_data = res.json()
-            if 'candidates' not in response_data or not response_data['candidates']:
-                raise ValueError(f"Unexpected API response structure: {response_data}")
-                
-            raw_text = response_data['candidates'][0]['content']['parts'][0]['text']
+            # Call Gemini using the official SDK inside our venv
+            # We explicitly request JSON output for better accuracy
+            response = model.generate_content(
+                prompt,
+                generation_config=genai.types.GenerationConfig(
+                    response_mime_type="application/json",
+                    temperature=0.1
+                ),
+                request_options={"timeout": 60}
+            )
             
             # Clean and parse response
-            cleaned_text = raw_text.replace("```json", "").replace("```", "").strip()
+            cleaned_text = response.text.replace("```json", "").replace("```", "").strip()
             
             # Try to find JSON in the response if it's wrapped in other text
             if not cleaned_text.startswith("{"):

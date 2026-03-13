@@ -6,7 +6,7 @@ echo.
 
 echo 1. Generating Menu Data (Scraping ^& AI Analysis)...
 echo    PLEASE WAIT (This takes about 30 seconds)...
-python scripts/gen_menu.py
+venv\Scripts\python.exe scripts/gen_menu.py
 
 if %errorlevel% neq 0 (
     echo.
