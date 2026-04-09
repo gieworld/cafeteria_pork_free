@@ -60,7 +60,11 @@ def main():
     print("\n🤖 Menu CHANGED! Starting AI analysis...")
     print("   (This uses Gemini tokens - approx 5 calls)")
     
+    import time
     for idx, day in enumerate(days):
+        if idx > 0:
+            print("   ⏳ Respecting API rate limits, waiting 15 seconds...")
+            time.sleep(15)
         print(f"   > Analyzing {day}...")
         result = halal_lib.analyze_with_gemini(full_menu, day)
         if result:

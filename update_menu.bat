@@ -1,4 +1,5 @@
 @echo off
+set PYTHONIOENCODING=utf-8
 echo ========================================
 echo 🍱 KIT Pork-Free Menu Updater
 echo ========================================

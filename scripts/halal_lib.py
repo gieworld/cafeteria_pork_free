@@ -230,8 +230,9 @@ IMPORTANT: For A La Carte, safe_options and avoid MUST be simple string arrays o
 Do NOT use objects/dicts. Just plain strings like: ["Chicken Steak", "Beef Soup"]
 """
     
+    # Give preview models more time and breathing room
     max_retries = 3
-    retry_delay = 2  # seconds
+    retry_delay = 5  # seconds
     
     for attempt in range(max_retries):
         try:
@@ -243,7 +244,7 @@ Do NOT use objects/dicts. Just plain strings like: ["Chicken Steak", "Beef Soup"
                     response_mime_type="application/json",
                     temperature=0.1
                 ),
-                request_options={"timeout": 60}
+                request_options={"timeout": 120}  # Increased timeout to 120s
             )
             
             # Clean and parse response
