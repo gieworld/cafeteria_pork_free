@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-05T09:02:38.063780",
-  "menu_hash": "fe3c3aed65f54c9e33ab7a5709e626b7",
+  "updated_at": "2026-05-09T09:02:59.735991",
+  "menu_hash": "dcd5061a67da14471578d87fb3b1e4e9",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -11,10 +11,10 @@
           "meals": [
             {
               "time": "Breakfast",
-              "price": "1000 won",
+              "price": "1000원",
               "selling_time": "08:20~10:00",
-              "verdict": "WORTH IT",
-              "main_dish": "Grilled Seaweed Jeonju Bibim Tuna Mayo Triangle Kimbap",
+              "verdict": "NOT WORTH",
+              "main_dish": "B.E.L.T Sandwich",
               "safe_items": [
                 "Grilled Seaweed Jeonju Bibim Tuna Mayo Triangle Kimbap",
                 "Take Alive Sweet Grapefruit Pack"
@@ -25,29 +25,32 @@
               "reason": "B.E.L.T Sandwich contains bacon."
             },
             {
-              "time": "Lunch/Dinner",
+              "time": "Lunch",
               "price": "Varies",
-              "selling_time": "11:00~14:00 16:00~18:30",
+              "selling_time": "11:00~14:00",
               "verdict": "NOT WORTH",
-              "main_dish": "Pork Soup",
-              "safe_items": [],
-              "skip_items": [
-                "Pork Soup"
+              "main_dish": "Pork Gukbap",
+              "safe_items": [
+                "Rose Spaghetti & Garlic Baguette"
               ],
-              "reason": "Main dish contains pork."
+              "skip_items": [
+                "Pork Gukbap"
+              ],
+              "reason": "Pork Gukbap contains pork."
             },
             {
-              "time": "Lunch/Dinner",
+              "time": "Dinner",
               "price": "Varies",
-              "selling_time": "11:00~14:00 16:00~18:30",
-              "verdict": "SAFE",
-              "main_dish": "Rose Spaghetti & Garlic Baguette",
+              "selling_time": "16:00~18:30",
+              "verdict": "NOT WORTH",
+              "main_dish": "Pork Gukbap",
               "safe_items": [
-                "Rose Spaghetti",
-                "Garlic Baguette"
+                "Rose Spaghetti & Garlic Baguette"
               ],
-              "skip_items": [],
-              "reason": "All items are pork-free."
+              "skip_items": [
+                "Pork Gukbap"
+              ],
+              "reason": "Pork Gukbap contains pork."
             }
           ]
         },
@@ -67,22 +70,22 @@
             },
             {
               "time": "Lunch",
-              "price": "6000 won",
+              "price": "6000원",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
               "main_dish": "Sweet and Sour Sticky Rice Pork",
               "safe_items": [
                 "Multi-grain Rice",
                 "Beef Soup",
-                "Spicy Stir-fried Squid",
-                "Braised Quail Eggs with Shishito Peppers",
-                "Braised Peanuts and Burdock",
+                "Squid Bulgogi",
+                "Shishito Pepper Quail Egg Jangjorim",
+                "Peanut Burdock Jorim",
                 "Kimchi"
               ],
               "skip_items": [
                 "Sweet and Sour Sticky Rice Pork"
               ],
-              "reason": "Main dish contains pork."
+              "reason": "Sweet and Sour Sticky Rice Pork contains pork."
             },
             {
               "time": "Dinner",
@@ -100,11 +103,11 @@
           "name": "A La Carte",
           "type": "individual",
           "price": "Varies",
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
           "avoid": [
-            "Ramen dishes",
-            "Donkatsu dishes"
+            "Ramen",
+            "Donkatsu"
           ]
         }
       ]
@@ -118,33 +121,33 @@
           "meals": [
             {
               "time": "Breakfast",
-              "price": null,
-              "selling_time": null,
+              "price": "",
+              "selling_time": "",
               "verdict": "NONE",
-              "main_dish": null,
+              "main_dish": "",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No restaurant operation (Children's Day)"
+              "reason": "Restaurant not operating (Children's Day)"
             },
             {
               "time": "Lunch",
-              "price": null,
-              "selling_time": null,
+              "price": "",
+              "selling_time": "",
               "verdict": "NONE",
-              "main_dish": null,
+              "main_dish": "",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No restaurant operation (Children's Day)"
+              "reason": "Restaurant not operating (Children's Day)"
             },
             {
               "time": "Dinner",
-              "price": null,
-              "selling_time": null,
+              "price": "",
+              "selling_time": "",
               "verdict": "NONE",
-              "main_dish": null,
+              "main_dish": "",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No restaurant operation (Children's Day)"
+              "reason": "Restaurant not operating (Children's Day)"
             }
           ]
         },
@@ -154,41 +157,41 @@
           "meals": [
             {
               "time": "Breakfast",
-              "price": null,
-              "selling_time": null,
+              "price": "",
+              "selling_time": "",
               "verdict": "NONE",
-              "main_dish": null,
+              "main_dish": "",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No restaurant operation (Children's Day)"
+              "reason": "No breakfast service listed for Professor Cafeteria."
             },
             {
               "time": "Lunch",
-              "price": null,
-              "selling_time": null,
+              "price": "6000 won",
+              "selling_time": "11:30~13:30",
               "verdict": "NONE",
-              "main_dish": null,
+              "main_dish": "",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No restaurant operation (Children's Day)"
+              "reason": "Restaurant not operating (Children's Day)"
             },
             {
               "time": "Dinner",
-              "price": null,
-              "selling_time": null,
+              "price": "",
+              "selling_time": "",
               "verdict": "NONE",
-              "main_dish": null,
+              "main_dish": "",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No restaurant operation (Children's Day)"
+              "reason": "No dinner service listed for Professor Cafeteria."
             }
           ]
         },
         {
           "name": "A La Carte",
           "type": "individual",
-          "price": null,
-          "selling_time": null,
+          "price": "",
+          "selling_time": "",
           "safe_options": [],
           "avoid": []
         }
@@ -203,43 +206,23 @@
           "meals": [
             {
               "time": "Breakfast",
-              "price": "1000 won",
+              "price": "1000원",
               "selling_time": "08:20~10:00",
               "verdict": "NOT WORTH",
               "main_dish": "Bulgogi Lunchbox",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Bulgogi in cafeterias is suspicious and may contain pork. It's not worth the risk as a package meal."
+              "reason": "Bulgogi in cafeterias may contain pork."
             },
             {
               "time": "Lunch/Dinner",
-              "price": "Check in cafeteria",
-              "selling_time": "11:00~14:00, 16:00~18:30",
-              "verdict": "SAFE",
-              "main_dish": "Raw Beef Salad with Cold Broth",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "Beef is pork-free."
-            },
-            {
-              "time": "Lunch/Dinner",
-              "price": "Check in cafeteria",
+              "price": "Not specified",
               "selling_time": "11:00~14:00, 16:00~18:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Pork Kimchi Rice Bowl",
+              "main_dish": "Raw Beef Sashimi Cold Soup, Pork Kimchi Rice Bowl, Shrimp Tempura Udon",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Main dish contains pork."
-            },
-            {
-              "time": "Lunch/Dinner",
-              "price": "Check in cafeteria",
-              "selling_time": "11:00~14:00, 16:00~18:30",
-              "verdict": "SAFE",
-              "main_dish": "Shrimp Tempura Udon",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "Shrimp and udon are pork-free."
+              "reason": "The package includes a main dish containing pork (Pork Kimchi Rice Bowl)."
             }
           ]
         },
@@ -249,17 +232,17 @@
           "meals": [
             {
               "time": "Breakfast",
-              "price": "N/A",
-              "selling_time": "N/A",
+              "price": "Not specified",
+              "selling_time": "Not specified",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "No operation",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No operation."
+              "reason": "No meal available."
             },
             {
               "time": "Lunch",
-              "price": "6000 won",
+              "price": "6000원",
               "selling_time": "11:30~13:30",
               "verdict": "WORTH IT",
               "main_dish": "Beef Bone Soup",
@@ -274,17 +257,17 @@
               "skip_items": [
                 "Steamed King Dumplings"
               ],
-              "reason": "Main dish is safe, but skip the steamed king dumplings as they contain pork."
+              "reason": "Main dish is beef, but king dumplings contain pork."
             },
             {
               "time": "Dinner",
-              "price": "N/A",
-              "selling_time": "N/A",
+              "price": "Not specified",
+              "selling_time": "Not specified",
               "verdict": "NONE",
-              "main_dish": "N/A",
+              "main_dish": "No operation",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No dinner menu available."
+              "reason": "No meal available."
             }
           ]
         },
@@ -295,8 +278,8 @@
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
           "avoid": [
-            "Ramen dishes",
-            "Donkatsu dishes"
+            "Ramen",
+            "Donkatsu"
           ]
         }
       ]
@@ -314,29 +297,51 @@
               "selling_time": "08:20~10:00",
               "verdict": "NOT WORTH",
               "main_dish": "Bulgogi Soft-boiled Egg Bibimbap Lunchbox",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "Bulgogi in cafeterias is suspicious as it may be mixed with pork to reduce costs. The main dish is not safe."
+              "safe_items": [
+                "Strawberry Yogurt"
+              ],
+              "skip_items": [
+                "Bulgogi Soft-boiled Egg Bibimbap Lunchbox"
+              ],
+              "reason": "Bulgogi in cafeterias may contain pork."
             },
             {
-              "time": "Lunch",
-              "price": "e.g. 5000-7000 won",
-              "selling_time": "11:00~14:00",
+              "time": "Lunch/Dinner",
+              "price": "e.g. 5000 won",
+              "selling_time": "11:00~14:00, 16:00~18:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Tonkotsu Ramen, Tteokgalbi Mayo Rice Bowl",
+              "main_dish": "Tonkotsu Ramen",
               "safe_items": [],
-              "skip_items": [],
-              "reason": "Tonkotsu Ramen contains pork broth. Tteokgalbi is suspicious as it often contains pork in cheaper settings."
+              "skip_items": [
+                "Tonkotsu Ramen"
+              ],
+              "reason": "Tonkotsu ramen uses pork bone broth."
             },
             {
-              "time": "Dinner",
-              "price": "e.g. 5000-7000 won",
-              "selling_time": "16:00~18:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "Tonkotsu Ramen, Tteokgalbi Mayo Rice Bowl",
-              "safe_items": [],
+              "time": "Lunch/Dinner",
+              "price": "e.g. 5000 won",
+              "selling_time": "11:00~14:00, 16:00~18:30",
+              "verdict": "SAFE",
+              "main_dish": "Chicken Karaage Rice Bowl",
+              "safe_items": [
+                "Chicken Karaage Rice Bowl"
+              ],
               "skip_items": [],
-              "reason": "Tonkotsu Ramen contains pork broth. Tteokgalbi is suspicious as it often contains pork in cheaper settings."
+              "reason": "Made with chicken, which is pork-free."
+            },
+            {
+              "time": "Lunch/Dinner",
+              "price": "e.g. 5000 won",
+              "selling_time": "11:00~14:00, 16:00~18:30",
+              "verdict": "NOT WORTH",
+              "main_dish": "Curry Rice",
+              "safe_items": [
+                "Chicken Nuggets"
+              ],
+              "skip_items": [
+                "Curry Rice"
+              ],
+              "reason": "Korean curry often contains pork or pork broth."
             }
           ]
         },
@@ -346,13 +351,13 @@
           "meals": [
             {
               "time": "Breakfast",
-              "price": "N/A",
-              "selling_time": "N/A",
+              "price": "Not available",
+              "selling_time": "Not available",
               "verdict": "NONE",
               "main_dish": "No meal available",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No meal available for breakfast."
+              "reason": "No meal available."
             },
             {
               "time": "Lunch",
@@ -360,19 +365,28 @@
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
               "main_dish": "Charcoal-grilled Soy Sauce Bulgogi",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "Bulgogi in cafeterias is suspicious as it may be mixed with pork to reduce costs. The main dish is not safe."
+              "safe_items": [
+                "Multi-grain Rice",
+                "Young Radish Doenjang Soup",
+                "Egg Rantang Jeon",
+                "Lettuce & Cucumber Sticks & Ssamjang",
+                "Bracken with Perilla Seeds",
+                "Kkakdugi"
+              ],
+              "skip_items": [
+                "Charcoal-grilled Soy Sauce Bulgogi"
+              ],
+              "reason": "Bulgogi in cafeterias may contain pork."
             },
             {
               "time": "Dinner",
-              "price": "N/A",
-              "selling_time": "N/A",
+              "price": "Not available",
+              "selling_time": "Not available",
               "verdict": "NONE",
               "main_dish": "No meal available",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No meal available for dinner."
+              "reason": "No meal available."
             }
           ]
         },
@@ -406,55 +420,27 @@
               "skip_items": [
                 "Quattro Meat Feast Lunchbox"
               ],
-              "reason": "The 'Meat Feast' often includes pork in Korean cafeterias, especially for budget meals."
+              "reason": "The 'Quattro Meat Feast Lunchbox' likely contains pork or a mix of meats including pork."
             },
             {
               "time": "Lunch",
-              "price": "e.g. 5000원",
+              "price": "Not specified",
               "selling_time": "11:00~14:00",
-              "verdict": "SAFE",
-              "main_dish": "Ttukbaegi Bulgogi",
-              "safe_items": [
-                "Ttukbaegi Bulgogi"
-              ],
+              "verdict": "NONE",
+              "main_dish": "",
+              "safe_items": [],
               "skip_items": [],
-              "reason": "Ttukbaegi Bulgogi is specifically made with pure beef and is pork-free."
-            },
-            {
-              "time": "Lunch",
-              "price": "e.g. 5000원",
-              "selling_time": "11:00~14:00",
-              "verdict": "SAFE",
-              "main_dish": "Chicken Thigh Steak",
-              "safe_items": [
-                "Chicken Thigh Steak"
-              ],
-              "skip_items": [],
-              "reason": "Chicken is pork-free."
+              "reason": "Multiple individual dishes are listed, which contradicts the 'package meal' rule where you get everything and cannot choose. No single package meal is offered for lunch."
             },
             {
               "time": "Dinner",
-              "price": "e.g. 5000원",
+              "price": "Not specified",
               "selling_time": "16:00~18:30",
-              "verdict": "SAFE",
-              "main_dish": "Ttukbaegi Bulgogi",
-              "safe_items": [
-                "Ttukbaegi Bulgogi"
-              ],
+              "verdict": "NONE",
+              "main_dish": "",
+              "safe_items": [],
               "skip_items": [],
-              "reason": "Ttukbaegi Bulgogi is specifically made with pure beef and is pork-free."
-            },
-            {
-              "time": "Dinner",
-              "price": "e.g. 5000원",
-              "selling_time": "16:00~18:30",
-              "verdict": "SAFE",
-              "main_dish": "Chicken Thigh Steak",
-              "safe_items": [
-                "Chicken Thigh Steak"
-              ],
-              "skip_items": [],
-              "reason": "Chicken is pork-free."
+              "reason": "Multiple individual dishes are listed, which contradicts the 'package meal' rule where you get everything and cannot choose. No single package meal is offered for dinner."
             }
           ]
         },
@@ -464,13 +450,13 @@
           "meals": [
             {
               "time": "Breakfast",
-              "price": "e.g. 5000원",
-              "selling_time": "e.g. 08:00~09:00",
+              "price": "Not specified",
+              "selling_time": "Not operating",
               "verdict": "NONE",
               "main_dish": "",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No restaurant operation."
+              "reason": "Restaurant not operating."
             },
             {
               "time": "Lunch",
@@ -478,36 +464,29 @@
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
               "main_dish": "Pork Stew",
-              "safe_items": [
-                "Multi-grain rice",
-                "Broccoli & Chili Paste",
-                "Stir-fried Dried Filefish",
-                "Fresh Kimchi Salad",
-                "Radish Kimchi"
-              ],
+              "safe_items": [],
               "skip_items": [
-                "Pork Stew",
-                "Fish Cake Japchae"
+                "Pork Stew"
               ],
-              "reason": "The main stew contains pork. Japchae is also suspicious and may contain pork."
+              "reason": "The main dish, Pork Stew, contains pork."
             },
             {
               "time": "Dinner",
-              "price": "e.g. 5000원",
-              "selling_time": "e.g. 17:00~18:00",
+              "price": "Not specified",
+              "selling_time": "Not operating",
               "verdict": "NONE",
               "main_dish": "",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No dinner service listed."
+              "reason": "Restaurant not operating."
             }
           ]
         },
         {
           "name": "A La Carte",
           "type": "individual",
-          "price": "e.g. 5000~10000원",
-          "selling_time": "11:00~14:00, 16:00~18:30",
+          "price": "Varies by dish",
+          "selling_time": "11:00~14:00 16:00~18:30",
           "safe_options": [],
           "avoid": [
             "Ramen",
