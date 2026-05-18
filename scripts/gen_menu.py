@@ -76,26 +76,17 @@ def main():
                 "day": day,
                 "cafeterias": [
                     {
-                        "name": "Student Cafeteria",
+                        "name": "Set Meal",
                         "type": "package",
                         "meals": [
-                            {"time": "Breakfast", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"},
-                            {"time": "Lunch", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"},
-                            {"time": "Dinner", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"}
-                        ]
-                    },
-                    {
-                        "name": "Professor Cafeteria",
-                        "type": "package",
-                        "meals": [
-                            {"time": "Breakfast", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"},
-                            {"time": "Lunch", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"},
-                            {"time": "Dinner", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"}
+                            {"time": "Lunch", "price": "6000 won", "selling_time": "11:30~13:30", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"}
                         ]
                     },
                     {
                         "name": "A La Carte",
                         "type": "individual",
+                        "breakfast": {"price": "1000 won", "selling_time": "08:20~10:00", "verdict": "NONE", "main_dish": "N/A", "reason": "Analysis failed"},
+                        "selling_time": "11:00~14:00, 16:00~18:30",
                         "safe_options": [],
                         "avoid": []
                     }

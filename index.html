@@ -232,8 +232,28 @@
                 `;
 
                 if (cafe.type === 'individual') {
-                    // A La Carte
-                    // Display Price/Time Header if available
+                    // A La Carte — show breakfast block first if present
+                    if (cafe.breakfast && cafe.breakfast.verdict !== 'NONE') {
+                        const bkf = cafe.breakfast;
+                        let bBadgeClass = bkf.verdict === 'SAFE' ? 'badge-safe' : 'badge-danger';
+                        let bBadgeText = bkf.verdict === 'SAFE' ? 'SAFE' : 'PORK !!';
+                        html += `
+                        <div class="mb-4 border-b-2 border-dashed border-black pb-4">
+                            <div class="flex justify-between items-start mb-1">
+                                <span class="font-bold uppercase bg-black text-white px-2 py-0.5">BREAKFAST</span>
+                                <span class="badge ${bBadgeClass}">${bBadgeText}</span>
+                            </div>
+                            <div class="text-xs mb-2 font-mono text-gray-700">
+                                ${bkf.price ? `<span class="mr-2">💰 ${bkf.price}</span>` : ''}
+                                ${bkf.selling_time ? `<span>🕒 ${bkf.selling_time}</span>` : ''}
+                            </div>
+                            <div class="text-xl mb-1">${bkf.main_dish || 'N/A'}</div>
+                            ${bkf.reason ? `<div class="text-sm text-gray-600">${bkf.reason}</div>` : ''}
+                        </div>`;
+                        hasContent = true;
+                    }
+
+                    // Display Price/Time Header for lunch/dinner if available
                     if (cafe.price || cafe.selling_time) {
                         html += `
                         <div class="mb-4 p-2 bg-gray-100 border border-black text-sm text-center">

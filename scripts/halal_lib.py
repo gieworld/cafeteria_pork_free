@@ -16,9 +16,8 @@ CACHE_FILE = "menu_cache.json"
 CACHE_DURATION_HOURS = 24
 
 URLS = {
-    "Student Cafeteria": "https://www.kumoh.ac.kr/ko/restaurant01.do",
-    "Professor Cafeteria": "https://www.kumoh.ac.kr/ko/restaurant02.do",
-    "A La Carte": "https://www.kumoh.ac.kr/ko/restaurant04.do"
+    "Set Meal": "https://www.kumoh.ac.kr/ko/restaurant02.do",
+    "A La Carte": "https://www.kumoh.ac.kr/ko/restaurant01.do",
 }
 
 # --- CACHE FUNCTIONS ---
@@ -163,15 +162,15 @@ This is a PORK-FREE guide, not halal certification.
 TARGET DAY: {target_day}
 
 CONTEXT:
-- Student & Professor Cafeteria = PACKAGE MEAL (you get everything, cannot choose individual items)
-- A La Carte = INDIVIDUAL ORDER (you can pick specific safe dishes)
+- Set Meal (restaurant02) = PACKAGE MEAL. Lunch only (11:30~13:30), 6000 won. You get all dishes, cannot choose.
+- A La Carte (restaurant01) = INDIVIDUAL ORDER. Breakfast (1000 won, 08:20~10:00) + rotating daily lunch/dinner specials (11:00~14:00, 16:00~18:30).
 
 PORK DETECTION RULES:
-- CONTAINS PORK: Pork, Ham, Bacon, Sausage, Spam, Tonkatsu/Donkatsu, Mandu/Dumplings (usually pork), Budae-jjigae, Gamjatang, Jeyuk, Menchi Katsu
+- CONTAINS PORK: Pork, Ham, Bacon, Sausage, Spam, Tonkatsu/Donkatsu, Mandu/Dumplings (usually pork), Budae-jjigae, Gamjatang, Jeyuk, Menchi Katsu, Samgyeopsal, Daepaesam
 - PORK-FREE: Chicken, Beef, Fish, Seafood, Tofu, Eggs, Vegetables
 - SUSPICIOUS (may contain pork): Ramen (pork broth), Kimchi Stew, Soft Tofu Stew, Curry (often contains pork in Korea)
 {corrections_text}
-PACKAGE MEAL WORTHINESS:
+PACKAGE MEAL WORTHINESS (for Set Meal only):
 - SAFE = All items are pork-free
 - WORTH IT = Main dish is pork-free, but some side dishes contain pork (can skip those sides)
 - NOT WORTH = Main dish contains pork (don't buy this package)
@@ -189,37 +188,32 @@ MENU DATA:
       "day": "{target_day}",
       "cafeterias": [
         {{
-          "name": "Student Cafeteria",
+          "name": "Set Meal",
           "type": "package",
           "meals": [
             {{
-              "time": "Breakfast",
-              "price": "e.g. 5000원",
-              "selling_time": "e.g. 08:00~09:00",
+              "time": "Lunch",
+              "price": "6000 won",
+              "selling_time": "11:30~13:30",
               "verdict": "SAFE/WORTH IT/NOT WORTH/NONE",
               "main_dish": "name of main protein/dish",
               "safe_items": ["list items you can eat"],
               "skip_items": ["list items with pork to skip"],
               "reason": "brief explanation"
-            }},
-            {{"time": "Lunch", "price": "...", "selling_time": "...", "verdict": "...", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}},
-            {{"time": "Dinner", "price": "...", "selling_time": "...", "verdict": "...", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}}
-          ]
-        }},
-        {{
-          "name": "Professor Cafeteria",
-          "type": "package",
-          "meals": [
-            {{"time": "Breakfast", "price": "...", "selling_time": "...", "verdict": "...", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}},
-            {{"time": "Lunch", "price": "...", "selling_time": "...", "verdict": "...", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}},
-            {{"time": "Dinner", "price": "...", "selling_time": "...", "verdict": "...", "main_dish": "...", "safe_items": [], "skip_items": [], "reason": "..."}}
+            }}
           ]
         }},
         {{
           "name": "A La Carte",
           "type": "individual",
-          "price": "Range or specific price",
-          "selling_time": "Operating hours",
+          "breakfast": {{
+            "price": "1000 won",
+            "selling_time": "08:20~10:00",
+            "verdict": "SAFE/NOT WORTH/NONE",
+            "main_dish": "name of breakfast item",
+            "reason": "brief explanation"
+          }},
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": ["Dish Name 1", "Dish Name 2"],
           "avoid": ["Dish Name 3", "Dish Name 4"]
         }}
