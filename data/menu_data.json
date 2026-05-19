@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-18T11:14:21.956345",
-  "menu_hash": "99c9e20f41d7d905696b00e8d3b1d0fc",
+  "updated_at": "2026-05-19T09:02:32.166213",
+  "menu_hash": "46e7e0ac9e6b47535cd812317c75c619",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -14,20 +14,20 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Stir-fried Pork Belly and Octopus",
+              "main_dish": "Jjusam Bulgogi",
               "safe_items": [
-                "Multi-grain rice",
+                "Mixed grain rice",
                 "Cold bean sprout soup",
-                "Angel hair noodle salad",
+                "Angel hair salad",
                 "Corn steamed egg",
-                "Pickled radish & Perilla leaves & Green chili",
+                "Pickled radish & perilla leaves & cucumber chili",
                 "Pickled onions",
                 "Cup juice"
               ],
               "skip_items": [
-                "Stir-fried Pork Belly and Octopus"
+                "Jjusam Bulgogi"
               ],
-              "reason": "Main dish contains pork."
+              "reason": "The main dish, Jjusam Bulgogi, contains Samgyeopsal (pork belly)."
             }
           ]
         },
@@ -38,8 +38,8 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Katsu Gwamollip Lunchbox",
-            "reason": "Katsu usually refers to pork cutlet."
+            "main_dish": "Katsu Overload Lunchbox",
+            "reason": "Katsu typically refers to pork cutlet (Tonkatsu) in Korea."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
@@ -47,7 +47,7 @@
           ],
           "avoid": [
             "Shoyu Ramen",
-            "Thinly Sliced Pork Belly Rice Bowl"
+            "Daepaesamgyeop-deopbap"
           ]
         }
       ]
@@ -64,20 +64,20 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "WORTH IT",
-              "main_dish": "Spicy chicken galbi",
+              "main_dish": "Spicy Dakgalbi",
               "safe_items": [
-                "Multi-grain rice",
+                "Mixed grain rice",
                 "Fish cake soup",
-                "Spicy chicken galbi",
-                "Cucumber chive salad",
+                "Spicy Dakgalbi",
+                "Cucumber and chive salad",
                 "Lettuce & Ssamjang",
                 "Pineapple salad",
-                "Kimchi"
+                "Napa cabbage kimchi"
               ],
               "skip_items": [
                 "Sotteok-sotteok"
               ],
-              "reason": "The main dish, spicy chicken galbi, is pork-free. However, the sotteok-sotteok side dish contains sausage, which is pork. You can skip the sotteok-sotteok."
+              "reason": "The main dish (Spicy Dakgalbi) is pork-free. However, Sotteok-sotteok contains sausage, which typically contains pork in Korea. You can skip this side dish."
             }
           ]
         },
@@ -89,13 +89,13 @@
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
             "main_dish": "Wagjak Charcoal Bulgogi Gimbap, Chicken & Ham Sandwich",
-            "reason": "The Chicken & Ham Sandwich contains ham (pork). The Wagjak Charcoal Bulgogi Gimbap is suspicious as bulgogi in cafeterias may contain pork."
+            "reason": "The Chicken & Ham Sandwich contains ham, which is pork. The Bulgogi Gimbap is suspicious as bulgogi in cafeterias may be mixed with pork."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
           "avoid": [
             "Pork Neck Cube Jjajangmyeon",
-            "Pu Phat Pong Curry & Baby Crab",
+            "Poo Pad Pong Curry & Baby Crab",
             "Tteokgalbi Mayo Rice Bowl"
           ]
         }
@@ -112,19 +112,18 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "WORTH IT",
-              "main_dish": "Beef Gochujang Yeolmu Bibimbap",
+              "verdict": "SAFE",
+              "main_dish": "Beef Gochujang*Young Radish Bibimbap",
               "safe_items": [
-                "Multi-grain Rice",
-                "Enoki Mushroom Doenjang-guk",
-                "Cheongpomuk with Seaweed Flakes",
-                "Altari Kimchi",
-                "Iced Persimmon"
+                "Beef Gochujang*Young Radish Bibimbap",
+                "Enoki Mushroom Soybean Paste Soup",
+                "Hash Brown Pizza",
+                "Mung Bean Jelly Salad with Seaweed",
+                "Young Radish Kimchi",
+                "Frozen Persimmon"
               ],
-              "skip_items": [
-                "Hash Brown Pizza"
-              ],
-              "reason": "Main dish is beef. Hash Brown Pizza may contain pork and should be skipped."
+              "skip_items": [],
+              "reason": "All dishes are pork-free."
             }
           ]
         },
@@ -136,7 +135,7 @@
             "selling_time": "08:20~10:00",
             "verdict": "SAFE",
             "main_dish": "Chicken Tender Sriracha Mayo Poke Rice Bowl",
-            "reason": "All items are pork-free."
+            "reason": "All breakfast items are pork-free."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
@@ -182,7 +181,7 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Seolleongtang",
+            "Yukgaejang",
             "Spicy Chicken Fried Rice",
             "Salad Pasta"
           ],
@@ -202,17 +201,10 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Tomahawk Pork Chop & Garnish",
+              "main_dish": "Donmahawk & Garnish",
               "safe_items": [],
-              "skip_items": [
-                "Tomahawk Pork Chop & Garnish",
-                "Aglio e Olio",
-                "Green Salad",
-                "Crouton Cream Soup",
-                "Bushman Bread",
-                "Radish & Beet Pickles"
-              ],
-              "reason": "The main dish, Tomahawk Pork Chop, contains pork."
+              "skip_items": [],
+              "reason": "The main dish 'Donmahawk' is pork."
             }
           ]
         },
@@ -224,13 +216,13 @@
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
             "main_dish": "N/A",
-            "reason": "No breakfast meal available."
+            "reason": "No breakfast operation on Friday."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
           "avoid": [
-            "Ramen",
-            "Pork Cutlet",
+            "Ramen dishes",
+            "Donkatsu dishes",
             "Pork Kimchi Stew"
           ]
         }
