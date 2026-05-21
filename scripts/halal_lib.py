@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 import json
 import os
 import hashlib
@@ -140,11 +141,8 @@ def analyze_with_gemini(menu_data, target_day):
         print("❌ Missing GEMINI_API_KEY")
         return None
 
-    genai.configure(api_key=GEMINI_API_KEY)
-    
-    # Try the requested model, fallback if needed
-    model = genai.GenerativeModel('gemini-2.5-flash')
-    
+    client = genai.Client(api_key=GEMINI_API_KEY)
+
     # Load manual corrections
     corrections = load_corrections()
     corrections_text = ""
@@ -224,49 +222,42 @@ IMPORTANT: For A La Carte, safe_options and avoid MUST be simple string arrays o
 Do NOT use objects/dicts. Just plain strings like: ["Chicken Steak", "Beef Soup"]
 """
     
-    # Give preview models more time and breathing room
     max_retries = 3
     retry_delay = 5  # seconds
-    
+
     for attempt in range(max_retries):
         try:
-            # Call Gemini using the official SDK inside our venv
-            # We explicitly request JSON output for better accuracy
-            response = model.generate_content(
-                prompt,
-                generation_config=genai.types.GenerationConfig(
+            response = client.models.generate_content(
+                model="gemini-3.5-flash",
+                contents=prompt,
+                config=types.GenerateContentConfig(
                     response_mime_type="application/json",
-                    temperature=0.1
+                    temperature=0.1,
                 ),
-                request_options={"timeout": 120}  # Increased timeout to 120s
             )
-            
+
             # Clean and parse response
             cleaned_text = response.text.replace("```json", "").replace("```", "").strip()
-            
+
             # Try to find JSON in the response if it's wrapped in other text
             if not cleaned_text.startswith("{"):
-                # Look for JSON object in the text
                 start = cleaned_text.find("{")
                 end = cleaned_text.rfind("}") + 1
                 if start != -1 and end > start:
                     cleaned_text = cleaned_text[start:end]
-            
+
             result = json.loads(cleaned_text)
-            
+
             # Fix any dict items in safe_options/avoid (fallback)
             for cafe in result.get("cafeterias", []):
                 if cafe.get("type") == "individual":
-                    # Convert dicts to strings if AI misbehaved
                     safe = cafe.get("safe_options", [])
                     cafe["safe_options"] = [item if isinstance(item, str) else item.get("menu", str(item)) for item in safe]
-                    
                     avoid = cafe.get("avoid", [])
                     cafe["avoid"] = [item if isinstance(item, str) else item.get("menu", str(item)) for item in avoid]
-            
-            # Success! Return result
+
             return result
-            
+
         except json.JSONDecodeError as e:
             print(f"   ⚠️ JSON parsing error on attempt {attempt + 1}/{max_retries}: {e}")
             if attempt < max_retries - 1:
@@ -276,12 +267,11 @@ Do NOT use objects/dicts. Just plain strings like: ["Chicken Steak", "Beef Soup"
             else:
                 print(f"   ❌ Failed to parse JSON after {max_retries} attempts")
                 print(f"   Raw response: {cleaned_text[:200]}...")
-                
+
         except Exception as e:
             error_msg = str(e)
             print(f"   ⚠️ Gemini API error on attempt {attempt + 1}/{max_retries}: {error_msg}")
-            
-            # Check if it's a rate limit error
+
             if "quota" in error_msg.lower() or "rate" in error_msg.lower():
                 print(f"   ⏳ Rate limit detected, waiting {retry_delay * 2} seconds...")
                 import time
@@ -292,5 +282,5 @@ Do NOT use objects/dicts. Just plain strings like: ["Chicken Steak", "Beef Soup"
                 time.sleep(retry_delay)
             else:
                 print(f"   ❌ Failed after {max_retries} attempts")
-    
+
     return None

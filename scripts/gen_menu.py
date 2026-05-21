@@ -26,8 +26,7 @@ def main():
     
     # Authenticate
     if not os.getenv("GEMINI_API_KEY"):
-        print("❌ Missing GEMINI_API_KEY! Set it in env or secrets.")
-        # For local testing, ensure .env is loaded (halal_lib does this)
+        print("❌ Missing GEMINI_API_KEY! Set it in .env or secrets.")
     
     # 1. Fetch Menu
     print("📥 Fetching menus from Kumoh website...")
