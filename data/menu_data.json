@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-24T09:01:53.336707",
-  "menu_hash": "94f619fa99b389865f1c8afcfe183c1a",
+  "updated_at": "2026-05-30T09:01:58.515967",
+  "menu_hash": "62008b1109aedee25b926b39e2143b83",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -17,7 +17,7 @@
               "main_dish": "None",
               "safe_items": [],
               "skip_items": [],
-              "reason": "The cafeteria is closed due to the alternative holiday."
+              "reason": "The cafeteria is closed due to an alternative holiday."
             }
           ]
         },
@@ -29,7 +29,7 @@
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
             "main_dish": "None",
-            "reason": "The cafeteria is closed due to the alternative holiday."
+            "reason": "Breakfast is not operated."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
@@ -58,9 +58,9 @@
                 "Cabbage kimchi"
               ],
               "skip_items": [
-                "Thinly sliced pork belly boiled pork & seasoned lettuce with green onion"
+                "Thinly sliced pork belly boiled pork with seasoned lettuce and green onion"
               ],
-              "reason": "The main dish is boiled pork belly (Daepae Samgyeopsal Suyeok), which is pork."
+              "reason": "The main dish is boiled pork belly (Daepae Samgyeopsal), which is pork."
             }
           ]
         },
@@ -71,16 +71,17 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Bacon beef cheeseburger and triangle kimbap",
-            "reason": "The breakfast menu contains a bacon beef cheeseburger, and bacon is pork."
+            "main_dish": "Bacon beef cheese burger",
+            "reason": "The burger contains bacon, which is pork."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Beef Brisket Tteokbokki"
+            "Beef brisket tteokbokki"
           ],
           "avoid": [
-            "Meat Udon",
-            "Katsudon (Pork Cutlet Rice Bowl)"
+            "Katsudon",
+            "Meat udon",
+            "Daily special set"
           ]
         }
       ]
@@ -97,19 +98,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "WORTH IT",
-              "main_dish": "Beef Rib Soup (Galbitang)",
+              "main_dish": "Galbitang (Beef Short Rib Soup)",
               "safe_items": [
                 "Mixed grain rice",
-                "Beef rib soup",
+                "Galbitang (Beef short rib soup)",
                 "Soy-marinated quail eggs",
                 "Wood ear mushroom cold salad",
                 "Chili and cucumber sticks with ssamjang",
-                "Radish kimchi"
+                "Kkakdugi (Radish kimchi)"
               ],
               "skip_items": [
-                "Spicy dumplings"
+                "Fire dumplings"
               ],
-              "reason": "The main dish is beef rib soup which is safe, but the side dish includes spicy dumplings which contain pork."
+              "reason": "The main dish Galbitang is made of beef and is safe, but the side dish 'Fire dumplings' contains pork and must be skipped."
             }
           ]
         },
@@ -120,16 +121,17 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Bulgogi half-boiled egg bibimbap",
-            "reason": "Bulgogi in cheap cafeterias may be mixed with pork to reduce costs, making it suspicious."
+            "main_dish": "Bulgogi Bibimbap with Half-Boiled Egg",
+            "reason": "Bulgogi in cheap cafeterias is suspicious as it may be mixed with pork to reduce costs."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
             "Tuna Mayo Rice Bowl"
           ],
           "avoid": [
+            "Fried Shrimp Mapo Tofu Rice Bowl",
             "Passion Gukbap",
-            "Mapo Tofu Rice Bowl"
+            "Daily Special Set Meal"
           ]
         }
       ]
@@ -152,13 +154,13 @@
                 "Blue crab soup",
                 "Seasoned bean sprouts",
                 "Steamed cabbage and lettuce with ssamjang",
-                "Kimchi"
+                "Cabbage kimchi"
               ],
               "skip_items": [
                 "Stir-fried spicy pork",
                 "Tofu meatballs"
               ],
-              "reason": "The main dish is stir-fried spicy pork (Jeyuk), which contains pork. Tofu meatballs may also contain minced pork."
+              "reason": "The main dish is stir-fried spicy pork (Jeyuk), which contains pork."
             }
           ]
         },
@@ -170,15 +172,16 @@
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
             "main_dish": "Bulgogi Bento Box",
-            "reason": "Bulgogi in cheap cafeterias is suspicious as it may be mixed with pork to reduce costs."
+            "reason": "Bulgogi in cheap cafeterias may be mixed with pork to reduce costs, making it unsafe without verification."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Hot Pot Bulgogi"
+            "Ttukbaegi Bulgogi (Hot Pot Beef Bulgogi)"
           ],
           "avoid": [
             "Tonkatsu Cold Buckwheat Noodles",
-            "Abiko Curry and Tornado Potato"
+            "Abiko Curry and Tornado Potato",
+            "Daily Special"
           ]
         }
       ]
@@ -205,7 +208,7 @@
                 "Cabbage Kimchi"
               ],
               "skip_items": [],
-              "reason": "All items, including the main fish dish, are completely pork-free."
+              "reason": "All items in this set meal, including the main grilled fish, are completely pork-free."
             }
           ]
         },
@@ -217,14 +220,15 @@
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
             "main_dish": "Quattro Meat Feast",
-            "reason": "The meal contains multiple types of meat which highly likely includes pork or processed pork products."
+            "reason": "The 'Quattro Meat Feast' highly likely contains pork or processed pork products among its meat selections."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
             "Beef Short Plate Spicy Cold Noodles"
           ],
           "avoid": [
-            "Pork Ribs and Self Rice Balls"
+            "Pork Ribs and Self Rice Balls",
+            "Daily Special Set"
           ]
         }
       ]
