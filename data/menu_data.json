@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-05-30T09:01:58.515967",
-  "menu_hash": "62008b1109aedee25b926b39e2143b83",
+  "updated_at": "2026-05-31T09:01:57.308713",
+  "menu_hash": "6774fb7b4a3bbf836db2b48a9cd758fb",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -13,11 +13,19 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "None",
-              "safe_items": [],
+              "verdict": "SAFE",
+              "main_dish": "Beef Brisket Rice Noodles",
+              "safe_items": [
+                "Beef Brisket Rice Noodles with Cilantro",
+                "Extra Rice",
+                "Sweet Potato Roll and Sorghum Pancake",
+                "Spinach Morning Glory",
+                "Honey Passion Fruit",
+                "Pickled Radish",
+                "Kkakdugi"
+              ],
               "skip_items": [],
-              "reason": "The cafeteria is closed due to an alternative holiday."
+              "reason": "The main dish is beef brisket rice noodles and all side dishes are pork-free."
             }
           ]
         },
@@ -27,13 +35,17 @@
           "breakfast": {
             "price": "1000 won",
             "selling_time": "08:20~10:00",
-            "verdict": "NONE",
-            "main_dish": "None",
-            "reason": "Breakfast is not operated."
+            "verdict": "NOT WORTH",
+            "main_dish": "Spicy Stir-fried Pork and Pork Cutlet",
+            "reason": "Contains pork (both Jeyuk and Donkatsu are pork dishes)."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
-          "avoid": []
+          "avoid": [
+            "Pork Kimchi Stew",
+            "Menchi Katsu Cream Stew Udon",
+            "Gimbap Fried Rice and Mini Tteokbokki"
+          ]
         }
       ]
     },
@@ -49,18 +61,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Thinly sliced pork belly boiled pork",
+              "main_dish": "Budae-jjigae and Perilla Seed White Bulgogi",
               "safe_items": [
-                "Mixed grain rice",
-                "Chard soybean paste soup",
-                "Perilla oil buckwheat noodles",
-                "Lotus root black sesame salad",
-                "Cabbage kimchi"
+                "Mixed Grain Rice",
+                "Stir-fried Seafood Udon",
+                "Seed Croquette with Ketchup",
+                "Green Salad",
+                "Cabbage Kimchi"
               ],
               "skip_items": [
-                "Thinly sliced pork belly boiled pork with seasoned lettuce and green onion"
+                "Budae-jjigae",
+                "Perilla Seed White Bulgogi"
               ],
-              "reason": "The main dish is boiled pork belly (Daepae Samgyeopsal), which is pork."
+              "reason": "Budae-jjigae contains pork ham and sausage, and cafeteria bulgogi is suspicious as it may be mixed with pork."
             }
           ]
         },
@@ -70,19 +83,17 @@
           "breakfast": {
             "price": "1000 won",
             "selling_time": "08:20~10:00",
-            "verdict": "NOT WORTH",
-            "main_dish": "Bacon beef cheese burger",
-            "reason": "The burger contains bacon, which is pork."
+            "verdict": "SAFE",
+            "main_dish": "Sweet and Sour Fried Tofu Rice Balls & Egg Cheese Tomato Sandwich",
+            "reason": "All breakfast items including fried tofu rice balls, egg cheese tomato sandwich, and yogurt are pork-free."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Beef brisket tteokbokki"
+            "Flying Fish Roe and Tuna Sashimi Rice Bowl",
+            "Green Onion Beef Soup",
+            "Soy Sauce Chicken Hayashi Rice"
           ],
-          "avoid": [
-            "Katsudon",
-            "Meat udon",
-            "Daily special set"
-          ]
+          "avoid": []
         }
       ]
     },
@@ -97,20 +108,11 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "WORTH IT",
-              "main_dish": "Galbitang (Beef Short Rib Soup)",
-              "safe_items": [
-                "Mixed grain rice",
-                "Galbitang (Beef short rib soup)",
-                "Soy-marinated quail eggs",
-                "Wood ear mushroom cold salad",
-                "Chili and cucumber sticks with ssamjang",
-                "Kkakdugi (Radish kimchi)"
-              ],
-              "skip_items": [
-                "Fire dumplings"
-              ],
-              "reason": "The main dish Galbitang is made of beef and is safe, but the side dish 'Fire dumplings' contains pork and must be skipped."
+              "verdict": "NONE",
+              "main_dish": "None",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "The cafeteria is closed on Wednesday due to the local election."
             }
           ]
         },
@@ -120,19 +122,13 @@
           "breakfast": {
             "price": "1000 won",
             "selling_time": "08:20~10:00",
-            "verdict": "NOT WORTH",
-            "main_dish": "Bulgogi Bibimbap with Half-Boiled Egg",
-            "reason": "Bulgogi in cheap cafeterias is suspicious as it may be mixed with pork to reduce costs."
+            "verdict": "NONE",
+            "main_dish": "None",
+            "reason": "The breakfast service is closed on Wednesday due to the local election."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [
-            "Tuna Mayo Rice Bowl"
-          ],
-          "avoid": [
-            "Fried Shrimp Mapo Tofu Rice Bowl",
-            "Passion Gukbap",
-            "Daily Special Set Meal"
-          ]
+          "safe_options": [],
+          "avoid": []
         }
       ]
     },
@@ -147,20 +143,19 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "Stir-fried spicy pork",
+              "verdict": "SAFE",
+              "main_dish": "Nurungji Chicken Soup and Spicy Grilled Chicken",
               "safe_items": [
-                "Mixed grain rice",
-                "Blue crab soup",
-                "Seasoned bean sprouts",
-                "Steamed cabbage and lettuce with ssamjang",
-                "Cabbage kimchi"
+                "Mixed Grain Rice",
+                "Nurungji Chicken Soup",
+                "Spicy Raw Stingray Salad",
+                "Spicy Grilled Chicken and Enoki Mushroom",
+                "Fusilli Salad",
+                "Pickled Onion and Chili",
+                "Seokbakji Radish Kimchi"
               ],
-              "skip_items": [
-                "Stir-fried spicy pork",
-                "Tofu meatballs"
-              ],
-              "reason": "The main dish is stir-fried spicy pork (Jeyuk), which contains pork."
+              "skip_items": [],
+              "reason": "All items on the menu, including the main chicken soup and spicy grilled chicken, are completely pork-free."
             }
           ]
         },
@@ -171,17 +166,16 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Bulgogi Bento Box",
-            "reason": "Bulgogi in cheap cafeterias may be mixed with pork to reduce costs, making it unsafe without verification."
+            "main_dish": "Osaka-style Night Market Assorted Bento",
+            "reason": "Assorted bento boxes in Korea almost always contain pork products such as sausages, ham, or pork cutlets."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Ttukbaegi Bulgogi (Hot Pot Beef Bulgogi)"
+            "Cold Beef Tartare Soup",
+            "Spicy Stir-fried Chicken Rice Bowl"
           ],
           "avoid": [
-            "Tonkatsu Cold Buckwheat Noodles",
-            "Abiko Curry and Tornado Potato",
-            "Daily Special"
+            "Spam Mayo Rice Bowl"
           ]
         }
       ]
@@ -197,18 +191,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "SAFE",
-              "main_dish": "Grilled Spanish Mackerel with Lemon",
+              "verdict": "NOT WORTH",
+              "main_dish": "Spicy Braised Ribs",
               "safe_items": [
-                "Gondre Rice with Seasoning Sauce",
-                "Young Napa Cabbage Soybean Paste Soup",
-                "Grilled Spanish Mackerel with Lemon",
-                "Sweet Pumpkin Tempura",
-                "Cherry Tomato Caprese Salad",
+                "Mixed Grain Rice",
+                "Bean Sprout Soup",
+                "Steamed Egg with Vegetables",
+                "Perilla Leaves and Chili with Ssamjang",
+                "Stir-fried Anchovies with Almonds",
                 "Cabbage Kimchi"
               ],
-              "skip_items": [],
-              "reason": "All items in this set meal, including the main grilled fish, are completely pork-free."
+              "skip_items": [
+                "Spicy Braised Ribs"
+              ],
+              "reason": "The main dish, Spicy Braised Ribs, is highly likely made of pork in budget cafeterias."
             }
           ]
         },
@@ -218,17 +214,16 @@
           "breakfast": {
             "price": "1000 won",
             "selling_time": "08:20~10:00",
-            "verdict": "NOT WORTH",
-            "main_dish": "Quattro Meat Feast",
-            "reason": "The 'Quattro Meat Feast' highly likely contains pork or processed pork products among its meat selections."
+            "verdict": "SAFE",
+            "main_dish": "Shishito Pepper Steak Donburi",
+            "reason": "The main dish is beef steak donburi, which is pork-free."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Beef Short Plate Spicy Cold Noodles"
+            "Poke"
           ],
           "avoid": [
-            "Pork Ribs and Self Rice Balls",
-            "Daily Special Set"
+            "Nak-Sam-Sae Hot Pot"
           ]
         }
       ]
