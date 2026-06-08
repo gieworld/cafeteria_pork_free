@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-07T09:01:51.908377",
-  "menu_hash": "3d428c27dca8bb26fff6ba7f352e3434",
+  "updated_at": "2026-06-08T09:02:18.747041",
+  "menu_hash": "6757383ee577b46b472c35d63170560e",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -13,11 +13,19 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "None",
-              "safe_items": [],
+              "verdict": "SAFE",
+              "main_dish": "Beef Bulgogi",
+              "safe_items": [
+                "Mixed Grain Rice",
+                "Perilla Seed Seaweed Soup",
+                "Beef Bulgogi",
+                "Stir-fried Fish Cake and Chives",
+                "Dried Pollack and Bellflower Root Salad",
+                "Lettuce with Ssamjang",
+                "Cabbage Kimchi"
+              ],
               "skip_items": [],
-              "reason": "No menu data available for today."
+              "reason": "All items are pork-free. However, since bulgogi in cheap cafeterias can sometimes be mixed with pork to reduce costs, please double-check with the staff before eating."
             }
           ]
         },
@@ -29,11 +37,16 @@
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
             "main_dish": "Dachan Special Set Meal",
-            "reason": "Korean daily set meals (정식) typically include pork-based side dishes like ham, sausage, or stir-fried pork."
+            "reason": "This multi-dish special set meal typically includes various side dishes that often contain pork, such as ham, sausage, or meatballs."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [],
-          "avoid": []
+          "safe_options": [
+            "Deungchon Shabu Kalguksu (Shabu Shabu Noodle Soup)",
+            "Chicken Karaage Rice Bowl"
+          ],
+          "avoid": [
+            "Jajang Rice and Squid Vegetable Hot Bar (Jajang sauce contains pork)"
+          ]
         }
       ]
     },
@@ -48,11 +61,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "None",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available."
+              "verdict": "WORTH IT",
+              "main_dish": "Braised Spicy Chicken with Aged Kimchi",
+              "safe_items": [
+                "Mixed Grain Rice",
+                "Braised Spicy Chicken with Aged Kimchi",
+                "Fried Vegetables with Soy Sauce",
+                "Stir-fried Broccoli and Chickpeas",
+                "Crab Meat Salad",
+                "Diced Radish Kimchi"
+              ],
+              "skip_items": [
+                "Soft Tofu Stew"
+              ],
+              "reason": "The main chicken dish is safe, but the soft tofu stew typically contains minced pork and must be skipped."
             }
           ]
         },
@@ -64,13 +86,15 @@
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
             "main_dish": "Garlic Potato Ham Salad Sandwich and Gimbap",
-            "reason": "The sandwich contains ham, and the gimbap likely contains ham or sausage, which are pork products."
+            "reason": "The sandwich contains ham, and the gimbap typically contains ham or sausage."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [],
+          "safe_options": [
+            "Spicy Cold Chicken Udon",
+            "Seolleongtang (Ox Bone Soup)"
+          ],
           "avoid": [
-            "Garlic Potato Ham Salad Sandwich",
-            "7-Flavor Hearty Gimbap"
+            "Pork Belly Bibimbap"
           ]
         }
       ]
@@ -86,11 +110,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "None",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available."
+              "verdict": "NOT WORTH",
+              "main_dish": "Cold Buckwheat Noodles and Grilled Short Rib Patties",
+              "safe_items": [
+                "Cold Buckwheat Noodles",
+                "Extra Rice",
+                "Breadcrumb Mayo Salad",
+                "Watermelon",
+                "Napa Cabbage Kimchi"
+              ],
+              "skip_items": [
+                "Grilled Short Rib Patties with Seasoned Green Onion",
+                "Handmade Kimchi Dumplings"
+              ],
+              "reason": "The handmade kimchi dumplings contain pork, and the grilled short rib patties (Tteokgalbi) are highly likely to contain a mix of pork and beef."
             }
           ]
         },
@@ -102,11 +135,15 @@
             "selling_time": "08:20~10:00",
             "verdict": "SAFE",
             "main_dish": "Sichuan-style Spicy Stir-fried Chicken Set Meal",
-            "reason": "The main dish is chicken and the special dessert is a macaron, both of which are pork-free."
+            "reason": "The main dish is chicken-based and the special dessert is a macaron, both of which are pork-free."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
-          "avoid": []
+          "avoid": [
+            "Tonkotsu Ramen",
+            "Spicy Stir-fried Pork with Rice",
+            "Pork Cutlet Kimchi Nabe Rice Bowl"
+          ]
         }
       ]
     },
@@ -121,11 +158,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "None",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available."
+              "verdict": "NOT WORTH",
+              "main_dish": "Stir-fried garlic stems and pork, Chili fried shrimp",
+              "safe_items": [
+                "Bean sprout rice with sauce",
+                "Curled mallow soybean paste soup",
+                "Chili fried shrimp",
+                "Spicy stir-fried dried squid",
+                "Cabbage salad with ketchup-mayonnaise",
+                "Cabbage kimchi"
+              ],
+              "skip_items": [
+                "Stir-fried garlic stems and pork"
+              ],
+              "reason": "One of the main dishes is stir-fried pork, so this package meal is not recommended."
             }
           ]
         },
@@ -136,13 +182,15 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Katsu Overload Bento",
-            "reason": "The bento contains Katsu (pork cutlet), which is made of pork."
+            "main_dish": "Katsu Lunchbox",
+            "reason": "The lunchbox contains Katsu (pork cutlet) which is made of pork."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
           "avoid": [
-            "Katsu Overload Bento"
+            "Butadon (Pork Rice Bowl)",
+            "Omurice (Omelette Rice)",
+            "Mapo Tofu Rice Bowl"
           ]
         }
       ]
@@ -158,11 +206,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "None",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available."
+              "verdict": "NOT WORTH",
+              "main_dish": "Garlic soy sauce sweet and sour pork",
+              "safe_items": [
+                "Mixed grain rice",
+                "Seasoned pickled radish",
+                "Green salad with kiwi dressing",
+                "Cabbage kimchi"
+              ],
+              "skip_items": [
+                "Garlic soy sauce sweet and sour pork",
+                "Jjamppong soup",
+                "Chili pepper japchae with flower bun"
+              ],
+              "reason": "The main dish is sweet and sour pork (Tangsuyuk), which is pork. Additionally, Jjamppong soup and Japchae are suspicious as they often contain pork or pork broth."
             }
           ]
         },
@@ -173,14 +230,15 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "National Team Synergy Lunchbox",
-            "reason": "Korean lunchboxes (Dosirak) typically contain pork-based side dishes such as ham, sausage, or stir-fried pork."
+            "main_dish": "National-level synergy lunchbox with peach cup",
+            "reason": "Korean cafeteria lunchboxes (Dosirak) typically contain pork side dishes such as ham, sausage, or stir-fried pork."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [],
-          "avoid": [
-            "National Team Synergy Lunchbox"
-          ]
+          "safe_options": [
+            "Fish Roe Rice Bowl (Albap)",
+            "Aglio e Olio"
+          ],
+          "avoid": []
         }
       ]
     }
