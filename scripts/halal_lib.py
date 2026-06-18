@@ -134,9 +134,13 @@ def load_corrections():
         print(f"Warning: Could not load corrections: {e}")
     return []
 
+_primary_model_quota_exhausted = False  # skip primary for rest of run once quota hit
+
 # --- AI ANALYSIS ---
 def analyze_with_gemini(menu_data, target_day):
     """Sends menu text to Gemini to find pork-free options."""
+    global _primary_model_quota_exhausted
+
     if not GEMINI_API_KEY:
         print("❌ Missing GEMINI_API_KEY")
         return None
@@ -222,13 +226,23 @@ IMPORTANT: For A La Carte, safe_options and avoid MUST be simple string arrays o
 Do NOT use objects/dicts. Just plain strings like: ["Chicken Steak", "Beef Soup"]
 """
     
+    models = ["gemini-3.5-flash", "gemini-3.1-flash-lite"]
     max_retries = 3
     retry_delay = 5  # seconds
 
+    if _primary_model_quota_exhausted:
+        print(f"   ↩️ Using fallback model: {models[-1]} (primary quota exhausted)")
+
     for attempt in range(max_retries):
+        if _primary_model_quota_exhausted:
+            model = models[-1]
+        else:
+            model = models[0] if attempt < max_retries - 1 else models[-1]
+        if not _primary_model_quota_exhausted and attempt == max_retries - 1:
+            print(f"   ↩️ Switching to fallback model: {model}")
         try:
             response = client.models.generate_content(
-                model="gemini-3.5-flash",
+                model=model,
                 contents=prompt,
                 config=types.GenerateContentConfig(
                     response_mime_type="application/json",
@@ -273,6 +287,8 @@ Do NOT use objects/dicts. Just plain strings like: ["Chicken Steak", "Beef Soup"
             print(f"   ⚠️ Gemini API error on attempt {attempt + 1}/{max_retries}: {error_msg}")
 
             if "quota" in error_msg.lower() or "rate" in error_msg.lower():
+                if model == models[0]:
+                    _primary_model_quota_exhausted = True
                 print(f"   ⏳ Rate limit detected, waiting {retry_delay * 2} seconds...")
                 import time
                 time.sleep(retry_delay * 2)
