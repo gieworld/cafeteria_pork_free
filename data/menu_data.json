@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-19T09:02:47.709441",
-  "menu_hash": "3b566b8d19c9680b4c4bb7281e2fe506",
+  "updated_at": "2026-06-20T09:02:31.223181",
+  "menu_hash": "53f67924c85e49880578a54f4d60b65a",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -14,18 +14,18 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "SAFE",
-              "main_dish": "Menbosha (Shrimp Toast)",
+              "main_dish": "Clear beef radish soup and Menbosha (Shrimp toast)",
               "safe_items": [
-                "Multigrain rice",
+                "Mixed grain rice",
                 "Clear beef radish soup",
-                "Menbosha",
-                "Spicy sea snail and vegetable salad",
+                "Menbosha (Shrimp toast)",
+                "Sea snail salad",
                 "Steamed shishito peppers",
-                "Chicory with citron dressing",
-                "Kimchi"
+                "Chicory yuja salad",
+                "Cabbage kimchi"
               ],
               "skip_items": [],
-              "reason": "All items in the set are pork-free."
+              "reason": "All items in this set meal are pork-free, featuring beef radish soup and shrimp toast as the main dishes."
             }
           ]
         },
@@ -37,16 +37,15 @@
             "selling_time": "08:20~10:00",
             "verdict": "SAFE",
             "main_dish": "Tuna Bibimbap",
-            "reason": "The breakfast menu is pork-free."
+            "reason": "Tuna bibimbap and black soybean soy milk are completely pork-free."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Shrimp Wonton Noodles",
-            "Ttukbaegi Bulgogi"
+            "Shrimp wonton noodles"
           ],
           "avoid": [
-            "Daepaesam (Thin-sliced pork belly) Rice Bowl",
-            "Pink Sausage Pancake (often contains pork)"
+            "Thinly sliced pork belly rice bowl",
+            "Special Set (Ttukbaegi Bulgogi, Pink Sausage Pancake, Seasoned Dried Squid)"
           ]
         }
       ]
@@ -63,19 +62,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Gochujang Bulgogi (Pork)",
+              "main_dish": "Gochujang Bulgogi (Spicy Pork Bulgogi)",
               "safe_items": [
-                "Multigrain rice",
-                "Dried pollack soup",
-                "Broccoli and blanched squid with red chili paste",
-                "Sweet potato glazed with syrup",
-                "Peach salad",
-                "Kimchi"
+                "Mixed Grain Rice",
+                "Dried Pollack Soup",
+                "Blanched Broccoli and Squid with Red Chili Paste",
+                "Candied Sweet Potatoes",
+                "Peach Salad",
+                "Cabbage Kimchi"
               ],
               "skip_items": [
                 "Gochujang Bulgogi"
               ],
-              "reason": "The main dish is Gochujang Bulgogi, which is made with pork."
+              "reason": "The main dish is Gochujang Bulgogi, which is made of pork."
             }
           ]
         },
@@ -86,17 +85,16 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Grilled Jeonju Bibimbap Tuna Mayo Triangle Kimbap, Shrimp Bulgogi Burger",
-            "reason": "The shrimp bulgogi burger may contain pork mixed in the patty, and the triangle kimbap is a processed item."
+            "main_dish": "Grilled Jeonju Bibim Tuna Mayo Triangular Gimbap and Shrimp Bulgogi Burger",
+            "reason": "The Shrimp Bulgogi Burger patty is highly likely to contain pork mixed with beef."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Raw Beef Bibim-naengmyeon"
+            "Beef Tartare Spicy Cold Noodles"
           ],
           "avoid": [
-            "Katsudon",
-            "Budae-jjigae",
-            "Garlic Scallion Pork Stir-fry"
+            "Katsudon (Pork Cutlet Rice Bowl)",
+            "Daily Special Plate (Army Stew, Stir-fried Pork with Garlic Stems, Grilled Tofu)"
           ]
         }
       ]
@@ -115,17 +113,17 @@
               "verdict": "NOT WORTH",
               "main_dish": "Creamy Onion Pork Cutlet",
               "safe_items": [
-                "Multigrain rice",
-                "Garlic butter grilled king oyster mushrooms",
-                "Jellyfish cold salad",
-                "Tomato marinade",
-                "Radish kimchi"
+                "Mixed Grain Rice",
+                "Tuna Kimchi Stew",
+                "Garlic Butter King Oyster Mushroom",
+                "Jellyfish Cold Salad",
+                "Tomato Marinade",
+                "Diced Radish Kimchi"
               ],
               "skip_items": [
-                "Creamy onion pork cutlet",
-                "Tuna kimchi stew"
+                "Creamy Onion Pork Cutlet"
               ],
-              "reason": "The main dish is pork cutlet and the stew contains pork, making the meal unsafe."
+              "reason": "The main dish is pork cutlet (donkatsu), which contains pork."
             }
           ]
         },
@@ -136,19 +134,16 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Pork & Pork Cutlet Lunchbox",
-            "reason": "The breakfast menu contains pork and pork cutlet."
+            "main_dish": "Spicy Pork (Jeyuk) and Pork Cutlet Lunchbox",
+            "reason": "Contains both spicy stir-fried pork (jeyuk) and pork cutlet."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Seolleongtang (Beef bone soup)",
+            "Seolleongtang (Ox Bone Soup)",
             "Chicken Quesadilla",
-            "Beef Seaweed Soup",
-            "Braised Chicken"
+            "Daily Special Set (Beef Seaweed Soup, Braised Chicken, Seasoned Dried Radish)"
           ],
-          "avoid": [
-            "None"
-          ]
+          "avoid": []
         }
       ]
     },
@@ -163,20 +158,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "Curry",
+              "verdict": "WORTH IT",
+              "main_dish": "Braised chicken drumsticks and Fish and chips",
               "safe_items": [
                 "White rice",
                 "Spicy bean sprout soup",
-                "Chicken drumstick braised",
+                "Braised chicken drumsticks",
                 "Fish and chips with chipotle sauce",
                 "Spinach mandarin salad",
-                "Kimchi"
+                "Cabbage kimchi"
               ],
               "skip_items": [
                 "Curry"
               ],
-              "reason": "Korean curry is unsafe as it often contains pork pieces or pork broth."
+              "reason": "The main chicken and fish dishes are safe, but the curry must be skipped as Korean curry often contains pork."
             }
           ]
         },
@@ -187,18 +182,16 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Flying fish roe tuna mayo rice ball, Chicken & Ham sandwich",
-            "reason": "The sandwich contains ham, which is pork."
+            "main_dish": "Flying fish roe tuna mayo gimbap and Chicken & ham sandwich",
+            "reason": "The breakfast package includes a chicken and ham sandwich, which contains pork."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Bulgogi pasta",
-            "Tuna mayo rice bowl",
-            "Cabbage soybean paste soup",
-            "Spicy stir-fried fish cake"
+            "Tuna Mayo Rice Bowl"
           ],
           "avoid": [
-            "Donggeurang-ttaeng (meatball pancake)"
+            "Bulgogi Pasta",
+            "Daily Special Set (Napa Cabbage Soybean Paste Soup, Meatballs, Spicy Stir-fried Fish Cakes)"
           ]
         }
       ]
@@ -214,20 +207,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "Cold Soybean Noodle Soup",
+              "verdict": "WORTH IT",
+              "main_dish": "Cold soy milk noodle soup and Seasoned fried pollack",
               "safe_items": [
-                "Cold Soybean Noodle Soup",
-                "Additional Rice",
-                "Seasoned Pollack",
-                "Cucumber & Chili with Ssamjang",
-                "Glutinous Twist Doughnut",
-                "Yeolmu Kimchi"
+                "Cold soy milk noodle soup",
+                "Extra rice",
+                "Seasoned fried pollack",
+                "Cucumber and chili pepper with ssamjang",
+                "Glutinous rice twisted donut",
+                "Young radish kimchi"
               ],
               "skip_items": [
-                "Bibim Mandu (Dumplings)"
+                "Spicy mixed dumplings"
               ],
-              "reason": "The main dish and most sides are pork-free, but the Bibim Mandu contains pork."
+              "reason": "The main noodle dish and seasoned fried pollack are pork-free, but the mixed dumplings contain pork and must be skipped."
             }
           ]
         },
@@ -237,18 +230,16 @@
           "breakfast": {
             "price": "1000 won",
             "selling_time": "08:20~10:00",
-            "verdict": "SAFE",
-            "main_dish": "Bulgogi Soft-Boiled Egg Bibimbap",
-            "reason": "The breakfast set is pork-free."
+            "verdict": "NOT WORTH",
+            "main_dish": "Bulgogi half-boiled egg bibimbap",
+            "reason": "Bulgogi in cheap cafeterias is suspicious as it may be mixed with pork to reduce costs."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [
-            "None"
-          ],
+          "safe_options": [],
           "avoid": [
-            "Bone Hangover Soup",
-            "Pork Neck Pilaf",
-            "Squid Vegetable Hot Bar"
+            "Pork Backbone Hangover Soup",
+            "Pork Neck Pilaf with Squid Vegetable Hot Bar",
+            "Daily Special (Perilla Radish Soup, Vienna Sausage Potato Stew, Kimchi Dumplings)"
           ]
         }
       ]
