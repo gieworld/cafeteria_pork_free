@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-21T09:03:25.555678",
-  "menu_hash": "ed44ddf465efa6f9ecb1127d3d53f4d2",
+  "updated_at": "2026-06-22T09:01:49.760553",
+  "menu_hash": "51e707548ffe060772dbe4a7f8e91f45",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -16,18 +16,18 @@
               "verdict": "NOT WORTH",
               "main_dish": "Stir-fried Octopus and Pork",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Clam Seaweed Soup",
-                "Snail Strong Soybean Paste",
-                "Pumpkin Leaves and Kale Wraps",
-                "Eggplant Salad",
-                "Steamed Sweet Pumpkin with Red Beans",
-                "Cabbage Kimchi"
+                "Mixed grain rice",
+                "Clam seaweed soup",
+                "Snails in strong soybean paste",
+                "Pumpkin leaves and kale wraps",
+                "Eggplant salad",
+                "Steamed sweet pumpkin with red beans",
+                "Cabbage kimchi"
               ],
               "skip_items": [
-                "Stir-fried Octopus and Pork"
+                "Stir-fried octopus and pork"
               ],
-              "reason": "The main dish is Stir-fried Octopus and Pork (Nakji Jeyuk Bokkeum), which contains pork (Jeyuk)."
+              "reason": "The main dish is Nakji-Jeyuk-bokkeum, which contains pork (Jeyuk)."
             }
           ]
         },
@@ -37,9 +37,9 @@
           "breakfast": {
             "price": "1000 won",
             "selling_time": "08:20~10:00",
-            "verdict": "NONE",
-            "main_dish": "None",
-            "reason": "No menu data available for today."
+            "verdict": "NOT WORTH",
+            "main_dish": "Legendary Cook Soldier's Honey Combination Lunchbox",
+            "reason": "This military-themed lunchbox is highly likely to contain pork side dishes such as ham, sausage, or stir-fried pork."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
@@ -61,15 +61,15 @@
               "verdict": "NOT WORTH",
               "main_dish": "Grilled Pork Belly and Assorted Sausages",
               "safe_items": [
-                "Mixed grain rice",
-                "Fried tofu miso soup",
-                "Bean sprout and green onion salad",
-                "Steamed egg",
-                "Lettuce, chili, garlic, and ssamjang",
-                "Cabbage kimchi"
+                "Mixed Grain Rice",
+                "Fried Tofu Soup",
+                "Bean Sprout and Green Onion Salad",
+                "Steamed Egg",
+                "Lettuce, Chili, Garlic, and Ssamjang",
+                "Cabbage Kimchi"
               ],
               "skip_items": [
-                "Grilled pork belly and assorted sausages"
+                "Grilled Pork Belly and Assorted Sausages"
               ],
               "reason": "The main dish contains pork belly (samgyeopsal) and sausages, which are pork products."
             }
@@ -81,9 +81,9 @@
           "breakfast": {
             "price": "1000 won",
             "selling_time": "08:20~10:00",
-            "verdict": "NONE",
-            "main_dish": "None",
-            "reason": "No menu data available."
+            "verdict": "NOT WORTH",
+            "main_dish": "Egg and Spicy Pork Gimbap with Yogurt",
+            "reason": "The gimbap contains Jeyuk, which is spicy marinated pork."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
@@ -103,18 +103,18 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "SAFE",
-              "main_dish": "Cheongyang Mayo Crispy Chicken and Banquet Noodles",
+              "main_dish": "Banquet Noodles and Cheongyang Mayo Fried Chicken",
               "safe_items": [
                 "Banquet Noodles",
                 "Extra Rice",
-                "Cheongyang Mayo Crispy Chicken",
+                "Cheongyang Mayo Fried Chicken",
                 "Spicy Fish Cake",
                 "Bok Choy Fresh Kimchi",
-                "Amangchi Snack",
-                "Altari Kimchi"
+                "Amangchi",
+                "Young Radish Kimchi"
               ],
               "skip_items": [],
-              "reason": "All items on the menu, including the main chicken dish and noodles, are completely pork-free."
+              "reason": "All dishes, including the main chicken dish and noodles, are pork-free."
             }
           ]
         },
@@ -126,7 +126,7 @@
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
             "main_dish": "None",
-            "reason": "No menu data available for today."
+            "reason": "No breakfast service during the summer vacation period."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
@@ -145,19 +145,19 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "SAFE",
-              "main_dish": "Braised Mackerel with Radish",
+              "verdict": "WORTH IT",
+              "main_dish": "Braised mackerel and radish",
               "safe_items": [
-                "Five-color vegetables",
-                "Barley rice",
+                "Five-color seasoned vegetables with barley rice",
                 "Enoki mushroom soybean paste soup",
-                "Braised Mackerel with Radish",
-                "Tofu and egg pancake",
-                "Rice cake and sausage skewer (Gal-tteok-gal-tteok)",
-                "Young radish kimchi"
+                "Braised mackerel and radish",
+                "Pan-fried tofu and egg",
+                "Young summer radish kimchi"
               ],
-              "skip_items": [],
-              "reason": "All items in the set meal are pork-free."
+              "skip_items": [
+                "Gal-tteok gal-tteok (Short rib patty and rice cake skewers)"
+              ],
+              "reason": "The main dish is braised mackerel which is pork-free, but the side dish 'Gal-tteok gal-tteok' (short rib patty skewers) likely contains minced pork and should be avoided."
             }
           ]
         },
@@ -169,7 +169,7 @@
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
             "main_dish": "None",
-            "reason": "No menu data available."
+            "reason": "No breakfast is served during the summer vacation period."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
@@ -189,18 +189,18 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "SAFE",
-              "main_dish": "Spicy Stir-fried Chicken (Dakgalbi)",
+              "main_dish": "Spicy stir-fried chicken and Spicy fish roe soup",
               "safe_items": [
-                "Multi-grain rice",
-                "Pollack roe soup (Altang)",
+                "Mixed grain rice",
+                "Spicy fish roe soup",
                 "Spicy stir-fried chicken",
-                "Royal court tteokbokki",
-                "Crab leg fry",
+                "Royal court rice cakes",
+                "Fried crab claws",
                 "Cabbage salad",
                 "White kimchi"
               ],
               "skip_items": [],
-              "reason": "All items in the set are pork-free."
+              "reason": "All items in this set meal, including the main chicken and seafood dishes, are completely pork-free."
             }
           ]
         },
@@ -212,7 +212,7 @@
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
             "main_dish": "None",
-            "reason": "No menu data available."
+            "reason": "No breakfast service during the summer vacation period."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
