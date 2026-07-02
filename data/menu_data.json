@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-06-29T09:04:06.217148",
-  "menu_hash": "df10dc307f84d0696c76e1045e0e7178",
+  "updated_at": "2026-07-02T09:02:10.946974",
+  "menu_hash": "082d8c80bee481f943ac8269df7bd971",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -14,18 +14,18 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "SAFE",
-              "main_dish": "Salt-grilled duck with chives",
+              "main_dish": "Salt-Grilled Duck and Seasoned Chives",
               "safe_items": [
-                "Multigrain rice",
-                "Clam soup",
-                "Salt-grilled duck with chives",
-                "Braised soft tofu",
-                "Braised quail eggs with chili peppers",
-                "Three-colored pickled radish",
-                "Kimchi"
+                "Mixed Grain Rice",
+                "Clear Marsh Clam Soup",
+                "Salt-Grilled Duck and Seasoned Chives",
+                "Seasoned Steamed Soft Tofu",
+                "Braised Quail Eggs and Shishito Peppers",
+                "Three-Color Pickled Radish Wraps",
+                "Napa Cabbage Kimchi"
               ],
               "skip_items": [],
-              "reason": "All items in the set are pork-free."
+              "reason": "All items in this package meal, including the main duck dish, are completely pork-free."
             }
           ]
         },
@@ -35,18 +35,18 @@
           "breakfast": {
             "price": "1000 won",
             "selling_time": "08:20~10:00",
-            "verdict": "SAFE",
-            "main_dish": "Breakfast menu",
-            "reason": "Standard breakfast is generally pork-free, but verify if ham/bacon is served."
+            "verdict": "NONE",
+            "main_dish": "None",
+            "reason": "No breakfast menu is provided for this day."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
           "avoid": [
             "Ramen",
-            "Donkatsu",
-            "Jokbal (Pig's trotters) buckwheat noodles",
-            "High-rice (Curry)",
-            "Sotteok-sotteok (Sausage and rice cake skewer)"
+            "Pork Cutlet (Tonkatsu)",
+            "Jokbal (Pig's Trotters) Buckwheat Noodles",
+            "Hashed Rice and Sausage Rice Cake Skewer",
+            "Tuna Kimchi Stew"
           ]
         }
       ]
@@ -63,18 +63,18 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "SAFE",
-              "main_dish": "Grilled Mackerel (Gogalbi)",
+              "main_dish": "Gogalbi (Grilled Mackerel with Spicy Sauce)",
               "safe_items": [
-                "Multigrain rice",
-                "Seaweed egg soup",
-                "Grilled Mackerel",
-                "Sweet and sour shiitake mushrooms",
-                "Yangjangpi (seafood and vegetable stir-fry)",
-                "Seaweed stem and apple salad",
-                "Kimchi"
+                "Mixed grain rice",
+                "Capsosiphon egg soup",
+                "Gogalbi (Grilled mackerel with spicy sauce)",
+                "Shiitake mushroom sweet and sour",
+                "Yangjangpi (Double skin starch salad)",
+                "Sea string apple salad",
+                "Napa cabbage kimchi"
               ],
               "skip_items": [],
-              "reason": "All items in the set are pork-free."
+              "reason": "All dishes in this set, including the main grilled mackerel and the sides, are completely pork-free."
             }
           ]
         },
@@ -84,18 +84,18 @@
           "breakfast": {
             "price": "1000 won",
             "selling_time": "08:20~10:00",
-            "verdict": "SAFE",
-            "main_dish": "Breakfast menu",
-            "reason": "Standard breakfast is generally pork-free, but verify if ham/bacon is served."
+            "verdict": "NONE",
+            "main_dish": "Not specified",
+            "reason": "No specific breakfast menu is listed for Tuesday."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [
-            "Stir-fried seafood Jjamppong rice"
-          ],
+          "safe_options": [],
           "avoid": [
             "Ramen",
-            "Donkatsu",
-            "Budae-jjigae"
+            "Tonkatsu (Pork Cutlet)",
+            "Stir-fried Seafood Jjamppong Rice Bowl",
+            "Budae-jjigae (Army Stew)",
+            "Special Set (Udon and Mini Gimbap)"
           ]
         }
       ]
@@ -112,18 +112,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Pork Rice Soup (Dwaeji-gukbap)",
+              "main_dish": "Pork Soup",
               "safe_items": [
+                "Mixed Grain Rice",
+                "Yuringi (Deep-fried Chicken) with Lettuce Salad",
+                "Seasoned Old Cucumber",
+                "Radish Kimchi",
                 "Maple Pecan Pie"
               ],
               "skip_items": [
-                "Pork Rice Soup",
-                "White Blood Sausage Stir-fry",
-                "Yuringi (Fried Chicken)",
-                "Radish Salad",
-                "Diced Radish Kimchi"
+                "Pork Soup",
+                "Stir-fried White Blood Sausage"
               ],
-              "reason": "The main dish is pork-based soup, and the side dishes contain pork-based items like blood sausage and fried chicken (often cross-contaminated or containing pork ingredients)."
+              "reason": "The main dish is Pork Soup (Dwaeji-gukbap) and the side dish is Stir-fried White Blood Sausage, both of which contain pork."
             }
           ]
         },
@@ -134,8 +135,8 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
-            "main_dish": "Not provided",
-            "reason": "No breakfast menu information available for this day."
+            "main_dish": "None",
+            "reason": "No breakfast menu is provided for this day."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
@@ -145,7 +146,7 @@
           "avoid": [
             "Ramen",
             "Pork Cutlet",
-            "Pork-based dishes"
+            "Soft Tofu Stew"
           ]
         }
       ]
@@ -162,19 +163,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Nak-sam-sae (Octopus, Pork Belly, Shrimp) Stir-fry",
+              "main_dish": "Cold Chicken Noodle Soup and Stir-fried Octopus, Pork Belly, and Shrimp",
               "safe_items": [
-                "Chilled Chicken Noodle Soup",
-                "Rice",
-                "Fried Chili",
-                "Almond Anchovy Stir-fry",
-                "Kimchi",
-                "Homemade Black Sesame Gelato"
+                "Cold Chicken Noodle Soup",
+                "Extra Rice",
+                "Stir-fried Anchovies with Almonds",
+                "Napa Cabbage Kimchi",
+                "Black Sesame Porridge"
               ],
               "skip_items": [
-                "Nak-sam-sae (Octopus, Pork Belly, Shrimp) Stir-fry"
+                "Stir-fried Octopus, Pork Belly, and Shrimp",
+                "Fried Chili Pepper"
               ],
-              "reason": "The main dish contains pork belly (samgyeopsal)."
+              "reason": "One of the main dishes (Naksamsae) contains pork belly, and the fried chili peppers are highly likely to contain minced pork filling."
             }
           ]
         },
@@ -184,18 +185,18 @@
           "breakfast": {
             "price": "1000 won",
             "selling_time": "08:20~10:00",
-            "verdict": "SAFE",
-            "main_dish": "Not specified",
-            "reason": "Breakfast menu not provided, please check on-site."
+            "verdict": "NONE",
+            "main_dish": "None",
+            "reason": "No breakfast menu is provided for this day."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Beef Short Plate Galbi-tang"
+            "Beef Short Rib Soup with Beef Brisket"
           ],
           "avoid": [
             "Ramen",
-            "Donkatsu",
-            "Kimchi Jeyuk Rice Bowl"
+            "Pork Cutlet",
+            "Spicy Pork and Kimchi Rice Bowl"
           ]
         }
       ]
@@ -212,19 +213,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "WORTH IT",
-              "main_dish": "Beef and Bean Sprout Stir-fry",
+              "main_dish": "Stir-fried beef and bean sprouts",
               "safe_items": [
-                "Multigrain rice",
-                "Cheonggukjang stew",
-                "Beef and bean sprout stir-fry",
-                "Potato stir-fry",
-                "Kimchi",
+                "Mixed grain rice",
+                "Stir-fried beef and bean sprouts",
+                "Kimchi pancake",
+                "Stir-fried shredded potatoes",
+                "Cabbage kimchi",
                 "Tomato salad"
               ],
               "skip_items": [
-                "Kimchi pancake"
+                "Rich soybean paste stew"
               ],
-              "reason": "The main dish and most sides are pork-free, but the kimchi pancake is suspicious as it often contains pork."
+              "reason": "The main dish is beef-based and pork-free, but the rich soybean paste stew (jjigae) is suspicious as Korean stews often contain minced pork."
             }
           ]
         },
@@ -236,16 +237,16 @@
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
             "main_dish": "None",
-            "reason": "No breakfast menu provided for this day."
+            "reason": "No breakfast menu is specified for this day."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
           "avoid": [
             "Ramen",
-            "Tonkatsu",
-            "Pork neck cube steak jajangmyeon",
-            "Abiko curry",
-            "Twister potato"
+            "Pork cutlet",
+            "Pork neck cube steak black bean noodles",
+            "Abiko curry and tornado potato",
+            "Daily special"
           ]
         }
       ]
