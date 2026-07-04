@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-03T09:02:14.239762",
-  "menu_hash": "43193f1428904aff0f931100ae22495e",
+  "updated_at": "2026-07-04T09:02:16.676673",
+  "menu_hash": "02b9f8dd8541bc7108579cd5730dd3b5",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -14,18 +14,18 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "SAFE",
-              "main_dish": "Salt-grilled Duck with Chive Salad",
+              "main_dish": "Salt-grilled duck and chive salad",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Marsh Clam Soup",
-                "Salt-grilled Duck with Chive Salad",
-                "Steamed Soft Tofu with Seasoning",
-                "Braised Shishito Peppers and Quail Eggs",
-                "Three-color Pickled Radish",
-                "Napa Cabbage Kimchi"
+                "Mixed grain rice",
+                "Marsh clam soup",
+                "Salt-grilled duck and chive salad",
+                "Seasoned steamed soft tofu",
+                "Braised shishito peppers and quail eggs",
+                "Three-color pickled radish wraps",
+                "Napa cabbage kimchi"
               ],
               "skip_items": [],
-              "reason": "The main dish is duck, and all side dishes are completely pork-free."
+              "reason": "The main dish is duck, and all side dishes are pork-free."
             }
           ]
         },
@@ -37,7 +37,7 @@
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
             "main_dish": "None",
-            "reason": "No breakfast menu is provided for this day."
+            "reason": "No breakfast menu is provided for today."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
@@ -45,7 +45,7 @@
             "Ramen",
             "Pork Cutlet",
             "Pig's Trotters Buckwheat Noodles",
-            "Hashed Rice and Sausage Rice Cake Skewers",
+            "Hash Rice and Sausage Rice Cake Skewers",
             "Tuna Kimchi Stew"
           ]
         }
@@ -69,13 +69,13 @@
                 "Seaweed Egg Soup",
                 "Grilled Mackerel",
                 "Shiitake Mushroom Sweet and Sour",
-                "Sea String and Apple Salad",
-                "Napa Cabbage Kimchi"
+                "Sea String Apple Salad",
+                "Cabbage Kimchi"
               ],
               "skip_items": [
                 "Yangjangpi (Double Skin Salad)"
               ],
-              "reason": "The main dish is grilled mackerel, which is safe. However, Yangjangpi traditionally contains pork strips, so it is recommended to skip that side dish."
+              "reason": "The main dish is grilled mackerel which is safe, but Yangjangpi may contain pork strips, so it is recommended to skip that side dish."
             }
           ]
         },
@@ -87,7 +87,7 @@
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
             "main_dish": "None",
-            "reason": "No breakfast menu is provided for this day."
+            "reason": "No breakfast menu is specified for this day."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
@@ -96,7 +96,7 @@
             "Pork Cutlet",
             "Stir-fried Seafood Jjamppong Rice Bowl",
             "Budae-jjigae (Army Stew)",
-            "Special Set (Udon and Mini Gimbap)"
+            "Udon and Mini Gimbap Set"
           ]
         }
       ]
@@ -113,9 +113,9 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Pork Soup (Dwaeji-gukbap)",
+              "main_dish": "Pork Soup",
               "safe_items": [
-                "Yuringi (Deep-fried Chicken) and Lettuce Salad",
+                "Deep-fried Chicken with Lettuce Salad",
                 "Seasoned Old Cucumber",
                 "Radish Kimchi",
                 "Maple Pecan Pie"
@@ -124,7 +124,7 @@
                 "Pork Soup",
                 "Stir-fried White Blood Sausage"
               ],
-              "reason": "The main dish is Pork Soup and the side dish is Stir-fried White Blood Sausage, both of which contain pork."
+              "reason": "The main dish is Pork Soup (Dwaeji-gukbap) and the side dish is Stir-fried Sundae, both of which contain pork."
             }
           ]
         },
@@ -135,13 +135,13 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
-            "main_dish": "Not Operational",
-            "reason": "No breakfast menu is provided for this day."
+            "main_dish": "None",
+            "reason": "No breakfast menu is listed for this day."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
             "Beef Tartare Bibimbap",
-            "Spicy Chicken Katsu"
+            "Spicy Chicken Cutlet"
           ],
           "avoid": [
             "Ramen",
@@ -162,20 +162,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "Cold Chicken Noodle Soup and Stir-fried Octopus, Pork Belly, and Shrimp",
+              "verdict": "WORTH IT",
+              "main_dish": "Cold Chicken Noodle Soup",
               "safe_items": [
                 "Cold Chicken Noodle Soup",
                 "Extra Rice",
                 "Stir-fried Anchovies with Almonds",
-                "Cabbage Kimchi",
+                "Napa Cabbage Kimchi",
                 "Black Sesame Porridge"
               ],
               "skip_items": [
                 "Stir-fried Octopus, Pork Belly, and Shrimp",
                 "Fried Chili Pepper"
               ],
-              "reason": "One of the main dishes (Stir-fried Octopus, Pork Belly, and Shrimp) contains pork belly, and the fried chili pepper is highly likely to be stuffed with minced pork."
+              "reason": "The main noodle dish is chicken-based and safe. However, you must skip the stir-fried octopus, pork belly, and shrimp (which contains pork belly) and the fried chili pepper (which typically contains minced pork filling)."
             }
           ]
         },
@@ -187,7 +187,7 @@
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
             "main_dish": "None",
-            "reason": "No breakfast menu is provided for this day."
+            "reason": "No specific breakfast menu is provided for this day."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
@@ -196,8 +196,8 @@
           "avoid": [
             "Ramen",
             "Pork Cutlet",
-            "Spicy Pork and Kimchi Rice Bowl",
-            "Special Set (Mini Gimbap and Tteokbokki)"
+            "Spicy Stir-fried Pork with Kimchi Rice Bowl",
+            "Special Set: Mini Gimbap and Tteokbokki"
           ]
         }
       ]
@@ -214,19 +214,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "WORTH IT",
-              "main_dish": "Stir-fried beef and bean sprouts",
+              "main_dish": "Stir-fried Beef and Bean Sprouts",
               "safe_items": [
-                "Mixed grain rice",
-                "Stir-fried beef and bean sprouts",
-                "Kimchi pancake",
-                "Stir-fried shredded potatoes",
-                "Cabbage kimchi",
-                "Tomato salad"
+                "Mixed Grain Rice",
+                "Stir-fried Beef and Bean Sprouts",
+                "Kimchi Pancake",
+                "Radish Seasoned with Perilla Seeds",
+                "Cabbage Kimchi",
+                "Tomato Salad"
               ],
               "skip_items": [
-                "Rich soybean paste stew"
+                "Rich Soybean Paste Stew"
               ],
-              "reason": "The main dish is stir-fried beef which is pork-free and safe to eat. However, the rich soybean paste stew (jjigae) is suspicious as Korean stews often contain minced pork, so you should skip it."
+              "reason": "The main dish is beef-based and safe to eat. However, the rich soybean paste stew (jjigae) is suspicious as Korean stews often contain minced pork, so it should be skipped."
             }
           ]
         },
@@ -245,7 +245,7 @@
           "avoid": [
             "Ramen",
             "Pork Cutlet",
-            "Pork Neck Cube Steak Jajangmyeon",
+            "Pork Neck Cube Steak Black Bean Noodles",
             "Abiko Curry and Tornado Potato"
           ]
         }
