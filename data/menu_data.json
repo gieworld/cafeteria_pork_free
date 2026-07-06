@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-05T09:01:37.035456",
-  "menu_hash": "a8d29921f697de7e49474de41325a786",
+  "updated_at": "2026-07-06T09:01:57.577281",
+  "menu_hash": "9e92d0aca0a0caf3959f5a1ed46e52ac",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -13,11 +13,19 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "None",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available for today."
+              "verdict": "NOT WORTH",
+              "main_dish": "Spicy Braised Pork Shank and Rice Cake",
+              "safe_items": [
+                "Mixed Grain Rice",
+                "Squid Cutlet with Lemon Mayo Sauce",
+                "Blueberry Salad",
+                "Young Summer Radish Kimchi"
+              ],
+              "skip_items": [
+                "Spicy Braised Pork Shank and Rice Cake",
+                "White Soft Tofu Soup"
+              ],
+              "reason": "The main dish contains pork shank, and the soft tofu soup is unsafe as soft tofu stews typically contain minced pork."
             }
           ]
         },
@@ -29,11 +37,17 @@
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
             "main_dish": "None",
-            "reason": "No menu data available for today."
+            "reason": "No breakfast menu is provided for this day."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [],
-          "avoid": []
+          "safe_options": [
+            "Deungchon Shabu Kalguksu",
+            "Chipotle Mayo Chicken Rice Bowl"
+          ],
+          "avoid": [
+            "Ramen",
+            "Pork Cutlet"
+          ]
         }
       ]
     },
@@ -48,11 +62,19 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "None",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available for today."
+              "verdict": "NOT WORTH",
+              "main_dish": "Bun Cha, Cha Gio, and Galbi Mandu",
+              "safe_items": [
+                "Vegetable Fried Rice",
+                "Rakkyo and Pickled Ginger",
+                "Cabbage Kimchi"
+              ],
+              "skip_items": [
+                "Bun Cha",
+                "Cha Gio",
+                "Galbi Mandu"
+              ],
+              "reason": "The main dishes (Bun Cha, Cha Gio, and Galbi Mandu) all contain pork."
             }
           ]
         },
@@ -64,11 +86,17 @@
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
             "main_dish": "None",
-            "reason": "No menu data available for today."
+            "reason": "No breakfast menu is specified for this day."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [],
-          "avoid": []
+          "safe_options": [
+            "Seolleongtang (Ox Bone Soup)",
+            "Spicy Webfoot Octopus Chili Pasta"
+          ],
+          "avoid": [
+            "Ramen",
+            "Pork Cutlet (Donkatsu)"
+          ]
         }
       ]
     },
@@ -83,11 +111,19 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "None",
-              "safe_items": [],
+              "verdict": "SAFE",
+              "main_dish": "Chuncheon Spicy Stir-fried Chicken (Dakgalbi)",
+              "safe_items": [
+                "Mixed Grain Rice",
+                "Dried Shrimp Mallow Soup",
+                "Chuncheon Spicy Stir-fried Chicken (Dakgalbi)",
+                "Perilla Oil Perilla Leaf Pasta",
+                "Fried Burdock with Citron Dressing",
+                "Cabbage Kimchi",
+                "Mini Strawberry Jam Pie"
+              ],
               "skip_items": [],
-              "reason": "No menu data available for today."
+              "reason": "All items in this package meal, including the main chicken dish and the shrimp soup, are completely pork-free."
             }
           ]
         },
@@ -99,11 +135,16 @@
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
             "main_dish": "None",
-            "reason": "No menu data available for today."
+            "reason": "No breakfast menu is provided for this day."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
-          "avoid": []
+          "avoid": [
+            "Ramen Dishes",
+            "Pork Cutlet Dishes",
+            "White Jjamppong",
+            "Pork Belly Bibimbap"
+          ]
         }
       ]
     },
@@ -118,11 +159,19 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "None",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available for today."
+              "verdict": "NOT WORTH",
+              "main_dish": "Gochujang Bulgogi (Spicy Pork Bulgogi)",
+              "safe_items": [
+                "Mixed Grain Rice",
+                "Acorn Jelly Cold Soup",
+                "Stir-fried Kamaboko (Fish Cake)",
+                "Spoonable Sweet Corn",
+                "Cabbage Kimchi"
+              ],
+              "skip_items": [
+                "Gochujang Bulgogi"
+              ],
+              "reason": "The main dish is Gochujang Bulgogi, which is made of pork, making this package meal not worth purchasing."
             }
           ]
         },
@@ -134,11 +183,17 @@
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
             "main_dish": "None",
-            "reason": "No menu data available for today."
+            "reason": "No breakfast menu is scheduled for this day."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [],
-          "avoid": []
+          "safe_options": [
+            "Hot Pot Bulgogi (Ttukbaegi Bulgogi)",
+            "Tuna Poke"
+          ],
+          "avoid": [
+            "Ramen",
+            "Pork Cutlet (Donkatsu)"
+          ]
         }
       ]
     },
@@ -153,11 +208,19 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "None",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available."
+              "verdict": "NOT WORTH",
+              "main_dish": "Stir-fried Budae (Sausage and Ham)",
+              "safe_items": [
+                "Chinese-style Cold Noodles",
+                "Extra Rice",
+                "Fried Perilla Leaves stuffed with Tuna",
+                "Sweet Rice Cake and Chestnut",
+                "Napa Cabbage Kimchi"
+              ],
+              "skip_items": [
+                "Stir-fried Budae (Sausage and Ham)"
+              ],
+              "reason": "The main dish is Stir-fried Budae, which contains pork sausages and ham, making this package meal unsafe to purchase."
             }
           ]
         },
@@ -169,11 +232,17 @@
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
             "main_dish": "None",
-            "reason": "No menu data available."
+            "reason": "No breakfast menu is available on Friday."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [],
-          "avoid": []
+          "safe_options": [
+            "Fish Roe Rice Bowl"
+          ],
+          "avoid": [
+            "Ramen",
+            "Pork Cutlet",
+            "Pork Neck Pilaf"
+          ]
         }
       ]
     }
