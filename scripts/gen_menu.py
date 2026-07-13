@@ -19,6 +19,31 @@ import halal_lib
 
 DATA_FILE = os.path.join(BASE_DIR, "data", "menu_data.json")
 
+
+def placeholder_day(day):
+    """Fallback structure for a day the AI could not analyze, so the dashboard isn't missing it."""
+    return {
+        "day": day,
+        "cafeterias": [
+            {
+                "name": "Set Meal",
+                "type": "package",
+                "meals": [
+                    {"time": "Lunch", "price": "6000 won", "selling_time": "11:30~13:30", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"}
+                ]
+            },
+            {
+                "name": "A La Carte",
+                "type": "individual",
+                "breakfast": {"price": "1000 won", "selling_time": "08:20~10:00", "verdict": "NONE", "main_dish": "N/A", "reason": "Analysis failed"},
+                "selling_time": "11:00~14:00, 16:00~18:30",
+                "safe_options": [],
+                "avoid": []
+            }
+        ]
+    }
+
+
 def main():
     print("=" * 50)
     print(f"🌍 KIT Pork-Free Generator - {datetime.now().strftime('%Y-%m-%d %H:%M')}")
@@ -27,7 +52,8 @@ def main():
     # Authenticate
     if not os.getenv("GEMINI_API_KEY"):
         print("❌ Missing GEMINI_API_KEY! Set it in .env or secrets.")
-    
+        sys.exit(1)
+
     # 1. Fetch Menu
     print("📥 Fetching menus from Kumoh website...")
     full_menu = halal_lib.fetch_all_menus()
@@ -41,9 +67,10 @@ def main():
         try:
             with open(DATA_FILE, "r", encoding="utf-8") as f:
                 existing_data = json.load(f)
-        except:
-            pass
-            
+        except Exception as e:
+            print(f"⚠️ Could not read existing {DATA_FILE}: {e}")
+
+
     old_hash = existing_data.get("menu_hash")
     
     if old_hash == menu_hash:
@@ -51,64 +78,45 @@ def main():
         print(f"   (Local file already up to date with hash {menu_hash})")
         return
 
-    # 3. Analyze ALL Weekdays (Mon-Fri)
+    # 3. Analyze ALL Weekdays (Mon-Fri) in a SINGLE Gemini call
     # We want the dashboard to show the whole week
     days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
-    week_data = {}
-    
+
     print("\n🤖 Menu CHANGED! Starting AI analysis...")
-    print("   (This uses Gemini tokens - approx 5 calls)")
-    
-    import time
-    for idx, day in enumerate(days):
-        if idx > 0:
-            print("   ⏳ Respecting API rate limits, waiting 15 seconds...")
-            time.sleep(15)
-        print(f"   > Analyzing {day}...")
-        result = halal_lib.analyze_with_gemini(full_menu, day)
+    print("   (Analyzing the whole week in 1 Gemini call)")
+
+    analysis = halal_lib.analyze_week(full_menu, days)
+
+    # 3b. Bail out if the call failed entirely - don't clobber good existing data
+    if not analysis:
+        print("\n❌ AI analysis failed. Keeping existing menu_data.json untouched.")
+        sys.exit(1)
+
+    week_data = {}
+    success_count = 0
+    for day in days:
+        result = analysis.get(day)
         if result:
+            success_count += 1
             week_data[day] = result
         else:
-            print(f"     ⚠️ Analysis failed for {day}, using fallback structure")
-            # Add fallback structure so day is not missing
-            week_data[day] = {
-                "day": day,
-                "cafeterias": [
-                    {
-                        "name": "Set Meal",
-                        "type": "package",
-                        "meals": [
-                            {"time": "Lunch", "price": "6000 won", "selling_time": "11:30~13:30", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"}
-                        ]
-                    },
-                    {
-                        "name": "A La Carte",
-                        "type": "individual",
-                        "breakfast": {"price": "1000 won", "selling_time": "08:20~10:00", "verdict": "NONE", "main_dish": "N/A", "reason": "Analysis failed"},
-                        "selling_time": "11:00~14:00, 16:00~18:30",
-                        "safe_options": [],
-                        "avoid": []
-                    }
-                ]
-            }
-        
-        # Add small delay between days to prevent rate limiting (except after last day)
-        if idx < len(days) - 1:
-            import time
-            time.sleep(1)
-    
+            print(f"   ⚠️ No result for {day}, using placeholder structure")
+            week_data[day] = placeholder_day(day)
+
     # 4. Build Final JSON Structure
     output = {
         "updated_at": datetime.now().isoformat(),
         "menu_hash": menu_hash,
         "week_data": week_data
     }
-    
+
     # 5. Save
     os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
-        
+
+    if success_count < len(days):
+        print(f"\n⚠️ Only {success_count}/{len(days)} days analyzed successfully; the rest use placeholder data.")
     print(f"\n✅ Helper: Saved NEW analysis to {DATA_FILE}")
     print("=" * 50)
 

@@ -5,82 +5,20 @@ from google.genai import types
 import json
 import os
 import hashlib
-from datetime import datetime
 from dotenv import load_dotenv
 
 # Load environment variables
 load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
-# Configuration
-CACHE_FILE = "menu_cache.json"
-CACHE_DURATION_HOURS = 24
-
 URLS = {
     "Set Meal": "https://www.kumoh.ac.kr/ko/restaurant02.do",
     "A La Carte": "https://www.kumoh.ac.kr/ko/restaurant01.do",
 }
 
-# --- CACHE FUNCTIONS ---
-def load_cache():
-    """Load cached menu analysis."""
-    try:
-        if os.path.exists(CACHE_FILE):
-            with open(CACHE_FILE, "r", encoding="utf-8") as f:
-                return json.load(f)
-    except:
-        pass
-    return {}
-
-def save_cache(day, analysis, menu_hash=None):
-    """Save menu analysis to cache with menu hash for change detection."""
-    cache = load_cache()
-    # If overwriting, preserve existing menu_hash if new one not provided (though usually provided)
-    # Actually, simplistic approach: just overwrite.
-    cache[day] = {
-        "timestamp": datetime.now().isoformat(),
-        "analysis": analysis,
-        "menu_hash": menu_hash
-    }
-    with open(CACHE_FILE, "w", encoding="utf-8") as f:
-        json.dump(cache, f, ensure_ascii=False, indent=2)
-
-def save_full_cache(cache_data):
-    """Save the entire cache dictionary (used by bulk operations)."""
-    with open(CACHE_FILE, "w", encoding="utf-8") as f:
-        json.dump(cache_data, f, ensure_ascii=False, indent=2)
-
-def is_cache_valid(day):
-    """Check if cache for a day is still valid."""
-    cache = load_cache()
-    if day not in cache:
-        return False
-    
-    try:
-        cached_time = datetime.fromisoformat(cache[day]["timestamp"])
-        age = datetime.now() - cached_time
-        return age.total_seconds() < (CACHE_DURATION_HOURS * 3600)
-    except:
-        return False
-
-def get_cached_analysis(day):
-    """Get cached analysis for a day."""
-    cache = load_cache()
-    if day in cache:
-        return cache[day].get("analysis")
-    return None
-
 def get_menu_hash(menu_text):
     """Generate hash of menu text to detect changes."""
     return hashlib.md5(menu_text.encode()).hexdigest()
-
-def has_menu_changed(day, current_hash):
-    """Check if menu has changed since last cache."""
-    cache = load_cache()
-    if day not in cache:
-        return True
-    cached_hash = cache[day].get("menu_hash")
-    return cached_hash != current_hash
 
 # --- DATA FETCHING ---
 def get_menu_text(url):
@@ -134,38 +72,43 @@ def load_corrections():
         print(f"Warning: Could not load corrections: {e}")
     return []
 
-_primary_model_quota_exhausted = False  # skip primary for rest of run once quota hit
+MODELS = ["gemini-3.5-flash", "gemini-3.1-flash-lite"]  # primary, fallback
 
-# --- AI ANALYSIS ---
-def analyze_with_gemini(menu_data, target_day):
-    """Sends menu text to Gemini to find pork-free options."""
-    global _primary_model_quota_exhausted
 
-    if not GEMINI_API_KEY:
-        print("❌ Missing GEMINI_API_KEY")
-        return None
+def _coerce_day_result(day, result):
+    """Normalize one day's result: ensure the 'day' field and string-only A La Carte lists."""
+    result.setdefault("day", day)
+    for cafe in result.get("cafeterias", []):
+        if cafe.get("type") == "individual":
+            for key in ("safe_options", "avoid"):
+                items = cafe.get(key, [])
+                cafe[key] = [it if isinstance(it, str) else it.get("menu", str(it)) for it in items]
+    return result
 
-    client = genai.Client(api_key=GEMINI_API_KEY)
 
-    # Load manual corrections
-    corrections = load_corrections()
-    corrections_text = ""
-    if corrections:
-        corrections_text = "\n\nMANUAL CORRECTIONS (OVERRIDE AI):\n"
-        for corr in corrections:
-            corrections_text += f"- {corr['dish']} at {corr['cafeteria']}: {corr['status'].upper()} - {corr['reason']}\n"
-
-    prompt = f"""
+def _build_week_prompt(menu_data, days, corrections_text):
+    day_list = ", ".join(days)
+    # One JSON object per day, keyed by day name, each matching the original per-day schema.
+    return f"""
 You are a PORK-FREE food assistant for foreign students in Korea who don't eat pork.
 
-IMPORTANT: We are checking for PORK only, not full halal certification. 
+IMPORTANT: We are checking for PORK only, not full halal certification.
 This is a PORK-FREE guide, not halal certification.
 
-TARGET DAY: {target_day}
+TARGET DAYS: {day_list}
+Analyze EVERY one of these days from the weekly menu data below.
 
 CONTEXT:
 - Set Meal (restaurant02) = PACKAGE MEAL. Lunch only (11:30~13:30), 6000 won. You get all dishes, cannot choose.
-- A La Carte (restaurant01) = INDIVIDUAL ORDER. Breakfast (1000 won, 08:20~10:00) + rotating daily lunch/dinner specials (11:00~14:00, 16:00~18:30).
+- A La Carte (restaurant01) = INDIVIDUAL ORDER. Rotating daily lunch/dinner specials (11:00~14:00, 16:00~18:30). A cheap breakfast (조식, 1000 won, 08:20~10:00) is served ONLY during regular semester and is often suspended during vacations/holidays.
+
+BREAKFAST RULE (CRITICAL - do NOT invent breakfast):
+- Only report a breakfast if the menu data for that day ACTUALLY lists breakfast items (look for "조식" / "breakfast", or explicit 08:20~10:00 items).
+- If the data shows NO breakfast for that day (e.g. it only lists "일품요리"/lunch-dinner specials, or shows "미운영"/not operating), set breakfast to: verdict "NONE", main_dish "Not served", reason "Breakfast not served".
+- NEVER guess or fabricate a breakfast dish that is not present in the menu data.
+
+CLOSED-DAY RULE:
+- If a day shows "미운영" (not operating) or a holiday marker like "[제헌절]", treat that cafeteria as closed: Set Meal verdict "NONE", breakfast verdict "NONE", and empty safe_options/avoid lists.
 
 PORK DETECTION RULES:
 - CONTAINS PORK: Pork, Ham, Bacon, Sausage, Spam, Tonkatsu/Donkatsu, Mandu/Dumplings (usually pork), Budae-jjigae, Gamjatang, Jeyuk, Menchi Katsu, Samgyeopsal, Daepaesam
@@ -185,60 +128,84 @@ TRANSLATION RULE (CRITICAL):
 MENU DATA:
 {menu_data}
 
-    Return ONLY this JSON (no markdown):
-    {{
-      "day": "{target_day}",
-      "cafeterias": [
-        {{
-          "name": "Set Meal",
-          "type": "package",
-          "meals": [
-            {{
-              "time": "Lunch",
-              "price": "6000 won",
-              "selling_time": "11:30~13:30",
-              "verdict": "SAFE/WORTH IT/NOT WORTH/NONE",
-              "main_dish": "name of main protein/dish",
-              "safe_items": ["list items you can eat"],
-              "skip_items": ["list items with pork to skip"],
-              "reason": "brief explanation"
-            }}
-          ]
-        }},
-        {{
-          "name": "A La Carte",
-          "type": "individual",
-          "breakfast": {{
-            "price": "1000 won",
-            "selling_time": "08:20~10:00",
-            "verdict": "SAFE/NOT WORTH/NONE",
-            "main_dish": "name of breakfast item",
+Return ONLY this JSON (no markdown). Include an entry for EVERY target day:
+{{
+  "Monday": {{
+    "day": "Monday",
+    "cafeterias": [
+      {{
+        "name": "Set Meal",
+        "type": "package",
+        "meals": [
+          {{
+            "time": "Lunch",
+            "price": "6000 won",
+            "selling_time": "11:30~13:30",
+            "verdict": "SAFE/WORTH IT/NOT WORTH/NONE",
+            "main_dish": "name of main protein/dish",
+            "safe_items": ["list items you can eat"],
+            "skip_items": ["list items with pork to skip"],
             "reason": "brief explanation"
-          }},
-          "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": ["Dish Name 1", "Dish Name 2"],
-          "avoid": ["Dish Name 3", "Dish Name 4"]
-        }}
-      ]
-    }}
+          }}
+        ]
+      }},
+      {{
+        "name": "A La Carte",
+        "type": "individual",
+        "breakfast": {{
+          "price": "1000 won",
+          "selling_time": "08:20~10:00",
+          "verdict": "SAFE/NOT WORTH/NONE (use NONE if breakfast is not in the data)",
+          "main_dish": "actual breakfast item from the data, or 'Not served' if none",
+          "reason": "brief explanation, or 'Breakfast not served' if none"
+        }},
+        "selling_time": "11:00~14:00, 16:00~18:30",
+        "safe_options": ["Dish Name 1", "Dish Name 2"],
+        "avoid": ["Dish Name 3", "Dish Name 4"]
+      }}
+    ]
+  }}
+}}
+
+Repeat the SAME structure for EVERY target day, each keyed by its day name (Monday, Tuesday, ...).
+Output raw JSON only: no markdown, no code fences, no comments, and no text before or after the JSON object.
 
 IMPORTANT: For A La Carte, safe_options and avoid MUST be simple string arrays of dish names only.
 Do NOT use objects/dicts. Just plain strings like: ["Chicken Steak", "Beef Soup"]
 """
-    
-    models = ["gemini-3.5-flash", "gemini-3.1-flash-lite"]
+
+
+# --- AI ANALYSIS ---
+def analyze_week(menu_data, days):
+    """Analyze all weekdays in a SINGLE Gemini call.
+
+    Returns a dict mapping day name -> per-day analysis, or None if all attempts failed.
+    Days missing from the model's response are simply absent from the returned dict;
+    the caller fills those with a placeholder structure.
+    """
+    if not GEMINI_API_KEY:
+        print("❌ Missing GEMINI_API_KEY")
+        return None
+
+    client = genai.Client(api_key=GEMINI_API_KEY)
+
+    corrections = load_corrections()
+    corrections_text = ""
+    if corrections:
+        corrections_text = "\n\nMANUAL CORRECTIONS (OVERRIDE AI):\n"
+        for corr in corrections:
+            corrections_text += f"- {corr['dish']} at {corr['cafeteria']}: {corr['status'].upper()} - {corr['reason']}\n"
+
+    prompt = _build_week_prompt(menu_data, days, corrections_text)
+
     max_retries = 3
     retry_delay = 5  # seconds
-
-    if _primary_model_quota_exhausted:
-        print(f"   ↩️ Using fallback model: {models[-1]} (primary quota exhausted)")
+    cleaned_text = ""
 
     for attempt in range(max_retries):
-        if _primary_model_quota_exhausted:
-            model = models[-1]
-        else:
-            model = models[0] if attempt < max_retries - 1 else models[-1]
-        if not _primary_model_quota_exhausted and attempt == max_retries - 1:
+        # Use the primary model, then switch to the fallback on the final attempt.
+        model = MODELS[0] if attempt < max_retries - 1 else MODELS[-1]
+        if attempt == max_retries - 1:
             print(f"   ↩️ Switching to fallback model: {model}")
         try:
             response = client.models.generate_content(
@@ -250,52 +217,46 @@ Do NOT use objects/dicts. Just plain strings like: ["Chicken Steak", "Beef Soup"
                 ),
             )
 
-            # Clean and parse response
             cleaned_text = response.text.replace("```json", "").replace("```", "").strip()
+            # Always trim to the outermost braces: strips anything the model appends
+            # before/after the JSON object (stray text, comments -> "Extra data" errors).
+            start = cleaned_text.find("{")
+            end = cleaned_text.rfind("}") + 1
+            if start != -1 and end > start:
+                cleaned_text = cleaned_text[start:end]
 
-            # Try to find JSON in the response if it's wrapped in other text
-            if not cleaned_text.startswith("{"):
-                start = cleaned_text.find("{")
-                end = cleaned_text.rfind("}") + 1
-                if start != -1 and end > start:
-                    cleaned_text = cleaned_text[start:end]
+            parsed = json.loads(cleaned_text)
 
-            result = json.loads(cleaned_text)
+            # Normalize each requested day we got back.
+            week = {}
+            for day in days:
+                if day in parsed and isinstance(parsed[day], dict):
+                    week[day] = _coerce_day_result(day, parsed[day])
+            if not week:
+                raise ValueError("Response contained none of the requested days")
+            if len(week) < len(days):
+                missing = [d for d in days if d not in week]
+                print(f"   ⚠️ Model omitted {len(missing)} day(s): {', '.join(missing)}")
+            return week
 
-            # Fix any dict items in safe_options/avoid (fallback)
-            for cafe in result.get("cafeterias", []):
-                if cafe.get("type") == "individual":
-                    safe = cafe.get("safe_options", [])
-                    cafe["safe_options"] = [item if isinstance(item, str) else item.get("menu", str(item)) for item in safe]
-                    avoid = cafe.get("avoid", [])
-                    cafe["avoid"] = [item if isinstance(item, str) else item.get("menu", str(item)) for item in avoid]
-
-            return result
-
-        except json.JSONDecodeError as e:
-            print(f"   ⚠️ JSON parsing error on attempt {attempt + 1}/{max_retries}: {e}")
+        except (json.JSONDecodeError, ValueError) as e:
+            print(f"   ⚠️ Parse error on attempt {attempt + 1}/{max_retries}: {e}")
             if attempt < max_retries - 1:
                 print(f"   ⏳ Retrying in {retry_delay} seconds...")
                 import time
                 time.sleep(retry_delay)
             else:
-                print(f"   ❌ Failed to parse JSON after {max_retries} attempts")
+                print(f"   ❌ Failed to parse response after {max_retries} attempts")
                 print(f"   Raw response: {cleaned_text[:200]}...")
 
         except Exception as e:
             error_msg = str(e)
             print(f"   ⚠️ Gemini API error on attempt {attempt + 1}/{max_retries}: {error_msg}")
-
-            if "quota" in error_msg.lower() or "rate" in error_msg.lower():
-                if model == models[0]:
-                    _primary_model_quota_exhausted = True
-                print(f"   ⏳ Rate limit detected, waiting {retry_delay * 2} seconds...")
+            if attempt < max_retries - 1:
+                wait = retry_delay * 2 if ("quota" in error_msg.lower() or "rate" in error_msg.lower()) else retry_delay
+                print(f"   ⏳ Retrying in {wait} seconds...")
                 import time
-                time.sleep(retry_delay * 2)
-            elif attempt < max_retries - 1:
-                print(f"   ⏳ Retrying in {retry_delay} seconds...")
-                import time
-                time.sleep(retry_delay)
+                time.sleep(wait)
             else:
                 print(f"   ❌ Failed after {max_retries} attempts")
 
