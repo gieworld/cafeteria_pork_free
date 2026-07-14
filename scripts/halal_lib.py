@@ -110,10 +110,16 @@ BREAKFAST RULE (CRITICAL - do NOT invent breakfast):
 CLOSED-DAY RULE:
 - If a day shows "미운영" (not operating) or a holiday marker like "[제헌절]", treat that cafeteria as closed: Set Meal verdict "NONE", breakfast verdict "NONE", and empty safe_options/avoid lists.
 
-PORK DETECTION RULES:
-- CONTAINS PORK: Pork, Ham, Bacon, Sausage, Spam, Tonkatsu/Donkatsu, Mandu/Dumplings (usually pork), Budae-jjigae, Gamjatang, Jeyuk, Menchi Katsu, Samgyeopsal, Daepaesam
+ASTERISK PORK MARKER (AUTHORITATIVE - trust this first):
+- The cafeteria marks items that contain pork with a leading "*". Their own note reads: "*로 표시된 항목은 돈육이 포함된 메뉴입니다." (items marked * contain pork).
+- Therefore: ANY item written with a leading "*" (e.g. "*돈가스류", "*돼지국밥", "*제육덮밥", "*카츠동") DEFINITELY contains pork -> ALWAYS put it in `avoid` / mark as pork.
+- WARNING: the absence of "*" does NOT guarantee pork-free. Pork can appear WITHOUT a "*", especially inside the "일품정식(...)" set-meal parentheses. So still apply the name rules below to every un-starred item.
+
+PORK DETECTION RULES (apply by dish name, in addition to the * marker):
+- CONTAINS PORK: Pork, Ham, Bacon, Sausage, Spam, Tonkatsu/Donkatsu (돈가스/카츠동), Mandu/Dumplings (usually pork), Budae-jjigae, Gamjatang, Jeyuk/Jeyuk-deopbap (제육), Menchi Katsu, Samgyeopsal, Daepaesam, Pork shank (돈사태/돈사태찜), anything with "돈"/"돼지" in the Korean name
 - PORK-FREE: Chicken, Beef, Fish, Seafood, Tofu, Eggs, Vegetables
 - SUSPICIOUS (may contain pork): Ramen (pork broth), Kimchi Stew, Soft Tofu Stew, Curry (often contains pork in Korea)
+- "일품정식(...)" = a rotating set meal; judge it ENTIRELY by the dish named inside the parentheses (e.g. "일품정식(돈사태찜" = pork shank -> pork; "일품정식(낙지볶음" = stir-fried octopus -> pork-free).
 {corrections_text}
 PACKAGE MEAL WORTHINESS (for Set Meal only):
 - SAFE = All items are pork-free

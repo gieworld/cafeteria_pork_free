@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-13T10:42:28.017349",
-  "menu_hash": "b5459a606ca2511acdce59e8979bcef0",
+  "updated_at": "2026-07-14T10:27:15.908318",
+  "menu_hash": "30679396a244a04e26dacf31fce69656",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -14,17 +14,17 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Spicy Pork Ribs with Rice Cakes",
+              "main_dish": "Spicy Pork Rib Stew with Rice Cakes",
               "safe_items": [
-                "Multigrain rice",
-                "Beef seaweed soup",
-                "King prawn tempura",
-                "Green salad",
-                "Mandarin",
-                "Kimchi"
+                "Mixed Grain Rice",
+                "Beef Seaweed Soup",
+                "King Shrimp Fry",
+                "Green Salad",
+                "Iced Sweet Mango Tea",
+                "Napa Cabbage Kimchi"
               ],
               "skip_items": [
-                "Spicy Pork Ribs with Rice Cakes"
+                "Spicy Pork Rib Stew with Rice Cakes"
               ],
               "reason": "The main dish contains pork."
             }
@@ -37,17 +37,17 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
-            "main_dish": "None",
-            "reason": "No breakfast menu provided for this day."
+            "main_dish": "Not served",
+            "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Stir-fried Octopus Set"
+            "Daily Special (Stir-fried Octopus)"
           ],
           "avoid": [
             "Ramen",
             "Pork Cutlet",
-            "Pork Rice Soup",
+            "Pork Soup with Rice",
             "Katsudon"
           ]
         }
@@ -65,7 +65,7 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Mala Xiangguo and Sticky Rice Guobaorou",
+              "main_dish": "Mala Xiang Guo and Sticky Rice Pork Strips",
               "safe_items": [
                 "Mixed Grain Rice",
                 "Clam Radish Soup",
@@ -74,10 +74,10 @@
                 "White Kimchi"
               ],
               "skip_items": [
-                "Sticky Rice Guobaorou",
-                "Mala Xiangguo"
+                "Mala Xiang Guo",
+                "Sticky Rice Pork Strips"
               ],
-              "reason": "The main meat dish is Sticky Rice Guobaorou, which is made of pork. Mala Xiangguo is also highly likely to contain pork or cross-contamination."
+              "reason": "The main dishes contain pork."
             }
           ]
         },
@@ -88,17 +88,17 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
-            "main_dish": "Not specified",
-            "reason": "No specific breakfast menu is provided for this day."
+            "main_dish": "Not served",
+            "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [
-            "Gomtang (Beef Bone Soup)"
-          ],
+          "safe_options": [],
           "avoid": [
             "Ramen",
-            "Pork Cutlet (Tonkatsu)",
-            "Tteokgalbi Mayo Rice Bowl"
+            "Pork Cutlet",
+            "Pork Kimchi Stew",
+            "Tteokgalbi Mayo Rice Bowl",
+            "Daily Special (Pork Shank Stew)"
           ]
         }
       ]
@@ -115,19 +115,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Steamed Thinly Sliced Pork Belly with Vegetables",
+              "main_dish": "Steamed Sliced Pork Belly and Vegetables",
               "safe_items": [
                 "Seaweed Rice",
                 "Cold Spicy Squid Soup",
-                "Fried Sweet Pumpkin",
-                "Soy-braised Boiled Eggs",
+                "Sweet Pumpkin Fritters",
+                "Soy-braised Eggs",
                 "Watermelon",
-                "Cabbage Kimchi"
+                "Napa Cabbage Kimchi"
               ],
               "skip_items": [
-                "Steamed Thinly Sliced Pork Belly with Vegetables"
+                "Steamed Sliced Pork Belly and Vegetables"
               ],
-              "reason": "The main dish contains thinly sliced pork belly (Samgyeopsal), which is pork."
+              "reason": "The main dish contains pork."
             }
           ]
         },
@@ -138,17 +138,18 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
-            "main_dish": "None",
-            "reason": "No breakfast menu is available for this day."
+            "main_dish": "Not served",
+            "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Chicken Thigh Steak"
+            "Chicken Leg Steak"
           ],
           "avoid": [
             "Ramen",
             "Pork Cutlet",
-            "Spicy Stir-fried Pork with Rice"
+            "Spicy Stir-fried Pork Rice Bowl",
+            "Daily Special (Unspecified)"
           ]
         }
       ]
@@ -167,17 +168,17 @@
               "verdict": "NOT WORTH",
               "main_dish": "Stir-fried Pork",
               "safe_items": [
-                "Multi-grain Rice",
+                "Mixed Grain Rice",
                 "Crab Meat Soup",
                 "Broccoli Seasoned with Seaweed",
                 "Fried Eggplant with Chili Sauce",
-                "Kimchi",
+                "Napa Cabbage Kimchi",
                 "Caramel Flower Bun"
               ],
               "skip_items": [
                 "Stir-fried Pork"
               ],
-              "reason": "The main dish is stir-fried pork, which contains pork. It is not recommended to purchase this package meal."
+              "reason": "The main dish contains pork."
             }
           ]
         },
@@ -188,8 +189,8 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
-            "main_dish": "None",
-            "reason": "No breakfast menu is specified for today."
+            "main_dish": "Not served",
+            "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
@@ -198,7 +199,8 @@
           ],
           "avoid": [
             "Ramen",
-            "Pork Cutlet"
+            "Pork Cutlet",
+            "Daily Special (Unspecified)"
           ]
         }
       ]
@@ -215,10 +217,10 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NONE",
-              "main_dish": "None",
+              "main_dish": "Not served",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Closed for Constitution Day"
+              "reason": "Cafeteria closed for Constitution Day"
             }
           ]
         },
@@ -229,8 +231,8 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
-            "main_dish": "None",
-            "reason": "Closed for Constitution Day"
+            "main_dish": "Not served",
+            "reason": "Cafeteria closed for Constitution Day"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
