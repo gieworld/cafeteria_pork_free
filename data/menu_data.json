@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-14T10:27:15.908318",
-  "menu_hash": "30679396a244a04e26dacf31fce69656",
+  "updated_at": "2026-07-15T09:00:30.487177",
+  "menu_hash": "06354b90e3b04655cfa0f38999d16b71",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -14,17 +14,17 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Spicy Pork Rib Stew with Rice Cakes",
+              "main_dish": "Spicy pork rib stew with rice cakes",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Beef Seaweed Soup",
-                "King Shrimp Fry",
-                "Green Salad",
-                "Iced Sweet Mango Tea",
-                "Napa Cabbage Kimchi"
+                "Mixed grain rice",
+                "Beef seaweed soup",
+                "King shrimp fry",
+                "Green salad",
+                "Amangchi dessert",
+                "Cabbage kimchi"
               ],
               "skip_items": [
-                "Spicy Pork Rib Stew with Rice Cakes"
+                "Spicy pork rib stew with rice cakes"
               ],
               "reason": "The main dish contains pork."
             }
@@ -42,12 +42,12 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Daily Special (Stir-fried Octopus)"
+            "Stir-fried octopus set meal"
           ],
           "avoid": [
             "Ramen",
-            "Pork Cutlet",
-            "Pork Soup with Rice",
+            "Pork cutlet",
+            "Pork soup",
             "Katsudon"
           ]
         }
@@ -65,17 +65,17 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Mala Xiang Guo and Sticky Rice Pork Strips",
+              "main_dish": "Mala xiang guo and Sticky rice sweet and sour pork",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Clam Radish Soup",
-                "Stir-fried Bok Choy and Mushrooms",
-                "Peach Yogurt Salad",
-                "White Kimchi"
+                "Mixed grain rice",
+                "Clam and radish soup",
+                "Stir-fried bok choy and mushrooms",
+                "Peach yogurt salad",
+                "White kimchi"
               ],
               "skip_items": [
-                "Mala Xiang Guo",
-                "Sticky Rice Pork Strips"
+                "Mala xiang guo",
+                "Sticky rice sweet and sour pork"
               ],
               "reason": "The main dishes contain pork."
             }
@@ -95,10 +95,10 @@
           "safe_options": [],
           "avoid": [
             "Ramen",
-            "Pork Cutlet",
-            "Pork Kimchi Stew",
-            "Tteokgalbi Mayo Rice Bowl",
-            "Daily Special (Pork Shank Stew)"
+            "Pork cutlet",
+            "Pork kimchi stew",
+            "Tteokgalbi mayo rice bowl",
+            "Pork shank stew set meal"
           ]
         }
       ]
@@ -115,17 +115,17 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Steamed Sliced Pork Belly and Vegetables",
+              "main_dish": "Steamed sliced pork belly with vegetables",
               "safe_items": [
-                "Seaweed Rice",
-                "Cold Spicy Squid Soup",
-                "Sweet Pumpkin Fritters",
-                "Soy-braised Eggs",
+                "Seaweed rice",
+                "Cold spicy squid soup",
+                "Sweet pumpkin fries",
+                "Soy-braised eggs",
                 "Watermelon",
-                "Napa Cabbage Kimchi"
+                "Cabbage kimchi"
               ],
               "skip_items": [
-                "Steamed Sliced Pork Belly and Vegetables"
+                "Steamed sliced pork belly with vegetables"
               ],
               "reason": "The main dish contains pork."
             }
@@ -143,13 +143,12 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Chicken Leg Steak"
+            "Chicken leg steak"
           ],
           "avoid": [
             "Ramen",
-            "Pork Cutlet",
-            "Spicy Stir-fried Pork Rice Bowl",
-            "Daily Special (Unspecified)"
+            "Pork cutlet",
+            "Spicy stir-fried pork rice bowl"
           ]
         }
       ]
@@ -166,17 +165,17 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Stir-fried Pork",
+              "main_dish": "Stir-fried pork",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Crab Meat Soup",
-                "Broccoli Seasoned with Seaweed",
-                "Fried Eggplant with Chili Sauce",
-                "Napa Cabbage Kimchi",
-                "Caramel Flower Bun"
+                "Mixed grain rice",
+                "Crab meat soup",
+                "Broccoli seasoned with seaweed",
+                "Fried eggplant with chili sauce",
+                "Cabbage kimchi",
+                "Caramel flower bun"
               ],
               "skip_items": [
-                "Stir-fried Pork"
+                "Stir-fried pork"
               ],
               "reason": "The main dish contains pork."
             }
@@ -194,13 +193,12 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Cream Stew Udon",
-            "Tuna Sashimi Rice Bowl"
+            "Chicken cream stew udon",
+            "Tuna sashimi rice bowl"
           ],
           "avoid": [
             "Ramen",
-            "Pork Cutlet",
-            "Daily Special (Unspecified)"
+            "Pork cutlet"
           ]
         }
       ]
@@ -220,7 +218,7 @@
               "main_dish": "Not served",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Cafeteria closed for Constitution Day"
+              "reason": "Closed for Constitution Day"
             }
           ]
         },
@@ -232,7 +230,7 @@
             "selling_time": "08:20~10:00",
             "verdict": "NONE",
             "main_dish": "Not served",
-            "reason": "Cafeteria closed for Constitution Day"
+            "reason": "Closed for Constitution Day"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
