@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-17T09:00:52.186737",
-  "menu_hash": "7721dcd89f94065019fdbc91bdb2bc4d",
+  "updated_at": "2026-07-20T10:13:45.426855",
+  "menu_hash": "2420dcafeec86e6d7a9e332910c340dd",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -14,19 +14,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Spicy pork rib stew with rice cakes",
+              "main_dish": "Perilla seed white pork bulgogi",
               "safe_items": [
                 "Mixed grain rice",
-                "Beef seaweed soup",
-                "King shrimp fry",
-                "Green salad",
-                "Dessert",
+                "Skewered fish cake soup",
+                "Tteokbokki pasta",
+                "Lotus root shrimp crackers with Cheongyang mayo sauce",
+                "Bok choy fresh kimchi",
                 "Napa cabbage kimchi"
               ],
               "skip_items": [
-                "Spicy pork rib stew with rice cakes"
+                "Perilla seed white pork bulgogi"
               ],
-              "reason": "The main dish contains pork."
+              "reason": "The main dish (Perilla seed white bulgogi) is marked with an asterisk, indicating it contains pork."
             }
           ]
         },
@@ -42,13 +42,13 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Stir-fried octopus set"
+            "Beef Tartare Bibimbap",
+            "Andong Beef Brisket Hangover Noodles"
           ],
           "avoid": [
-            "Ramen dishes",
-            "Pork cutlet dishes",
-            "Pork rice soup",
-            "Katsudon"
+            "Ramen",
+            "Pork Cutlet",
+            "Special Set (Uni Jajangmyeon)"
           ]
         }
       ]
@@ -64,20 +64,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "Mala xiang guo and Glutinous rice pork strips",
+              "verdict": "WORTH IT",
+              "main_dish": "Rose braised chicken with Fenmosa",
               "safe_items": [
                 "Mixed grain rice",
-                "Clam radish soup",
-                "Stir-fried bok choy and mushrooms",
-                "Peach yogurt salad",
-                "White kimchi"
+                "Jeonju-style bean sprout soup",
+                "Rose braised chicken with Fenmosa",
+                "Ex-boyfriend toast",
+                "Cherry tomato green salad",
+                "Young summer radish kimchi"
               ],
               "skip_items": [
-                "Mala xiang guo",
-                "Glutinous rice pork strips"
+                "Vegetable mixed dumplings"
               ],
-              "reason": "The main dishes contain pork."
+              "reason": "The main chicken dish is safe, but the side dish (vegetable mixed dumplings) is marked with an asterisk and contains pork."
             }
           ]
         },
@@ -94,11 +94,11 @@
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
           "avoid": [
-            "Ramen dishes",
-            "Pork cutlet dishes",
-            "Pork kimchi stew",
-            "Tteokgalbi mayo rice bowl",
-            "Braised pork shank set"
+            "Ramen",
+            "Pork Cutlet",
+            "Boiled Pork Slices Set",
+            "Gimbap Fried Rice",
+            "Special Set"
           ]
         }
       ]
@@ -115,112 +115,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Steamed sliced pork belly and vegetables",
-              "safe_items": [
-                "Seaweed rice",
-                "Cold spicy squid soup",
-                "Sweet pumpkin fritters",
-                "Soy-braised eggs",
-                "Watermelon",
-                "Napa cabbage kimchi"
-              ],
-              "skip_items": [
-                "Steamed sliced pork belly and vegetables"
-              ],
-              "reason": "The main dish contains pork."
-            }
-          ]
-        },
-        {
-          "name": "A La Carte",
-          "type": "individual",
-          "breakfast": {
-            "price": "1000 won",
-            "selling_time": "08:20~10:00",
-            "verdict": "NONE",
-            "main_dish": "Not served",
-            "reason": "Breakfast not served"
-          },
-          "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [
-            "Chicken leg steak"
-          ],
-          "avoid": [
-            "Ramen dishes",
-            "Pork cutlet dishes",
-            "Spicy stir-fried pork rice bowl",
-            "Budae-jjigae set"
-          ]
-        }
-      ]
-    },
-    "Thursday": {
-      "day": "Thursday",
-      "cafeterias": [
-        {
-          "name": "Set Meal",
-          "type": "package",
-          "meals": [
-            {
-              "time": "Lunch",
-              "price": "6000 won",
-              "selling_time": "11:30~13:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "Stir-fried pork",
+              "main_dish": "Spicy braised pork ribs",
               "safe_items": [
                 "Mixed grain rice",
-                "Crab meat soup",
-                "Broccoli seasoned with seaweed",
-                "Fried eggplant with chili sauce",
-                "Napa cabbage kimchi",
-                "Caramel flower bun"
+                "Octopus soup",
+                "Cream shrimp and lettuce salad",
+                "Pickled stem lettuce",
+                "Tomato marinade",
+                "Radish kimchi"
               ],
               "skip_items": [
-                "Stir-fried pork"
+                "Spicy braised pork ribs"
               ],
-              "reason": "The main dish contains pork."
-            }
-          ]
-        },
-        {
-          "name": "A La Carte",
-          "type": "individual",
-          "breakfast": {
-            "price": "1000 won",
-            "selling_time": "08:20~10:00",
-            "verdict": "NONE",
-            "main_dish": "Not served",
-            "reason": "Breakfast not served"
-          },
-          "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [
-            "Chicken cream stew udon",
-            "Tuna sashimi rice bowl"
-          ],
-          "avoid": [
-            "Ramen dishes",
-            "Pork cutlet dishes",
-            "Stir-fried pork belly and kimchi set"
-          ]
-        }
-      ]
-    },
-    "Friday": {
-      "day": "Friday",
-      "cafeterias": [
-        {
-          "name": "Set Meal",
-          "type": "package",
-          "meals": [
-            {
-              "time": "Lunch",
-              "price": "6000 won",
-              "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "Not served",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "Closed for Constitution Day"
+              "reason": "The main dish (Spicy braised ribs) is marked with an asterisk, indicating it contains pork."
             }
           ]
         },
@@ -237,6 +144,101 @@
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
           "avoid": []
+        }
+      ]
+    },
+    "Thursday": {
+      "day": "Thursday",
+      "cafeterias": [
+        {
+          "name": "Set Meal",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Lunch",
+              "price": "6000 won",
+              "selling_time": "11:30~13:30",
+              "verdict": "NOT WORTH",
+              "main_dish": "Creamy onion pork cutlet",
+              "safe_items": [
+                "Mixed grain rice",
+                "Spicy beef soup",
+                "Grilled king oyster mushroom with garlic butter",
+                "Chilled chicken breast with mustard sauce",
+                "Nacho salad",
+                "Napa cabbage kimchi"
+              ],
+              "skip_items": [
+                "Creamy onion pork cutlet"
+              ],
+              "reason": "The main dish (Creamy onion pork cutlet) is marked with an asterisk, indicating it contains pork."
+            }
+          ]
+        },
+        {
+          "name": "A La Carte",
+          "type": "individual",
+          "breakfast": {
+            "price": "1000 won",
+            "selling_time": "08:20~10:00",
+            "verdict": "NONE",
+            "main_dish": "Not served",
+            "reason": "Breakfast not served"
+          },
+          "selling_time": "11:00~14:00, 16:00~18:30",
+          "safe_options": [],
+          "avoid": []
+        }
+      ]
+    },
+    "Friday": {
+      "day": "Friday",
+      "cafeterias": [
+        {
+          "name": "Set Meal",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Lunch",
+              "price": "6000 won",
+              "selling_time": "11:30~13:30",
+              "verdict": "NOT WORTH",
+              "main_dish": "Pork neck kimchi stew",
+              "safe_items": [
+                "Mixed grain rice",
+                "Beef pancake",
+                "Chicken and rice cake gangjeong",
+                "Seasoned mung bean sprouts",
+                "Fruit cocktail salad",
+                "Young summer radish kimchi"
+              ],
+              "skip_items": [
+                "Pork neck kimchi stew"
+              ],
+              "reason": "The main stew (Pork neck kimchi stew) is marked with an asterisk, indicating it contains pork."
+            }
+          ]
+        },
+        {
+          "name": "A La Carte",
+          "type": "individual",
+          "breakfast": {
+            "price": "1000 won",
+            "selling_time": "08:20~10:00",
+            "verdict": "NONE",
+            "main_dish": "Not served",
+            "reason": "Breakfast not served"
+          },
+          "selling_time": "11:00~14:00, 16:00~18:30",
+          "safe_options": [
+            "Cold Buckwheat Noodles and Takoyaki"
+          ],
+          "avoid": [
+            "Ramen",
+            "Pork Cutlet",
+            "Thinly Sliced Pork Belly Rice Bowl",
+            "Special Set"
+          ]
         }
       ]
     }
