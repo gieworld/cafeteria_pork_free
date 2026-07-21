@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-20T10:13:45.426855",
-  "menu_hash": "2420dcafeec86e6d7a9e332910c340dd",
+  "updated_at": "2026-07-21T09:00:32.174906",
+  "menu_hash": "35568bd97d450784d8016fe7ac5d7653",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -20,13 +20,13 @@
                 "Skewered fish cake soup",
                 "Tteokbokki pasta",
                 "Lotus root shrimp crackers with Cheongyang mayo sauce",
-                "Bok choy fresh kimchi",
-                "Napa cabbage kimchi"
+                "Pak choi fresh kimchi",
+                "Cabbage kimchi"
               ],
               "skip_items": [
                 "Perilla seed white pork bulgogi"
               ],
-              "reason": "The main dish (Perilla seed white bulgogi) is marked with an asterisk, indicating it contains pork."
+              "reason": "The main dish is marked with an asterisk and contains pork."
             }
           ]
         },
@@ -42,13 +42,13 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Beef Tartare Bibimbap",
-            "Andong Beef Brisket Hangover Noodles"
+            "Beef tartare bibimbap",
+            "Andong beef brisket hangover noodle soup"
           ],
           "avoid": [
             "Ramen",
-            "Pork Cutlet",
-            "Special Set (Uni Jajangmyeon)"
+            "Pork cutlet",
+            "Uni Jajangmyeon"
           ]
         }
       ]
@@ -65,19 +65,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "WORTH IT",
-              "main_dish": "Rose braised chicken with Fenmosa",
+              "main_dish": "Fenmosa rose braised chicken",
               "safe_items": [
                 "Mixed grain rice",
                 "Jeonju-style bean sprout soup",
-                "Rose braised chicken with Fenmosa",
+                "Fenmosa rose braised chicken",
                 "Ex-boyfriend toast",
                 "Cherry tomato green salad",
                 "Young summer radish kimchi"
               ],
               "skip_items": [
-                "Vegetable mixed dumplings"
+                "Vegetable fried dumplings"
               ],
-              "reason": "The main chicken dish is safe, but the side dish (vegetable mixed dumplings) is marked with an asterisk and contains pork."
+              "reason": "The main dish is pork-free chicken, but the side dumpling contains pork."
             }
           ]
         },
@@ -95,10 +95,10 @@
           "safe_options": [],
           "avoid": [
             "Ramen",
-            "Pork Cutlet",
-            "Boiled Pork Slices Set",
-            "Gimbap Fried Rice",
-            "Special Set"
+            "Pork cutlet",
+            "Thinly sliced boiled pork set",
+            "Gimbap fried rice",
+            "Daily special"
           ]
         }
       ]
@@ -115,19 +115,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Spicy braised pork ribs",
+              "main_dish": "Spicy pork ribs",
               "safe_items": [
                 "Mixed grain rice",
                 "Octopus soup",
-                "Cream shrimp and lettuce salad",
+                "Cream shrimp & lettuce salad",
                 "Pickled stem lettuce",
                 "Tomato marinade",
-                "Radish kimchi"
+                "Kkakdugi"
               ],
               "skip_items": [
-                "Spicy braised pork ribs"
+                "Spicy pork ribs"
               ],
-              "reason": "The main dish (Spicy braised ribs) is marked with an asterisk, indicating it contains pork."
+              "reason": "The main dish is marked with an asterisk and contains pork."
             }
           ]
         },
@@ -141,7 +141,7 @@
             "main_dish": "Not served",
             "reason": "Breakfast not served"
           },
-          "selling_time": "11:00~14:00, 16:00~18:30",
+          "selling_time": "Closed",
           "safe_options": [],
           "avoid": []
         }
@@ -163,15 +163,15 @@
               "safe_items": [
                 "Mixed grain rice",
                 "Spicy beef soup",
-                "Grilled king oyster mushroom with garlic butter",
-                "Chilled chicken breast with mustard sauce",
+                "Garlic butter king oyster mushroom",
+                "Chicken breast mustard cold salad",
                 "Nacho salad",
-                "Napa cabbage kimchi"
+                "Cabbage kimchi"
               ],
               "skip_items": [
                 "Creamy onion pork cutlet"
               ],
-              "reason": "The main dish (Creamy onion pork cutlet) is marked with an asterisk, indicating it contains pork."
+              "reason": "The main dish is marked with an asterisk and contains pork."
             }
           ]
         },
@@ -185,7 +185,7 @@
             "main_dish": "Not served",
             "reason": "Breakfast not served"
           },
-          "selling_time": "11:00~14:00, 16:00~18:30",
+          "selling_time": "Closed",
           "safe_options": [],
           "avoid": []
         }
@@ -215,7 +215,7 @@
               "skip_items": [
                 "Pork neck kimchi stew"
               ],
-              "reason": "The main stew (Pork neck kimchi stew) is marked with an asterisk, indicating it contains pork."
+              "reason": "The main dish is marked with an asterisk and contains pork."
             }
           ]
         },
@@ -231,13 +231,13 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Cold Buckwheat Noodles and Takoyaki"
+            "Cold buckwheat noodles & Takoyaki"
           ],
           "avoid": [
             "Ramen",
-            "Pork Cutlet",
-            "Thinly Sliced Pork Belly Rice Bowl",
-            "Special Set"
+            "Pork cutlet",
+            "Thinly sliced pork belly rice bowl",
+            "Daily special"
           ]
         }
       ]
