@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-23T09:00:35.058933",
-  "menu_hash": "997e94561acedbdc7ea0003e62f560f9",
+  "updated_at": "2026-07-24T09:00:38.885323",
+  "menu_hash": "59d05929160f51b5433eb975c8769c09",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -14,19 +14,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Perilla Seed White Bulgogi",
+              "main_dish": "Perilla seed white pork bulgogi",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Skewered Fish Cake Soup",
-                "Tteokbokki Pasta",
-                "Lotus Root Shrimp Crackers with Cheongyang Mayo Sauce",
-                "Bok Choy Fresh Kimchi",
-                "Napa Cabbage Kimchi"
+                "Mixed grain rice",
+                "Skewered fish cake soup",
+                "Tteokbokki pasta",
+                "Lotus root shrimp crackers with Cheongyang mayo sauce",
+                "Bok choy fresh kimchi",
+                "Napa cabbage kimchi"
               ],
               "skip_items": [
-                "Perilla Seed White Bulgogi"
+                "Perilla seed white pork bulgogi"
               ],
-              "reason": "The main dish (Perilla Seed White Bulgogi) is marked with an asterisk, indicating it contains pork."
+              "reason": "The main dish is marked with an asterisk, indicating it contains pork."
             }
           ]
         },
@@ -48,7 +48,7 @@
           "avoid": [
             "Ramen",
             "Pork Cutlet",
-            "Daily Special (Uni Jajangmyeon)"
+            "Uni Jajangmyeon Set"
           ]
         }
       ]
@@ -65,19 +65,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "WORTH IT",
-              "main_dish": "Fenmosa Rose Braised Chicken",
+              "main_dish": "Rose braised chicken with Fenmosa",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Jeonju-style Bean Sprout Soup",
-                "Fenmosa Rose Braised Chicken",
-                "Ex-Boyfriend Toast",
-                "Cherry Tomato Green Salad",
-                "Young Summer Radish Kimchi"
+                "Mixed grain rice",
+                "Jeonju-style bean sprout soup",
+                "Rose braised chicken with Fenmosa",
+                "Ex-boyfriend toast",
+                "Cherry tomato green salad",
+                "Young summer radish kimchi"
               ],
               "skip_items": [
-                "Vegetable Fried Dumplings"
+                "Vegetable bibim mandu"
               ],
-              "reason": "The main dish is pork-free chicken, but the side dish (Vegetable Fried Dumplings) contains pork."
+              "reason": "The main chicken dish is safe, but the side dish (Vegetable bibim mandu) is marked with an asterisk and contains pork."
             }
           ]
         },
@@ -93,12 +93,12 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Daily Special (Smoked Duck)"
+            "Smoked Duck Set"
           ],
           "avoid": [
             "Ramen",
             "Pork Cutlet",
-            "Boiled Pork Slices Set",
+            "Boiled Pork Set",
             "Gimbap Fried Rice"
           ]
         }
@@ -116,19 +116,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Spicy Braised Ribs",
+              "main_dish": "Spicy pork ribs",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Octopus Soup",
-                "Cream Shrimp & Lettuce Salad",
-                "Stem Lettuce Pickles",
-                "Tomato Marinade",
-                "Radish Kimchi"
+                "Mixed grain rice",
+                "Octopus soup",
+                "Cream shrimp and lettuce salad",
+                "Pickled stem lettuce",
+                "Tomato marinade",
+                "Radish kimchi"
               ],
               "skip_items": [
-                "Spicy Braised Ribs"
+                "Spicy pork ribs"
               ],
-              "reason": "The main dish (Spicy Braised Ribs) is marked with an asterisk, indicating it contains pork."
+              "reason": "The main dish (Spicy pork ribs) is marked with an asterisk, indicating it contains pork."
             }
           ]
         },
@@ -149,7 +149,7 @@
           "avoid": [
             "Ramen",
             "Pork Cutlet",
-            "Daily Special (Beef Bulgogi)"
+            "Beef Bulgogi Set"
           ]
         }
       ]
@@ -166,19 +166,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Creamy Onion Pork Cutlet",
+              "main_dish": "Creamy onion pork cutlet",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Spicy Beef Soup",
-                "Garlic Butter King Oyster Mushroom Roast",
-                "Chicken Breast Mustard Cold Salad",
-                "Nacho Salad",
-                "Napa Cabbage Kimchi"
+                "Mixed grain rice",
+                "Spicy beef soup",
+                "Garlic butter king oyster mushroom roast",
+                "Chicken breast mustard cold salad",
+                "Nacho salad",
+                "Napa cabbage kimchi"
               ],
               "skip_items": [
-                "Creamy Onion Pork Cutlet"
+                "Creamy onion pork cutlet"
               ],
-              "reason": "The main dish (Creamy Onion Pork Cutlet) contains pork."
+              "reason": "The main dish is pork cutlet, which contains pork."
             }
           ]
         },
@@ -197,7 +197,8 @@
           "avoid": [
             "Ramen",
             "Pork Cutlet",
-            "Daily Special (Unspecified)"
+            "Abiko Curry and Tornado Potato",
+            "Chili Japchae and Flower Bun Set"
           ]
         }
       ]
@@ -214,19 +215,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Pork Neck Kimchi Stew",
+              "main_dish": "Pork neck kimchi stew",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Beef Pancake",
-                "Chicken and Rice Cake Gangjeong",
-                "Mung Bean Sprout Salad",
-                "Fruit Cocktail Salad",
-                "Young Summer Radish Kimchi"
+                "Mixed grain rice",
+                "Beef pancake",
+                "Chicken and rice cake gangjeong",
+                "Seasoned mung bean sprouts",
+                "Fruit cocktail salad",
+                "Young summer radish kimchi"
               ],
               "skip_items": [
-                "Pork Neck Kimchi Stew"
+                "Pork neck kimchi stew"
               ],
-              "reason": "The main dish (Pork Neck Kimchi Stew) contains pork."
+              "reason": "The main dish is pork neck kimchi stew, which contains pork."
             }
           ]
         },
@@ -242,13 +243,13 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Cold Buckwheat Noodles & Takoyaki"
+            "Cold Buckwheat Noodles and Takoyaki"
           ],
           "avoid": [
             "Ramen",
             "Pork Cutlet",
             "Thinly Sliced Pork Belly Rice Bowl",
-            "Daily Special (Unspecified)"
+            "Unspecified Special Set"
           ]
         }
       ]
