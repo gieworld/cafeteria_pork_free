@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-25T09:00:30.684090",
-  "menu_hash": "80ef3dfcf37636e8acaf647079497cfc",
+  "updated_at": "2026-07-26T09:00:16.563324",
+  "menu_hash": "a8d29921f697de7e49474de41325a786",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -13,172 +13,11 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "Perilla seed white bulgogi",
-              "safe_items": [
-                "Mixed grain rice",
-                "Skewered fish cake soup",
-                "Tteokbokki pasta",
-                "Lotus root shrimp crackers with Cheongyang mayo sauce",
-                "Bok choy fresh kimchi",
-                "Napa cabbage kimchi"
-              ],
-              "skip_items": [
-                "Perilla seed white bulgogi"
-              ],
-              "reason": "The main dish (Perilla seed white bulgogi) is marked with an asterisk, indicating it contains pork."
-            }
-          ]
-        },
-        {
-          "name": "A La Carte",
-          "type": "individual",
-          "breakfast": {
-            "price": "1000 won",
-            "selling_time": "08:20~10:00",
-            "verdict": "NONE",
-            "main_dish": "Not served",
-            "reason": "Breakfast not served"
-          },
-          "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [
-            "Beef tartare bibimbap",
-            "Andong beef brisket hangover noodle soup"
-          ],
-          "avoid": [
-            "Ramen",
-            "Pork cutlet",
-            "Uni Jajangmyeon set"
-          ]
-        }
-      ]
-    },
-    "Tuesday": {
-      "day": "Tuesday",
-      "cafeterias": [
-        {
-          "name": "Set Meal",
-          "type": "package",
-          "meals": [
-            {
-              "time": "Lunch",
-              "price": "6000 won",
-              "selling_time": "11:30~13:30",
-              "verdict": "WORTH IT",
-              "main_dish": "Fenmosa rose braised chicken",
-              "safe_items": [
-                "Mixed grain rice",
-                "Jeonju-style bean sprout soup",
-                "Fenmosa rose braised chicken",
-                "Ex-boyfriend toast",
-                "Cherry tomato green salad",
-                "Young summer radish kimchi"
-              ],
-              "skip_items": [
-                "Vegetable mixed dumplings"
-              ],
-              "reason": "The main dish is pork-free chicken, but the side dumpling contains pork."
-            }
-          ]
-        },
-        {
-          "name": "A La Carte",
-          "type": "individual",
-          "breakfast": {
-            "price": "1000 won",
-            "selling_time": "08:20~10:00",
-            "verdict": "NONE",
-            "main_dish": "Not served",
-            "reason": "Breakfast not served"
-          },
-          "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [
-            "Smoked duck set"
-          ],
-          "avoid": [
-            "Ramen",
-            "Pork cutlet",
-            "Boiled pork slices set",
-            "Gimbap fried rice"
-          ]
-        }
-      ]
-    },
-    "Wednesday": {
-      "day": "Wednesday",
-      "cafeterias": [
-        {
-          "name": "Set Meal",
-          "type": "package",
-          "meals": [
-            {
-              "time": "Lunch",
-              "price": "6000 won",
-              "selling_time": "11:30~13:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "Spicy pork galbi-jjim",
-              "safe_items": [
-                "Mixed grain rice",
-                "Octopus soup",
-                "Cream shrimp & lettuce salad",
-                "Stem lettuce pickle",
-                "Tomato marinade",
-                "Radish kimchi"
-              ],
-              "skip_items": [
-                "Spicy pork galbi-jjim"
-              ],
-              "reason": "The main dish (Spicy pork galbi-jjim) is marked with an asterisk, indicating it contains pork."
-            }
-          ]
-        },
-        {
-          "name": "A La Carte",
-          "type": "individual",
-          "breakfast": {
-            "price": "1000 won",
-            "selling_time": "08:20~10:00",
-            "verdict": "NONE",
-            "main_dish": "Not served",
-            "reason": "Breakfast not served"
-          },
-          "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [
-            "Chicken karaage rice bowl"
-          ],
-          "avoid": [
-            "Ramen",
-            "Pork cutlet",
-            "Beef bulgogi set"
-          ]
-        }
-      ]
-    },
-    "Thursday": {
-      "day": "Thursday",
-      "cafeterias": [
-        {
-          "name": "Set Meal",
-          "type": "package",
-          "meals": [
-            {
-              "time": "Lunch",
-              "price": "6000 won",
-              "selling_time": "11:30~13:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "Creamy onion pork cutlet",
-              "safe_items": [
-                "Mixed grain rice",
-                "Spicy beef soup",
-                "Garlic butter king oyster mushroom roast",
-                "Chicken breast mustard cold salad",
-                "Nacho salad",
-                "Napa cabbage kimchi"
-              ],
-              "skip_items": [
-                "Creamy onion pork cutlet"
-              ],
-              "reason": "The main dish is pork cutlet, which contains pork."
+              "verdict": "NONE",
+              "main_dish": "Not served",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available"
             }
           ]
         },
@@ -194,17 +33,12 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
-          "avoid": [
-            "Ramen",
-            "Pork cutlet",
-            "Abiko curry & tornado potato",
-            "Chili japchae & flower bun"
-          ]
+          "avoid": []
         }
       ]
     },
-    "Friday": {
-      "day": "Friday",
+    "Tuesday": {
+      "day": "Tuesday",
       "cafeterias": [
         {
           "name": "Set Meal",
@@ -214,20 +48,11 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "Pork neck kimchi stew",
-              "safe_items": [
-                "Mixed grain rice",
-                "Beef pancake",
-                "Chicken & rice cake gangjeong",
-                "Mung bean sprout salad",
-                "Fruit cocktail salad",
-                "Young summer radish kimchi"
-              ],
-              "skip_items": [
-                "Pork neck kimchi stew"
-              ],
-              "reason": "The main dish is pork neck kimchi stew, which contains pork."
+              "verdict": "NONE",
+              "main_dish": "Not served",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available"
             }
           ]
         },
@@ -242,15 +67,113 @@
             "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [
-            "Cold buckwheat noodles & Takoyaki"
-          ],
-          "avoid": [
-            "Ramen",
-            "Pork cutlet",
-            "Thinly sliced pork belly rice bowl",
-            "Pork backbone hangover soup"
+          "safe_options": [],
+          "avoid": []
+        }
+      ]
+    },
+    "Wednesday": {
+      "day": "Wednesday",
+      "cafeterias": [
+        {
+          "name": "Set Meal",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Lunch",
+              "price": "6000 won",
+              "selling_time": "11:30~13:30",
+              "verdict": "NONE",
+              "main_dish": "Not served",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available"
+            }
           ]
+        },
+        {
+          "name": "A La Carte",
+          "type": "individual",
+          "breakfast": {
+            "price": "1000 won",
+            "selling_time": "08:20~10:00",
+            "verdict": "NONE",
+            "main_dish": "Not served",
+            "reason": "Breakfast not served"
+          },
+          "selling_time": "11:00~14:00, 16:00~18:30",
+          "safe_options": [],
+          "avoid": []
+        }
+      ]
+    },
+    "Thursday": {
+      "day": "Thursday",
+      "cafeterias": [
+        {
+          "name": "Set Meal",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Lunch",
+              "price": "6000 won",
+              "selling_time": "11:30~13:30",
+              "verdict": "NONE",
+              "main_dish": "Not served",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available"
+            }
+          ]
+        },
+        {
+          "name": "A La Carte",
+          "type": "individual",
+          "breakfast": {
+            "price": "1000 won",
+            "selling_time": "08:20~10:00",
+            "verdict": "NONE",
+            "main_dish": "Not served",
+            "reason": "Breakfast not served"
+          },
+          "selling_time": "11:00~14:00, 16:00~18:30",
+          "safe_options": [],
+          "avoid": []
+        }
+      ]
+    },
+    "Friday": {
+      "day": "Friday",
+      "cafeterias": [
+        {
+          "name": "Set Meal",
+          "type": "package",
+          "meals": [
+            {
+              "time": "Lunch",
+              "price": "6000 won",
+              "selling_time": "11:30~13:30",
+              "verdict": "NONE",
+              "main_dish": "Not served",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available"
+            }
+          ]
+        },
+        {
+          "name": "A La Carte",
+          "type": "individual",
+          "breakfast": {
+            "price": "1000 won",
+            "selling_time": "08:20~10:00",
+            "verdict": "NONE",
+            "main_dish": "Not served",
+            "reason": "Breakfast not served"
+          },
+          "selling_time": "11:00~14:00, 16:00~18:30",
+          "safe_options": [],
+          "avoid": []
         }
       ]
     }
