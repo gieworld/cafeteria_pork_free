@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-26T09:00:16.563324",
-  "menu_hash": "a8d29921f697de7e49474de41325a786",
+  "updated_at": "2026-07-27T09:00:29.052211",
+  "menu_hash": "da41438f2f82da4d1e6f6c1e086187da",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -13,11 +13,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "Not served",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available"
+              "verdict": "WORTH IT",
+              "main_dish": "Mushroom beef bulgogi and Chicken yuringi",
+              "safe_items": [
+                "Mixed grain rice",
+                "Blue crab soybean paste soup",
+                "Chicken yuringi",
+                "Cucumber pepper seasoned with soybean paste",
+                "Iced ripe persimmon",
+                "Napa cabbage kimchi"
+              ],
+              "skip_items": [
+                "Mushroom beef bulgogi"
+              ],
+              "reason": "The chicken dish is safe, but the beef bulgogi is suspicious as cafeteria bulgogi may be mixed with pork."
             }
           ]
         },
@@ -32,8 +41,14 @@
             "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [],
-          "avoid": []
+          "safe_options": [
+            "Clam Kalguksu"
+          ],
+          "avoid": [
+            "Ramen",
+            "Pork Cutlet",
+            "Spicy Pork Rice Bowl"
+          ]
         }
       ]
     },
@@ -48,11 +63,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "Not served",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available"
+              "verdict": "NOT WORTH",
+              "main_dish": "Webfoot octopus and pork bulgogi",
+              "safe_items": [
+                "Mixed grain rice",
+                "Perilla seed seaweed soup",
+                "Bean sprout and crab stick cold salad",
+                "Wrap vegetables and ssamjang",
+                "Takoyaki",
+                "Napa cabbage kimchi"
+              ],
+              "skip_items": [
+                "Webfoot octopus and pork bulgogi"
+              ],
+              "reason": "The main dish contains pork."
             }
           ]
         },
@@ -67,8 +91,14 @@
             "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [],
-          "avoid": []
+          "safe_options": [
+            "Smoked Duck Noodles"
+          ],
+          "avoid": [
+            "Ramen",
+            "Pork Cutlet",
+            "Spicy Pork Rice Bowl"
+          ]
         }
       ]
     },
@@ -83,11 +113,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "Not served",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available"
+              "verdict": "WORTH IT",
+              "main_dish": "Chili shrimp and Spicy chicken soup",
+              "safe_items": [
+                "Mixed grain rice",
+                "Spicy chicken soup",
+                "Chili shrimp",
+                "Steamed egg with vegetables",
+                "Granola salad",
+                "Napa cabbage kimchi"
+              ],
+              "skip_items": [
+                "Seafood japchae"
+              ],
+              "reason": "The main dishes are safe, but the seafood japchae is suspicious as cafeteria japchae may contain pork."
             }
           ]
         },
@@ -103,7 +142,12 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
-          "avoid": []
+          "avoid": [
+            "Ramen",
+            "Pork Cutlet",
+            "Pork Belly Bibimbap",
+            "Spicy Pork Rice Bowl"
+          ]
         }
       ]
     },
@@ -118,11 +162,18 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "Not served",
-              "safe_items": [],
+              "verdict": "SAFE",
+              "main_dish": "Squid cutlet and Chicken tteokbokki",
+              "safe_items": [
+                "Thistle rice with seasoned sauce",
+                "Soft tofu egg soup",
+                "Squid cutlet",
+                "Chicken tteokbokki",
+                "Napa cabbage kimchi",
+                "Roasted grain drink"
+              ],
               "skip_items": [],
-              "reason": "No menu data available"
+              "reason": "All items are pork-free and safe to eat."
             }
           ]
         },
@@ -137,8 +188,14 @@
             "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [],
-          "avoid": []
+          "safe_options": [
+            "Cold Raw Beef Soup"
+          ],
+          "avoid": [
+            "Ramen",
+            "Pork Cutlet",
+            "Spicy Pork Rice Bowl"
+          ]
         }
       ]
     },
@@ -153,11 +210,19 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "Not served",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available"
+              "verdict": "NOT WORTH",
+              "main_dish": "Bite-sized pork cutlet",
+              "safe_items": [
+                "Nutritious chicken porridge",
+                "Stir-fried dried shredded squid with green onions",
+                "Cucumber and pepper with ssamjang",
+                "Blueberry salad",
+                "Napa cabbage kimchi"
+              ],
+              "skip_items": [
+                "Bite-sized pork cutlet"
+              ],
+              "reason": "The main dish is a pork cutlet."
             }
           ]
         },
@@ -173,7 +238,12 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
-          "avoid": []
+          "avoid": [
+            "Ramen",
+            "Pork Cutlet",
+            "Pork Cutlet Abiko Curry",
+            "Spicy Pork Rice Bowl"
+          ]
         }
       ]
     }
