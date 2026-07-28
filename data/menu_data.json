@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-27T09:00:29.052211",
-  "menu_hash": "da41438f2f82da4d1e6f6c1e086187da",
+  "updated_at": "2026-07-28T09:00:31.624956",
+  "menu_hash": "aff1e8bb1bb59415ddf25acc480e6bac",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -14,19 +14,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "WORTH IT",
-              "main_dish": "Mushroom beef bulgogi and Chicken yuringi",
+              "main_dish": "Mushroom Beef Bulgogi and Chicken Yuringi",
               "safe_items": [
-                "Mixed grain rice",
-                "Blue crab soybean paste soup",
-                "Chicken yuringi",
-                "Cucumber pepper seasoned with soybean paste",
-                "Iced ripe persimmon",
-                "Napa cabbage kimchi"
+                "Mixed Grain Rice",
+                "Blue Crab Soybean Paste Soup",
+                "Chicken Yuringi",
+                "Cucumber Pepper Seasoned with Soybean Paste",
+                "Iced Ripe Persimmon",
+                "Napa Cabbage Kimchi"
               ],
               "skip_items": [
-                "Mushroom beef bulgogi"
+                "Mushroom Beef Bulgogi"
               ],
-              "reason": "The chicken dish is safe, but the beef bulgogi is suspicious as cafeteria bulgogi may be mixed with pork."
+              "reason": "The chicken dish is safe, but the beef bulgogi is suspicious as cheap cafeteria bulgogi may contain pork."
             }
           ]
         },
@@ -42,12 +42,12 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Clam Kalguksu"
+            "Clam Knife-Cut Noodles"
           ],
           "avoid": [
             "Ramen",
             "Pork Cutlet",
-            "Spicy Pork Rice Bowl"
+            "Spicy Stir-fried Pork with Rice"
           ]
         }
       ]
@@ -64,17 +64,17 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Webfoot octopus and pork bulgogi",
+              "main_dish": "Webfoot Octopus and Pork Bulgogi",
               "safe_items": [
-                "Mixed grain rice",
-                "Perilla seed seaweed soup",
-                "Bean sprout and crab stick cold salad",
-                "Wrap vegetables and ssamjang",
+                "Mixed Grain Rice",
+                "Perilla Seed Seaweed Soup",
+                "Bean Sprout and Crab Meat Cold Salad",
+                "Ssam Vegetables and Ssamjang",
                 "Takoyaki",
-                "Napa cabbage kimchi"
+                "Napa Cabbage Kimchi"
               ],
               "skip_items": [
-                "Webfoot octopus and pork bulgogi"
+                "Webfoot Octopus and Pork Bulgogi"
               ],
               "reason": "The main dish contains pork."
             }
@@ -92,12 +92,12 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Smoked Duck Noodles"
+            "Smoked Duck Sesame Noodles"
           ],
           "avoid": [
             "Ramen",
             "Pork Cutlet",
-            "Spicy Pork Rice Bowl"
+            "Spicy Stir-fried Pork with Rice"
           ]
         }
       ]
@@ -114,19 +114,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "WORTH IT",
-              "main_dish": "Chili shrimp and Spicy chicken soup",
+              "main_dish": "Spicy Chicken Soup and Chili Shrimp",
               "safe_items": [
-                "Mixed grain rice",
-                "Spicy chicken soup",
-                "Chili shrimp",
-                "Steamed egg with vegetables",
-                "Granola salad",
-                "Napa cabbage kimchi"
+                "Mixed Grain Rice",
+                "Spicy Chicken Soup",
+                "Chili Shrimp",
+                "Steamed Egg with Vegetables",
+                "Granola Salad",
+                "Napa Cabbage Kimchi"
               ],
               "skip_items": [
-                "Seafood japchae"
+                "Korean Glass Noodles (Japchae)"
               ],
-              "reason": "The main dishes are safe, but the seafood japchae is suspicious as cafeteria japchae may contain pork."
+              "reason": "The main dishes are pork-free, but the glass noodles (Japchae) may contain pork."
             }
           ]
         },
@@ -146,7 +146,7 @@
             "Ramen",
             "Pork Cutlet",
             "Pork Belly Bibimbap",
-            "Spicy Pork Rice Bowl"
+            "Spicy Stir-fried Pork with Rice"
           ]
         }
       ]
@@ -162,18 +162,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "SAFE",
-              "main_dish": "Squid cutlet and Chicken tteokbokki",
+              "verdict": "WORTH IT",
+              "main_dish": "Royal Court Tteokbokki and Squid Hot Bar",
               "safe_items": [
-                "Thistle rice with seasoned sauce",
-                "Soft tofu egg soup",
-                "Squid cutlet",
-                "Chicken tteokbokki",
-                "Napa cabbage kimchi",
-                "Roasted grain drink"
+                "Thistle Rice with Sauce",
+                "Royal Court Tteokbokki",
+                "Squid Hot Bar with Mustard",
+                "Basil Tomato Salad",
+                "Napa Cabbage Kimchi",
+                "Roasted Grain Shake"
               ],
-              "skip_items": [],
-              "reason": "All items are pork-free and safe to eat."
+              "skip_items": [
+                "Spicy Clam Soft Tofu Stew"
+              ],
+              "reason": "The main dishes are pork-free, but the soft tofu stew must be avoided as it typically contains minced pork."
             }
           ]
         },
@@ -194,7 +196,7 @@
           "avoid": [
             "Ramen",
             "Pork Cutlet",
-            "Spicy Pork Rice Bowl"
+            "Spicy Stir-fried Pork with Rice"
           ]
         }
       ]
@@ -211,18 +213,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Bite-sized pork cutlet",
+              "main_dish": "Nutritious Chicken Porridge and Bite-sized Pork Cutlet",
               "safe_items": [
-                "Nutritious chicken porridge",
-                "Stir-fried dried shredded squid with green onions",
-                "Cucumber and pepper with ssamjang",
-                "Blueberry salad",
-                "Napa cabbage kimchi"
+                "Nutritious Chicken Porridge",
+                "Extra Rice",
+                "Stir-fried Dried Shredded Squid with Green Onions",
+                "Cucumber and Pepper with Ssamjang",
+                "Blueberry Salad",
+                "Napa Cabbage Kimchi"
               ],
               "skip_items": [
-                "Bite-sized pork cutlet"
+                "Bite-sized Pork Cutlet with Fried Garlic"
               ],
-              "reason": "The main dish is a pork cutlet."
+              "reason": "The main dish includes pork cutlet."
             }
           ]
         },
@@ -242,7 +245,7 @@
             "Ramen",
             "Pork Cutlet",
             "Pork Cutlet Abiko Curry",
-            "Spicy Pork Rice Bowl"
+            "Spicy Stir-fried Pork with Rice"
           ]
         }
       ]
