@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-02T09:00:24.531690",
-  "menu_hash": "6a8dd0ce738edd73850b9ae586d380f7",
+  "updated_at": "2026-08-04T09:00:42.259030",
+  "menu_hash": "bb08e0d3f6d267d8593f48b9dadf74df",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -13,20 +13,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "WORTH IT",
-              "main_dish": "Fish and Chips with Chipotle Sauce",
+              "verdict": "NOT WORTH",
+              "main_dish": "Curry",
               "safe_items": [
                 "White Rice",
                 "Enoki Mushroom and Fried Tofu Miso Soup",
                 "Fish and Chips with Chipotle Sauce",
                 "Spicy Chewy Noodles with Vegetables",
                 "Spinach Mandarin Salad",
-                "Cabbage Kimchi"
+                "Napa Cabbage Kimchi"
               ],
               "skip_items": [
                 "Curry"
               ],
-              "reason": "The main dish (Fish and Chips) is pork-free, but the curry side dish contains pork."
+              "reason": "The main dish is Curry, which is marked with an asterisk indicating it contains pork."
             }
           ]
         },
@@ -68,14 +68,14 @@
                 "Mixed Grain Rice",
                 "Kelp Noodle Salad",
                 "Seasoned Yellow Radish",
-                "Cabbage Kimchi"
+                "Napa Cabbage Kimchi"
               ],
               "skip_items": [
-                "Jjamppong Soup",
+                "Spicy Seafood Noodle Soup",
                 "Sweet and Sour Pork",
                 "Wedding Shaomai"
               ],
-              "reason": "The main dish (Sweet and Sour Pork) and several side dishes contain pork."
+              "reason": "The main dishes (Sweet and Sour Pork, Spicy Seafood Noodle Soup) and the Shaomai side dish contain pork."
             }
           ]
         },
@@ -118,14 +118,14 @@
                 "Mixed Grain Rice",
                 "Dried Pollack Hangover Soup",
                 "Tomato Spaghetti",
-                "Chicory Salad with Citron Dressing",
-                "Cabbage Kimchi",
+                "Chicory Salad with Yuzu Dressing",
+                "Napa Cabbage Kimchi",
                 "Apricot Jam Pie"
               ],
               "skip_items": [
                 "Stir-fried Eggplant and Pork"
               ],
-              "reason": "The main dish contains pork."
+              "reason": "The main meat dish (Stir-fried Eggplant and Pork) contains pork."
             }
           ]
         },
@@ -141,7 +141,7 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Spicy Chicken Rice"
+            "Chipotle Chicken Rice Bowl"
           ],
           "avoid": [
             "Ramen",
@@ -163,7 +163,7 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Pork Soup",
+              "main_dish": "Pork Rice Soup",
               "safe_items": [
                 "Braised Quail Eggs and Fish Cake Balls",
                 "Pan-fried Seafood Meatballs",
@@ -172,9 +172,9 @@
                 "Radish Kimchi"
               ],
               "skip_items": [
-                "Pork Soup"
+                "Pork Rice Soup with Seasoned Red Pepper Paste"
               ],
-              "reason": "The main dish is pork soup."
+              "reason": "The main dish is Pork Rice Soup, which contains pork."
             }
           ]
         },
@@ -210,20 +210,19 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "Fruit-marinated Braised Pork Ribs",
+              "verdict": "SAFE",
+              "main_dish": "Nutritious Braised Beef Short Ribs",
               "safe_items": [
                 "Mixed Grain Rice",
-                "Young Summer Radish Miso Soup",
+                "Yeolmu Soybean Paste Soup",
+                "Nutritious Braised Beef Short Ribs",
                 "Fried Squid Rings",
                 "Seasoned Pickled Radish",
                 "Tropical Fruit Salad",
-                "Cabbage Kimchi"
+                "Napa Cabbage Kimchi"
               ],
-              "skip_items": [
-                "Fruit-marinated Braised Pork Ribs"
-              ],
-              "reason": "The main dish contains pork."
+              "skip_items": [],
+              "reason": "All items, including the main beef dish and squid side dish, are pork-free."
             }
           ]
         },
@@ -239,7 +238,7 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Omelet Rice"
+            "Omurice"
           ],
           "avoid": [
             "Ramen",
