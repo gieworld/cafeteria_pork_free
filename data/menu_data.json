@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-05T09:00:35.873131",
-  "menu_hash": "a764508e80392d994cb34b2bba8c0ec0",
+  "updated_at": "2026-08-07T09:00:27.292659",
+  "menu_hash": "97890b3a6ac7efc521ea65138dcb1ba5",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -14,17 +14,17 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "WORTH IT",
-              "main_dish": "Fish and Chips with Chipotle Sauce",
+              "main_dish": "Fish and Chips",
               "safe_items": [
                 "White Rice",
                 "Enoki Mushroom Fried Tofu Miso Soup",
                 "Fish and Chips with Chipotle Sauce",
                 "Spicy Chewy Noodles with Vegetables",
                 "Spinach Mandarin Salad",
-                "Napa Cabbage Kimchi"
+                "Cabbage Kimchi"
               ],
               "skip_items": [
-                "Pork Curry"
+                "Curry"
               ],
               "reason": "The main dish Fish and Chips is pork-free, but the curry side dish contains pork and must be skipped."
             }
@@ -68,14 +68,14 @@
                 "Mixed Grain Rice",
                 "Kelp Noodle Salad",
                 "Seasoned Yellow Radish",
-                "Napa Cabbage Kimchi"
+                "Cabbage Kimchi"
               ],
               "skip_items": [
-                "Spicy Seafood Noodle Soup",
+                "Jjamppong Soup",
                 "Sweet and Sour Pork",
-                "Wedding Shaomai Dumpling"
+                "Wedding Shaomai"
               ],
-              "reason": "The main dishes (Sweet and Sour Pork and Spicy Seafood Noodle Soup) and the dumplings contain pork."
+              "reason": "The main dish Sweet and Sour Pork, the soup, and the dim sum side dish all contain pork."
             }
           ]
         },
@@ -118,14 +118,14 @@
                 "Mixed Grain Rice",
                 "Dried Pollack Hangover Soup",
                 "Tomato Spaghetti",
-                "Chicory Citron Salad",
-                "Napa Cabbage Kimchi",
+                "Chicory Yuzu Salad",
+                "Cabbage Kimchi",
                 "Apricot Jam Pie"
               ],
               "skip_items": [
                 "Stir-fried Eggplant and Pork"
               ],
-              "reason": "The main dish contains pork."
+              "reason": "The main meat dish contains pork."
             }
           ]
         },
@@ -172,7 +172,7 @@
                 "Radish Kimchi"
               ],
               "skip_items": [
-                "Pork Rice Soup"
+                "Pork Rice Soup with Seasoned Red Pepper Paste"
               ],
               "reason": "The main dish is Pork Rice Soup, which contains pork."
             }
@@ -193,8 +193,8 @@
           "avoid": [
             "Ramen",
             "Pork Cutlet",
-            "Cold Ramen",
-            "Pork Kimchi Stew"
+            "Cold Ramen (Hiyashi Chuka)",
+            "Spam Kimchi Stew"
           ]
         }
       ]
@@ -211,18 +211,18 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "SAFE",
-              "main_dish": "Nutritious Braised Beef Short Ribs",
+              "main_dish": "Braised Beef Short Ribs",
               "safe_items": [
                 "Mixed Grain Rice",
-                "Young Radish Miso Soup",
-                "Nutritious Braised Beef Short Ribs",
+                "Young Radish Leaf Miso Soup",
+                "Braised Beef Short Ribs",
                 "Fried Squid Rings",
                 "Seasoned Pickled Vegetables",
                 "Tropical Fruit Salad",
-                "Napa Cabbage Kimchi"
+                "Cabbage Kimchi"
               ],
               "skip_items": [],
-              "reason": "All items, including the beef short ribs and fried squid rings, are pork-free."
+              "reason": "All items, including the main beef dish and squid side dish, are pork-free."
             }
           ]
         },
