@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-07T09:00:27.292659",
-  "menu_hash": "97890b3a6ac7efc521ea65138dcb1ba5",
+  "updated_at": "2026-08-09T09:00:23.779383",
+  "menu_hash": "9a115c3d292809120e9a6f177fc5719b",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -14,19 +14,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "WORTH IT",
-              "main_dish": "Fish and Chips",
+              "main_dish": "Cheongyang-style braised chicken",
               "safe_items": [
-                "White Rice",
-                "Enoki Mushroom Fried Tofu Miso Soup",
-                "Fish and Chips with Chipotle Sauce",
-                "Spicy Chewy Noodles with Vegetables",
-                "Spinach Mandarin Salad",
-                "Cabbage Kimchi"
+                "Mixed grain rice",
+                "Cheongyang-style braised chicken",
+                "Seaweed lotus root fry with sriracha mayo",
+                "Sea string salad with flying fish roe",
+                "Blueberry salad",
+                "Napa cabbage kimchi"
               ],
               "skip_items": [
-                "Curry"
+                "Green chili soybean paste stew"
               ],
-              "reason": "The main dish Fish and Chips is pork-free, but the curry side dish contains pork and must be skipped."
+              "reason": "The main dish is chicken which is safe, but the soybean paste stew is suspicious as Korean stews may contain minced pork."
             }
           ]
         },
@@ -41,12 +41,13 @@
             "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [],
+          "safe_options": [
+            "Buckwheat cold noodles with sesame sauce",
+            "Tuna mayo rice bowl"
+          ],
           "avoid": [
             "Ramen",
-            "Pork Cutlet",
-            "Pork Neck Pilaf",
-            "Pork Kimchi Stew"
+            "Pork cutlet"
           ]
         }
       ]
@@ -63,19 +64,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Sweet and Sour Pork",
+              "main_dish": "Pork barbecue pork chop",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Kelp Noodle Salad",
-                "Seasoned Yellow Radish",
-                "Cabbage Kimchi"
+                "White rice",
+                "Crouton cream soup",
+                "Gorgonzola pizza",
+                "Rucola tomato salad",
+                "Radish cucumber pickle",
+                "Napa cabbage kimchi"
               ],
               "skip_items": [
-                "Jjamppong Soup",
-                "Sweet and Sour Pork",
-                "Wedding Shaomai"
+                "Pork barbecue pork chop"
               ],
-              "reason": "The main dish Sweet and Sour Pork, the soup, and the dim sum side dish all contain pork."
+              "reason": "The main dish contains pork."
             }
           ]
         },
@@ -91,12 +92,12 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Tuna Poke"
+            "Beef brisket bean sprout rice bowl"
           ],
           "avoid": [
             "Ramen",
-            "Pork Cutlet",
-            "Pork Kimchi Stew"
+            "Pork cutlet",
+            "Spam mayo rice bowl"
           ]
         }
       ]
@@ -113,19 +114,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Stir-fried Eggplant and Pork",
+              "main_dish": "Dongindong-style braised pork ribs",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Dried Pollack Hangover Soup",
-                "Tomato Spaghetti",
-                "Chicory Yuzu Salad",
-                "Cabbage Kimchi",
-                "Apricot Jam Pie"
+                "Mixed grain rice",
+                "Steamed cabbage",
+                "Stir-fried minced chili",
+                "Morning bread sandwich",
+                "Napa cabbage kimchi"
               ],
               "skip_items": [
-                "Stir-fried Eggplant and Pork"
+                "Pureed soybean stew",
+                "Dongindong-style braised pork ribs"
               ],
-              "reason": "The main meat dish contains pork."
+              "reason": "The main dish and the stew contain pork."
             }
           ]
         },
@@ -141,12 +142,12 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Chipotle Chicken Rice Bowl"
+            "Cockle bibimbap",
+            "Chicken karaage rice bowl"
           ],
           "avoid": [
             "Ramen",
-            "Pork Cutlet",
-            "Pork Kimchi Stew"
+            "Pork cutlet"
           ]
         }
       ]
@@ -162,19 +163,18 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "Pork Rice Soup",
+              "verdict": "SAFE",
+              "main_dish": "Squid and webfoot octopus bibimbap",
               "safe_items": [
-                "Braised Quail Eggs and Fish Cake Balls",
-                "Pan-fried Seafood Meatballs",
-                "Stir-fried Seaweed Stems",
-                "Pineapple Stick",
-                "Radish Kimchi"
+                "Squid and webfoot octopus bibimbap",
+                "Cold cucumber seaweed soup",
+                "Sweet pumpkin and sweet potato tempura",
+                "Lettuce and nut ssamjang",
+                "Stir-fried chives and seaweed flakes",
+                "Napa cabbage kimchi"
               ],
-              "skip_items": [
-                "Pork Rice Soup with Seasoned Red Pepper Paste"
-              ],
-              "reason": "The main dish is Pork Rice Soup, which contains pork."
+              "skip_items": [],
+              "reason": "All items are pork-free."
             }
           ]
         },
@@ -189,12 +189,13 @@
             "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [],
+          "safe_options": [
+            "Ox bone soup"
+          ],
           "avoid": [
             "Ramen",
-            "Pork Cutlet",
-            "Cold Ramen (Hiyashi Chuka)",
-            "Spam Kimchi Stew"
+            "Pork cutlet",
+            "Tteokgalbi mayo rice bowl"
           ]
         }
       ]
@@ -211,18 +212,18 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "SAFE",
-              "main_dish": "Braised Beef Short Ribs",
+              "main_dish": "Whole chicken leg ginseng soup with sprout ginseng",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Young Radish Leaf Miso Soup",
-                "Braised Beef Short Ribs",
-                "Fried Squid Rings",
-                "Seasoned Pickled Vegetables",
-                "Tropical Fruit Salad",
-                "Cabbage Kimchi"
+                "Mung bean glutinous rice",
+                "Whole chicken leg ginseng soup with sprout ginseng",
+                "Spicy squid salad",
+                "Chive pancake",
+                "Vegetable sticks with ssamjang",
+                "Plum tea",
+                "Radish kimchi"
               ],
               "skip_items": [],
-              "reason": "All items, including the main beef dish and squid side dish, are pork-free."
+              "reason": "All items are pork-free."
             }
           ]
         },
@@ -238,12 +239,12 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Omelet Rice"
+            "Tuna mayo rice bowl"
           ],
           "avoid": [
             "Ramen",
-            "Pork Cutlet",
-            "Pork Kimchi Stew"
+            "Pork cutlet",
+            "Meatball spaghetti"
           ]
         }
       ]
