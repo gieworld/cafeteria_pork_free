@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-09T09:00:23.779383",
-  "menu_hash": "9a115c3d292809120e9a6f177fc5719b",
+  "updated_at": "2026-08-16T09:00:23.757016",
+  "menu_hash": "a8d29921f697de7e49474de41325a786",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -13,20 +13,11 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "WORTH IT",
-              "main_dish": "Cheongyang-style braised chicken",
-              "safe_items": [
-                "Mixed grain rice",
-                "Cheongyang-style braised chicken",
-                "Seaweed lotus root fry with sriracha mayo",
-                "Sea string salad with flying fish roe",
-                "Blueberry salad",
-                "Napa cabbage kimchi"
-              ],
-              "skip_items": [
-                "Green chili soybean paste stew"
-              ],
-              "reason": "The main dish is chicken which is safe, but the soybean paste stew is suspicious as Korean stews may contain minced pork."
+              "verdict": "NONE",
+              "main_dish": "Not served",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available"
             }
           ]
         },
@@ -41,14 +32,8 @@
             "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [
-            "Buckwheat cold noodles with sesame sauce",
-            "Tuna mayo rice bowl"
-          ],
-          "avoid": [
-            "Ramen",
-            "Pork cutlet"
-          ]
+          "safe_options": [],
+          "avoid": []
         }
       ]
     },
@@ -63,20 +48,11 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "Pork barbecue pork chop",
-              "safe_items": [
-                "White rice",
-                "Crouton cream soup",
-                "Gorgonzola pizza",
-                "Rucola tomato salad",
-                "Radish cucumber pickle",
-                "Napa cabbage kimchi"
-              ],
-              "skip_items": [
-                "Pork barbecue pork chop"
-              ],
-              "reason": "The main dish contains pork."
+              "verdict": "NONE",
+              "main_dish": "Not served",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available"
             }
           ]
         },
@@ -91,14 +67,8 @@
             "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [
-            "Beef brisket bean sprout rice bowl"
-          ],
-          "avoid": [
-            "Ramen",
-            "Pork cutlet",
-            "Spam mayo rice bowl"
-          ]
+          "safe_options": [],
+          "avoid": []
         }
       ]
     },
@@ -113,20 +83,11 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NOT WORTH",
-              "main_dish": "Dongindong-style braised pork ribs",
-              "safe_items": [
-                "Mixed grain rice",
-                "Steamed cabbage",
-                "Stir-fried minced chili",
-                "Morning bread sandwich",
-                "Napa cabbage kimchi"
-              ],
-              "skip_items": [
-                "Pureed soybean stew",
-                "Dongindong-style braised pork ribs"
-              ],
-              "reason": "The main dish and the stew contain pork."
+              "verdict": "NONE",
+              "main_dish": "Not served",
+              "safe_items": [],
+              "skip_items": [],
+              "reason": "No menu data available"
             }
           ]
         },
@@ -141,14 +102,8 @@
             "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [
-            "Cockle bibimbap",
-            "Chicken karaage rice bowl"
-          ],
-          "avoid": [
-            "Ramen",
-            "Pork cutlet"
-          ]
+          "safe_options": [],
+          "avoid": []
         }
       ]
     },
@@ -163,18 +118,11 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "SAFE",
-              "main_dish": "Squid and webfoot octopus bibimbap",
-              "safe_items": [
-                "Squid and webfoot octopus bibimbap",
-                "Cold cucumber seaweed soup",
-                "Sweet pumpkin and sweet potato tempura",
-                "Lettuce and nut ssamjang",
-                "Stir-fried chives and seaweed flakes",
-                "Napa cabbage kimchi"
-              ],
+              "verdict": "NONE",
+              "main_dish": "Not served",
+              "safe_items": [],
               "skip_items": [],
-              "reason": "All items are pork-free."
+              "reason": "No menu data available"
             }
           ]
         },
@@ -189,14 +137,8 @@
             "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [
-            "Ox bone soup"
-          ],
-          "avoid": [
-            "Ramen",
-            "Pork cutlet",
-            "Tteokgalbi mayo rice bowl"
-          ]
+          "safe_options": [],
+          "avoid": []
         }
       ]
     },
@@ -211,19 +153,11 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "SAFE",
-              "main_dish": "Whole chicken leg ginseng soup with sprout ginseng",
-              "safe_items": [
-                "Mung bean glutinous rice",
-                "Whole chicken leg ginseng soup with sprout ginseng",
-                "Spicy squid salad",
-                "Chive pancake",
-                "Vegetable sticks with ssamjang",
-                "Plum tea",
-                "Radish kimchi"
-              ],
+              "verdict": "NONE",
+              "main_dish": "Not served",
+              "safe_items": [],
               "skip_items": [],
-              "reason": "All items are pork-free."
+              "reason": "No menu data available"
             }
           ]
         },
@@ -238,14 +172,8 @@
             "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [
-            "Tuna mayo rice bowl"
-          ],
-          "avoid": [
-            "Ramen",
-            "Pork cutlet",
-            "Meatball spaghetti"
-          ]
+          "safe_options": [],
+          "avoid": []
         }
       ]
     }
