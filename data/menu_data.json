@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-16T09:00:23.757016",
-  "menu_hash": "a8d29921f697de7e49474de41325a786",
+  "updated_at": "2026-08-17T09:01:16.000742",
+  "menu_hash": "dab6b80663406ef6cbe40a96ebb90214",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -17,7 +17,7 @@
               "main_dish": "Not served",
               "safe_items": [],
               "skip_items": [],
-              "reason": "No menu data available"
+              "reason": "Cafeteria closed due to alternative holiday"
             }
           ]
         },
@@ -48,11 +48,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "Not served",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available"
+              "verdict": "NOT WORTH",
+              "main_dish": "Perilla Seed White Bulgogi",
+              "safe_items": [
+                "Mixed Grain Rice",
+                "Kimchi Bean Sprout Soup",
+                "Braised Tofu",
+                "Green Salad",
+                "Radish Kimchi"
+              ],
+              "skip_items": [
+                "Perilla Seed White Bulgogi",
+                "Bacon Yaki Udon"
+              ],
+              "reason": "The main dish is Bulgogi which is suspicious of containing pork, and the side dish Bacon Yaki Udon contains pork."
             }
           ]
         },
@@ -67,8 +76,14 @@
             "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [],
-          "avoid": []
+          "safe_options": [
+            "Beef Tartare Bibimbap"
+          ],
+          "avoid": [
+            "Ramen",
+            "Pork Cutlet",
+            "Katsudon"
+          ]
         }
       ]
     },
@@ -83,11 +98,19 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "Not served",
-              "safe_items": [],
+              "verdict": "SAFE",
+              "main_dish": "Taebaek-style Water Chicken Galbi",
+              "safe_items": [
+                "Mixed Grain Rice",
+                "Perilla Seed Radish Soup",
+                "Taebaek-style Water Chicken Galbi",
+                "Flying Fish Roe Steamed Egg",
+                "Bellflower Root Cucumber Salad",
+                "Pineapple Salad",
+                "Cabbage Kimchi"
+              ],
               "skip_items": [],
-              "reason": "No menu data available"
+              "reason": "All items, including the chicken main dish, are pork-free."
             }
           ]
         },
@@ -103,7 +126,12 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
-          "avoid": []
+          "avoid": [
+            "Ramen",
+            "Pork Cutlet",
+            "Pork Belly Bibimbap",
+            "Abiko Curry and Tornado Potato"
+          ]
         }
       ]
     },
@@ -118,11 +146,19 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "Not served",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available"
+              "verdict": "WORTH IT",
+              "main_dish": "Spicy Stir-fried Squid",
+              "safe_items": [
+                "Mixed Grain Rice",
+                "Spicy Stir-fried Squid",
+                "Fried Eggplant with Garlic Sauce",
+                "Spinach Mandarin Salad",
+                "White Kimchi"
+              ],
+              "skip_items": [
+                "Wachon Pork Stew"
+              ],
+              "reason": "The main dish (stir-fried squid) is safe, but the soup (Wachon Pork Stew) contains pork and must be skipped."
             }
           ]
         },
@@ -137,8 +173,14 @@
             "reason": "Breakfast not served"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
-          "safe_options": [],
-          "avoid": []
+          "safe_options": [
+            "Beef Tartare Bibimbap",
+            "Cold Buckwheat Noodles and Takoyaki"
+          ],
+          "avoid": [
+            "Ramen",
+            "Pork Cutlet"
+          ]
         }
       ]
     },
@@ -153,11 +195,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:30~13:30",
-              "verdict": "NONE",
-              "main_dish": "Not served",
-              "safe_items": [],
-              "skip_items": [],
-              "reason": "No menu data available"
+              "verdict": "WORTH IT",
+              "main_dish": "Grilled Mackerel",
+              "safe_items": [
+                "Mixed Grain Rice",
+                "Chard Soybean Paste Soup",
+                "Grilled Mackerel",
+                "Roasted Seaweed with Seasoning Sauce",
+                "Cherry Tomato Caprese",
+                "Cabbage Kimchi"
+              ],
+              "skip_items": [
+                "Bulgogi Salad"
+              ],
+              "reason": "The main dish (grilled mackerel) is safe, but the Bulgogi Salad is suspicious and should be skipped."
             }
           ]
         },
@@ -173,7 +224,12 @@
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
-          "avoid": []
+          "avoid": [
+            "Ramen",
+            "Pork Cutlet",
+            "Pork Neck Cube Steak Jajangmyeon",
+            "Pork Belly Bibimbap"
+          ]
         }
       ]
     }
