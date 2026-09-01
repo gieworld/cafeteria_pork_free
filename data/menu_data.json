@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-08-30T09:00:32.784923",
-  "menu_hash": "d84d040467f8504adb01d3b85fca8834",
+  "updated_at": "2026-09-01T09:00:55.022756",
+  "menu_hash": "17016e6123e08a9b49ba646069c72122",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -22,10 +22,10 @@
                 "Spicy Stir-fried Mushrooms",
                 "Simmered Chickpeas and Burdock Root",
                 "Blueberry Salad",
-                "Cabbage Kimchi"
+                "Napa Cabbage Kimchi"
               ],
               "skip_items": [],
-              "reason": "All items, including the main duck dish, are pork-free."
+              "reason": "All items are pork-free. Duck is the main protein."
             }
           ]
         },
@@ -44,7 +44,9 @@
             "Beef Tartare Bibimbap"
           ],
           "avoid": [
-            "Sausage Ratatouille Omurice"
+            "Ramen",
+            "Pork Cutlet",
+            "Sausage Omurice"
           ]
         }
       ]
@@ -67,12 +69,12 @@
                 "Abalone Short Rib Soup",
                 "Chungmu-style Squid and Fish Cake Salad",
                 "Mung Bean Jelly with Seaweed",
-                "Stuffed Cucumber Kimchi",
+                "Stuffed Cucumber Pickles",
                 "Tropical Fruit Salad",
                 "Radish Kimchi"
               ],
               "skip_items": [],
-              "reason": "All items, including the main beef and abalone dish, are pork-free."
+              "reason": "All items are pork-free. The main dish is beef and abalone soup."
             }
           ]
         },
@@ -84,13 +86,13 @@
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
             "main_dish": "Hearty Jeyuk and Pork Cutlet Set",
-            "reason": "Contains pork (Jeyuk and Donkatsu)"
+            "reason": "Contains pork (Jeyuk and Pork Cutlet)"
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
           "avoid": [
             "Tonkotsu Ramen",
-            "Butadon (Pork Rice Bowl)"
+            "Spicy Stir-fried Pork Rice Bowl (Jeyuk Deopbap)"
           ]
         }
       ]
@@ -107,19 +109,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Stir-fried Spicy Chicken and Korean Blood Sausage",
+              "main_dish": "Stir-fried Chicken and Blood Sausage (Sundae)",
               "safe_items": [
                 "Mixed Grain Rice",
-                "Dried Pollack Soup",
+                "Dried Pollack Hangover Soup",
                 "Steamed Eggplant",
-                "Bean Sprout Salad",
-                "Pickled Radish",
-                "Cabbage Kimchi"
+                "Bean Sprout and Green Onion Salad",
+                "Three-color Pickled Radish Wraps",
+                "Napa Cabbage Kimchi"
               ],
               "skip_items": [
-                "Stir-fried Spicy Chicken and Korean Blood Sausage"
+                "Stir-fried Chicken and Blood Sausage (Sundae)"
               ],
-              "reason": "The main dish contains Sundae (Korean blood sausage), which contains pork ingredients."
+              "reason": "The main dish contains Sundae (Korean blood sausage), which traditionally contains pork ingredients."
             }
           ]
         },
@@ -130,8 +132,8 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Fried Crab Stick Gimbap, Double Ham Tomato Sandwich, and Yogurt",
-            "reason": "Contains ham in the sandwich."
+            "main_dish": "Fried Crab Stick Gimbap and Double Ham Tomato Sandwich",
+            "reason": "Contains ham, which is made from pork."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [],
@@ -154,19 +156,19 @@
               "price": "6000 won",
               "selling_time": "11:30~13:30",
               "verdict": "NOT WORTH",
-              "main_dish": "Braised Kimchi and Pork",
+              "main_dish": "Steamed Kimchi and Pork",
               "safe_items": [
                 "Mixed Grain Rice",
-                "Young Radish Soybean Paste Soup",
+                "Young Summer Radish Soybean Paste Soup",
                 "Baby Leaf Soft Tofu",
                 "Sweet Potato Croquette",
                 "Granola Salad",
                 "Radish Kimchi"
               ],
               "skip_items": [
-                "Braised Kimchi and Pork"
+                "Steamed Kimchi and Pork"
               ],
-              "reason": "The main dish contains pork."
+              "reason": "The main dish contains pork (marked with *)."
             }
           ]
         },
@@ -177,12 +179,12 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Bulgogi Bibimbap with Soft-Boiled Egg and Strawberry Yogurt",
+            "main_dish": "Bulgogi Bibimbap with Half-Boiled Egg",
             "reason": "Bulgogi in cheap cafeterias is suspicious as it may be mixed with pork."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
-            "Deongchon Shabu Noodle Soup"
+            "Deungchon Shabu Kalguksu"
           ],
           "avoid": [
             "Pork Belly Bibimbap"
@@ -209,12 +211,12 @@
                 "Corn Steamed Egg",
                 "Stir-fried Garlic Stems and Dried Shrimp",
                 "Breadcrumb Mayo Salad",
-                "Cabbage Kimchi"
+                "Napa Cabbage Kimchi"
               ],
               "skip_items": [
                 "Perilla Leaf Bulgogi"
               ],
-              "reason": "The main dish contains pork."
+              "reason": "The main dish contains pork (marked with *)."
             }
           ]
         },
@@ -225,8 +227,8 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Ham Wrap and Jeyuk (Spicy Pork) Set Meal",
-            "reason": "Contains ham and pork (Jeyuk)."
+            "main_dish": "Ham Wrap and Jeyuk (Pork) Set",
+            "reason": "Contains ham and Jeyuk (pork)."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "safe_options": [
