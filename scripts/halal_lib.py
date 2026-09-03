@@ -72,7 +72,7 @@ def load_corrections():
         print(f"Warning: Could not load corrections: {e}")
     return []
 
-MODELS = ["gemini-3.5-flash", "gemini-3.1-flash-lite"]  # primary, fallback
+MODELS = ["gemini-3.8-flash", "gemini-3.7-flash"]  # primary, fallback
 
 
 def _coerce_day_result(day, result):
