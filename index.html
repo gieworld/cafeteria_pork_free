@@ -178,11 +178,27 @@
                 const data = await response.json();
                 menuData = data.week_data;
 
-                document.getElementById('update-time').innerText = "Updated: " + new Date(data.updated_at).toLocaleDateString();
+                // Label each tab with the real date from the site's own header, and find
+                // which tab is actually today - the weekday name alone can't tell us
+                // whether this file holds the current week or a stale one.
+                const todayISO = new Date().toLocaleDateString('en-CA');
+                let todayTab = null;
+                days.forEach(d => {
+                    const iso = menuData[d] && menuData[d].date;
+                    if (!iso) return;
+                    document.getElementById(`tab-${d}`).innerText =
+                        `${d.slice(0, 3).toUpperCase()} ${iso.slice(5).replace('-', '/')}`;
+                    if (iso === todayISO) todayTab = d;
+                });
+
+                const staleWeek = data.week_start && days.includes(today) && !todayTab;
+                document.getElementById('update-time').innerText =
+                    "Updated: " + new Date(data.updated_at).toLocaleDateString()
+                    + (staleWeek ? " ⚠ not this week" : "");
                 document.getElementById('loading').classList.add('hidden');
 
-                // Switch to today or Monday if weekend
-                const startDay = days.includes(today) ? today : "Monday";
+                // Open today's tab (by date), else today's weekday, else Monday
+                const startDay = todayTab || (days.includes(today) ? today : "Monday");
                 switchTab(startDay);
 
             } catch (e) {

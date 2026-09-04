@@ -29,13 +29,20 @@ def placeholder_day(day):
                 "name": "Set Meal",
                 "type": "package",
                 "meals": [
-                    {"time": "Lunch", "price": "6000 won", "selling_time": "11:30~13:30", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"}
+                    {"time": "Lunch", "price": "6000 won", "selling_time": "11:40~13:30", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"}
                 ]
             },
             {
                 "name": "A La Carte",
                 "type": "individual",
                 "breakfast": {"price": "1000 won", "selling_time": "08:20~10:00", "verdict": "NONE", "main_dish": "N/A", "reason": "Analysis failed"},
+                "selling_time": "11:00~14:00, 16:00~18:30",
+                "safe_options": [],
+                "avoid": []
+            },
+            {
+                "name": "Snack Bar",
+                "type": "individual",
                 "selling_time": "11:00~14:00, 16:00~18:30",
                 "safe_options": [],
                 "avoid": []
@@ -56,8 +63,16 @@ def main():
 
     # 1. Fetch Menu
     print("📥 Fetching menus from Kumoh website...")
-    full_menu = halal_lib.fetch_all_menus()
+    try:
+        full_menu = halal_lib.fetch_all_menus()
+    except Exception as e:
+        # Never analyze a partial/failed scrape: that used to overwrite good data.
+        print(f"\n❌ Scraping failed: {e}")
+        print("   Keeping existing menu_data.json untouched.")
+        sys.exit(1)
+
     menu_hash = halal_lib.get_menu_hash(full_menu)
+    menu_dates = halal_lib.parse_menu_dates(full_menu)
     
     # 2. Check for Changes (Optimization)
     print(f"🔑 Menu Hash: {menu_hash}")
@@ -103,10 +118,15 @@ def main():
             print(f"   ⚠️ No result for {day}, using placeholder structure")
             week_data[day] = placeholder_day(day)
 
+        # Real date from the table header, so the dashboard can tell which week this is.
+        if menu_dates.get(day):
+            week_data[day]["date"] = menu_dates[day]
+
     # 4. Build Final JSON Structure
     output = {
         "updated_at": datetime.now().isoformat(),
         "menu_hash": menu_hash,
+        "week_start": menu_dates.get("Monday"),
         "week_data": week_data
     }
 

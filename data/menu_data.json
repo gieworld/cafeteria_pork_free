@@ -1,6 +1,7 @@
 {
-  "updated_at": "2026-09-01T09:00:55.022756",
-  "menu_hash": "17016e6123e08a9b49ba646069c72122",
+  "updated_at": "2026-09-04T11:15:26.541152",
+  "menu_hash": "a8eb92366b80af6588d80c5f8188cd09",
+  "week_start": "2026-08-31",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -12,20 +13,20 @@
             {
               "time": "Lunch",
               "price": "6000 won",
-              "selling_time": "11:30~13:30",
+              "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "SAFE",
-              "main_dish": "Steamed Smoked Duck with Vegetables",
+              "main_dish": "Smoked Duck and Steamed Vegetables",
               "safe_items": [
                 "Mixed Grain Rice",
                 "Blue Crab Soybean Paste Soup",
-                "Steamed Smoked Duck with Vegetables",
+                "Smoked Duck and Steamed Vegetables",
                 "Spicy Stir-fried Mushrooms",
-                "Simmered Chickpeas and Burdock Root",
+                "Braised Chickpeas and Burdock",
                 "Blueberry Salad",
-                "Napa Cabbage Kimchi"
+                "Baechu Kimchi"
               ],
               "skip_items": [],
-              "reason": "All items are pork-free. Duck is the main protein."
+              "reason": "All items are pork-free; duck, crab, vegetables, and beans are used."
             }
           ]
         },
@@ -33,23 +34,31 @@
           "name": "A La Carte",
           "type": "individual",
           "breakfast": {
-            "price": "1000 won",
-            "selling_time": "08:20~10:00",
+            "price": "",
+            "selling_time": "",
             "verdict": "NONE",
             "main_dish": "Not served",
             "reason": "Breakfast not served"
           },
-          "selling_time": "11:00~14:00, 16:00~18:30",
+          "selling_time": "11:00~14:00 16:00~18:30",
           "safe_options": [
             "Beef Tartare Bibimbap"
           ],
           "avoid": [
-            "Ramen",
-            "Pork Cutlet",
+            "Ramen Varieties",
+            "Pork Cutlet Varieties",
             "Sausage Omurice"
           ]
+        },
+        {
+          "name": "Snack Bar",
+          "type": "individual",
+          "selling_time": "",
+          "safe_options": [],
+          "avoid": []
         }
-      ]
+      ],
+      "date": "2026-08-31"
     },
     "Tuesday": {
       "day": "Tuesday",
@@ -61,20 +70,20 @@
             {
               "time": "Lunch",
               "price": "6000 won",
-              "selling_time": "11:30~13:30",
+              "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "SAFE",
               "main_dish": "Abalone Short Rib Soup",
               "safe_items": [
                 "Millet Rice",
                 "Abalone Short Rib Soup",
                 "Chungmu-style Squid and Fish Cake Salad",
-                "Mung Bean Jelly with Seaweed",
-                "Stuffed Cucumber Pickles",
+                "Mung Bean Jelly with Seaweed Flakes",
+                "Stuffed Chili Pickles",
                 "Tropical Fruit Salad",
-                "Radish Kimchi"
+                "Kkakdugi"
               ],
               "skip_items": [],
-              "reason": "All items are pork-free. The main dish is beef and abalone soup."
+              "reason": "All items are pork-free; beef ribs, abalone, squid, and fish cake are used."
             }
           ]
         },
@@ -85,17 +94,31 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Hearty Jeyuk and Pork Cutlet Set",
-            "reason": "Contains pork (Jeyuk and Pork Cutlet)"
+            "main_dish": "Hearty Spicy Stir-fried Pork and Pork Cutlet Set",
+            "reason": "Contains spicy stir-fried pork and pork cutlet."
           },
-          "selling_time": "11:00~14:00, 16:00~18:30",
+          "selling_time": "11:00~14:00 16:00~18:30",
           "safe_options": [],
           "avoid": [
             "Tonkotsu Ramen",
-            "Spicy Stir-fried Pork Rice Bowl (Jeyuk Deopbap)"
+            "Spicy Stir-fried Pork Rice Bowl"
+          ]
+        },
+        {
+          "name": "Snack Bar",
+          "type": "individual",
+          "selling_time": "11:00~14:00 16:00~18:30",
+          "safe_options": [
+            "Udon",
+            "Sweet and Sour Fried Chicken"
+          ],
+          "avoid": [
+            "Ramen Varieties",
+            "Pork Cutlet Varieties"
           ]
         }
-      ]
+      ],
+      "date": "2026-09-01"
     },
     "Wednesday": {
       "day": "Wednesday",
@@ -107,21 +130,21 @@
             {
               "time": "Lunch",
               "price": "6000 won",
-              "selling_time": "11:30~13:30",
+              "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "NOT WORTH",
-              "main_dish": "Stir-fried Chicken and Blood Sausage (Sundae)",
+              "main_dish": "Spicy Stir-fried Chicken and Blood Sausage",
               "safe_items": [
                 "Mixed Grain Rice",
-                "Dried Pollack Hangover Soup",
+                "Dried Pollock Hangover Soup",
                 "Steamed Eggplant",
-                "Bean Sprout and Green Onion Salad",
-                "Three-color Pickled Radish Wraps",
-                "Napa Cabbage Kimchi"
+                "Seasoned Bean Sprouts and Green Onion",
+                "Three-color Pickled Radish Paper",
+                "Baechu Kimchi"
               ],
               "skip_items": [
-                "Stir-fried Chicken and Blood Sausage (Sundae)"
+                "Spicy Stir-fried Chicken and Blood Sausage"
               ],
-              "reason": "The main dish contains Sundae (Korean blood sausage), which traditionally contains pork ingredients."
+              "reason": "The main dish contains sundae (blood sausage), which contains pork."
             }
           ]
         },
@@ -132,17 +155,31 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Fried Crab Stick Gimbap and Double Ham Tomato Sandwich",
-            "reason": "Contains ham, which is made from pork."
+            "main_dish": "Fried Crab Meat Kimbap and Double Ham Tomato Sandwich",
+            "reason": "Contains ham sandwich."
           },
-          "selling_time": "11:00~14:00, 16:00~18:30",
+          "selling_time": "11:00~14:00 16:00~18:30",
           "safe_options": [],
           "avoid": [
             "Pork Kimchi Stew",
-            "Tteokgalbi Mayo Rice Bowl"
+            "Short Rib Patties Mayo Rice Bowl"
+          ]
+        },
+        {
+          "name": "Snack Bar",
+          "type": "individual",
+          "selling_time": "11:00~14:00 16:00~18:30",
+          "safe_options": [
+            "Udon",
+            "Sweet and Sour Fried Chicken"
+          ],
+          "avoid": [
+            "Ramen Varieties",
+            "Pork Cutlet Varieties"
           ]
         }
-      ]
+      ],
+      "date": "2026-09-02"
     },
     "Thursday": {
       "day": "Thursday",
@@ -154,21 +191,21 @@
             {
               "time": "Lunch",
               "price": "6000 won",
-              "selling_time": "11:30~13:30",
+              "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "NOT WORTH",
-              "main_dish": "Steamed Kimchi and Pork",
+              "main_dish": "Braised Pork and Kimchi",
               "safe_items": [
                 "Mixed Grain Rice",
-                "Young Summer Radish Soybean Paste Soup",
+                "Young Radish Soybean Paste Soup",
                 "Baby Leaf Soft Tofu",
                 "Sweet Potato Croquette",
                 "Granola Salad",
-                "Radish Kimchi"
+                "Kkakdugi"
               ],
               "skip_items": [
-                "Steamed Kimchi and Pork"
+                "Braised Pork and Kimchi"
               ],
-              "reason": "The main dish contains pork (marked with *)."
+              "reason": "Main dish is braised pork and kimchi."
             }
           ]
         },
@@ -179,18 +216,32 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Bulgogi Bibimbap with Half-Boiled Egg",
-            "reason": "Bulgogi in cheap cafeterias is suspicious as it may be mixed with pork."
+            "main_dish": "Bulgogi Soft-boiled Egg Bibimbap",
+            "reason": "Bulgogi in cafeteria settings may contain mixed pork."
           },
-          "selling_time": "11:00~14:00, 16:00~18:30",
+          "selling_time": "11:00~14:00 16:00~18:30",
           "safe_options": [
             "Deungchon Shabu Kalguksu"
           ],
           "avoid": [
             "Pork Belly Bibimbap"
           ]
+        },
+        {
+          "name": "Snack Bar",
+          "type": "individual",
+          "selling_time": "11:00~14:00 16:00~18:30",
+          "safe_options": [
+            "Udon",
+            "Sweet and Sour Fried Chicken"
+          ],
+          "avoid": [
+            "Ramen Varieties",
+            "Pork Cutlet Varieties"
+          ]
         }
-      ]
+      ],
+      "date": "2026-09-03"
     },
     "Friday": {
       "day": "Friday",
@@ -202,21 +253,21 @@
             {
               "time": "Lunch",
               "price": "6000 won",
-              "selling_time": "11:30~13:30",
+              "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "NOT WORTH",
-              "main_dish": "Perilla Leaf Bulgogi",
+              "main_dish": "Perilla Leaf Pork Bulgogi",
               "safe_items": [
                 "Mixed Grain Rice",
-                "Rice Cake Seaweed Soup",
-                "Corn Steamed Egg",
-                "Stir-fried Garlic Stems and Dried Shrimp",
+                "Joraengi Rice Cake Seaweed Soup",
+                "Corn Steamed Eggs",
+                "Stir-fried Garlic Scapes and Dried Shrimp",
                 "Breadcrumb Mayo Salad",
-                "Napa Cabbage Kimchi"
+                "Baechu Kimchi"
               ],
               "skip_items": [
-                "Perilla Leaf Bulgogi"
+                "Perilla Leaf Pork Bulgogi"
               ],
-              "reason": "The main dish contains pork (marked with *)."
+              "reason": "Main dish is pork bulgogi."
             }
           ]
         },
@@ -227,18 +278,32 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Ham Wrap and Jeyuk (Pork) Set",
-            "reason": "Contains ham and Jeyuk (pork)."
+            "main_dish": "Ham Wrap Half-and-Half Spicy Pork Feast",
+            "reason": "Contains both ham and spicy stir-fried pork."
           },
-          "selling_time": "11:00~14:00, 16:00~18:30",
+          "selling_time": "11:00~14:00 16:00~18:30",
           "safe_options": [
             "Chicken Cream Stew Udon"
           ],
           "avoid": [
-            "Webfoot Octopus and Pork Bulgogi Rice Bowl"
+            "Baby Octopus and Pork Bulgogi Rice Bowl"
+          ]
+        },
+        {
+          "name": "Snack Bar",
+          "type": "individual",
+          "selling_time": "11:00~14:00 16:00~18:30",
+          "safe_options": [
+            "Udon",
+            "Sweet and Sour Fried Chicken"
+          ],
+          "avoid": [
+            "Ramen Varieties",
+            "Pork Cutlet Varieties"
           ]
         }
-      ]
+      ],
+      "date": "2026-09-04"
     }
   }
 }
