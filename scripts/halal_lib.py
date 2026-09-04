@@ -88,7 +88,9 @@ def parse_menu_dates(menu_text):
     """
     today = date.today()
     dates = {}
-    for ko, mm, dd in re.findall(r"([월화수목금토일])\s*\((\d{1,2})\.(\d{1,2})\)", menu_text):
+    # The (?:요일)? matters: without it, "월요일(08.31)" would match the trailing
+    # 일 and silently file Monday under Sunday.
+    for ko, mm, dd in re.findall(r"([월화수목금토일])(?:요일)?\s*\((\d{1,2})\.(\d{1,2})\)", menu_text):
         candidates = []
         for offset in (-1, 0, 1):
             try:
@@ -110,10 +112,16 @@ def extract_pork_items(menu_text):
       - eligibility footnotes, e.g. "*재학생만 해당" (enrolled students only)
     """
     items = []
-    for token, trailing_star in re.findall(r"\*([^\s*]+)(\*?)", menu_text):
+    # The closing star only counts as decoration when the wrapped text ENDS there.
+    # A bare (\*?) made "*돈가스류/*카츠동" swallow the second item's star as its own
+    # closer, so the decoration filter threw away BOTH dishes.
+    # ponytail: the two footnote literals below are today's exact wording; a reworded
+    # footnote leaks one non-dish into the list, which is fail-safe here (an extra
+    # name in `avoid`, never a missing one). Generalize only if it actually happens.
+    for token, trailing_star in re.findall(r"\*([^\s*]+)(\*(?=\s|$))?", menu_text):
         if trailing_star:
             continue
-        name = token.strip("()[]{}<>,.·:;&")
+        name = token.strip("()[]{}<>,.·:;&/")
         if not name or name == "로" or name.startswith("재학생"):
             continue
         if name not in items:
@@ -127,6 +135,11 @@ MODELS = ["gemini-3.8-flash", "gemini-3.7-flash"]  # primary, fallback
 FIXED_MENU_CAFES = {"Snack Bar"}  # same short menu every weekday -> render collapsed
 
 
+def _clean_ko(value):
+    """Korean name the way the counter sign prints it: without the pork asterisk."""
+    return str(value or "").strip().lstrip("*").strip()
+
+
 def _coerce_dish(item):
     """Normalize one orderable dish to {"en": ..., "ko": ...}.
 
@@ -136,19 +149,49 @@ def _coerce_dish(item):
     """
     if isinstance(item, dict):
         return {"en": str(item.get("en") or item.get("menu") or "").strip(),
-                "ko": str(item.get("ko") or "").strip().lstrip("*").strip()}
+                "ko": _clean_ko(item.get("ko"))}
     return {"en": str(item).strip(), "ko": ""}
 
 
-def _coerce_day_result(day, result):
-    """Normalize one day's result: the 'day' field, {en,ko} dishes, fixed-menu flag."""
+def _coerce_day_result(day, result, pork_items=()):
+    """Normalize one day's result and ENFORCE the site's own pork markers.
+
+    Extracting the "*" markers in code and then only *asking* the model to
+    respect them left the guarantee probabilistic. This is a food-restriction
+    app, so the deterministic check belongs in the deterministic layer: a dish
+    the cafeteria itself flagged never stays in a safe list.
+    """
     result.setdefault("day", day)
-    for cafe in result.get("cafeterias", []):
+    result.setdefault("cafeterias", [])  # a day dict without it used to blank the page
+    pork = set(pork_items)
+
+    for cafe in result["cafeterias"]:
         cafe["fixed_menu"] = cafe.get("name") in FIXED_MENU_CAFES
-        if cafe.get("type") == "individual":
-            for key in ("safe_options", "avoid"):
-                dishes = [_coerce_dish(it) for it in cafe.get(key, [])]
-                cafe[key] = [d for d in dishes if d["en"]]
+
+        # main_dish_ko never went through _coerce_dish, so it kept its leading "*"
+        for meal in cafe.get("meals", []):
+            if isinstance(meal, dict) and meal.get("main_dish_ko"):
+                meal["main_dish_ko"] = _clean_ko(meal["main_dish_ko"])
+        breakfast = cafe.get("breakfast")
+        if isinstance(breakfast, dict) and breakfast.get("main_dish_ko"):
+            breakfast["main_dish_ko"] = _clean_ko(breakfast["main_dish_ko"])
+
+        if cafe.get("type") != "individual":
+            continue
+
+        safe, avoid = [], []
+        for key in ("safe_options", "avoid"):
+            for d in (_coerce_dish(it) for it in cafe.get(key, [])):
+                if not d["en"]:
+                    continue
+                if d["ko"] and d["ko"] in pork:
+                    if key == "safe_options":
+                        print(f"   🛑 Override: {d['en']} ({d['ko']}) is site-marked pork")
+                    avoid.append(d)
+                else:
+                    (safe if key == "safe_options" else avoid).append(d)
+        cafe["safe_options"] = safe
+        cafe["avoid"] = list({(d["en"], d["ko"]): d for d in avoid}.values())
     return result
 
 
@@ -340,7 +383,7 @@ def analyze_week(menu_data, days):
             week = {}
             for day in days:
                 if day in parsed and isinstance(parsed[day], dict):
-                    week[day] = _coerce_day_result(day, parsed[day])
+                    week[day] = _coerce_day_result(day, parsed[day], pork_items)
             if not week:
                 raise ValueError("Response contained none of the requested days")
             if len(week) < len(days):
@@ -384,11 +427,29 @@ if __name__ == "__main__":
     assert "개강특식" not in pork, "'*개강특식*' is decoration, not a pork marker"
     assert not any(p.startswith("재학생") for p in pork), "'*재학생만 해당' is a footnote, not a pork marker"
 
+    # Adjacent starred items with no space between them must both survive
+    packed = extract_pork_items("*돈가스류/*카츠동 *제육덮밥,*돈코츠라멘")
+    assert packed == ["돈가스류", "카츠동", "제육덮밥", "돈코츠라멘"], packed
+
     dates = parse_menu_dates(sample)
     assert dates["Monday"].endswith("-08-31"), dates
     assert dates["Tuesday"].endswith("-09-01"), dates
     assert dates["Wednesday"].endswith("-09-02"), dates
     assert len(dates) == 3, dates
+    # A full day name must not be filed under Sunday via its trailing 일
+    assert parse_menu_dates("월요일(08.31)")["Monday"].endswith("-08-31")
+
+    # A site-marked dish never stays in a safe list, whatever the model said
+    day = _coerce_day_result("Monday", {"cafeterias": [{
+        "name": "A La Carte", "type": "individual",
+        "safe_options": [{"en": "Tonkotsu Ramen", "ko": "돈코츠라멘"},
+                         {"en": "Udon", "ko": "우동"}],
+        "avoid": [],
+    }]}, ["돈코츠라멘"])
+    cafe = day["cafeterias"][0]
+    assert [d["en"] for d in cafe["safe_options"]] == ["Udon"], cafe["safe_options"]
+    assert [d["en"] for d in cafe["avoid"]] == ["Tonkotsu Ramen"], cafe["avoid"]
+    assert _coerce_day_result("Monday", {})["cafeterias"] == [], "missing cafeterias must default"
 
     # ASCII-only output so this runs on a bare Windows console (no PYTHONIOENCODING).
     print(f"halal_lib self-check OK ({len(pork)} pork items, {len(dates)} dates)")

@@ -207,9 +207,6 @@
             <div id="loading" class="text-center py-20 text-xl animate-pulse">
                 [ READING DISK... ]
             </div>
-            <div id="error-msg" class="hidden text-center py-20 text-red-600 font-bold border-2 border-red-600 m-4 p-4">
-                ⚠ SYSTEM ERROR: FAILED TO LOAD DATA.
-            </div>
         </main>
 
         <!-- Footer -->
@@ -249,7 +246,6 @@
                     : 'Week unknown';
                 document.getElementById('update-time').innerText =
                     'Updated ' + new Date(data.updated_at).toLocaleDateString();
-                document.getElementById('loading').classList.add('hidden');
 
                 // Open today's tab (by date), else today's weekday, else Monday
                 const startDay = todayTab || (days.includes(today) ? today : "Monday");
@@ -257,8 +253,12 @@
 
             } catch (e) {
                 console.error(e);
-                document.getElementById('loading').classList.add('hidden');
-                document.getElementById('error-msg').classList.remove('hidden');
+                // Rebuild the message instead of unhiding a static node: by the time a
+                // render error lands, #loading and #error-msg may already be wiped from
+                // #content, and the handler itself would then throw on a null - leaving
+                // a blank white window with no error at all.
+                document.getElementById('content').innerHTML =
+                    `<div class="text-center py-20 text-red-600 font-bold border-2 border-red-600 m-4 p-4">⚠ SYSTEM ERROR: FAILED TO LOAD DATA.</div>`;
             }
         }
 
@@ -276,6 +276,14 @@
             renderMenu(day);
         }
 
+        // Every value rendered below travels scraped Korean HTML -> LLM free text ->
+        // JSON -> innerHTML. One stray "<" in a dish name would swallow the rest of
+        // the card, so nothing model-written reaches the DOM unescaped.
+        function esc(s) {
+            return String(s == null ? '' : s).replace(/[&<>"']/g, c =>
+                ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+        }
+
         // A dish is {en, ko}; older data files stored a bare string.
         function dish(item) {
             if (item && typeof item === 'object') return { en: item.en || '', ko: item.ko || '' };
@@ -286,12 +294,12 @@
         function dishLine(item, tag) {
             const d = dish(item);
             if (!d.en) return '';
-            return `<${tag}>${d.en}${d.ko ? `<div class="ko">${d.ko}</div>` : ''}</${tag}>`;
+            return `<${tag}>${esc(d.en)}${d.ko ? `<div class="ko">${esc(d.ko)}</div>` : ''}</${tag}>`;
         }
 
         // VT323 draws "~" high and thin, so "11:00~14:00" reads as "11:00*14:00".
         function fmtTime(s) {
-            return String(s || '').replace(/~/g, '-');
+            return esc(String(s || '').replace(/~/g, '-'));
         }
 
         // "2026-08-31" -> "Aug 31". Parsed as local parts, not via Date(iso),
@@ -325,37 +333,59 @@
             eq(fmtTime('11:00~14:00'), '11:00-14:00', 'tilde becomes hyphen');
             eq(dish({ en: 'Udon', ko: '우동' }), { en: 'Udon', ko: '우동' }, 'object dish');
             eq(dish('Legacy String'), { en: 'Legacy String', ko: '' }, 'legacy string dish');
+            eq(esc('Ham & <b>Eggs</b>'), 'Ham &amp; &lt;b&gt;Eggs&lt;/b&gt;', 'markup escaped');
+
+            // nowBox is where the new logic risk actually lives, so cover it too
+            const at = h => { const d = new Date(); d.setHours(h, 0, 0, 0); return d; };
+            const day = {
+                date: new Date().toLocaleDateString('en-CA'),
+                cafeterias: [
+                    { name: 'Set Meal', type: 'package', meals: [{ verdict: 'NONE', selling_time: '11:40~13:30', main_dish: 'N/A' }] },
+                    { name: 'Snack Bar', type: 'individual', selling_time: '11:00~14:00', note: 'Not operating', safe_options: [] }
+                ]
+            };
+            const noon = nowBox(day, at(12));
+            if (/contains pork/.test(noon)) throw new Error('verdict NONE must not be reported as pork');
+            if (!/Not operating/.test(noon)) throw new Error('a closed counter must say so, not "nothing pork-free"');
+            eq(nowBox({ ...day, date: '1999-01-01' }, at(12)), '', 'box shows only on today');
+            eq(nowBox(day, at(15)), '<div class="alert-box mb-4 text-center">NOTHING SERVING RIGHT NOW</div>', 'closed at 15:00');
+
             return 'index.html self-check OK';
         }
 
         // The one thing a student standing in the hall actually wants: what is
         // servable right now. Derived from selling_time vs the clock - no new data.
-        function nowBox(dayData) {
-            const now = new Date();
+        // `now` is a parameter so selfCheck() can exercise this without stubbing Date.
+        function nowBox(dayData, now = new Date()) {
             if (dayData.date !== now.toLocaleDateString('en-CA')) return ''; // only for today
             const mins = now.getHours() * 60 + now.getMinutes();
 
             const lines = [];
+            const line = (who, what) => lines.push(`<b>${esc(who)}</b> — ${esc(what)}`);
+
             (dayData.cafeterias || []).forEach(cafe => {
                 if (cafe.type === 'package') {
                     (cafe.meals || []).forEach(meal => {
-                        if (!openNow(meal.selling_time, mins)) return;
+                        // NONE means "no meal today" - not the same claim as "pork".
+                        // renderMenu already skips these; this used to contradict it.
+                        if (meal.verdict === 'NONE' || !openNow(meal.selling_time, mins)) return;
                         const ok = meal.verdict === 'SAFE' || meal.verdict === 'WORTH IT';
-                        lines.push(`<b>${cafe.name}</b> — ` + (ok
-                            ? dish({ en: meal.main_dish, ko: meal.main_dish_ko }).en
-                            : 'contains pork, skip'));
+                        line(cafe.name, ok ? (meal.main_dish || '') : 'contains pork, skip');
                     });
                     return;
                 }
                 const bkf = cafe.breakfast;
                 if (bkf && bkf.verdict !== 'NONE' && openNow(bkf.selling_time, mins)) {
-                    lines.push(`<b>${cafe.name} breakfast</b> — ` +
-                        (bkf.verdict === 'SAFE' ? bkf.main_dish : 'contains pork, skip'));
+                    line(`${cafe.name} breakfast`,
+                        bkf.verdict === 'SAFE' ? bkf.main_dish : 'contains pork, skip');
                 }
                 if (openNow(cafe.selling_time, mins)) {
                     const safe = (cafe.safe_options || []).map(dish).filter(d => d.en);
-                    lines.push(`<b>${cafe.name}</b> — ` +
-                        (safe.length ? safe.map(d => d.en).join(', ') : 'nothing pork-free'));
+                    // A counter that is closed or has moved is not "open with no
+                    // options" - sending someone to a shut counter is worse than silence.
+                    line(cafe.name, cafe.note || (safe.length
+                        ? safe.map(d => d.en).join(', ')
+                        : 'nothing pork-free'));
                 }
             });
 
@@ -370,18 +400,16 @@
 
         function renderMenu(day) {
             const container = document.getElementById('content');
-            container.innerHTML = ""; // Clear existing
-
             const dayData = menuData[day];
 
             if (!dayData) {
-                container.innerHTML = `<div class="text-center py-10 text-gray-500">No data available for ${day}</div>`;
+                container.innerHTML = `<div class="text-center py-10 text-gray-500">No data available for ${esc(day)}</div>`;
                 return;
             }
 
-            container.innerHTML = nowBox(dayData);
+            container.innerHTML = nowBox(dayData); // also clears #loading
 
-            dayData.cafeterias.forEach(cafe => {
+            (dayData.cafeterias || []).forEach(cafe => {
                 const card = document.createElement('div');
                 card.className = 'mac-window mb-6'; // Inner windows
 
@@ -389,7 +417,7 @@
                 let html = '';
 
                 if (cafe.note && !cafe.fixed_menu) {
-                    html += `<div class="mb-3 text-center border-2 border-dotted border-black py-1">${cafe.note}</div>`;
+                    html += `<div class="mb-3 text-center border-2 border-dotted border-black py-1">${esc(cafe.note)}</div>`;
                     hasContent = true;
                 }
 
@@ -406,12 +434,12 @@
                                 <span class="badge ${bBadgeClass}">${bBadgeText}</span>
                             </div>
                             <div class="text-xs mb-2 font-mono text-gray-700">
-                                ${bkf.price ? `<span class="mr-2">💰 ${bkf.price}</span>` : ''}
+                                ${bkf.price ? `<span class="mr-2">💰 ${esc(bkf.price)}</span>` : ''}
                                 ${bkf.selling_time ? `<span>🕒 ${fmtTime(bkf.selling_time)}</span>` : ''}
                             </div>
-                            <div class="text-xl mb-1">${bkf.main_dish || 'N/A'}</div>
-                            ${bkf.main_dish_ko ? `<div class="ko mb-1">${bkf.main_dish_ko}</div>` : ''}
-                            ${bkf.reason ? `<div class="text-sm text-gray-600">${bkf.reason}</div>` : ''}
+                            <div class="text-xl mb-1">${esc(bkf.main_dish || 'N/A')}</div>
+                            ${bkf.main_dish_ko ? `<div class="ko mb-1">${esc(bkf.main_dish_ko)}</div>` : ''}
+                            ${bkf.reason ? `<div class="text-sm text-gray-600">${esc(bkf.reason)}</div>` : ''}
                         </div>`;
                         hasContent = true;
                     }
@@ -420,7 +448,7 @@
                     if (cafe.price || cafe.selling_time) {
                         html += `
                         <div class="mb-4 p-2 bg-gray-100 border border-black text-sm text-center">
-                            ${cafe.price ? `<span class="mr-3">💰 ${cafe.price}</span>` : ''}
+                            ${cafe.price ? `<span class="mr-3">💰 ${esc(cafe.price)}</span>` : ''}
                             ${cafe.selling_time ? `<span>🕒 ${fmtTime(cafe.selling_time)}</span>` : ''}
                         </div>`;
                     }
@@ -463,25 +491,25 @@
                         html += `
                         <div class="mb-6 border-b-2 border-dashed border-black pb-4 last:border-0 last:pb-0">
                             <div class="flex justify-between items-start mb-1">
-                                <span class="font-bold uppercase bg-black text-white px-2 py-0.5">${meal.time}</span>
+                                <span class="font-bold uppercase bg-black text-white px-2 py-0.5">${esc(meal.time)}</span>
                                 <span class="badge ${badgeClass}">${badgeText}</span>
                             </div>
                             
                             <!-- Price & Time Info -->
                             ${(meal.price || meal.selling_time) ?
                                 `<div class="text-xs mb-2 font-mono text-gray-700">
-                                    ${meal.price ? `<span class="mr-2">💰 ${meal.price}</span>` : ''}
+                                    ${meal.price ? `<span class="mr-2">💰 ${esc(meal.price)}</span>` : ''}
                                     ${meal.selling_time ? `<span>🕒 ${fmtTime(meal.selling_time)}</span>` : ''}
                                  </div>` : ''}
 
-                            <div class="text-xl mb-1">${meal.main_dish || 'No info'}</div>
-                            ${meal.main_dish_ko ? `<div class="ko mb-2">${meal.main_dish_ko}</div>` : ''}
+                            <div class="text-xl mb-1">${esc(meal.main_dish || 'No info')}</div>
+                            ${meal.main_dish_ko ? `<div class="ko mb-2">${esc(meal.main_dish_ko)}</div>` : ''}
 
                             ${meal.safe_items && meal.safe_items.length ?
-                                `<div class="text-sm mt-1">👍 ${meal.safe_items.join(', ')}</div>` : ''}
+                                `<div class="text-sm mt-1">👍 ${meal.safe_items.map(esc).join(', ')}</div>` : ''}
                             
                             ${meal.skip_items && meal.skip_items.length ?
-                                `<div class="text-sm mt-1 font-bold">🛑 SKIP: ${meal.skip_items.join(', ')}</div>` : ''}
+                                `<div class="text-sm mt-1 font-bold">🛑 SKIP: ${meal.skip_items.map(esc).join(', ')}</div>` : ''}
                         </div>`;
                     });
                 }
@@ -493,10 +521,10 @@
                 // Every cafeteria is the same <details> widget, so the affordance is
                 // consistent everywhere; only the DEFAULT STATE ranks them. A fixed-menu
                 // counter (Snack Bar prints the same four items all week) starts closed.
-                const safeCount = (cafe.safe_options || []).map(dish).filter(d => d.en).length;
+                const safeCount = () => (cafe.safe_options || []).map(dish).filter(d => d.en).length;
                 const label = cafe.fixed_menu
-                    ? `${cafe.name} — ${cafe.note || `${safeCount} pork-free`}`
-                    : cafe.name;
+                    ? `${esc(cafe.name)} — ${esc(cafe.note || `${safeCount()} pork-free`)}`
+                    : esc(cafe.name);
 
                 card.innerHTML = `
                 <details ${cafe.fixed_menu ? '' : 'open'}>

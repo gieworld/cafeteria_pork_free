@@ -28,6 +28,9 @@ goto MENU
 :ENABLE
 echo.
 echo Scheduling update_menu.bat to run daily at 9:00 AM...
+rem Older builds installed this under a different name. Remove it first, or a
+rem machine set up back then ends up running the update twice every morning.
+schtasks /delete /tn "KITPorkFree_AutoUpdate" /f >nul 2>&1
 schtasks /create ^
     /tn "KumohPorkFree_AutoUpdate" ^
     /tr "cmd /c cd /d \"%SCRIPT_DIR%\" && update_menu.bat auto" ^
@@ -52,6 +55,7 @@ goto MENU
 echo.
 echo Removing Auto-Update task...
 schtasks /delete /tn "KumohPorkFree_AutoUpdate" /f
+schtasks /delete /tn "KITPorkFree_AutoUpdate" /f >nul 2>&1
 echo.
 echo ✅ Auto-Update DISABLED.
 echo.

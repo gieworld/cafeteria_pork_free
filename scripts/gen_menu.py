@@ -21,7 +21,13 @@ DATA_FILE = os.path.join(BASE_DIR, "data", "menu_data.json")
 
 
 def placeholder_day(day):
-    """Fallback structure for a day the AI could not analyze, so the dashboard isn't missing it."""
+    """Fallback structure for a day the AI could not analyze, so the dashboard isn't missing it.
+
+    Prices and times are deliberately EMPTY. They used to be hardcoded, which the
+    dashboard's "serving now" box then read as a real service window and turned
+    into confident claims about a day we know nothing about. Empty strings make
+    that box stay quiet, which is the honest answer here.
+    """
     return {
         "day": day,
         "cafeterias": [
@@ -29,14 +35,15 @@ def placeholder_day(day):
                 "name": "Set Meal",
                 "type": "package",
                 "meals": [
-                    {"time": "Lunch", "price": "6000 won", "selling_time": "11:40~13:30", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"}
+                    {"time": "Lunch", "price": "", "selling_time": "", "verdict": "NONE", "main_dish": "N/A", "safe_items": [], "skip_items": [], "reason": "Analysis failed - please check manually"}
                 ]
             },
             {
                 "name": "A La Carte",
                 "type": "individual",
-                "breakfast": {"price": "1000 won", "selling_time": "08:20~10:00", "verdict": "NONE", "main_dish": "N/A", "reason": "Analysis failed"},
-                "selling_time": "11:00~14:00, 16:00~18:30",
+                "breakfast": {"price": "", "selling_time": "", "verdict": "NONE", "main_dish": "N/A", "reason": "Analysis failed"},
+                "selling_time": "",
+                "note": "Analysis failed - check the cafeteria page",
                 "safe_options": [],
                 "avoid": []
             },
@@ -44,7 +51,8 @@ def placeholder_day(day):
                 "name": "Snack Bar",
                 "type": "individual",
                 "fixed_menu": True,
-                "selling_time": "11:00~14:00, 16:00~18:30",
+                "selling_time": "",
+                "note": "Analysis failed - check the cafeteria page",
                 "safe_options": [],
                 "avoid": []
             }
@@ -74,6 +82,10 @@ def main():
 
     menu_hash = halal_lib.get_menu_hash(full_menu)
     menu_dates = halal_lib.parse_menu_dates(full_menu)
+    if not menu_dates:
+        # Not fatal - the menu itself is still usable - but say so, otherwise the
+        # date-driven parts of the dashboard just go dark with no explanation.
+        print("⚠️ Could not read any dates from the table header; the site's format may have changed.")
     
     # 2. Check for Changes (Optimization)
     print(f"🔑 Menu Hash: {menu_hash}")
@@ -127,7 +139,9 @@ def main():
     output = {
         "updated_at": datetime.now().isoformat(),
         "menu_hash": menu_hash,
-        "week_start": menu_dates.get("Monday"),
+        # Earliest date we parsed, not specifically Monday's: a week whose 월 column
+        # is missing still knows when it starts.
+        "week_start": min(menu_dates.values()) if menu_dates else None,
         "week_data": week_data
     }
 

@@ -12,7 +12,9 @@ venv\Scripts\python.exe scripts/gen_menu.py
 if %errorlevel% neq 0 (
     echo.
     echo ❌ Error generating menu!
-    pause
+    rem The scheduled task runs with no console: pausing there would hang it
+    rem forever, holding a cmd.exe and colliding with every later run.
+    if not "%1"=="auto" pause
     exit /b
 )
 
