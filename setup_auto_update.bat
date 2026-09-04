@@ -29,7 +29,7 @@ goto MENU
 echo.
 echo Scheduling update_menu.bat to run daily at 9:00 AM...
 schtasks /create ^
-    /tn "KITPorkFree_AutoUpdate" ^
+    /tn "KumohPorkFree_AutoUpdate" ^
     /tr "cmd /c cd /d \"%SCRIPT_DIR%\" && update_menu.bat auto" ^
     /sc daily ^
     /st 09:00 ^

@@ -5,7 +5,7 @@
 
 ## 🔐 Verify GitHub Secrets
 
-Go to your repository: https://github.com/gieworld/cafeteria_halal
+Go to your repository: https://github.com/gieworld/cafeteria_pork_free
 
 ### Check Environment Secrets:
 1. Go to **Settings** → **Environments** → **Configure env**
