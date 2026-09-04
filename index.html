@@ -119,6 +119,29 @@
         .hidden {
             display: none;
         }
+
+        /* The Korean original - this is the line you point at, at the counter.
+           VT323 has no Hangul, so name the fallback stack instead of leaving it to chance. */
+        .ko {
+            font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+            font-size: 0.8rem;
+            color: #444;
+            letter-spacing: 0.02em;
+        }
+
+        /* Collapsed cafeteria: the title bar itself is the toggle */
+        summary.title-bar {
+            cursor: pointer;
+            list-style: none;
+        }
+
+        summary.title-bar::-webkit-details-marker {
+            display: none;
+        }
+
+        summary.title-bar::marker {
+            content: '';
+        }
     </style>
 </head>
 
@@ -147,6 +170,11 @@
             <button onclick="switchTab('Friday')" id="tab-Friday" class="retro-tab">FRI</button>
         </nav>
 
+        <!-- The disclaimer belongs where it cannot be scrolled past -->
+        <div class="border-b-2 border-black px-3 py-1 bg-black text-white text-center">
+            ⚠ PORK-FREE GUIDE ONLY — NOT HALAL CERTIFIED
+        </div>
+
         <!-- Main Content (White Canvas) -->
         <main id="content" class="content-area min-h-[400px]">
             <div id="loading" class="text-center py-20 text-xl animate-pulse">
@@ -159,8 +187,7 @@
 
         <!-- Footer -->
         <footer class="border-t-2 border-black p-2 text-center text-sm bg-gray-100">
-            <p>⚠️ GUIDE ONLY. NOT CERTIFIED.</p>
-            <p class="text-xs mt-1">KIT Pork-Free v2.0 (System 7 Edition)</p>
+            <p class="text-xs">KIT Pork-Free v2.0 (System 7 Edition)</p>
         </footer>
     </div>
 
@@ -222,6 +249,91 @@
             renderMenu(day);
         }
 
+        // A dish is {en, ko}; older data files stored a bare string.
+        function dish(item) {
+            if (item && typeof item === 'object') return { en: item.en || '', ko: item.ko || '' };
+            return { en: String(item || ''), ko: '' };
+        }
+
+        // English to understand it, Korean to point at it on the counter sign.
+        function dishLine(item, tag) {
+            const d = dish(item);
+            if (!d.en) return '';
+            return `<${tag}>${d.en}${d.ko ? `<div class="ko">${d.ko}</div>` : ''}</${tag}>`;
+        }
+
+        // VT323 draws "~" high and thin, so "11:00~14:00" reads as "11:00*14:00".
+        function fmtTime(s) {
+            return String(s || '').replace(/~/g, '-');
+        }
+
+        // Every HH:MM~HH:MM window in a selling_time string, as minutes from midnight.
+        function timeWindows(s) {
+            return [...String(s || '').matchAll(/(\d{1,2}):(\d{2})\s*[~\-]\s*(\d{1,2}):(\d{2})/g)]
+                .map(m => [+m[1] * 60 + +m[2], +m[3] * 60 + +m[4]]);
+        }
+
+        function openNow(sellingTime, mins) {
+            return timeWindows(sellingTime).some(([from, to]) => mins >= from && mins <= to);
+        }
+
+        // Run selfCheck() in devtools after touching the time/dish helpers above.
+        function selfCheck() {
+            const eq = (got, want, what) => {
+                if (JSON.stringify(got) !== JSON.stringify(want))
+                    throw new Error(`${what}: got ${JSON.stringify(got)}, want ${JSON.stringify(want)}`);
+            };
+            eq(timeWindows('11:40~13:30 (also 11:00~11:40 at the A La Carte hall)'),
+                [[700, 810], [660, 700]], 'both windows incl. the parenthetical one');
+            eq(openNow('11:00~14:00 16:00~18:30', 12 * 60), true, 'open at 12:00');
+            eq(openNow('11:00~14:00 16:00~18:30', 15 * 60), false, 'closed at 15:00');
+            eq(openNow('11:00~14:00 16:00~18:30', 17 * 60), true, 'open at 17:00');
+            eq(fmtTime('11:00~14:00'), '11:00-14:00', 'tilde becomes hyphen');
+            eq(dish({ en: 'Udon', ko: '우동' }), { en: 'Udon', ko: '우동' }, 'object dish');
+            eq(dish('Legacy String'), { en: 'Legacy String', ko: '' }, 'legacy string dish');
+            return 'index.html self-check OK';
+        }
+
+        // The one thing a student standing in the hall actually wants: what is
+        // servable right now. Derived from selling_time vs the clock - no new data.
+        function nowBox(dayData) {
+            const now = new Date();
+            if (dayData.date !== now.toLocaleDateString('en-CA')) return ''; // only for today
+            const mins = now.getHours() * 60 + now.getMinutes();
+
+            const lines = [];
+            (dayData.cafeterias || []).forEach(cafe => {
+                if (cafe.type === 'package') {
+                    (cafe.meals || []).forEach(meal => {
+                        if (!openNow(meal.selling_time, mins)) return;
+                        const ok = meal.verdict === 'SAFE' || meal.verdict === 'WORTH IT';
+                        lines.push(`<b>${cafe.name}</b> — ` + (ok
+                            ? dish({ en: meal.main_dish, ko: meal.main_dish_ko }).en
+                            : 'contains pork, skip'));
+                    });
+                    return;
+                }
+                const bkf = cafe.breakfast;
+                if (bkf && bkf.verdict !== 'NONE' && openNow(bkf.selling_time, mins)) {
+                    lines.push(`<b>${cafe.name} breakfast</b> — ` +
+                        (bkf.verdict === 'SAFE' ? bkf.main_dish : 'contains pork, skip'));
+                }
+                if (openNow(cafe.selling_time, mins)) {
+                    const safe = (cafe.safe_options || []).map(dish).filter(d => d.en);
+                    lines.push(`<b>${cafe.name}</b> — ` +
+                        (safe.length ? safe.map(d => d.en).join(', ') : 'nothing pork-free'));
+                }
+            });
+
+            if (!lines.length) {
+                return `<div class="alert-box mb-4 text-center">NOTHING SERVING RIGHT NOW</div>`;
+            }
+            return `<div class="alert-box mb-4">
+                <div class="font-bold mb-1">▶ SERVING NOW</div>
+                ${lines.map(l => `<div class="text-sm">${l}</div>`).join('')}
+            </div>`;
+        }
+
         function renderMenu(day) {
             const container = document.getElementById('content');
             container.innerHTML = ""; // Clear existing
@@ -233,19 +345,19 @@
                 return;
             }
 
+            container.innerHTML = nowBox(dayData);
+
             dayData.cafeterias.forEach(cafe => {
                 const card = document.createElement('div');
                 card.className = 'mac-window mb-6'; // Inner windows
 
                 let hasContent = false;
+                let html = '';
 
-                // Inner Title Bar
-                let html = `
-                <div class="title-bar" style="height: 24px; padding: 2px;">
-                    <span class="title-text" style="font-size: 1rem; padding: 0 8px;">${cafe.name}</span>
-                </div>
-                <div class="p-4">
-                `;
+                if (cafe.note && !cafe.fixed_menu) {
+                    html += `<div class="mb-3 text-center border-2 border-dotted border-black py-1">${cafe.note}</div>`;
+                    hasContent = true;
+                }
 
                 if (cafe.type === 'individual') {
                     // A La Carte — show breakfast block first if present
@@ -261,9 +373,10 @@
                             </div>
                             <div class="text-xs mb-2 font-mono text-gray-700">
                                 ${bkf.price ? `<span class="mr-2">💰 ${bkf.price}</span>` : ''}
-                                ${bkf.selling_time ? `<span>🕒 ${bkf.selling_time}</span>` : ''}
+                                ${bkf.selling_time ? `<span>🕒 ${fmtTime(bkf.selling_time)}</span>` : ''}
                             </div>
                             <div class="text-xl mb-1">${bkf.main_dish || 'N/A'}</div>
+                            ${bkf.main_dish_ko ? `<div class="ko mb-1">${bkf.main_dish_ko}</div>` : ''}
                             ${bkf.reason ? `<div class="text-sm text-gray-600">${bkf.reason}</div>` : ''}
                         </div>`;
                         hasContent = true;
@@ -274,15 +387,15 @@
                         html += `
                         <div class="mb-4 p-2 bg-gray-100 border border-black text-sm text-center">
                             ${cafe.price ? `<span class="mr-3">💰 ${cafe.price}</span>` : ''}
-                            ${cafe.selling_time ? `<span>🕒 ${cafe.selling_time}</span>` : ''}
+                            ${cafe.selling_time ? `<span>🕒 ${fmtTime(cafe.selling_time)}</span>` : ''}
                         </div>`;
                     }
-                    
+
                     if (cafe.safe_options && cafe.safe_options.length > 0) {
                         html += `<div class="mb-3"><span class="badge badge-safe">SAFE OPTIONS</span></div>`;
                         html += `<ul class="list-square ml-5 space-y-2 mb-4">`;
                         cafe.safe_options.forEach(item => {
-                            html += `<li>${item}</li>`;
+                            html += dishLine(item, 'li');
                         });
                         html += `</ul>`;
                         hasContent = true;
@@ -291,7 +404,7 @@
                         html += `<div class="mb-3"><span class="badge badge-danger">CONTAINS PORK</span></div>`;
                         html += `<ul class="list-square ml-5 space-y-2">`;
                         cafe.avoid.forEach(item => {
-                            html += `<li>${item}</li>`;
+                            html += dishLine(item, 'li');
                         });
                         html += `</ul>`;
                         hasContent = true;
@@ -321,14 +434,15 @@
                             </div>
                             
                             <!-- Price & Time Info -->
-                            ${(meal.price || meal.selling_time) ? 
+                            ${(meal.price || meal.selling_time) ?
                                 `<div class="text-xs mb-2 font-mono text-gray-700">
                                     ${meal.price ? `<span class="mr-2">💰 ${meal.price}</span>` : ''}
-                                    ${meal.selling_time ? `<span>🕒 ${meal.selling_time}</span>` : ''}
+                                    ${meal.selling_time ? `<span>🕒 ${fmtTime(meal.selling_time)}</span>` : ''}
                                  </div>` : ''}
-                            
-                            <div class="text-xl mb-2">${meal.main_dish || 'No info'}</div>
-                            
+
+                            <div class="text-xl mb-1">${meal.main_dish || 'No info'}</div>
+                            ${meal.main_dish_ko ? `<div class="ko mb-2">${meal.main_dish_ko}</div>` : ''}
+
                             ${meal.safe_items && meal.safe_items.length ?
                                 `<div class="text-sm mt-1">👍 ${meal.safe_items.join(', ')}</div>` : ''}
                             
@@ -342,9 +456,21 @@
                     html += `<div class="text-center py-4 border-2 border-dotted border-gray-400">[ NO DATA ]</div>`;
                 }
 
-                html += `</div>`; // Close content div
+                // A fixed-menu counter (Snack Bar) prints the same four items every
+                // weekday, so it gets a collapsed row instead of a full window - the
+                // cafeterias whose menu actually rotates stay on top.
+                const safeCount = (cafe.safe_options || []).map(dish).filter(d => d.en).length;
+                const label = cafe.fixed_menu
+                    ? `${cafe.name} — ${cafe.note || `${safeCount} pork-free`}`
+                    : cafe.name;
+                const titleBar = tag => `
+                <${tag} class="title-bar" style="height: 24px; padding: 2px;">
+                    <span class="title-text" style="font-size: 1rem; padding: 0 8px;">${label}</span>
+                </${tag}>`;
 
-                card.innerHTML = html;
+                card.innerHTML = cafe.fixed_menu
+                    ? `<details>${titleBar('summary')}<div class="p-4">${html}</div></details>`
+                    : `${titleBar('div')}<div class="p-4">${html}</div>`;
                 container.appendChild(card);
             });
         }

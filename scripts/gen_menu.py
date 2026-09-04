@@ -43,6 +43,7 @@ def placeholder_day(day):
             {
                 "name": "Snack Bar",
                 "type": "individual",
+                "fixed_menu": True,
                 "selling_time": "11:00~14:00, 16:00~18:30",
                 "safe_options": [],
                 "avoid": []

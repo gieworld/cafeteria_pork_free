@@ -124,14 +124,31 @@ def extract_pork_items(menu_text):
 MODELS = ["gemini-3.8-flash", "gemini-3.7-flash"]  # primary, fallback
 
 
+FIXED_MENU_CAFES = {"Snack Bar"}  # same short menu every weekday -> render collapsed
+
+
+def _coerce_dish(item):
+    """Normalize one orderable dish to {"en": ..., "ko": ...}.
+
+    The Korean name is what is actually printed on the counter sign, so it is
+    the name a student points at. Bare strings (older data files, or a model
+    that ignored the schema) still come through with an empty `ko`.
+    """
+    if isinstance(item, dict):
+        return {"en": str(item.get("en") or item.get("menu") or "").strip(),
+                "ko": str(item.get("ko") or "").strip().lstrip("*").strip()}
+    return {"en": str(item).strip(), "ko": ""}
+
+
 def _coerce_day_result(day, result):
-    """Normalize one day's result: ensure the 'day' field and string-only A La Carte lists."""
+    """Normalize one day's result: the 'day' field, {en,ko} dishes, fixed-menu flag."""
     result.setdefault("day", day)
     for cafe in result.get("cafeterias", []):
+        cafe["fixed_menu"] = cafe.get("name") in FIXED_MENU_CAFES
         if cafe.get("type") == "individual":
             for key in ("safe_options", "avoid"):
-                items = cafe.get(key, [])
-                cafe[key] = [it if isinstance(it, str) else it.get("menu", str(it)) for it in items]
+                dishes = [_coerce_dish(it) for it in cafe.get(key, [])]
+                cafe[key] = [d for d in dishes if d["en"]]
     return result
 
 
@@ -151,7 +168,7 @@ Analyze EVERY one of these days from the weekly menu data below.
 CONTEXT (three cafeterias):
 - Set Meal (restaurant02, 정찬식당) = PACKAGE MEAL. Lunch only, ~6000 won. You get all dishes, cannot choose.
 - A La Carte (restaurant01, 일품식당) = INDIVIDUAL ORDER. Rotating daily lunch/dinner specials (일품요리). A cheap breakfast (조식 / 천원의 아침밥) is served ONLY during regular semester and is often suspended during vacations/holidays.
-- Snack Bar (restaurant04, 분식당) = SNACK COUNTER, individual order. Mostly a fixed short menu (udon, ramen, pork cutlet, sweet & sour chicken). Some days it shows "일품식당에서 주문 가능" (order at the A La Carte hall instead) or "미운영" (not operating) - report those in `reason`-free form by leaving the lists empty.
+- Snack Bar (restaurant04, 분식당) = SNACK COUNTER, individual order. Mostly a fixed short menu (udon, ramen, pork cutlet, sweet & sour chicken). Some days it shows "일품식당에서 주문 가능" (order at the A La Carte hall instead) or "미운영" (not operating) - on those days leave safe_options/avoid empty and say so in `note`.
 
 SITE-MARKED PORK ITEMS (extracted mechanically from the cafeteria's own "*" markers - treat as ABSOLUTE truth):
 {pork_list}
@@ -190,9 +207,16 @@ PRICE & TIME RULE (the example values below are placeholders, NOT facts):
 - If the data adds an extra service window, append it. e.g. with "(11:00~11:40) 일품식당에서 위의 정식메뉴 운영" -> selling_time "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)".
 - If a price or time is genuinely absent from the data, use "" (empty string). NEVER invent a number.
 
-TRANSLATION RULE (CRITICAL):
-- ALL values in the JSON (including `main_dish`, `safe_items`, `skip_items`, `reason`, `safe_options`, `avoid`) MUST be translated into English.
-- Do NOT output Korean characters in these fields.
+LANGUAGE RULE (CRITICAL - the student has to order at a Korean counter):
+- `reason`, `safe_items`, `skip_items` and `time` MUST be English only. No Korean characters in those.
+- A dish the student ORDERS BY NAME carries BOTH names, because the counter sign is in Korean:
+  - every `safe_options` / `avoid` entry is an OBJECT: {{"en": "English name", "ko": "exact Korean name"}}
+  - `main_dish` stays English; add `main_dish_ko` next to it (on Set Meal meals AND on breakfast).
+- Every `ko` value MUST be copied VERBATIM from the MENU DATA above, minus any leading "*". Never transliterate, never invent Korean, never translate English back into Korean. If the data has no Korean source for that dish, use "".
+- `safe_items` / `skip_items` are Set Meal side dishes: plain English strings, no Korean. The tray comes as-is, so those are never ordered by name.
+
+NOT-SERVING NOTE:
+- Give each individual-order cafeteria a `note`: one short English line ONLY when it is not serving normally that day - e.g. "Not operating" for 미운영, "Order at the A La Carte hall" for 일품식당에서 주문 가능. Otherwise "".
 
 MENU DATA:
 {menu_data}
@@ -211,7 +235,8 @@ Return ONLY this JSON (no markdown). Include an entry for EVERY target day:
             "price": "<from data, e.g. 6000 won>",
             "selling_time": "<from data, e.g. 11:40~13:30>",
             "verdict": "SAFE/WORTH IT/NOT WORTH/NONE",
-            "main_dish": "name of main protein/dish",
+            "main_dish": "name of main protein/dish, in English",
+            "main_dish_ko": "the same dish's exact Korean name from the data, or ''",
             "safe_items": ["list items you can eat"],
             "skip_items": ["list items with pork to skip"],
             "reason": "brief explanation"
@@ -226,18 +251,21 @@ Return ONLY this JSON (no markdown). Include an entry for EVERY target day:
           "selling_time": "<from data, e.g. 08:20~10:00>",
           "verdict": "SAFE/NOT WORTH/NONE (use NONE if breakfast is not in the data)",
           "main_dish": "actual breakfast item from the data, or 'Not served' if none",
+          "main_dish_ko": "that item's exact Korean name from the data, or ''",
           "reason": "brief explanation, or 'Breakfast not served' if none"
         }},
         "selling_time": "<from data, e.g. 11:00~14:00, 16:00~18:30>",
-        "safe_options": ["Dish Name 1", "Dish Name 2"],
-        "avoid": ["Dish Name 3", "Dish Name 4"]
+        "note": "",
+        "safe_options": [{{"en": "Chicken Cream Stew Udon", "ko": "치킨크림스튜우동"}}],
+        "avoid": [{{"en": "Tonkotsu Ramen", "ko": "돈코츠라멘"}}]
       }},
       {{
         "name": "Snack Bar",
         "type": "individual",
         "selling_time": "<from data, e.g. 11:00~14:00, 16:00~18:30>",
-        "safe_options": ["Dish Name 1"],
-        "avoid": ["Dish Name 2"]
+        "note": "",
+        "safe_options": [{{"en": "Udon", "ko": "우동"}}],
+        "avoid": [{{"en": "Pork Cutlet Varieties", "ko": "돈가스류"}}]
       }}
     ]
   }}
@@ -246,8 +274,7 @@ Return ONLY this JSON (no markdown). Include an entry for EVERY target day:
 Repeat the SAME structure for EVERY target day, each keyed by its day name (Monday, Tuesday, ...).
 Output raw JSON only: no markdown, no code fences, no comments, and no text before or after the JSON object.
 
-IMPORTANT: For A La Carte and Snack Bar, safe_options and avoid MUST be simple string arrays of dish names only.
-Do NOT use objects/dicts. Just plain strings like: ["Chicken Steak", "Beef Soup"]
+IMPORTANT: For A La Carte and Snack Bar, EVERY safe_options / avoid entry MUST be an object with exactly the keys "en" and "ko". Never a bare string.
 """
 
 
