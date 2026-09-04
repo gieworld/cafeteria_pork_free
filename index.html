@@ -129,7 +129,15 @@
             letter-spacing: 0.02em;
         }
 
-        /* Collapsed cafeteria: the title bar itself is the toggle */
+        /* Today's tab, so you can find your way back after tabbing around.
+           Underlining the label rather than the tab edge: a bar at the bottom
+           just blends into the 2px border already there. */
+        .retro-tab.today {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        /* Cafeteria window: the title bar itself is the toggle */
         summary.title-bar {
             cursor: pointer;
             list-style: none;
@@ -141,6 +149,25 @@
 
         summary.title-bar::marker {
             content: '';
+        }
+
+        /* Our own disclosure arrow. The only animation on the page: feedback for
+           a direct manipulation, not decoration - and stepped, not eased, because
+           System 7 never eased anything. */
+        summary.title-bar .title-text::after {
+            content: ' ▸';
+            display: inline-block;
+            transition: transform 120ms steps(3);
+        }
+
+        details[open] > summary.title-bar .title-text::after {
+            transform: rotate(90deg);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            summary.title-bar .title-text::after {
+                transition: none;
+            }
         }
     </style>
 </head>
@@ -158,7 +185,7 @@
         <!-- App Header Info -->
         <div class="border-b-2 border-black p-3 bg-white flex justify-between items-center">
             <div class="text-lg">System: <span class="font-bold">KIT Cafeteria</span></div>
-            <div id="update-time" class="text-sm border border-black px-2 py-1">Loading...</div>
+            <div id="week-label" class="text-sm border border-black px-2 py-1">Loading...</div>
         </div>
 
         <!-- Navigation (Tabs) -->
@@ -187,7 +214,7 @@
 
         <!-- Footer -->
         <footer class="border-t-2 border-black p-2 text-center text-sm bg-gray-100">
-            <p class="text-xs">KIT Pork-Free v2.0 (System 7 Edition)</p>
+            <p class="text-xs"><span id="update-time"></span> · KIT Pork-Free v2.0 (System 7 Edition)</p>
         </footer>
     </div>
 
@@ -205,23 +232,23 @@
                 const data = await response.json();
                 menuData = data.week_data;
 
-                // Label each tab with the real date from the site's own header, and find
-                // which tab is actually today - the weekday name alone can't tell us
-                // whether this file holds the current week or a stale one.
+                // Which week this is, is ONE fact - it belongs in the header once, not
+                // stamped across all five tabs. Tabs stay three letters so the whole
+                // week fits at phone width; today just gets an underline.
                 const todayISO = new Date().toLocaleDateString('en-CA');
                 let todayTab = null;
                 days.forEach(d => {
-                    const iso = menuData[d] && menuData[d].date;
-                    if (!iso) return;
-                    document.getElementById(`tab-${d}`).innerText =
-                        `${d.slice(0, 3).toUpperCase()} ${iso.slice(5).replace('-', '/')}`;
-                    if (iso === todayISO) todayTab = d;
+                    const isToday = !!(menuData[d] && menuData[d].date === todayISO);
+                    document.getElementById(`tab-${d}`).classList.toggle('today', isToday);
+                    if (isToday) todayTab = d;
                 });
 
                 const staleWeek = data.week_start && days.includes(today) && !todayTab;
+                document.getElementById('week-label').innerText = data.week_start
+                    ? (staleWeek ? '⚠ ' : '') + 'Week of ' + fmtDate(data.week_start)
+                    : 'Week unknown';
                 document.getElementById('update-time').innerText =
-                    "Updated: " + new Date(data.updated_at).toLocaleDateString()
-                    + (staleWeek ? " ⚠ not this week" : "");
+                    'Updated ' + new Date(data.updated_at).toLocaleDateString();
                 document.getElementById('loading').classList.add('hidden');
 
                 // Open today's tab (by date), else today's weekday, else Monday
@@ -265,6 +292,13 @@
         // VT323 draws "~" high and thin, so "11:00~14:00" reads as "11:00*14:00".
         function fmtTime(s) {
             return String(s || '').replace(/~/g, '-');
+        }
+
+        // "2026-08-31" -> "Aug 31". Parsed as local parts, not via Date(iso),
+        // which would be read as UTC and can land on the day before.
+        function fmtDate(iso) {
+            const [y, m, d] = String(iso).split('-').map(Number);
+            return new Date(y, m - 1, d).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
         }
 
         // Every HH:MM~HH:MM window in a selling_time string, as minutes from midnight.
@@ -456,21 +490,21 @@
                     html += `<div class="text-center py-4 border-2 border-dotted border-gray-400">[ NO DATA ]</div>`;
                 }
 
-                // A fixed-menu counter (Snack Bar) prints the same four items every
-                // weekday, so it gets a collapsed row instead of a full window - the
-                // cafeterias whose menu actually rotates stay on top.
+                // Every cafeteria is the same <details> widget, so the affordance is
+                // consistent everywhere; only the DEFAULT STATE ranks them. A fixed-menu
+                // counter (Snack Bar prints the same four items all week) starts closed.
                 const safeCount = (cafe.safe_options || []).map(dish).filter(d => d.en).length;
                 const label = cafe.fixed_menu
                     ? `${cafe.name} — ${cafe.note || `${safeCount} pork-free`}`
                     : cafe.name;
-                const titleBar = tag => `
-                <${tag} class="title-bar" style="height: 24px; padding: 2px;">
-                    <span class="title-text" style="font-size: 1rem; padding: 0 8px;">${label}</span>
-                </${tag}>`;
 
-                card.innerHTML = cafe.fixed_menu
-                    ? `<details>${titleBar('summary')}<div class="p-4">${html}</div></details>`
-                    : `${titleBar('div')}<div class="p-4">${html}</div>`;
+                card.innerHTML = `
+                <details ${cafe.fixed_menu ? '' : 'open'}>
+                    <summary class="title-bar" style="height: 24px; padding: 2px;">
+                        <span class="title-text" style="font-size: 1rem; padding: 0 8px;">${label}</span>
+                    </summary>
+                    <div class="p-4">${html}</div>
+                </details>`;
                 container.appendChild(card);
             });
         }
