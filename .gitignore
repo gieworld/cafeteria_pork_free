@@ -1,6 +1,9 @@
 # Environment variables (contains secrets!)
 .env
 
+# Output of scheduled update runs (update_menu.bat auto)
+update.log
+
 # Note: data/menu_data.json is TRACKED (needed for GitHub Pages)
 
 # Python
