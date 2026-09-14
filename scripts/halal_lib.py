@@ -175,7 +175,7 @@ def _generate(model, prompt):
             "reasoning": {"effort": "low"},
             "max_tokens": 32000,
         },
-        timeout=180,
+        timeout=300,  # successful free-tier weekly generations took 139-223s
     )
     try:
         body = r.json()
@@ -412,14 +412,15 @@ def analyze_week(menu_data, days):
 
     prompt = _build_week_prompt(menu_data, days, corrections_text, pork_items)
 
-    max_retries = 3
+    max_retries = 4  # two attempts on the primary, then two on the fallback
     retry_delay = 5  # seconds
     cleaned_text = ""
 
     for attempt in range(max_retries):
-        # Use the primary model, then switch to the fallback on the final attempt.
-        model = models[0] if attempt < max_retries - 1 else models[-1]
-        if attempt == max_retries - 1 and len(models) > 1:
+        # A single fallback attempt turned any transient OpenRouter 429 or timeout
+        # into a failed run - in exactly the case the fallback exists for.
+        model = models[0] if attempt < 2 else models[-1]
+        if attempt == 2 and len(models) > 1:
             print(f"   ↩️ Switching to fallback model: {model}")
         try:
             cleaned_text = _generate(model, prompt).replace("```json", "").replace("```", "").strip()
@@ -456,7 +457,7 @@ def analyze_week(menu_data, days):
 
         except Exception as e:
             error_msg = str(e)
-            print(f"   ⚠️ Gemini API error on attempt {attempt + 1}/{max_retries}: {error_msg}")
+            print(f"   ⚠️ {model} error on attempt {attempt + 1}/{max_retries}: {error_msg}")
             if attempt < max_retries - 1:
                 wait = retry_delay * 2 if ("quota" in error_msg.lower() or "rate" in error_msg.lower()) else retry_delay
                 print(f"   ⏳ Retrying in {wait} seconds...")
@@ -503,6 +504,24 @@ if __name__ == "__main__":
     assert [d["en"] for d in cafe["safe_options"]] == ["Udon"], cafe["safe_options"]
     assert [d["en"] for d in cafe["avoid"]] == ["Tonkotsu Ramen"], cafe["avoid"]
     assert _coerce_day_result("Monday", {})["cafeterias"] == [], "missing cafeterias must default"
+
+    # Retry order: primary twice, then fallback twice (the fallback used to get one shot)
+    import time as _time
+    tried, real_generate, real_sleep = [], _generate, _time.sleep
+    real_keys = (GEMINI_API_KEY, OPENROUTER_API_KEY)
+
+    def _always_503(model, prompt):
+        tried.append(model)
+        raise RuntimeError("503 simulated")
+
+    globals().update(_generate=_always_503, GEMINI_API_KEY="k", OPENROUTER_API_KEY="k")
+    _time.sleep = lambda seconds: None
+    try:
+        assert analyze_week("no menu", ["Monday"]) is None
+    finally:
+        globals().update(_generate=real_generate, GEMINI_API_KEY=real_keys[0], OPENROUTER_API_KEY=real_keys[1])
+        _time.sleep = real_sleep
+    assert tried == [MODELS[0], MODELS[0], MODELS[-1], MODELS[-1]], tried
 
     # ASCII-only output so this runs on a bare Windows console (no PYTHONIOENCODING).
     print(f"halal_lib self-check OK ({len(pork)} pork items, {len(dates)} dates)")

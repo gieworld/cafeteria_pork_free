@@ -111,7 +111,7 @@ def main():
     days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
     print("\n🤖 Menu CHANGED! Starting AI analysis...")
-    print("   (Analyzing the whole week in 1 Gemini call)")
+    print("   (Analyzing the whole week in 1 AI call)")
 
     analysis = halal_lib.analyze_week(full_menu, days)
 
