@@ -144,7 +144,10 @@ def _has_key(model):
 def _generate(model, prompt):
     """One JSON completion from whichever provider owns `model`; returns the raw text."""
     if model.startswith("gemini"):
-        response = genai.Client(api_key=GEMINI_API_KEY).models.generate_content(
+        # Keep the client in a variable. A temporary Client() is garbage-collected
+        # mid-request and closes its connection: "client has been closed".
+        client = genai.Client(api_key=GEMINI_API_KEY)
+        response = client.models.generate_content(
             model=model,
             contents=prompt,
             config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.1),
