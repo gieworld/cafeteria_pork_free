@@ -187,7 +187,12 @@ def _generate(model, prompt):
         raise RuntimeError(f"OpenRouter {r.status_code}: {message}")
 
     choice = body["choices"][0]
-    print(f"   ↪ answered by {body.get('model', model)}")  # a :free id can route to a variant
+    # finish/reasoning show whether a malformed week came from the budget running
+    # out mid-JSON or from the model itself; a :free id can route to a variant.
+    usage = body.get("usage") or {}
+    print(f"   ↪ answered by {body.get('model', model)} (finish={choice.get('finish_reason')}, "
+          f"tokens={usage.get('completion_tokens')}, "
+          f"reasoning={(usage.get('completion_tokens_details') or {}).get('reasoning_tokens')})")
     if not choice["message"].get("content"):
         raise ValueError(f"{model} returned no content (finish_reason={choice.get('finish_reason')})")
     return choice["message"]["content"]
@@ -304,6 +309,7 @@ PACKAGE MEAL WORTHINESS (for Set Meal only):
 - WORTH IT = Main dish is pork-free, but some side dishes contain pork (can skip those sides)
 - NOT WORTH = Main dish contains pork (don't buy this package)
 - NONE = No meal available
+- MAIN DISH = the tray's protein centerpiece. It is NEVER plain rice (밥, 잡곡밥, 기장밥, 콩나물밥, 추가밥), NEVER kimchi, and never a small side; a rice bowl or bibimbap that carries the protein IS the main. Judge SAFE / WORTH IT / NOT WORTH from this dish and put it in `main_dish`.
 
 PRICE & TIME RULE (the example values below are placeholders, NOT facts):
 - Read `price` and `selling_time` for each meal from the MENU DATA of that day. The cafeteria changes them.
@@ -339,7 +345,7 @@ Return ONLY this JSON (no markdown). Include an entry for EVERY target day:
             "price": "<from data, e.g. 6000 won>",
             "selling_time": "<from data, e.g. 11:40~13:30>",
             "verdict": "SAFE/WORTH IT/NOT WORTH/NONE",
-            "main_dish": "name of main protein/dish, in English",
+            "main_dish": "the protein centerpiece per the MAIN DISH rule (never plain rice), in English",
             "main_dish_ko": "the same dish's exact Korean name from the data, or ''",
             "safe_items": ["list items you can eat"],
             "skip_items": ["list items with pork to skip"],
