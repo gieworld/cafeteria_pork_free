@@ -12,6 +12,8 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 
 URLS = {
     "Set Meal": "https://www.kumoh.ac.kr/ko/restaurant02.do",       # 정찬식당
@@ -129,7 +131,54 @@ def extract_pork_items(menu_text):
     return items
 
 
-MODELS = ["gemini-3.8-flash", "gemini-3.7-flash"]  # primary, fallback
+# primary, fallback. Different PROVIDERS on purpose: both Gemini models go 503
+# ("high demand") at the same moments, so a same-provider fallback fails with the
+# primary. A "gemini-*" id goes to Google; anything else is an OpenRouter id.
+MODELS = ["gemini-3.8-flash", "google/gemma-4-31b-it:free"]
+
+
+def _has_key(model):
+    return bool(GEMINI_API_KEY if model.startswith("gemini") else OPENROUTER_API_KEY)
+
+
+def _generate(model, prompt):
+    """One JSON completion from whichever provider owns `model`; returns the raw text."""
+    if model.startswith("gemini"):
+        response = genai.Client(api_key=GEMINI_API_KEY).models.generate_content(
+            model=model,
+            contents=prompt,
+            config=types.GenerateContentConfig(response_mime_type="application/json", temperature=0.1),
+        )
+        return response.text
+
+    # OpenRouter is one OpenAI-shaped POST, so plain requests - no SDK needed.
+    r = requests.post(
+        OPENROUTER_URL,
+        headers={"Authorization": f"Bearer {OPENROUTER_API_KEY}"},
+        json={
+            "model": model,
+            "messages": [{"role": "user", "content": prompt}],
+            "response_format": {"type": "json_object"},
+            "temperature": 0.1,
+            # 5 days x 3 cafeterias of JSON, and reasoning models spend budget thinking first
+            "max_tokens": 16000,
+        },
+        timeout=180,
+    )
+    try:
+        body = r.json()
+    except ValueError:
+        body = {}
+    # OpenRouter can also return 200 with an "error" object when the upstream provider fails
+    if r.status_code != 200 or "error" in body:
+        message = (body.get("error") or {}).get("message") or r.text[:200]
+        raise RuntimeError(f"OpenRouter {r.status_code}: {message}")
+
+    choice = body["choices"][0]
+    print(f"   ↪ answered by {body.get('model', model)}")  # a :free id can route to a variant
+    if not choice["message"].get("content"):
+        raise ValueError(f"{model} returned no content (finish_reason={choice.get('finish_reason')})")
+    return choice["message"]["content"]
 
 
 FIXED_MENU_CAFES = {"Snack Bar"}  # same short menu every weekday -> render collapsed
@@ -329,11 +378,12 @@ def analyze_week(menu_data, days):
     Days missing from the model's response are simply absent from the returned dict;
     the caller fills those with a placeholder structure.
     """
-    if not GEMINI_API_KEY:
-        print("❌ Missing GEMINI_API_KEY")
+    # Skip models whose key is absent rather than failing: with one key set, every
+    # attempt just goes to that provider.
+    models = [m for m in MODELS if _has_key(m)]
+    if not models:
+        print("❌ No API key for any model in MODELS (need GEMINI_API_KEY and/or OPENROUTER_API_KEY)")
         return None
-
-    client = genai.Client(api_key=GEMINI_API_KEY)
 
     corrections = load_corrections()
     corrections_text = ""
@@ -356,20 +406,11 @@ def analyze_week(menu_data, days):
 
     for attempt in range(max_retries):
         # Use the primary model, then switch to the fallback on the final attempt.
-        model = MODELS[0] if attempt < max_retries - 1 else MODELS[-1]
-        if attempt == max_retries - 1:
+        model = models[0] if attempt < max_retries - 1 else models[-1]
+        if attempt == max_retries - 1 and len(models) > 1:
             print(f"   ↩️ Switching to fallback model: {model}")
         try:
-            response = client.models.generate_content(
-                model=model,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    response_mime_type="application/json",
-                    temperature=0.1,
-                ),
-            )
-
-            cleaned_text = response.text.replace("```json", "").replace("```", "").strip()
+            cleaned_text = _generate(model, prompt).replace("```json", "").replace("```", "").strip()
             # Always trim to the outermost braces: strips anything the model appends
             # before/after the JSON object (stray text, comments -> "Extra data" errors).
             start = cleaned_text.find("{")

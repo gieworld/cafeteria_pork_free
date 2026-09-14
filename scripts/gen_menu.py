@@ -66,8 +66,8 @@ def main():
     print("=" * 50)
     
     # Authenticate
-    if not os.getenv("GEMINI_API_KEY"):
-        print("❌ Missing GEMINI_API_KEY! Set it in .env or secrets.")
+    if not (os.getenv("GEMINI_API_KEY") or os.getenv("OPENROUTER_API_KEY")):
+        print("❌ Missing API key! Set GEMINI_API_KEY and/or OPENROUTER_API_KEY in .env or secrets.")
         sys.exit(1)
 
     # 1. Fetch Menu

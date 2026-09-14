@@ -11,6 +11,7 @@ Go to your repository: https://github.com/gieworld/cafeteria_pork_free
 1. Go to **Settings** → **Environments** → **Configure env**
 2. Verify these 3 secrets exist and have **actual values** (not empty):
    - ✅ `GEMINI_API_KEY`
+   - ✅ `OPENROUTER_API_KEY` (fallback provider)
    - ✅ `TELEGRAM_TOKEN`
    - ✅ `TELEGRAM_CHAT_ID`
 

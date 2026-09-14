@@ -28,6 +28,9 @@ We have upgraded from a **Telegram Bot** (blocked mainly by network) to a **Web 
    - Add New Repository Secret:
      - Name: `GEMINI_API_KEY`
      - Value: (Paste your key from .env)
+   - Add another secret for the fallback provider:
+     - Name: `OPENROUTER_API_KEY`
+     - Value: (Paste your key from .env)
 
 4. **Enable GitHub Pages**
    - Go to Repo **Settings** → **Pages**.
