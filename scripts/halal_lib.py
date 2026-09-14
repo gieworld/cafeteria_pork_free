@@ -134,7 +134,12 @@ def extract_pork_items(menu_text):
 # primary, fallback. Different PROVIDERS on purpose: both Gemini models go 503
 # ("high demand") at the same moments, so a same-provider fallback fails with the
 # primary. A "gemini-*" id goes to Google; anything else is an OpenRouter id.
-MODELS = ["gemini-3.8-flash", "google/gemma-4-31b-it:free"]
+# Fallback chosen by eval on 2026-09-14 (production prompt, real menus):
+#   nemotron-3-super   passed the hand-judged Aug 31 week (all 5 Set Meal verdicts),
+#                      0 pork dishes listed safe on the live week
+#   dots-3-note-preview  ran out of tokens reasoning, and called a duck set NOT WORTH
+#   gemma-4-31b-it       429 rate-limited every time; nex-n2.5-pro mangled Korean
+MODELS = ["gemini-3.8-flash", "nvidia/nemotron-3-super-120b-a12b:free"]
 
 
 def _has_key(model):
