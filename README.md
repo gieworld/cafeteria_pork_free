@@ -21,7 +21,7 @@ A "SERVING NOW" box on today's tab shows what is open right now.
 ## How it works
 
 1. **Windows Task Scheduler** on the maintainer's PC runs `update_menu.bat` every hour from 08:00 to 12:00. The kumoh.ac.kr site posts each new week at no fixed hour, so one early run can miss it.
-2. `scripts/gen_menu.py` scrapes the three pages. **If the menu hasn't changed, it stops there** — no AI call.
+2. `scripts/gen_menu.py` scrapes the three pages. **If the menu hasn't changed, it stops there** — no AI call. A week the AI answered only partly is saved but not marked done, so the next hourly run tries again.
 3. If it has changed, it makes one AI call for the whole week:
    - **Primary:** `gemini-3.8-flash` (Google) — 2 attempts
    - **Fallback:** `nvidia/nemotron-3-super-120b-a12b:free` (OpenRouter) — 2 attempts. A different company on purpose: Gemini's "high demand" 503s hit all Gemini models at once.

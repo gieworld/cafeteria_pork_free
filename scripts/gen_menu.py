@@ -138,7 +138,10 @@ def main():
     # 4. Build Final JSON Structure
     output = {
         "updated_at": datetime.now().isoformat(),
-        "menu_hash": menu_hash,
+        # Only a complete week earns the hash. A partial one is still saved (better
+        # than last week's data), but without the hash the next hourly run retries
+        # instead of skipping and leaving placeholder days up until the menu changes.
+        "menu_hash": menu_hash if success_count == len(days) else None,
         # Earliest date we parsed, not specifically Monday's: a week whose 월 column
         # is missing still knows when it starts.
         "week_start": min(menu_dates.values()) if menu_dates else None,
@@ -152,6 +155,7 @@ def main():
 
     if success_count < len(days):
         print(f"\n⚠️ Only {success_count}/{len(days)} days analyzed successfully; the rest use placeholder data.")
+        print("   Menu hash not saved, so the next run analyzes again.")
     print(f"\n✅ Helper: Saved NEW analysis to {DATA_FILE}")
     print("=" * 50)
 
