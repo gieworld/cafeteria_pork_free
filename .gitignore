@@ -4,6 +4,9 @@
 # Output of scheduled update runs (update_menu.bat auto)
 update.log
 
+# Raw model outputs from scripts/eval_models.py
+.eval/
+
 # Note: data/menu_data.json is TRACKED (needed for GitHub Pages)
 
 # Python
