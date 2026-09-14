@@ -163,8 +163,12 @@ def _generate(model, prompt):
             "messages": [{"role": "user", "content": prompt}],
             "response_format": {"type": "json_object"},
             "temperature": 0.1,
-            # 5 days x 3 cafeterias of JSON, and reasoning models spend budget thinking first
-            "max_tokens": 16000,
+            # Reasoning tokens count against max_tokens. At 16000 with default effort,
+            # dots-3-note-preview spent the whole budget thinking and returned no JSON
+            # (finish_reason=length). Low effort plus headroom leaves room for the
+            # ~8k-token week of JSON even if a provider ignores the effort hint.
+            "reasoning": {"effort": "low"},
+            "max_tokens": 32000,
         },
         timeout=180,
     )
