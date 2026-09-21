@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-20T08:03:41.282346",
-  "menu_hash": "def28f96ac4ffe750af264a6829ce256",
+  "updated_at": "2026-09-21T12:00:19.362855",
+  "menu_hash": "95a3c1d60bb543386b8b07ee88375f04",
   "week_start": "2026-09-21",
   "week_data": {
     "Monday": {
@@ -18,16 +18,17 @@
               "main_dish": "Pork Soup",
               "main_dish_ko": "돼지국밥",
               "safe_items": [
-                "Steamed Rice",
-                "Vegetable Tempura",
-                "Braised Tofu",
-                "Pollock Salad",
-                "Radish Kimchi"
+                "White rice",
+                "Vegetable tempura",
+                "Braised tofu",
+                "Spicy pollack roe with water parsley salad",
+                "Radish kimchi"
               ],
               "skip_items": [
+                "Pork Soup",
                 "Ssamjang"
               ],
-              "reason": "Main dish contains pork (pork soup)."
+              "reason": "Main dish is pork soup (marked with pork), and ssamjang also contains pork."
             }
           ],
           "fixed_menu": false
@@ -38,26 +39,21 @@
           "breakfast": {
             "price": "1000 won",
             "selling_time": "08:20~10:00",
-            "verdict": "SAFE",
-            "main_dish": "Harvest Full Moon Meal Lunchbox",
+            "verdict": "NOT WORTH",
+            "main_dish": "Hangawi Full Moon Feast Lunchbox",
             "main_dish_ko": "한가위보름달만찬도시락",
-            "reason": "Breakfast item contains no pork indicators."
+            "reason": "Convenience store style holiday lunchbox typically contains pork side dishes (sausage, ham, pork bulgogi)."
           },
-          "selling_time": "11:00~14:00, 16:00~18:30",
+          "selling_time": "11:00~14:00 16:00~18:30",
           "note": "",
-          "safe_options": [
-            {
-              "en": "Dinner Set Meal",
-              "ko": "일품정식(석식)"
-            }
-          ],
+          "safe_options": [],
           "avoid": [
             {
-              "en": "Pork Soybean Stew with Grilled Patties",
+              "en": "Meat Restaurant Soybean Paste Stew with Grilled Short Rib Patties",
               "ko": "고깃집된장찌개*떡갈비"
             },
             {
-              "en": "Curry Ramen",
+              "en": "Spicy Ramen",
               "ko": "카라이라멘"
             }
           ],
@@ -66,7 +62,7 @@
         {
           "name": "Snack Bar",
           "type": "individual",
-          "selling_time": "11:00~14:00, 16:00~18:30",
+          "selling_time": "11:00~14:00 16:00~18:30",
           "note": "",
           "safe_options": [
             {
@@ -74,7 +70,7 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet Fried Chicken",
+              "en": "Sweet and Sour Chicken",
               "ko": "닭강정"
             }
           ],
@@ -105,18 +101,19 @@
               "price": "6000 won",
               "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "NOT WORTH",
-              "main_dish": "Perilla Beef Bulgogi",
+              "main_dish": "Perilla Seed White Bulgogi",
               "main_dish_ko": "들깨백불고기",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Shrimp Snack Tteokbokki",
-                "Tomato Egg Stir-fry",
-                "Cabbage Kimchi"
+                "Mixed grain rice",
+                "Shrimp snack tteokbokki",
+                "Tomato scrambled eggs",
+                "Cabbage kimchi"
               ],
               "skip_items": [
-                "Aged Kimchi Stew"
+                "Aged Kimchi Stew",
+                "Perilla Seed White Bulgogi"
               ],
-              "reason": "Main dish contains pork (perilla beef bulgogi)."
+              "reason": "Main dish is pork bulgogi (marked with pork) and the kimchi stew contains or is made with pork broth/meat."
             }
           ],
           "fixed_menu": false
@@ -127,22 +124,22 @@
           "breakfast": {
             "price": "1000 won",
             "selling_time": "08:20~10:00",
-            "verdict": "SAFE",
-            "main_dish": "Four-Meat Feast Lunchbox",
+            "verdict": "NOT WORTH",
+            "main_dish": "Quattro Meat Feast Lunchbox",
             "main_dish_ko": "콰트로고기정찬도시락",
-            "reason": "Breakfast item contains no pork indicators."
+            "reason": "Multi-meat lunchbox includes various meats, predominantly pork cuts."
           },
-          "selling_time": "11:00~14:00, 16:00~18:30",
+          "selling_time": "11:00~14:00 16:00~18:30",
           "note": "",
           "safe_options": [
             {
-              "en": "Jjagalchi Rice Bowl",
+              "en": "Jjajang Egg Cheese Rice Bowl",
               "ko": "짜계치덮밥"
             }
           ],
           "avoid": [
             {
-              "en": "Sundae Hangover Soup",
+              "en": "Blood Sausage Hangover Soup",
               "ko": "순대해장국"
             }
           ],
@@ -151,7 +148,7 @@
         {
           "name": "Snack Bar",
           "type": "individual",
-          "selling_time": "11:00~14:00, 16:00~18:30",
+          "selling_time": "11:00~14:00 16:00~18:30",
           "note": "",
           "safe_options": [
             {
@@ -159,7 +156,7 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet Fried Chicken",
+              "en": "Sweet and Sour Chicken",
               "ko": "닭강정"
             }
           ],
@@ -193,15 +190,17 @@
               "main_dish": "Spicy Braised Ribs",
               "main_dish_ko": "매콤찜갈비",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Dried Shrimp Seaweed Soup",
-                "Chive Pancake",
-                "Lettuce Wrap",
-                "Cabbage Kimchi",
-                "Sesame Rice Cake"
+                "Mixed grain rice",
+                "Mallow soybean paste soup",
+                "Chive pancake",
+                "Self radish wrap roll",
+                "Cabbage kimchi",
+                "Sesame songpyeon"
               ],
-              "skip_items": [],
-              "reason": "Main dish contains pork (spicy braised ribs)."
+              "skip_items": [
+                "Spicy Braised Ribs"
+              ],
+              "reason": "Main dish is spicy braised pork ribs (marked with pork)."
             }
           ],
           "fixed_menu": false
@@ -213,34 +212,29 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Spam Kimchi Fried Rice Triangle Kimbap",
-            "main_dish_ko": "뉴스팸김치볶음삼각김밥",
-            "reason": "Breakfast item contains pork (Spam)."
+            "main_dish": "New Spam Kimchi Fried Rice Triangle Kimbap, High Protein Bulgogi Salad Pasta, Home Yogurt",
+            "main_dish_ko": "뉴스팸김치볶음삼각김밥 고단백불고기샐러드파스타 홈요거트",
+            "reason": "Breakfast includes Spam kimchi triangle kimbap, which contains pork."
           },
-          "selling_time": "11:00~14:00, 16:00~18:30",
+          "selling_time": "11:00~14:00 16:00~18:30",
           "note": "",
           "safe_options": [
             {
-              "en": "Chicken Kalguksu",
-              "ko": "닭칼국수"
-            },
-            {
-              "en": "Dinner Set Meal",
-              "ko": "일품정식(석식)"
-            }
-          ],
-          "avoid": [
-            {
               "en": "Beef Bulgogi Butter Rice",
               "ko": "소불고기버터밥"
+            },
+            {
+              "en": "Chicken Kalguksu",
+              "ko": "닭칼국수"
             }
           ],
+          "avoid": [],
           "fixed_menu": false
         },
         {
           "name": "Snack Bar",
           "type": "individual",
-          "selling_time": "11:00~14:00, 16:00~18:30",
+          "selling_time": "11:00~14:00 16:00~18:30",
           "note": "",
           "safe_options": [
             {
@@ -248,7 +242,7 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet Fried Chicken",
+              "en": "Sweet and Sour Chicken",
               "ko": "닭강정"
             }
           ],
@@ -279,11 +273,11 @@
               "price": "",
               "selling_time": "",
               "verdict": "NONE",
-              "main_dish": "",
+              "main_dish": "Not served",
               "main_dish_ko": "",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Closed due to holiday"
+              "reason": "Closed for Chuseok holiday."
             }
           ],
           "fixed_menu": false
@@ -300,7 +294,7 @@
             "reason": "Breakfast not served"
           },
           "selling_time": "",
-          "note": "Not operating",
+          "note": "Closed for Chuseok holiday",
           "safe_options": [],
           "avoid": [],
           "fixed_menu": false
@@ -309,7 +303,7 @@
           "name": "Snack Bar",
           "type": "individual",
           "selling_time": "",
-          "note": "Not operating",
+          "note": "Closed for Chuseok holiday",
           "safe_options": [],
           "avoid": [],
           "fixed_menu": true
@@ -329,11 +323,11 @@
               "price": "",
               "selling_time": "",
               "verdict": "NONE",
-              "main_dish": "",
+              "main_dish": "Not served",
               "main_dish_ko": "",
               "safe_items": [],
               "skip_items": [],
-              "reason": "Closed due to holiday"
+              "reason": "Closed for Chuseok holiday."
             }
           ],
           "fixed_menu": false
@@ -350,7 +344,7 @@
             "reason": "Breakfast not served"
           },
           "selling_time": "",
-          "note": "Not operating",
+          "note": "Closed for Chuseok holiday",
           "safe_options": [],
           "avoid": [],
           "fixed_menu": false
@@ -359,7 +353,7 @@
           "name": "Snack Bar",
           "type": "individual",
           "selling_time": "",
-          "note": "Not operating",
+          "note": "Closed for Chuseok holiday",
           "safe_options": [],
           "avoid": [],
           "fixed_menu": true
