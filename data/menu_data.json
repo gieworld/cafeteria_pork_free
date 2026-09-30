@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-09-27T08:00:22.601864",
-  "menu_hash": "4e532cc30e346aecec6a8d3a0e0bab23",
+  "updated_at": "2026-09-30T10:10:08.461102",
+  "menu_hash": "1923352980494a6d2b1ba6bf75c220ff",
   "week_start": "2026-09-28",
   "week_data": {
     "Monday": {
@@ -15,19 +15,15 @@
               "price": "6000 won",
               "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "NOT WORTH",
-              "main_dish": "Squid & Pork Bulgogi",
+              "main_dish": "Pork bulgogi",
               "main_dish_ko": "오돈불고기",
               "safe_items": [
-                "Mixed grain rice",
-                "Perilla seed seaweed soup",
-                "Green bean ball fish cake braise",
+                "Green bean and fish cake stew",
                 "Sesame oil steamed egg",
-                "Nut stir-fried anchovies",
-                "Napa cabbage kimchi"
+                "Stir-fried anchovies with nuts",
+                "Cabbage kimchi"
               ],
-              "skip_items": [
-                "Squid & pork bulgogi"
-              ],
+              "skip_items": [],
               "reason": "Main dish contains pork."
             }
           ],
@@ -40,21 +36,25 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Jeyuk & Pork Cutlet Lunchbox",
+            "main_dish": "Hearty pork & pork cutlet set lunchbox",
             "main_dish_ko": "든든한제육&돈가스정식도시락",
-            "reason": "Contains spicy stir-fried pork and pork cutlet."
+            "reason": "Contains pork (pork stir-fry and pork cutlet)."
           },
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [],
           "avoid": [
             {
-              "en": "Pork Neck Pilaf",
+              "en": "Pork neck pilaf",
               "ko": "목살필라프"
             },
             {
-              "en": "Spicy Handmade Dumpling Hot Pot",
+              "en": "Spicy handmade dumpling hot pot",
               "ko": "얼큰손만두전골"
+            },
+            {
+              "en": "Dinner set meal",
+              "ko": "일품정식(석식)"
             }
           ],
           "fixed_menu": false
@@ -62,7 +62,7 @@
         {
           "name": "Snack Bar",
           "type": "individual",
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
@@ -70,17 +70,17 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet & Sour Chicken Bites",
+              "en": "Sweet fried chicken",
               "ko": "닭강정"
             }
           ],
           "avoid": [
             {
-              "en": "Ramen Varieties",
+              "en": "Ramen varieties",
               "ko": "라면류"
             },
             {
-              "en": "Pork Cutlet Varieties",
+              "en": "Pork cutlet varieties",
               "ko": "돈가스류"
             }
           ],
@@ -100,21 +100,19 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
-              "verdict": "SAFE",
-              "main_dish": "Whole Chicken Cutlet with Chipotle Mayo Sauce",
+              "verdict": "WORTH IT",
+              "main_dish": "Chicken cutlet with chipotle mayo",
               "main_dish_ko": "통살치킨까스&치폴레마요s",
               "safe_items": [
-                "Mixed grain rice",
-                "Whole chicken cutlet with chipotle mayo sauce",
-                "Stir-fried shiitake mushroom with butter",
-                "Seasoned konjac vegetable salad",
-                "Seasoned perilla leaf pickles",
-                "Radish kimchi"
+                "Shiitake mushroom butter stir-fry",
+                "Konjac vegetable salad",
+                "Seasoned perilla leaves",
+                "Cubed radish kimchi"
               ],
               "skip_items": [
-                "Boneless pork backbone stew"
+                "Boneless gamjatang (pork spine soup)"
               ],
-              "reason": "Main dish is chicken. Boneless gamjatang soup contains pork and must be skipped."
+              "reason": "Main dish is pork-free but some side dishes contain pork."
             }
           ],
           "fixed_menu": false
@@ -126,22 +124,25 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Mac & Cheese Hot Dog, Tuna Mayo Ham Roll Rice Ball & Green Plum Drink",
-            "main_dish_ko": "맥앤치즈핫도그 전주비빔참치마요햄말이주먹밥 초록매실",
-            "reason": "Contains sausage/hot dog and ham."
+            "main_dish": "Mac and cheese hot dog",
+            "main_dish_ko": "맥앤치즈핫도그",
+            "reason": "Contains pork (hot dog likely pork and ham)."
           },
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
-          "safe_options": [
-            {
-              "en": "Market Style Beef Soup with Rice",
-              "ko": "장터국밥"
-            }
-          ],
+          "safe_options": [],
           "avoid": [
             {
-              "en": "Double Hamburger Steak Set",
+              "en": "Double hamburger steak set",
               "ko": "더블함박정식"
+            },
+            {
+              "en": "Market pork soup with rice",
+              "ko": "장터국밥"
+            },
+            {
+              "en": "Dinner set meal",
+              "ko": "일품정식(석식)"
             }
           ],
           "fixed_menu": false
@@ -149,7 +150,7 @@
         {
           "name": "Snack Bar",
           "type": "individual",
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
@@ -157,17 +158,17 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet & Sour Chicken Bites",
+              "en": "Sweet fried chicken",
               "ko": "닭강정"
             }
           ],
           "avoid": [
             {
-              "en": "Ramen Varieties",
+              "en": "Ramen varieties",
               "ko": "라면류"
             },
             {
-              "en": "Pork Cutlet Varieties",
+              "en": "Pork cutlet varieties",
               "ko": "돈가스류"
             }
           ],
@@ -188,20 +189,17 @@
               "price": "6000 won",
               "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "WORTH IT",
-              "main_dish": "Grilled Mackerel with Teriyaki Sauce",
+              "main_dish": "Grilled sabrefish teriyaki",
               "main_dish_ko": "삼치데리야끼구이",
               "safe_items": [
-                "Mixed grain rice",
-                "Spicy green onion and beef soup",
-                "Grilled mackerel with teriyaki sauce",
-                "Yuzu radish salad",
+                "Citron radish salad",
                 "Seasoned seaweed",
-                "Napa cabbage kimchi"
+                "Cabbage kimchi"
               ],
               "skip_items": [
-                "Japchae"
+                "Beef japchae (glass noodles stir-fry)"
               ],
-              "reason": "Main dish is fish. Japchae side dish contains pork and must be skipped."
+              "reason": "Main dish is pork-free but some side dishes contain pork."
             }
           ],
           "fixed_menu": false
@@ -213,22 +211,26 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Ham-wrapped Garlic Jeyuk & Sausage Vegetable Stir-fry Lunchbox",
+            "main_dish": "Ham wrapped garlic pork & plump soy set lunchbox",
             "main_dish_ko": "햄쌈통마늘제육&통통쏘야정식도시락",
-            "reason": "Contains ham, spicy stir-fried pork, and sausage."
+            "reason": "Contains pork (ham and pork stir-fry)."
           },
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
-              "en": "Earthen Pot Spicy Braised Chicken",
+              "en": "Earthen pot chicken stew",
               "ko": "뚝배기닭도리탕"
             }
           ],
           "avoid": [
             {
-              "en": "Vegetable Spicy Chewy Noodles & Fried Dumplings",
+              "en": "Vegetable spicy noodles & fried dumplings",
               "ko": "야채쫄면&만두튀김"
+            },
+            {
+              "en": "Dinner set meal",
+              "ko": "일품정식(석식)"
             }
           ],
           "fixed_menu": false
@@ -236,7 +238,7 @@
         {
           "name": "Snack Bar",
           "type": "individual",
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
@@ -244,17 +246,17 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet & Sour Chicken Bites",
+              "en": "Sweet fried chicken",
               "ko": "닭강정"
             }
           ],
           "avoid": [
             {
-              "en": "Ramen Varieties",
+              "en": "Ramen varieties",
               "ko": "라면류"
             },
             {
-              "en": "Pork Cutlet Varieties",
+              "en": "Pork cutlet varieties",
               "ko": "돈가스류"
             }
           ],
@@ -275,15 +277,12 @@
               "price": "6000 won",
               "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "SAFE",
-              "main_dish": "Barbecue Braised Chicken",
+              "main_dish": "Barbecue braised chicken",
               "main_dish_ko": "바베큐닭조림",
               "safe_items": [
-                "Mixed grain rice",
-                "Dried pollack hangover soup",
-                "Barbecue braised chicken",
-                "Bean sprout salad",
+                "Soybean sprout salad",
                 "Vitamin fried tofu salad",
-                "Napa cabbage kimchi",
+                "Cabbage kimchi",
                 "Orange"
               ],
               "skip_items": [],
@@ -299,22 +298,26 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Gimbap, Crisp Ham & Vegetable Sandwich, Grapefruit Drink",
-            "main_dish_ko": "NEW올바른7미든든김밥 아삭햄야채샌드위치 테이크얼라이브스위트자몽",
-            "reason": "Contains ham in the sandwich and likely ham/sausage in gimbap."
+            "main_dish": "New 7-grain hearty kimbap",
+            "main_dish_ko": "NEW올바른7미든든김밥",
+            "reason": "Contains pork (ham in sandwich)."
           },
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
-              "en": "Kkanpung Chicken Rice Bowl",
+              "en": "Sweet and sour chicken rice bowl",
               "ko": "깐풍치킨덮밥"
             }
           ],
           "avoid": [
             {
-              "en": "Pork Neck Cube Steak Jjajangmyeon",
+              "en": "Pork neck cube steak black bean noodles",
               "ko": "목살큐브스테이크짜장면"
+            },
+            {
+              "en": "Dinner set meal",
+              "ko": "일품정식(석식)"
             }
           ],
           "fixed_menu": false
@@ -322,7 +325,7 @@
         {
           "name": "Snack Bar",
           "type": "individual",
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
@@ -330,17 +333,17 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet & Sour Chicken Bites",
+              "en": "Sweet fried chicken",
               "ko": "닭강정"
             }
           ],
           "avoid": [
             {
-              "en": "Ramen Varieties",
+              "en": "Ramen varieties",
               "ko": "라면류"
             },
             {
-              "en": "Pork Cutlet Varieties",
+              "en": "Pork cutlet varieties",
               "ko": "돈가스류"
             }
           ],
@@ -361,20 +364,17 @@
               "price": "6000 won",
               "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "WORTH IT",
-              "main_dish": "Stir-fried Beef & Cabbage",
+              "main_dish": "Beef and cabbage stir-fry",
               "main_dish_ko": "소고기배추볶음",
               "safe_items": [
-                "White rice",
-                "Clear pollack soup",
-                "Stir-fried beef and cabbage",
-                "Udon tteokbokki",
+                "Stir-fried wheat noodles",
                 "Ricotta cheese salad",
-                "Napa cabbage kimchi"
+                "Cabbage kimchi"
               ],
               "skip_items": [
                 "Crispy flat dumplings"
               ],
-              "reason": "Main dish is beef. Dumplings almost always contain pork filling and must be skipped."
+              "reason": "Main dish is pork-free but some side dishes contain pork."
             }
           ],
           "fixed_menu": false
@@ -385,22 +385,26 @@
           "breakfast": {
             "price": "1000 won",
             "selling_time": "08:20~10:00",
-            "verdict": "NOT WORTH",
-            "main_dish": "Dachan Special Set Lunchbox",
+            "verdict": "SAFE",
+            "main_dish": "Danchan special set lunchbox",
             "main_dish_ko": "다찬스페셜정식도시락",
-            "reason": "Cafeteria special set lunchbox typically contains pork side dishes such as sausage or jeyuk."
+            "reason": "No pork detected in the listed item."
           },
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [],
           "avoid": [
             {
-              "en": "Katsudon (Pork Cutlet Rice Bowl)",
+              "en": "Pork cutlet rice bowl",
               "ko": "가츠동"
             },
             {
-              "en": "Spam Jjageuli Stew",
+              "en": "Spam stew",
               "ko": "스팸짜글이"
+            },
+            {
+              "en": "Dinner set meal",
+              "ko": "일품정식(석식)"
             }
           ],
           "fixed_menu": false
@@ -408,7 +412,7 @@
         {
           "name": "Snack Bar",
           "type": "individual",
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
@@ -416,17 +420,17 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet & Sour Chicken Bites",
+              "en": "Sweet fried chicken",
               "ko": "닭강정"
             }
           ],
           "avoid": [
             {
-              "en": "Ramen Varieties",
+              "en": "Ramen varieties",
               "ko": "라면류"
             },
             {
-              "en": "Pork Cutlet Varieties",
+              "en": "Pork cutlet varieties",
               "ko": "돈가스류"
             }
           ],
