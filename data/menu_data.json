@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-10-27T10:04:08.467266",
-  "menu_hash": "365100ac9faca59167a40ebf9fc4e3c8",
+  "updated_at": "2026-10-28T08:04:52.877942",
+  "menu_hash": "07576d10ba0daa241824b01b3f5cc316",
   "week_start": "2026-10-26",
   "week_data": {
     "Monday": {
@@ -19,16 +19,16 @@
               "main_dish_ko": "간장돼지불고기",
               "safe_items": [
                 "Mixed Grain Rice",
-                "Beef Yukgaejang",
+                "Beef Yukgaejang (Spicy Beef Soup)",
                 "Stir-fried Broccoli",
                 "Orange Salad",
-                "Baechu Kimchi",
+                "Napa Cabbage Kimchi",
                 "Maple Pecan"
               ],
               "skip_items": [
                 "Soy Sauce Pork Bulgogi"
               ],
-              "reason": "The main meat dish is pork bulgogi."
+              "reason": "The main dish contains pork, so this package meal is not recommended."
             }
           ],
           "fixed_menu": false
@@ -40,15 +40,15 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Dachan Special Set Lunchbox",
+            "main_dish": "Dachan Special Lunchbox",
             "main_dish_ko": "다찬스페셜정식도시락",
-            "reason": "Assorted special lunchbox typically contains various pork side dishes such as ham or sausages."
+            "reason": "Pre-packaged assorted bento boxes typically contain pork sausages, ham, or pork side dishes."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
-              "en": "Galbitang (Short Rib Soup)",
+              "en": "Short Rib Soup",
               "ko": "갈비탕"
             }
           ],
@@ -102,20 +102,20 @@
               "price": "6000 won",
               "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "WORTH IT",
-              "main_dish": "Salted Grilled Duck",
+              "main_dish": "Salt-Grilled Duck",
               "main_dish_ko": "오리소금구이",
               "safe_items": [
                 "Mixed Grain Rice",
-                "Salted Grilled Duck",
-                "Steamed Slow-Aging Vegetables",
+                "Salt-Grilled Duck",
+                "Slow-Aging Steamed Vegetables",
                 "Stir-fried Shishito Peppers and Anchovies",
-                "Baby Leaf Pickled Radish Wrap",
-                "Baechu Kimchi"
+                "Pickled Radish Paper with Baby Greens",
+                "Napa Cabbage Kimchi"
               ],
               "skip_items": [
                 "Spicy Soft Tofu Stew"
               ],
-              "reason": "The main protein is pork-free grilled duck, but the spicy soft tofu stew contains pork and must be skipped."
+              "reason": "The main protein is salt-grilled duck which is pork-free, but you must skip the spicy soft tofu stew as it contains pork."
             }
           ],
           "fixed_menu": false
@@ -127,15 +127,15 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "New Jeonju Bibim Triangle Kimbap, Cheddar Cheese Chicken Nugget Salad, Choco (Strawberry) Time",
+            "main_dish": "New Jeonju Bibim Triangle Kimbap & Cheddar Cheese Chicken Nugget Salad",
             "main_dish_ko": "뉴전주비빔삼각김밥 체다치즈치킨너겟샐러드 초코(딸기)타임",
-            "reason": "Jeonju bibim triangle kimbap often contains ground pork or mixed meat in the sauce."
+            "reason": "Jeonju bibim triangle kimbap frequently contains minced pork in its red pepper sauce filling."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
-              "en": "Kkanpung Chicken Rice Bowl",
+              "en": "Spicy Garlic Fried Chicken Rice Bowl",
               "ko": "깐풍치킨덮밥"
             }
           ],
@@ -192,18 +192,18 @@
               "main_dish": "Pork Gochujang Stew",
               "main_dish_ko": "돼지고추장찌개",
               "safe_items": [
-                "Shiitake Chwinamul Rice",
-                "Fried Chili and Sweet Pumpkin",
+                "Shiitake and Aster Rice",
+                "Fried Chili Pepper and Sweet Pumpkin",
                 "Spicy Stir-fried Mussels",
-                "Cabbage and Seaweed Salad",
-                "Baechu Kimchi",
-                "Misutgaru Drink"
+                "Cabbage Seaweed Salad",
+                "Napa Cabbage Kimchi",
+                "Roasted Grain Shake"
               ],
               "skip_items": [
                 "Pork Gochujang Stew",
                 "Seasoning Sauce"
               ],
-              "reason": "The main stew contains pork and the rice seasoning sauce also contains pork."
+              "reason": "The main stew and the rice seasoning sauce both contain pork."
             }
           ],
           "fixed_menu": false
@@ -215,20 +215,20 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "All-in-one Assorted Lunchbox",
+            "main_dish": "All-in-One Assorted Bento",
             "main_dish_ko": "한판모듬도시락",
-            "reason": "Assorted convenience lunchbox typically contains various pork items such as ham, sausage, or pork cutlet."
+            "reason": "Assorted convenience bento lunchboxes typically include pork ham, sausages, or pork side dishes."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [],
           "avoid": [
             {
-              "en": "Butadon (Pork Rice Bowl)",
+              "en": "Pork Rice Bowl (Butadon)",
               "ko": "부타동"
             },
             {
-              "en": "Jjamppong",
+              "en": "Spicy Seafood Noodle Soup (Jjamppong)",
               "ko": "짬뽕"
             }
           ],
@@ -276,20 +276,20 @@
               "price": "6000 won",
               "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "WORTH IT",
-              "main_dish": "Flame-scented Stir-fried Squid",
+              "main_dish": "Flame-Scented Stir-Fried Squid",
               "main_dish_ko": "불향오징어볶음",
               "safe_items": [
                 "White Rice",
-                "Seollongtang & Somen Noodles",
-                "Flame-scented Stir-fried Squid",
-                "Fresh Chive Kimchi",
+                "Seolleongtang (Ox Bone Soup) with Somyeon Noodles",
+                "Flame-Scented Stir-Fried Squid",
+                "Chive Fresh Kimchi",
                 "Lettuce Salad",
-                "Kkakdugi"
+                "Diced Radish Kimchi"
               ],
               "skip_items": [
-                "Crispy Flat Dumplings & Seasoned Vegetables"
+                "Crispy Flat Dumplings & Mixed Vegetables"
               ],
-              "reason": "The main protein is pork-free stir-fried squid and beef soup, but the crispy flat dumplings contain pork."
+              "reason": "The main protein dishes (squid and ox bone soup) are pork-free, but you must skip the crispy flat dumplings as dumplings contain pork."
             }
           ],
           "fixed_menu": false
@@ -301,9 +301,9 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Bulgogi Soft-boiled Egg Bibimbap, Strawberry Banana Smoothie",
-            "main_dish_ko": "불고기반숙비빔밥 딸기바나나스무디",
-            "reason": "Cafeteria bulgogi is often mixed with pork to cut costs."
+            "main_dish": "Bulgogi Soft-Boiled Egg Bibimbap",
+            "main_dish_ko": "불고기반숙비빔밥",
+            "reason": "Bulgogi served in cheap cafeteria settings is frequently mixed with pork to lower costs."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
@@ -368,16 +368,16 @@
               "safe_items": [
                 "Mixed Grain Rice",
                 "Beef Shank Hot Pot",
-                "Seasoned Fried Chicken",
-                "Vegetable Steamed Egg",
-                "Crispy Chili Pepper",
-                "Chonggak Kimchi",
-                "Strawberry Cookie Yogurt"
+                "Seasoned Sweet and Spicy Fried Chicken",
+                "Steamed Eggs with Vegetables",
+                "Crunchy Pepper",
+                "Altari Radish Kimchi",
+                "Dwaejibar Yogurt"
               ],
               "skip_items": [
                 "Ssamjang"
               ],
-              "reason": "The main protein dishes are beef shank hot pot and fried chicken, but the ssamjang sauce contains pork."
+              "reason": "The main protein dishes (beef shank hot pot and chicken) are pork-free, but you must avoid the ssamjang dipping sauce as it contains pork."
             }
           ],
           "fixed_menu": false
@@ -389,9 +389,9 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Sunchang Gochujang Jeyuk Set Lunchbox",
+            "main_dish": "Sunchang Gochujang Jeyuk Lunchbox",
             "main_dish_ko": "순창고추장제육정찬도시락",
-            "reason": "Contains spicy stir-fried pork (jeyuk)."
+            "reason": "Jeyuk is spicy stir-fried pork."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
