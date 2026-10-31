@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-10-28T08:04:52.877942",
-  "menu_hash": "07576d10ba0daa241824b01b3f5cc316",
-  "week_start": "2026-10-26",
+  "updated_at": "2026-11-01T08:01:37.239360",
+  "menu_hash": "b40b1295f447840947cd1e527a7f10e3",
+  "week_start": "2026-11-02",
   "week_data": {
     "Monday": {
       "day": "Monday",
@@ -14,21 +14,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
-              "verdict": "NOT WORTH",
-              "main_dish": "Soy Sauce Pork Bulgogi",
-              "main_dish_ko": "간장돼지불고기",
+              "verdict": "SAFE",
+              "main_dish": "Snow Cheese Spicy Stir-fried Chicken",
+              "main_dish_ko": "눈꽃치즈닭갈비",
               "safe_items": [
                 "Mixed Grain Rice",
-                "Beef Yukgaejang (Spicy Beef Soup)",
-                "Stir-fried Broccoli",
-                "Orange Salad",
-                "Napa Cabbage Kimchi",
-                "Maple Pecan"
+                "Dried Pollack Seaweed Soup",
+                "Snow Cheese Spicy Stir-fried Chicken",
+                "Perilla Oil Buckwheat Noodles",
+                "Seasoned Spinach",
+                "Potato Croquette Salad",
+                "Napa Cabbage Kimchi"
               ],
-              "skip_items": [
-                "Soy Sauce Pork Bulgogi"
-              ],
-              "reason": "The main dish contains pork, so this package meal is not recommended."
+              "skip_items": [],
+              "reason": "All items are pork-free, with chicken as the main dish."
             }
           ],
           "fixed_menu": false
@@ -40,22 +39,22 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Dachan Special Lunchbox",
-            "main_dish_ko": "다찬스페셜정식도시락",
-            "reason": "Pre-packaged assorted bento boxes typically contain pork sausages, ham, or pork side dishes."
+            "main_dish": "Ham-wrapped Green Onion Bulgogi Lunchbox",
+            "main_dish_ko": "햄쌈파불고기정찬도시락",
+            "reason": "Contains ham, which is a pork product."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
-              "en": "Short Rib Soup",
-              "ko": "갈비탕"
+              "en": "Halal Chicken Platter & Cola",
+              "ko": "[HALAL]치킨플래터&콜라"
             }
           ],
           "avoid": [
             {
-              "en": "Baked Egg Curry & Sausage",
-              "ko": "구운계란카레&소시지"
+              "en": "Spicy Pork Rice Bowl",
+              "ko": "제육덮밥"
             }
           ],
           "fixed_menu": false
@@ -69,10 +68,6 @@
             {
               "en": "Udon",
               "ko": "우동"
-            },
-            {
-              "en": "Sweet and Spicy Fried Chicken",
-              "ko": "닭강정"
             }
           ],
           "avoid": [
@@ -83,12 +78,16 @@
             {
               "en": "Pork Cutlet Varieties",
               "ko": "돈가스류"
+            },
+            {
+              "en": "Black Pork Cutlet",
+              "ko": "블랙돈가스"
             }
           ],
           "fixed_menu": true
         }
       ],
-      "date": "2026-10-26"
+      "date": "2026-11-02"
     },
     "Tuesday": {
       "day": "Tuesday",
@@ -102,20 +101,20 @@
               "price": "6000 won",
               "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "WORTH IT",
-              "main_dish": "Salt-Grilled Duck",
-              "main_dish_ko": "오리소금구이",
+              "main_dish": "Garlic Scapes Beef Brisket Bibimbap",
+              "main_dish_ko": "마늘쫑우삼겹비빔밥*후라이",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Salt-Grilled Duck",
-                "Slow-Aging Steamed Vegetables",
-                "Stir-fried Shishito Peppers and Anchovies",
-                "Pickled Radish Paper with Baby Greens",
+                "Garlic Scapes Beef Brisket Bibimbap (without fried egg)",
+                "Spicy Shredded Radish Soup",
+                "Fried Shrimp and Crab Stick with Tartar Sauce",
+                "Seasoned Cabbage",
+                "Braised Lotus Root and Chickpeas",
                 "Napa Cabbage Kimchi"
               ],
               "skip_items": [
-                "Spicy Soft Tofu Stew"
+                "Fried Egg"
               ],
-              "reason": "The main protein is salt-grilled duck which is pork-free, but you must skip the spicy soft tofu stew as it contains pork."
+              "reason": "The main bibimbap uses beef brisket, but the fried egg topping is cafeteria-flagged for pork and must be skipped."
             }
           ],
           "fixed_menu": false
@@ -127,22 +126,22 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "New Jeonju Bibim Triangle Kimbap & Cheddar Cheese Chicken Nugget Salad",
-            "main_dish_ko": "뉴전주비빔삼각김밥 체다치즈치킨너겟샐러드 초코(딸기)타임",
-            "reason": "Jeonju bibim triangle kimbap frequently contains minced pork in its red pepper sauce filling."
+            "main_dish": "Red Pepper Paste Jeyuk Bibimbap",
+            "main_dish_ko": "고추장제육비빔밥",
+            "reason": "Contains spicy pork (jeyuk)."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
-              "en": "Spicy Garlic Fried Chicken Rice Bowl",
-              "ko": "깐풍치킨덮밥"
+              "en": "Gikoba Style Chicken Rice Bowl",
+              "ko": "지코바치밥"
             }
           ],
           "avoid": [
             {
-              "en": "Tonkotsu Ramen",
-              "ko": "돈코츠라멘"
+              "en": "Pork Cutlet Kimchi Nabe",
+              "ko": "돈가스김치나베"
             }
           ],
           "fixed_menu": false
@@ -158,7 +157,7 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet and Spicy Fried Chicken",
+              "en": "Sweet and Crispy Fried Chicken",
               "ko": "닭강정"
             }
           ],
@@ -175,7 +174,7 @@
           "fixed_menu": true
         }
       ],
-      "date": "2026-10-27"
+      "date": "2026-11-03"
     },
     "Wednesday": {
       "day": "Wednesday",
@@ -189,21 +188,21 @@
               "price": "6000 won",
               "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "NOT WORTH",
-              "main_dish": "Pork Gochujang Stew",
-              "main_dish_ko": "돼지고추장찌개",
+              "main_dish": "Fire-flavored Spicy Webfoot Octopus and Pork Bulgogi",
+              "main_dish_ko": "불맛쭈돈불고기",
               "safe_items": [
-                "Shiitake and Aster Rice",
-                "Fried Chili Pepper and Sweet Pumpkin",
-                "Spicy Stir-fried Mussels",
-                "Cabbage Seaweed Salad",
-                "Napa Cabbage Kimchi",
-                "Roasted Grain Shake"
+                "Mixed Grain Rice",
+                "Soybean Curd Stew",
+                "Okonomiyaki Style Stir-fried Fish Cake",
+                "Cabbage and Kelp Wraps",
+                "Napa Cabbage Kimchi"
               ],
               "skip_items": [
-                "Pork Gochujang Stew",
-                "Seasoning Sauce"
+                "Fire-flavored Spicy Webfoot Octopus and Pork Bulgogi",
+                "Minced Chili Sauce",
+                "Sausage and Rice Cake Skewer"
               ],
-              "reason": "The main stew and the rice seasoning sauce both contain pork."
+              "reason": "The main dish contains pork (쭈돈불고기)."
             }
           ],
           "fixed_menu": false
@@ -215,21 +214,21 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "All-in-One Assorted Bento",
-            "main_dish_ko": "한판모듬도시락",
-            "reason": "Assorted convenience bento lunchboxes typically include pork ham, sausages, or pork side dishes."
+            "main_dish": "Hearty Jeyuk and Pork Cutlet Set Lunchbox",
+            "main_dish_ko": "든든한제육&돈까스정식 도시락",
+            "reason": "Contains spicy pork (jeyuk) and pork cutlet (donkatsu)."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [],
           "avoid": [
             {
-              "en": "Pork Rice Bowl (Butadon)",
-              "ko": "부타동"
+              "en": "Boiled Pork Belly Set",
+              "ko": "헐랭이수육정식"
             },
             {
-              "en": "Spicy Seafood Noodle Soup (Jjamppong)",
-              "ko": "짬뽕"
+              "en": "Hayashi Rice with Hot Bar",
+              "ko": "하이라이스*핫바"
             }
           ],
           "fixed_menu": false
@@ -245,7 +244,7 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet and Spicy Fried Chicken",
+              "en": "Sweet and Crispy Fried Chicken",
               "ko": "닭강정"
             }
           ],
@@ -262,7 +261,7 @@
           "fixed_menu": true
         }
       ],
-      "date": "2026-10-28"
+      "date": "2026-11-04"
     },
     "Thursday": {
       "day": "Thursday",
@@ -276,20 +275,20 @@
               "price": "6000 won",
               "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "WORTH IT",
-              "main_dish": "Flame-Scented Stir-Fried Squid",
-              "main_dish_ko": "불향오징어볶음",
+              "main_dish": "Deep-fried Sole with Yuringi Sauce",
+              "main_dish_ko": "가자미유린기",
               "safe_items": [
-                "White Rice",
-                "Seolleongtang (Ox Bone Soup) with Somyeon Noodles",
-                "Flame-Scented Stir-Fried Squid",
-                "Chive Fresh Kimchi",
-                "Lettuce Salad",
-                "Diced Radish Kimchi"
+                "Mixed Grain Rice",
+                "Deep-fried Sole with Yuringi Sauce",
+                "Quail Eggs for Rice",
+                "Cheongyang Stir-fried Udon",
+                "Chopped Salad",
+                "Napa Cabbage Kimchi"
               ],
               "skip_items": [
-                "Crispy Flat Dumplings & Mixed Vegetables"
+                "Pork Bone Hangover Soup"
               ],
-              "reason": "The main protein dishes (squid and ox bone soup) are pork-free, but you must skip the crispy flat dumplings as dumplings contain pork."
+              "reason": "The main protein dish is deep-fried fish, but the pork bone hangover soup (뼈해장국) contains pork bone broth and meat, so you must skip the soup."
             }
           ],
           "fixed_menu": false
@@ -301,22 +300,22 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Bulgogi Soft-Boiled Egg Bibimbap",
-            "main_dish_ko": "불고기반숙비빔밥",
-            "reason": "Bulgogi served in cheap cafeteria settings is frequently mixed with pork to lower costs."
+            "main_dish": "Crispy Spam Egg Gimbap and Sriracha Ham Tuna Sandburger",
+            "main_dish_ko": "와그작스팸계란김밥 스리라차햄참치샌드버거 더진한초코(딸기)우유",
+            "reason": "Contains Spam and ham, which are pork products."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
-              "en": "Skewered Fish Cake Hot Pot",
-              "ko": "꼬치어묵전골"
+              "en": "Chicken Knife-cut Noodle Soup",
+              "ko": "닭칼국수"
             }
           ],
           "avoid": [
             {
-              "en": "Meatball Spaghetti",
-              "ko": "미트볼스파게티"
+              "en": "Pork Neck Cube Rice Bowl",
+              "ko": "목살큐브덮밥"
             }
           ],
           "fixed_menu": false
@@ -332,7 +331,7 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet and Spicy Fried Chicken",
+              "en": "Sweet and Crispy Fried Chicken",
               "ko": "닭강정"
             }
           ],
@@ -349,7 +348,7 @@
           "fixed_menu": true
         }
       ],
-      "date": "2026-10-29"
+      "date": "2026-11-05"
     },
     "Friday": {
       "day": "Friday",
@@ -362,22 +361,20 @@
               "time": "Lunch",
               "price": "6000 won",
               "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
-              "verdict": "WORTH IT",
-              "main_dish": "Beef Shank Hot Pot",
-              "main_dish_ko": "아롱사태전골",
+              "verdict": "SAFE",
+              "main_dish": "Chicken Thigh Steak",
+              "main_dish_ko": "닭다리살스테이크",
               "safe_items": [
-                "Mixed Grain Rice",
-                "Beef Shank Hot Pot",
-                "Seasoned Sweet and Spicy Fried Chicken",
-                "Steamed Eggs with Vegetables",
-                "Crunchy Pepper",
-                "Altari Radish Kimchi",
-                "Dwaejibar Yogurt"
+                "Vegetable Fried Rice",
+                "Enoki Mushroom and Fried Tofu Soybean Paste Soup",
+                "Chicken Thigh Steak",
+                "Toowoomba Sujebi",
+                "Chicken Ball Salad",
+                "Mini Radish Kimchi",
+                "Vanilla Crown Pastry"
               ],
-              "skip_items": [
-                "Ssamjang"
-              ],
-              "reason": "The main protein dishes (beef shank hot pot and chicken) are pork-free, but you must avoid the ssamjang dipping sauce as it contains pork."
+              "skip_items": [],
+              "reason": "All items are pork-free, featuring chicken thigh steak as the main dish."
             }
           ],
           "fixed_menu": false
@@ -389,22 +386,22 @@
             "price": "1000 won",
             "selling_time": "08:20~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Sunchang Gochujang Jeyuk Lunchbox",
-            "main_dish_ko": "순창고추장제육정찬도시락",
-            "reason": "Jeyuk is spicy stir-fried pork."
+            "main_dish": "Quattro Meat Feast Lunchbox",
+            "main_dish_ko": "콰트로고기정찬도시락",
+            "reason": "The mixed meat lunchbox contains pork."
           },
           "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
-              "en": "Flying Fish Roe Rice Bowl",
-              "ko": "날치알밥"
+              "en": "Five-Color Vegetable Bibimbap",
+              "ko": "오색나물비빔밥"
             }
           ],
           "avoid": [
             {
-              "en": "Bulgogi Quesadilla",
-              "ko": "불고기퀘사디아"
+              "en": "Spicy Black Bean and Cream Shrimp",
+              "ko": "불*짜&크림새우"
             }
           ],
           "fixed_menu": false
@@ -420,7 +417,7 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet and Spicy Fried Chicken",
+              "en": "Sweet and Crispy Fried Chicken",
               "ko": "닭강정"
             }
           ],
@@ -437,7 +434,7 @@
           "fixed_menu": true
         }
       ],
-      "date": "2026-10-30"
+      "date": "2026-11-06"
     }
   }
 }
