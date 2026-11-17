@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-15T08:06:30.450747",
-  "menu_hash": "5ff6ff197f5afb8fabca5a6c3cb179ca",
+  "updated_at": "2026-11-17T12:12:19.439558",
+  "menu_hash": "7138aede49242989098d60b69ba844cb",
   "week_start": "2026-11-16",
   "week_data": {
     "Monday": {
@@ -19,16 +19,17 @@
               "main_dish_ko": "바싹간장불고기",
               "safe_items": [
                 "Mixed Grain Rice",
-                "Dried Radish Green Soup",
+                "Dried Radish Greens Soup",
                 "Oil Tteokbokki",
                 "Braised Tuna and Radish",
-                "Cabbage Kimchi"
+                "Cabbage and Perilla Leaves",
+                "Kimchi"
               ],
               "skip_items": [
                 "Crispy Soy Sauce Bulgogi",
                 "Ssamjang"
               ],
-              "reason": "Main dish Crispy Soy Sauce Bulgogi contains pork, and ssamjang also contains pork."
+              "reason": "The main dish is pork bulgogi explicitly marked with pork."
             }
           ],
           "fixed_menu": false
@@ -40,11 +41,11 @@
             "price": "1000 won",
             "selling_time": "08:00~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Tteokgalbi Lunch Box",
+            "main_dish": "Tteokgalbi Bento",
             "main_dish_ko": "떡갈비정식도시락",
-            "reason": "Tteokgalbi patties typically contain minced pork."
+            "reason": "Tteokgalbi patties in bento boxes almost always contain minced pork."
           },
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [],
           "avoid": [
@@ -66,7 +67,7 @@
         {
           "name": "Snack Bar",
           "type": "individual",
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
@@ -74,7 +75,7 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet and Spicy Fried Chicken",
+              "en": "Sweet and Sour Crispy Chicken",
               "ko": "닭강정"
             }
           ],
@@ -110,15 +111,15 @@
               "safe_items": [
                 "White Rice",
                 "Hayashi Rice",
-                "Grilled Chicken Gizzard with Whole Garlic",
+                "Grilled Chicken Gizzards with Garlic",
                 "Ricotta Cheese Salad",
-                "Cabbage Kimchi"
+                "Kimchi",
+                "Onion Hot Dog"
               ],
               "skip_items": [
-                "Budae-jjigae",
-                "Onion Hot Dog Sausage"
+                "Budae-jjigae"
               ],
-              "reason": "Budae-jjigae contains pork sausage and ham, and onion hot dog sausage typically contains pork."
+              "reason": "The main stew is Budae-jjigae, which contains ham and sausage."
             }
           ],
           "fixed_menu": false
@@ -130,21 +131,21 @@
             "price": "1000 won",
             "selling_time": "08:00~10:00",
             "verdict": "SAFE",
-            "main_dish": "Perilla Leaf Dakgalbi Rice Ball + Shrimp Egg Burger + Vegemil Soy Milk",
+            "main_dish": "Perilla Chicken Galbi Triangle Kimbap and Shrimp Egg Burger",
             "main_dish_ko": "더빅깻잎닭갈비볶음삼각김밥+ 더빅새우에그버거+ 베지밀검은콩아몬드호두팩",
-            "reason": "Made with spicy chicken and shrimp/egg burger without pork."
+            "reason": "Made with chicken and seafood, free of pork."
           },
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
-              "en": "Beef Short Rib Soup",
+              "en": "Short Rib Soup",
               "ko": "갈비탕"
             }
           ],
           "avoid": [
             {
-              "en": "Jjigigo-style Rice Bowl",
+              "en": "Jjigo-style Rice Bowl",
               "ko": "지지고st덮밥"
             }
           ],
@@ -153,7 +154,7 @@
         {
           "name": "Snack Bar",
           "type": "individual",
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
@@ -161,7 +162,7 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet and Spicy Fried Chicken",
+              "en": "Sweet and Sour Crispy Chicken",
               "ko": "닭강정"
             }
           ],
@@ -196,16 +197,15 @@
               "main_dish_ko": "인절미꿔바로우",
               "safe_items": [
                 "White Rice",
-                "Seasoned Cucumber with Doubanjiang",
-                "Cabbage Kimchi"
+                "Smashed Cucumber Salad",
+                "Kimchi"
               ],
               "skip_items": [
                 "Injeolmi Guobaorou",
-                "Meat Nanjawans",
-                "Bulgogi Chow Mein",
-                "Jjamppong Soup"
+                "Meat Meatballs",
+                "Bulgogi Chow Mein"
               ],
-              "reason": "Multiple main and side dishes (Guobaorou, Nanjawans, Chow Mein) contain pork, and Jjamppong soup may use pork broth."
+              "reason": "The main dish and other meat sides contain pork."
             }
           ],
           "fixed_menu": false
@@ -219,17 +219,17 @@
             "verdict": "NOT WORTH",
             "main_dish": "Bulgogi Soft-Boiled Egg Bibimbap",
             "main_dish_ko": "불고기반숙비빔밥",
-            "reason": "Bulgogi in cafeterias is suspicious and frequently mixed with pork."
+            "reason": "Bulgogi in cafeterias is frequently mixed with pork."
           },
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
-              "en": "Kkanpung Chicken Rice Bowl",
+              "en": "Spicy Garlic Fried Chicken Rice Bowl",
               "ko": "깐풍치킨덮밥"
             },
             {
-              "en": "Cart-style Cheol-udon",
+              "en": "Street Stall Jjol Udon",
               "ko": "포장마차쫄우동"
             }
           ],
@@ -239,7 +239,7 @@
         {
           "name": "Snack Bar",
           "type": "individual",
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
@@ -247,7 +247,7 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet and Spicy Fried Chicken",
+              "en": "Sweet and Sour Crispy Chicken",
               "ko": "닭강정"
             }
           ],
@@ -278,19 +278,19 @@
               "price": "6000 won",
               "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "SAFE",
-              "main_dish": "Bean Sprout Spicy Chicken Stir-fry",
+              "main_dish": "Spicy Chicken Galbi with Bean Sprouts",
               "main_dish_ko": "콩나물닭갈비",
               "safe_items": [
                 "Mixed Grain Rice",
                 "Naju Beef Bone Soup",
-                "Bean Sprout Spicy Chicken Stir-fry",
-                "Sweet and Spicy Pollock Gangjeong",
-                "Roasted Seaweed Flakes",
-                "Altari Kimchi",
+                "Spicy Chicken Galbi with Bean Sprouts",
+                "Crispy Pollack Gangjeong",
+                "Seasoned Green Laver",
+                "Radish Kimchi",
                 "Shine Muscat Mochi"
               ],
               "skip_items": [],
-              "reason": "All dishes are made with chicken, beef, seafood, or vegetables with no pork."
+              "reason": "All dishes are pork-free, featuring chicken, beef, and fish."
             }
           ],
           "fixed_menu": false
@@ -302,22 +302,21 @@
             "price": "1000 won",
             "selling_time": "08:00~10:00",
             "verdict": "NOT WORTH",
-            "main_dish": "Tuna & Bulgogi Fried Tofu Kimbap + Banana Protein Drink",
+            "main_dish": "Tuna and Fried Tofu Bulgogi Kimbap",
             "main_dish_ko": "올바른참치&유부불고기김밥+ 얼티브프로틴바나나",
-            "reason": "Bulgogi kimbap is suspicious and may contain pork."
+            "reason": "Bulgogi may contain pork and convenience kimbap often contains ham."
           },
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
-          "safe_options": [
-            {
-              "en": "Gambas Jajangmyeon",
-              "ko": "감바스짜장면"
-            }
-          ],
+          "safe_options": [],
           "avoid": [
             {
               "en": "Soft Tofu Stew",
               "ko": "순두부찌개"
+            },
+            {
+              "en": "Gambas Jjajangmyeon",
+              "ko": "감바스짜장면"
             }
           ],
           "fixed_menu": false
@@ -325,7 +324,7 @@
         {
           "name": "Snack Bar",
           "type": "individual",
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
@@ -333,7 +332,7 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet and Spicy Fried Chicken",
+              "en": "Sweet and Sour Crispy Chicken",
               "ko": "닭강정"
             }
           ],
@@ -364,20 +363,20 @@
               "price": "6000 won",
               "selling_time": "11:40~13:30 (also 11:00~11:40 at the A La Carte hall)",
               "verdict": "NOT WORTH",
-              "main_dish": "Spicy Braised Ribs",
+              "main_dish": "Spicy Braised Pork Ribs",
               "main_dish_ko": "매콤갈비찜",
               "safe_items": [
                 "Mixed Grain Rice",
                 "Clam Soup",
                 "Chive Fresh Kimchi",
                 "Waldorf Salad",
-                "Kkakdugi"
+                "Radish Kimchi"
               ],
               "skip_items": [
-                "Spicy Braised Ribs",
+                "Spicy Braised Pork Ribs",
                 "Cream Curry Glass Noodles"
               ],
-              "reason": "The spicy braised ribs contain pork, and curry contains pork."
+              "reason": "The main dish is braised pork ribs and curry noodles often contain pork."
             }
           ],
           "fixed_menu": false
@@ -391,15 +390,19 @@
             "verdict": "NOT WORTH",
             "main_dish": "Assorted Platter Bento",
             "main_dish_ko": "한판모둠도시락",
-            "reason": "Assorted platters typically contain pork sausages, ham, or pork cutlets."
+            "reason": "Assorted Korean bento boxes almost always contain pork sausages or ham."
           },
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [],
           "avoid": [
             {
-              "en": "Bongousse Rice Burger with Tteokbokki",
-              "ko": "봉구스밥버거*떡볶이"
+              "en": "Bongousse Rice Burger",
+              "ko": "봉구스밥버거"
+            },
+            {
+              "en": "Tteokbokki",
+              "ko": "떡볶이"
             },
             {
               "en": "Spam Stew",
@@ -411,7 +414,7 @@
         {
           "name": "Snack Bar",
           "type": "individual",
-          "selling_time": "11:00~14:00 16:00~18:30",
+          "selling_time": "11:00~14:00, 16:00~18:30",
           "note": "",
           "safe_options": [
             {
@@ -419,7 +422,7 @@
               "ko": "우동"
             },
             {
-              "en": "Sweet and Spicy Fried Chicken",
+              "en": "Sweet and Sour Crispy Chicken",
               "ko": "닭강정"
             }
           ],
